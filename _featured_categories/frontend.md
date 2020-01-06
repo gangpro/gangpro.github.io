@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Dev
-slug: dev
+title: Frontend
+slug: frontend
 menu: true
 submenu: true
 order: 3
 description: >
-  개발에 관련된 모든 것.  
+  Front-end 관련  
 ---
