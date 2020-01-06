@@ -50,14 +50,14 @@ http://www.tipue.com/search
 }
 .tipue_search_icon
 {
-     width: 19px;
-     height: 19px;
+     width: 35px;
+     height: 35px;
      margin-bottom: 0rem;
-     background-color: #626591;
+     background-color: transparent;
 }
 .tipue_search_left
 {
-     float: left;
+     float: right;
      padding: 10px 5px 0 0;
      color: #e3e3e3;
      max-height: 20px;
