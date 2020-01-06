@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Review
-slug: review
-category: review
+title: RDBMS
+slug: rdbms
+category: rdbms
 menu: false
 order: 1
 ---
