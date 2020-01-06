@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Statistics & R
-slug: r
-category: dev
+title: Review
+slug: review
+category: review
 menu: false
 order: 1
 ---
