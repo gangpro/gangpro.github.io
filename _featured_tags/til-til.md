@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Think
-slug: think
-category: think
+title: TIL
+slug: til
+category: til
 menu: false
 order: 1
 ---

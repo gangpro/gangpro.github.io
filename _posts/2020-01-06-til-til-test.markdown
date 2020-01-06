@@ -2,9 +2,9 @@
 layout: post
 title:  "[TEST] 제목 테스트"
 subtitle:   "서브제목 테스트"
-categories: think
-tags: think test
-comments: true
+categories: til
+tags: til test
+comments: false
 header-img: 
 ---
 
