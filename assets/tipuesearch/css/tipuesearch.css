@@ -39,7 +39,6 @@ http://www.tipue.com/search
      color: #333;
      max-width: 150px;
      max-height: 20px;
-	padding: 17px;
 	border: 2px solid #626591;
 	border-radius: 0;
 	-moz-appearance: none;
@@ -57,14 +56,14 @@ http://www.tipue.com/search
 }
 .tipue_search_left
 {
-     float: right;
+     float: left;
      padding: 10px 5px 0 0;
      color: #e3e3e3;
      max-height: 20px;
 }
 .tipue_search_right
 {
-     float: left;
+     float: right;
 }
 
 
