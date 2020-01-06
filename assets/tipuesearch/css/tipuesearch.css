@@ -39,6 +39,7 @@ http://www.tipue.com/search
      color: #333;
      max-width: 150px;
      max-height: 20px;
+	padding: 17px;
 	border: 2px solid #626591;
 	border-radius: 0;
 	-moz-appearance: none;
@@ -49,8 +50,8 @@ http://www.tipue.com/search
 }
 .tipue_search_icon
 {
-     width: 35px;
-     height: 35px;
+     width: 19px;
+     height: 19px;
      margin-bottom: 0rem;
      background-color: transparent;
 }
@@ -63,7 +64,7 @@ http://www.tipue.com/search
 }
 .tipue_search_right
 {
-     float: right;
+     float: left;
 }
 
 
