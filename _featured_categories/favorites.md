@@ -4,7 +4,7 @@ title: Favorites
 slug: favorites
 menu: true
 submenu: false
-order: 7
+order: 4
 description: >
   유용한 즐겨찾기 모음.
 ---
