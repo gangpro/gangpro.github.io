@@ -58,7 +58,7 @@ theorydb:
     # delicious:       <username>
     # stumbleupon:     <username>
     # paypal:          <username>
-    # rss:             https://gangpro.github.io/feed.xml
+    rss:               https://gangpro.github.io/feed.xml
 
 # Another author
 mdo:
