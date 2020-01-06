@@ -6,5 +6,5 @@ menu: true
 submenu: false
 order: 1
 description: >
-  Today I Learned.  
+  Today I Learned :)
 ---

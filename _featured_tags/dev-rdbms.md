@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: Rdbms
+title: RDBMS
 slug: rdbms
 category: dev
 menu: false

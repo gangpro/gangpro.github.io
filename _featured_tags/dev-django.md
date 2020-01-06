@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: Competition
-slug: competition
+title: Django
+slug: django
 category: dev
 menu: false
 order: 4

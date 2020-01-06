@@ -1,7 +1,7 @@
 ---
 layout: list
-title: EnvOps
-slug: envops
+title: Env
+slug: env
 menu: true
 submenu: false
 order: 2

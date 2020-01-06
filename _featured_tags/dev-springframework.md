@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: ML
-slug: ml
+title: SpringFramework
+slug: springframework
 category: dev
 menu: false
 order: 1
