@@ -58,7 +58,7 @@ theorydb:
     # stumbleupon:     <username>
     # paypal:          <username>
     email:           mailto:kangmh86@korea.ac.kr
-    rss:             https://gangpro.github.io/feed.xml
+    # rss:             https://gangpro.github.io/feed.xml
 
 # Another author
 mdo:
