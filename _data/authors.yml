@@ -46,8 +46,8 @@ theorydb:
     # pinterest:       <username>
     # foursquare:      <number>
     # yelp:            <string>
-    github:          gangpro
-    # stackoverflow:   <number/username>
+    github:            gangpro
+    stackoverflow:     12280903/gangpro
     # npm:             <username>
     # hackernews:      <username>
     # trello:          <firstnamelastname>
@@ -57,7 +57,7 @@ theorydb:
     # delicious:       <username>
     # stumbleupon:     <username>
     # paypal:          <username>
-    email:           mailto:kangmh86@korea.ac.kr
+    email:             mailto:kangmh86@korea.ac.kr
     # rss:             https://gangpro.github.io/feed.xml
 
 # Another author
