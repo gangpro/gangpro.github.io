@@ -4,7 +4,7 @@ title:  "[TEST] 제목 테스트"
 subtitle:   "서브제목 테스트"
 categories: til
 tags: til test
-comments: false
+comments: true
 date:   2020-01-06 12:00:00 
 lastmod : 2020-01-06 16:30:00
 sitemap :
