@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Vue
 slug: vue
-category: front
+category: frontend
 menu: false
 order: 1
 ---

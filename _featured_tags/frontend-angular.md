@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Angular
 slug: angular
-category: front
+category: frontend
 menu: false
 order: 3
 ---
