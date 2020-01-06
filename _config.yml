@@ -2,28 +2,28 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               GANGPRO's Blog
+title:               TheoryDB
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://gangpro.github.io
+url:                 https://theorydb.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
 baseurl:             ""
 
 # A very short description of your page
-tagline:             "All roads lead to dev."
+tagline:             "All roads lead to data."
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  개발자의 길..
+  Data Scientist의 길..
 
 # This should be the same author as first entry in `_data/authors.yml`
-author:              gangpro
-  name:              gangpro
-  email:             kangmh86@korea.ac.kr
+author:
+  name:              min
+  email:             theorydb@gmail.com
 
 # Fallback image and color
 image:               /assets/img/main_left.jpg
@@ -44,14 +44,14 @@ google_fonts:        Merriweather-Light
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-google_analytics:    #UA-137374202-1
+google_analytics:    UA-137374202-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
 disqus: True
-disqus_shortname:    gangpro
+disqus_shortname:    theorydb
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2020.01. by gangpro'
+copyright:           '&copy; 2019.04. by theorydb'
 
 # Format of the permalinks
 permalink:           pretty
