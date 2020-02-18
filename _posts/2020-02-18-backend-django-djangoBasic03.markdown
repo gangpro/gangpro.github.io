@@ -71,8 +71,7 @@ h1 {
 static_example.html 코드 수정<br/>
 
 ```html
-{% \raw %}
-{% load static %}
+"{% load static %}" <!--사용시 "" 지워야 함-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +88,6 @@ static_example.html 코드 수정<br/>
 
 </body>
 </html>
-{% \endraw %}
 ```
 
 ## 서버 실행
