@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] 장고 스타일 적용하기'
+title: '[DjangoBasic] 장고 스타일 적용하기'
 subtitle: 
 categories: backend
 tags: django basic

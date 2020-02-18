@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] ASCII art API 활용하기'
+title: '[DjangoBasic] ASCII art API 활용하기'
 subtitle: 
 categories: backend
 tags: django basic

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] 장고 폼 태그 사용해서 사용자 정보 받기'
+title: '[DjangoBasic] 장고 폼 태그 사용해서 사용자 정보 받기'
 subtitle: 
 categories: backend
 tags: django basic

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] 장고 설치 및 앱 생성'
+title: '[DjangoBasic] 장고 설치 및 앱 생성'
 subtitle: 
 categories: backend
 tags: django basic install

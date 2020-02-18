@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] 장고 이미지 추가하기'
+title: '[DjangoBasic] 장고 이미지 추가하기'
 subtitle: 
 categories: backend
 tags: django basic

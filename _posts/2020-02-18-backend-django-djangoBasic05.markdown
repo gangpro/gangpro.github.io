@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Django] 새로운 Utilities 앱 생성 및 응용하기'
+title: '[DjangoBasic] 새로운 Utilities 앱 생성 및 응용하기'
 subtitle: 
 categories: backend
 tags: django basic
