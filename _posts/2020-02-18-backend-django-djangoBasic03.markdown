@@ -71,7 +71,8 @@ h1 {
 static_example.html 코드 수정<br/>
 
 ```html
-<!--{% load static %} 커밋 중 에러로 사용시 주석 해제 해야함.-->
+{% \raw %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,6 +89,7 @@ static_example.html 코드 수정<br/>
 
 </body>
 </html>
+{% \endraw %}
 ```
 
 ## 서버 실행
