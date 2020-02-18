@@ -70,8 +70,9 @@ h1 {
 
 static_example.html 코드 수정<br/>
 
+{% load static %} 아래 html 첫번째 라인에 추가해서 사용해야 함<br/>
+
 ```html
-load static <!-- 사용시 {% %} 감싸서 사용 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
