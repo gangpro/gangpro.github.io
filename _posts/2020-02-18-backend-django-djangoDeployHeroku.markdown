@@ -18,7 +18,7 @@ published: true
 장고 heroku에 배포하기 <br/>
 [https://djangoform.herokuapp.com/boards/](https://djangoform.herokuapp.com/boards/)<br/>
 
-# Django heroku 웹에 배포하기
+## Django heroku 웹에 배포하기
 ---
 1. 기존에 설치한 가상환경 삭제
 2. 새롭게 가상환경 생성
@@ -28,7 +28,7 @@ pip install django
 ```
 
 4. 추가로 설치한 모듈 설치
-- bootstrap4, Ipython, django-allauth, 
+bootstrap4, Ipython, django-allauth, 
 ```
 pip install django-bootstrap4
 pip install etccccc
