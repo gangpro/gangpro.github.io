@@ -70,8 +70,8 @@ h1 {
 
 static_example.html 코드 수정<br/>
 
-```
-{% load static %}
+```html
+load static <!-- 사용시 {% %} 감싸서 사용 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
