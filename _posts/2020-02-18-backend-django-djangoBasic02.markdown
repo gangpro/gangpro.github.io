@@ -6,7 +6,7 @@ categories: backend
 tags: django basic
 comments: true
 date: 2020-02-18 11:35:17 +0900
-lastmod: 2020-02-18 11:35:17 +0900
+lastmod: 2020-02-18 14:35:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
@@ -155,7 +155,6 @@ artiiResult.html 파일 수정<br/>
 <img width="553" alt="Screen Shot 2019-06-04 at 15 17 30" src="https://user-images.githubusercontent.com/46523571/58855803-eafe3980-86db-11e9-9e18-8289d0855a6b.png"><br/>
 
 <img width="570" alt="Screen Shot 2019-06-04 at 15 16 18" src="https://user-images.githubusercontent.com/46523571/58855747-c6a25d00-86db-11e9-8f0d-28aa7ee89f53.png"><br/>
-
 
 
 
