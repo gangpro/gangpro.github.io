@@ -15,7 +15,8 @@ published: true
 
 
 
-장고 heroku에 배포하기<br/>
+장고 heroku에 배포하기 <br/>
+[https://djangoform.herokuapp.com/boards/](https://djangoform.herokuapp.com/boards/)<br/>
 
 # Django heroku 웹에 배포하기
 ---
