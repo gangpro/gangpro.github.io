@@ -20,28 +20,29 @@ published: true
 
 ## Django heroku 웹에 배포하기
 ---
-1. 기존에 설치한 가상환경 삭제
-2. 새롭게 가상환경 생성
-3. django 설치
-```
-pip install django
-```
 
-4. 추가로 설치한 모듈 설치
-bootstrap4, Ipython, django-allauth, 
-```
+기존에 설치한 가상환경 삭제<br/>
+
+새롭게 가상환경 생성<br/>
+
+django 설치<br/>
+`pip install django`
+
+추가로 설치한 모듈 설치<br/>
+```text
+bootstrap4, Ipython, django-allauth
+
 pip install django-bootstrap4
 pip install etccccc
 ```
 
-5. 설치한 모듈 .txt 파일로 저장
-```
-pip freeze > requirements.txt
-```
+설치한 모듈 .txt 파일로 저장<br/>
+`pip freeze > requirements.txt`
 
-6. 최상단 프로젝트 .gitignore 파일 코드 수정
-맨 마지막에 아래 내용 추가 
-```
+최상단 프로젝트 .gitignore 파일 코드 수정<br/>
+맨 마지막에 아래 내용 추가<br/>
+
+```text
 # Text backup files
 *.bak
 
