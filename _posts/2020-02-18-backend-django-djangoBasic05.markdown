@@ -5,7 +5,7 @@ subtitle:
 categories: backend
 tags: django basic
 comments: true
-date: 2020-02-18 14:40:17 +0900
+date: 2020-02-18 15:46:17 +0900
 lastmod: 2020-02-18 16:05:17 +0900
 sitemap:
   changefreq: daily
