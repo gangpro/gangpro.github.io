@@ -1,12 +1,12 @@
 ---
 layout: post
-title: '[Django] 장고 스타일 활용하기'
+title: '[Django] 장고 스타일 적용하기'
 subtitle: 
 categories: backend
 tags: django basic
 comments: true
 date: 2020-02-18 14:40:17 +0900
-lastmod: 2020-02-18 14:40:17 +0900
+lastmod: 2020-02-18 15:45:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
@@ -15,7 +15,7 @@ published: true
 
 
 
-> 장고에서 스타일(Style) 적용하기<br/>
+장고에서 스타일(Style) 적용하기<br/>
 
 ## 구조 만들기
 ---
