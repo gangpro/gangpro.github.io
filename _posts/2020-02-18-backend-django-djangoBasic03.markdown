@@ -71,7 +71,7 @@ h1 {
 static_example.html 코드 수정<br/>
 
 ```html
-"{% load static %}" <!--사용시 "" 지워야 함-->
+{% 로드 static %}" <!-- 사용시 로드를 load로 바꿔야 함 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
