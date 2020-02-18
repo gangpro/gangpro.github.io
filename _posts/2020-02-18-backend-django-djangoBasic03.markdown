@@ -71,7 +71,7 @@ h1 {
 static_example.html 코드 수정<br/>
 
 ```html
-{% load static %}
+load static <!-- 사용시 양쪽에 중괄호 퍼센트 감싸야 함. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
