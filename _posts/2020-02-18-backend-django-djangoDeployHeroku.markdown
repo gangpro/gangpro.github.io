@@ -3,7 +3,7 @@ layout: post
 title: '[DjangoHeroku] 장고 heroku에 배포하기'
 subtitle: 
 categories: backend
-tags: django djangoDeploy heroku
+tags: django deploy heroku
 comments: true
 date: 2020-02-18 17:35:17 +0900
 lastmod: 2020-02-18 17:50:17 +0900
@@ -39,8 +39,7 @@ pip freeze > requirements.txt
 ```
 
 6. 최상단 프로젝트 .gitignore 파일 코드 수정
-- 맨 마지막에 아래 내용 추가 
-
+맨 마지막에 아래 내용 추가 
 ```
 # Text backup files
 *.bak
@@ -53,7 +52,6 @@ pip freeze > requirements.txt
 ```
 
 7. github repository에 remote, add, push 하기
-
 ```
 만약 깃 리모트 변경하고 싶다면
 ➜  DjangoForm git:(master) rm -rf .git
@@ -66,13 +64,11 @@ pip freeze > requirements.txt
 ```
 
 8. 토큰값, 보안정보 숨기는 방법 python-decouple 설치
-
 ```
 pip install python-decouple
 ```   
    
 9. 최상단에 .env 파일 생성
-
 ```
 # .env
 SECRET_KEY=
@@ -130,7 +126,7 @@ django_heroku.settings(locals())
 ```
 
 15. 웹이 구동되는데 필요한 프로세스 목록 적기
-- Procfile 파일 생성
+Procfile 파일 생성
 ```
 web: gunicorn django_form.wsgi --log-file -
 
@@ -173,8 +169,7 @@ brew tap heroku/brew && brew install heroku
 ```
 
 23. 터미널에서 heroku 실행해보기
-- 아래와 같이 뜨면 설치가 잘 된거임.
-
+아래와 같이 뜨면 설치가 잘 된거임.
 ```
 (venv) ➜  DjangoForm git:(master) ✗ heroku
 CLI to interact with Heroku
@@ -230,9 +225,7 @@ COMMANDS
 ```
 
 24. 터미널에서 heroku login
-- 중간에 login 엔터하기 
-- 인터넷에서 로그인 성공하면 아래와 같이 뜸
-
+중간에 login 엔터하기, 인터넷에서 로그인 성공하면 아래와 같이 뜸.
 ```
 (venv) ➜  DjangoForm git:(master) ✗ heroku login
 heroku: Press any key to open up the browser to login or q to exit: 
