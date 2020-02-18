@@ -70,8 +70,8 @@ h1 {
 
 static_example.html 코드 수정<br/>
 
-```html
-{% 로드 static %}" <!-- 사용시 로드를 load로 바꿔야 함 -->
+```
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
