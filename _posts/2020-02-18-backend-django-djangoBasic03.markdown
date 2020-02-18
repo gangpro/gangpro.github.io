@@ -71,7 +71,8 @@ h1 {
 static_example.html 코드 수정<br/>
 
 ```html
-load static <!-- 사용시 양쪽에 중괄호 퍼센트 감싸야 함. -->
+{% raw %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +80,7 @@ load static <!-- 사용시 양쪽에 중괄호 퍼센트 감싸야 함. -->
     <title>static_example</title>
 
     <!--CSS 파일 불러오는 주소 static 적고 '경로' 표시 -->
-    <link rel="stylesheet" href="{% static 'stylesheets/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'stylesheets/style.css'" type="text/css">
 
 </head>
 <body>
