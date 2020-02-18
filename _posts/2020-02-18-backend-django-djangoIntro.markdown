@@ -13,10 +13,14 @@ sitemap:
 published: true
 ---
 
+## 개요
+맥북에 장고(Django) 설치 및 초기 앱 생성을 통해 Django 알아보기.
+
 ## 환경
 > macOS Mojave 10.14.5
 > python 3.6.8
 > django 2.2.1
+> PyCharm CE 2018.3.7
 
 ## HomeBrew 설치
 ---
@@ -110,15 +114,50 @@ See: https://docs.brew.sh/Homebrew-and-Python
 ```
 
 ## Django 설치
-`Django` 이름의 새로운 프로젝트 생성
+---
+PyCharm 실행 후 `Django` 이름의 새로운 폴더 생성<br>
 
+장고 설치<br>
+`pip install django`<br>
 
-작성 중 ing
+현재 디렉토리에 intro 이름으로 프로젝트 설치<br>
+`django-admin startproject intro .`<br>
 
+장고 서버 실행<br>
+`python manage.py runserver`<br>
 
+서버가 실행되면 인터넷 브라우저에서 아래와 같은 화면이 뜬다.<br>
+<img width="1123" alt="Screen Shot 2019-06-03 at 16 03 44" src="https://user-images.githubusercontent.com/46523571/58782318-356ab200-8619-11e9-9110-9862f14ac2b3.png"><br>
 
+## .gitignore 파일 생성
+---
+`Django` 폴더에서 `.gitignore` 이름의 새로운 파일 생성<br>
 
+`https://www.gitignore.io/` 접속해서 아래와 같이 추가한 후 Create 버튼 클릭
+<img width="953" alt="Screen Shot 2019-06-03 at 16 08 26" src="https://user-images.githubusercontent.com/46523571/58782680-2cc6ab80-861a-11e9-955d-6aa0275ff0f0.png"><br>
 
+생성된 코드를 `.gitignore`파일에 붙여넣은 후 저장
+
+## pages 새로운 앱 생성
+---
+pages 이름으로 앱을 하나 생성<br>
+`python manage.py startapp pages`<br>
+
+pages 폴더 안에 파일 의미
+- admin.py : 관리자 페이지 설정 가능
+- apps.py : 앱의 정보가 담기는 곳(default 상태 유지하기)
+- models.py : 데이터베이스, 앱에서 사용하는 모델 설정 
+- tests.py : 테스트 코드 작성하는 곳
+- views.py : Spring MVC에서 컨트롤러를 하는 곳
+
+하나의 앱을 만들고 나면 반드시 해야할 게 있다.
+- intro 폴더 settings.py 안에 소스코드 수정
+- 추가하기 
+	```
+  INSTALLED_APPS = [
+     'pages.apps.PagesConfig', 추가 해야한다.
+	```
+- pages 폴더 - apps.py - class PagesConfig(AppConfig): 값을 의미한다.
 
 ## 참고
 ---
