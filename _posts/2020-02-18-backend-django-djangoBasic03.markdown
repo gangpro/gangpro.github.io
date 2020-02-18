@@ -54,11 +54,11 @@ pages - static 폴더 안에 static_example.html 파일 생성 후 코드 작성
 </html>
 ```
 
-pages 폴더 안에 새로운 `static` 폴더 생성<br/>
+pages 폴더 안에 새로운 `static` 폴더 생성 <br/>
 
-pages - static 폴더 안에 새로운 `stylesheets` 폴더 생성<br/>
+pages - static 폴더 안에 새로운 `stylesheets` 폴더 생성 <br/>
 
-pages - static - stylesheets 폴더 안에 새로운 `style.css` 파일 생성 후 코드 작성<br/>
+pages - static - stylesheets 폴더 안에 새로운 `style.css` 파일 생성 후 코드 작성 <br/>
 
 ```css
 /* 경로 : pages/static/stylesheets/style.css */
