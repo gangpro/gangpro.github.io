@@ -13,8 +13,8 @@ sitemap:
 published: true
 ---
 
-## 개요
----
+
+
 장고(Django) 기능 중 폼(form) 태그(tag) 알아보기.
 
 ## 구조 알아보기
@@ -157,6 +157,7 @@ pages - templates 폴더 안에 catch.html 파일 생성 후 코드 작성<br/>
 
 서버 실행 후 throw.html 페이지 input tag에 값을 넣으면 catch.html로 이동하면서 아래와 같이 나온다.<br/>
 <img width="592" alt="Screen Shot 2019-06-04 at 13 49 28" src="https://user-images.githubusercontent.com/46523571/58851981-a66ca100-86cf-11e9-9b01-b7e01eaf6d53.png"><br/>
+
 
 
 

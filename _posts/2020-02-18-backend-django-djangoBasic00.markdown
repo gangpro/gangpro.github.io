@@ -13,8 +13,8 @@ sitemap:
 published: true
 ---
 
-## 개요
----
+
+
 맥북에 장고(Django) 설치 및 초기 앱 생성을 통해 Django 알아보기.
 
 ## HomeBrew 설치
@@ -133,6 +133,10 @@ pages 폴더 안에 새로운 templates 폴더 생성<br/>
 - 이유는 우리는 index.html 파일만 만들었기 때문
 - `http://127.0.0.1:8000/index/` 이렇게 입력하면 `Hello World`가 뜬다 :)
 - <img width="484" alt="Screen Shot 2019-06-03 at 17 09 05" src="https://user-images.githubusercontent.com/46523571/58786361-571c6700-8622-11e9-9c6e-ce307f6d0513.png">
+
+
+
+
 
 ## 환경
 ---
