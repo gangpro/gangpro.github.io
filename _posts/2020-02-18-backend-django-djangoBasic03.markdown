@@ -80,7 +80,7 @@ static_example.html 코드 수정<br/>
     <title>static_example</title>
 
     <!--CSS 파일 불러오는 주소 static 적고 '경로' 표시 -->
-    <link rel="stylesheet" href="{% static 'stylesheets/style.css'" type="text/css">
+    <link rel="stylesheet" href="{% static 'stylesheets/style.css' %}" type="text/css">
 
 </head>
 <body>
@@ -89,6 +89,7 @@ static_example.html 코드 수정<br/>
 
 </body>
 </html>
+{% endraw %}
 ```
 
 ## 서버 실행
