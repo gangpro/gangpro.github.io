@@ -102,6 +102,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
 
 exclude:
   - README.md
