@@ -2,8 +2,8 @@
 layout: post
 title: '[Django] 장고 설치 및 앱 생성'
 subtitle: 
-categories: backend django
-tags: django 
+categories: backend
+tags: django
 comments: true
 date: 2020-02-18 10:10:17 +0900
 lastmod: 2020-02-18 10:10:17 +0900
