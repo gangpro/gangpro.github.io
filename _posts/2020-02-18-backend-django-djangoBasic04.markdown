@@ -24,6 +24,7 @@ Utilities - templates - utilities - base.html 생성 및 코드 작성<br/>
 다른 페이지가 base.html 파일을 상속을 받는다.<br/>
 
 ```html
+{% raw %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +46,7 @@ Utilities - templates - utilities - base.html 생성 및 코드 작성<br/>
     </footer>
 </body>
 </html>
+{% endraw %}
 ```
 
 Utilities - templates - utilities - index.html 코드 수정 <br/>
