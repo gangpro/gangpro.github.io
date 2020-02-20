@@ -325,7 +325,7 @@ python manage.py createsuperuser
 비밀번호(확인) :
 ```
 
-
+배포 완료 !!! [https://djangoform.herokuapp.com/boards/](https://djangoform.herokuapp.com/boards/) <br/>
 
 
 
