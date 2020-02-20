@@ -24,30 +24,30 @@ AWS EC2(ubuntu), uWSGI, Nginx, RDS(MySQL), Route53, S3 활용한 Django 웹 배�
 ```
 Django
 ├── .config
-│   └── nginx										# 성능에 중점을 둔 차세대 웹 서버 소프트웨어
+│   └── nginx       # 성능에 중점을 둔 차세대 웹 서버 소프트웨어
 │       └── mydjango.conf
-│   └── uwsgi										# 장고와 웹서버를 연결해주는 역할을 하는 Python 프레임워크
+│   └── uwsgi       # 장고와 웹서버를 연결해주는 역할을 하는 Python 프레임워크
 │       └── mydjango.ini
 │       └── uwsgi.service
-├── .config_secret							# AWS secret 정보
+├── .config_secret      # AWS secret 정보
 │   └── secret.json
-├── mydjango										# 프로젝트 폴더
-│   └── config									# 기본 폴더
-│       └── __init__.py					# Python으로 하여금 이 디렉토리를 패키지처럼 다루라고 알려주는 단순한 빈 파일
-│       └── settings.py					# 현재 Django 프로젝트의 환경 및 구성을 저장
-│       └── storages.py					# static & media 파일 저장
-│       └── urls.py							# 현재 Django project 의 URL 선언을 저장
-│       └── wsgi.py							# 현재 프로젝트를 서비스하기 위한 WSGI 호환 웹 서버의 진입점
-│   └── manage.py								# Django 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인의 유틸리티
-├── .git												# git 관리
-├── .gitignore									# git 버전 관리에 제외할 파일 목록
-└── requirements.txt						# 패키지 세팅사항 저장
+├── mydjango        # 프로젝트 폴더
+│   └── config      # 기본 폴더
+│       └── __init__.py     # Python으로 하여금 이 디렉토리를 패키지처럼 다루라고 알려주는 단순한 빈 파일
+│       └── settings.py     # 현재 Django 프로젝트의 환경 및 구성을 저장
+│       └── storages.py     # static & media 파일 저장
+│       └── urls.py     # 현재 Django project 의 URL 선언을 저장
+│       └── wsgi.py     # 현재 프로젝트를 서비스하기 위한 WSGI 호환 웹 서버의 진입점
+│   └── manage.py       # Django 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인의 유틸리티
+├── .git        # git 관리
+├── .gitignore      # git 버전 관리에 제외할 파일 목록
+└── requirements.txt        # 패키지 세팅사항 저장
 ```
 
 ## Apps 구조
 ---
 ```
-│   └── accounts								# accounts app
+│   └── accounts        # accounts app
 │       └── migrations
 │       └── templates
 │           └── accounts
@@ -66,7 +66,7 @@ Django
 ```
 
 ```
-│   └── boards									# boards app
+│   └── boards      # boards app
 │       └── migrations
 │       └── templates
 │           └── boards
@@ -91,12 +91,12 @@ Django
 
 
 
-## Reference
-AWS 유저 가이드 : https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html <br/>
-나채원님 블로그 : https://nachwon.github.io/django-deploy-1-aws/ <br/>
-장선혁님 블로그 : https://wkdtjsgur100.github.io/ubuntu-pyenv-virtualenv-autoenv/ <br/>
-불곰님 블로그 : https://brownbears.tistory.com/350 <br/>
-블로그 : https://paphopu.tistory.com/entry/WSGI에-대한-설명-WSGI란-무엇인가 <br/>
+## 참고
+AWS 유저 가이드 : [https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/concepts.html) <br/>
+나채원님 블로그 : [https://nachwon.github.io/django-deploy-1-aws/](https://nachwon.github.io/django-deploy-1-aws/) <br/>
+장선혁님 블로그 : [https://wkdtjsgur100.github.io/ubuntu-pyenv-virtualenv-autoenv/](https://wkdtjsgur100.github.io/ubuntu-pyenv-virtualenv-autoenv/) <br/>
+불곰님 블로그 : [https://brownbears.tistory.com/350](https://brownbears.tistory.com/350) <br/>
+블로그 : [https://paphopu.tistory.com/entry/WSGI에-대한-설명-WSGI란-무엇인가](https://paphopu.tistory.com/entry/WSGI에-대한-설명-WSGI란-무엇인가) <br/>
 <br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
 
