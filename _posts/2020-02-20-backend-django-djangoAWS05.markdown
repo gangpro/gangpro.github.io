@@ -364,6 +364,7 @@ AWS 유저 가이드 : [https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuid
 ## 환경
 ---
 > macOS Mojave 10.14.5, 
-> python 3.6.8, 
-> django 2.2.1, 
-> PyCharm CE 2018.3.7.
+> python 3.7.3, 
+> django 2.2.3, 
+> PyCharm CE 2018.3.7,
+> AWS ubuntu 16.04.
