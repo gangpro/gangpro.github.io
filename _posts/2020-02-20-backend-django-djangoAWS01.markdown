@@ -1,12 +1,12 @@
 ---
 layout: post
-title: '[DjangoAWS] Django AWS 배포 시작하기'
+title: '[DjangoAWS] Django 환경 설정'
 subtitle: 
 categories: backend
 tags: django djangoAWS AWS
 comments: true
-date: 2020-02-20 09:20:17 +0900
-lastmod: 2020-02-20 09:30:17 +0900
+date: 2020-02-20 09:30:17 +0900
+lastmod: 2020-02-20 09:40:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
@@ -15,7 +15,7 @@ published: true
 
 
 
-Django AWS 배포를 위한 사전 환경 설정<br/>
+Django AWS 배포를 위한 사전 환경 설정, pyenv 설치, python 가상환경 설정, virtualenv 생성, django 설치<br/>
 
 ## 시작하기
 ---
