@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[DjangoAWS] AWS 시작하기'
+title: '[DjangoAWS] AWS Django 시작하기'
 subtitle: 
 categories: backend
 tags: django djangoAWS AWS

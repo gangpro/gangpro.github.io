@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[DjangoAWS] 장고와 웹 서버 연결을 위한 WSGI'
+title: '[DjangoAWS] AWS Django 웹 서버 연결을 위한 WSGI'
 subtitle: 
 categories: backend
 tags: django djangoAWS AWS
