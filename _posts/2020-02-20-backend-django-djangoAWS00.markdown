@@ -3,10 +3,10 @@ layout: post
 title: '[DjangoAWS] Django AWS 배포 시작하기'
 subtitle: 
 categories: backend
-tags: django djangoAWS
+tags: django djangoAWS AWS
 comments: true
-date: 2020-02-20 09:30:17 +0900
-lastmod: 2020-02-20 10:30:17 +0900
+date: 2020-02-20 09:20:17 +0900
+lastmod: 2020-02-20 09:30:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
