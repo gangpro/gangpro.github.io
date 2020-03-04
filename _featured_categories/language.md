@@ -1,6 +1,6 @@
 ---
 layout: list
-title: LANGUAGE
+title: Language
 slug: language
 menu: true
 submenu: false

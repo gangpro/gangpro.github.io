@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: LANGUAGE
+title: Language
 slug: language
 category: language
 menu: false
