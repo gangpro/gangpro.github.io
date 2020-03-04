@@ -374,6 +374,7 @@ SVG(Scalable Vector Graphics)는 마크업 언어(HTML/XML) 기반의 벡터 그
 
 ## 특수 문자 용어 정리
 ---
+
 | 기호 | 영어(발음)                               | 한글           |
 | ---- | ---------------------------------------- | -------------- |
 | `    | Grave(그레이브)                          | -              |
@@ -403,6 +404,7 @@ SVG(Scalable Vector Graphics)는 마크업 언어(HTML/XML) 기반의 벡터 그
 | {}   | Brace(브레이스)                          | 중괄호         |
 | []   | Bracket(브래킷)                          | 대괄호         |
 | <>   | Angle Bracket(앵글 브래킷)               | 꺽쇠괄호       |
+
 
 [HTML Entity List](https://www.freeformatter.com/html-entities.html)
 
