@@ -33,7 +33,7 @@ reset-css (5.0.1), /npm/reset-css@5.0.1/reset.min.css 의 해당 코드를 복�
 
 ### 코드 이동
 
-주의사항은 ``reset-css`는 적용하는 main.css 위에 붙여넣기 해야한다.
+주의사항은 `reset-css`는 적용하는 main.css 위에 붙여넣기 해야한다.
 
 ```html
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ reset-css (5.0.1), /npm/reset-css@5.0.1/reset.min.css 의 해당 코드를 복�
 
 ## Codepen
 ---
-codepen 공식 홈페이지 : https://codepen.io/ <br />
+codepen 공식 홈페이지 : [https://codepen.io/](https://codepen.io/) <br />
 
 웹 상에서 HTML, CSS, Javascript를 사용해 볼 수 있다.
 
@@ -69,7 +69,7 @@ codepen 공식 홈페이지 : https://codepen.io/ <br />
 
 ## Emmet
 ---
-emmet 문법 공식 홈페이지 : https://emmet.io/ <br/>
+emmet 문법 공식 홈페이지 : [https://emmet.io/](https://emmet.io/) <br/>
 
 복잡한 문법을 손쉽게 사용할 수 있게 해준다.
 
