@@ -5,7 +5,7 @@ subtitle:
 categories: til
 tags: til git
 comments: true
-date: 2020-03-04 18:30:17 +0900
+date: 2020-03-02 18:30:17 +0900
 lastmod: 2020-03-04 18:40:17 +0900
 sitemap:
   changefreq: daily
