@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Python
-slug: python
+title: JavaScript
+slug: javascript
 category: language
 menu: false
-order: 3
+order: 2
 ---
