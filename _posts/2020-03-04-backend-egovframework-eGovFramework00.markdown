@@ -3,7 +3,7 @@ layout: post
 title: '[eGovFrame] 전자정부 표준프레임워크 환경구축'
 subtitle: 
 categories: backend
-tags: eGovFrame eGovFramework Framework Spring
+tags: egovframework eGovFrame Spring
 comments: true
 date: 2020-03-04 18:00:17 +0900
 lastmod: 2020-03-04 18:10:17 +0900
@@ -132,8 +132,8 @@ Eclipse IDE for Java EE Developers - Mac Cocoa 64-bit 다운로드<br />
 
 
 ## 참고
-https://printhelloworld.tistory.com/182<br/>
-http://blog.naver.com/PostView.nhn?blogId=nodry&logNo=221001460883<br/>
+[https://printhelloworld.tistory.com/182](https://printhelloworld.tistory.com/182)<br/>
+[http://blog.naver.com/PostView.nhn?blogId=nodry&logNo=221001460883](http://blog.naver.com/PostView.nhn?blogId=nodry&logNo=221001460883)<br/>
 
 <br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
