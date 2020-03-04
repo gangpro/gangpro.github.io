@@ -5,8 +5,8 @@ subtitle:
 categories: til
 tags: til css
 comments: true
-date: 2020-03-04 20:00:17 +0900
-lastmod: 2020-03-04 20:10:17 +0900
+date: 2020-03-04 20:02:17 +0900
+lastmod: 2020-03-04 20:02:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
