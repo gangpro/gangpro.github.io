@@ -327,7 +327,7 @@ https://caniuse.com/#feat=srcset
 ## Polyfill
 ---
 
-https://github.com/aFarkas/respimage
+[https://github.com/aFarkas/respimage](https://github.com/aFarkas/respimage)
 
 <br/>
 

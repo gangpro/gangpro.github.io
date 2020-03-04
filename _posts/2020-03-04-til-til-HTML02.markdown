@@ -142,9 +142,12 @@ HTML 문서에 포함된 모든 상대 URL들의 기준 URL를 설정.
 
 [MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/style) / [W3Schools](https://www.w3schools.com/tags/tag_style.asp)
 
-
+<br/>
+<br/>
+<br/>
 
 ## 콘텐츠 구분
+---
 
 ### &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;
 
