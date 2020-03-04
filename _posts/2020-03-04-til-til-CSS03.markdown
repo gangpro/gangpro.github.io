@@ -1,0 +1,91 @@
+---
+layout: post
+title: '[CSS] CSS 실습 환경 구성'
+subtitle: 
+categories: til
+tags: til css
+comments: true
+date: 2020-03-04 20:10:17 +0900
+lastmod: 2020-03-04 20:20:17 +0900
+sitemap:
+  changefreq: daily
+  priority: 1
+published: true
+---
+
+CSS 실습 환경 구성 <br/>
+
+## CSS Reset CDN
+---
+### 홈페이지 접속
+
+``https://www.jsdelivr.com/package/npm/reset-css``
+
+
+
+### 코드 복사
+
+reset-css (5.0.1), /npm/reset-css@5.0.1/reset.min.css 의 해당 코드를 복사한다.
+
+``<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">``
+
+
+
+### 코드 이동
+
+주의사항은 ``reset-css`는 적용하는 main.css 위에 붙여넣기 해야한다.
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+</body>
+</html>
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+## Codepen
+---
+codepen 공식 홈페이지 : https://codepen.io/ <br />
+
+웹 상에서 HTML, CSS, Javascript를 사용해 볼 수 있다.
+
+<br />
+
+<br />
+
+<br />
+
+## Emmet
+---
+emmet 문법 공식 홈페이지 : https://emmet.io/ <br/>
+
+복잡한 문법을 손쉽게 사용할 수 있게 해준다.
+
+<br/>
+
+<br/>
+
+<br/>
+
+
+
+
+## 참고
+---
+패스트캠퍼스(박영웅 강사님) : 올인원 패키지 : 프론트엔드 개발 with React.js
+- [https://heropy.blog/2019/04/24/html-css-starter/](https://heropy.blog/2019/04/24/html-css-starter/)
+
+<br/>
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

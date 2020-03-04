@@ -1,0 +1,465 @@
+---
+layout: post
+title: '[CSS] CSS 개요'
+subtitle: 
+categories: til
+tags: til css
+comments: true
+date: 2020-03-04 19:40:17 +0900
+lastmod: 2020-03-04 19:50:17 +0900
+sitemap:
+  changefreq: daily
+  priority: 1
+published: true
+---
+
+웹(Web)을 구성하는 HTML, CSS, JS의 이해와 학습은 단순히 기술을 배우는 것으로 그치지 않고 웹과 모바일 그리고 IT 전반의 과거, 현재, 미래를 이해하는 데 많은 도움을 줍니다. 그리고 실무적으로 Product를 보다 구조적인 관점에서 볼 수 있는 능력을 키울 수 있습니다. 특히 Product 개발과 관련해 밀접하게 협업하는 기획, 디자인, 기술 영업 등의 직군에서 많은 도움이 될 수 있습니다. 이런 이유로 여러 기업에서 비전공자에게 개발 경험을 요구하는 경우가 상당히 많아졌습니다.
+
+HTML, CSS를 학습하기 전에 필요한 지식을 최대한 정리했습니다.<br/>
+
+## HTML, CSS 그리고 JavaScript
+---
+![HTML](https://heropy.blog/css/images/vendor_icons/html5.png)
+
+HTML(Hyper Text Markup Language)은 페이지에 제목, 문단, 표, 이미지, 동영상 등을 정의하고 그 구조와 의미를 부여하는 정적 언어로 웹의 구조를 담당합니다.
+HTML으로 화면을 예쁘게 만들려고 시도하지 마세요!(그렇게 할 수도 없지만..)
+온전히 튼튼한 구조(Semantic)를 만드는 것에만 집중해야 합니다.
+
+![CSS](https://heropy.blog/css/images/vendor_icons/css3.png)
+
+CSS(Cascading Style Sheets)는 마크업 언어(HTML, XML 등)가 실제 표시되는 방법(색상, 크기, 폰트, 레이아웃 등)을 지정하여 콘텐츠 구조를 꾸며주는 정적 언어로 웹의 시각적인 표현을 담당합니다.
+예쁘게 만드는 것만 집중할 수 있습니다.
+적당한 크기와 아름다운 색상, 원하는 위치를 지정하는데 집중할 수 있습니다.
+
+![JavaScript](https://heropy.blog/css/images/vendor_icons/javascript.png)
+
+JS(JavaScript)는 콘텐츠를 바꾸고 움직이는 등 페이지를 동적으로 꾸며주는 역할을 하는 프로그래밍 언어로 웹의 동적 처리를 담당합니다.
+JS는 HTML과 CSS를 동원해서 그들의 업무(구조, 시각적 표현 등)도 담당할 수 있지만, 그들만큼 잘하진 못하기 때문에(성능적으로) 되도록 동적 처리에만 집중해야 합니다.
+
+집을 지을 때 골조 전문, 미장 전문, 인테리어 전문 등 효율적인 작업을 위해 각 분야가 나뉘듯 웹 페이지를 제작할 때 각 언어의 역할을 다른 언어가 대체하지 않도록 주의해야 하며, 각 역할이 제대로 수행되도록 구조적, 기술적으로 언어(코드)를 최적화시킬 필요가 있습니다.
+(많은 입문자가 실전 과정으로 넘어갈 때 이 3가지의 단순한 역할을 도대체 왜 하나하나 파일과 폴더별로 구분하고 더 복잡하게 작성하는지 의아해하지만, 이는 언급한 것처럼 더욱 규모가 크고 복잡한 웹 페이지를 만들 때 구조적, 기술적으로 최적화하는 과정이며 유지/보수, 확장성, 생산성 등을 위해서 꼭 필요합니다. 이런 과정 자체를 이해하고 익숙해지는 것이 학습할 때 매우 중요합니다. **단, 아직은 너무 어렵게 생각할 필요가 없습니다!**)
+
+다음은 HTML, CSS, JS가 담당하는 역할을 시각적으로 표현한 사이트입니다.
+각 언어의 역할을 이해하는 데 도움이 될 것입니다.
+
+![HTML-CSS-JS 스크린샷](https://heropy.blog/images/screenshot/html-css-starter/html-css-js-site-screenshot.jpg)
+[HTML-CSS-JS](https://html-css-js.com/)
+
+### 웹 표준
+
+웹 표준(Web Standard)이란 ‘웹에서 사용되는 표준 기술이나 규칙’을 의미하며 W3C의 권고안에서 나온 기술들이 여기에 해당합니다.
+이 표준 기술들을 기준으로 웹 브라우저들(크롬, IE, 사파리 등)이 만들어지는데, 브라우저를 만드는 업체(구글, MS, 애플 같은)에서 표준 기술을 해석하는 차이, 새로운 기술 삽입([표준화 제정 단계](https://wit.nts-corp.com/2013/10/16/280)에 따른) 등으로 조금은 다르게 구동되는 브라우저가 생기게 됩니다.
+지금은 거의 사라졌지만 ActiveX, Flash 같은 기술은 표준이 아닙니다.
+
+> 대부분의 경우 표준화 제정 단계의 ‘권고안(REC)’에 해당하는 기술을 표준이라고 생각하시면 쉽습니다.
+
+### 크로스 브라우징
+
+![웹 브라우저들](https://heropy.blog/images/screenshot/html-css-starter/browsers.jpg)
+
+> 오른쪽부터 구글 크롬, MS 엣지, 모질라 파이어폭스, 오페라, 이스트소프트 스윙, 네이버 웨일, MS IE, 애플 사파리
+
+크로스 브라우징(Cross Browsing)은 위에서 설명한 것처럼 조금은 다르게 구동되는 여러 브라우저에서 동일한 사용자 경험(같은 화면, 같은 동작 등)을 줄 수 있도록 제작하는 기술, 방법 등을 말합니다.
+대부분의 브라우저는 최대한 웹 표준을 준수해서 제작되기 때문에 문제 되는 경우가 적지만 MSIE(마이크로소프트 인터넷 익스플로어) 브라우저는 ~~웹 표준 따위.., 제멋대로 만들어져 있기 때문에~~ 여러 의미에서 표준화하기 쉽지 않은 브라우저입니다.
+그래서 IE에서도 동작하게 하는 것을 크로스 브라우징이라고 부르기도 합니다.(대부분의 경우 IE에서 문제가 없으면 다른 브라우저는 OK!)
+
+> 2016년 봄에 네이버에서 [‘내 PC의 보안을 위협하는 구버전 익스플로러 이제 그만 헤어지자!’](https://campaign.naver.com/goodbye_ie10/)라는 캠페인을 했었습니다.
+
+### 웹 접근성
+
+웹 접근성이란 정상적인 웹 콘텐츠 사용이 가능한 일반 사용자부터 고령자, 장애인 같은 신체적, 환경적 조건에 제한이 있는 사용자를 포함해 모든 사용자들이 동등하게 접근할 수 있는 웹 콘텐츠를 제작하는 방법을 말합니다.
+청각 장애인을 위해 영상에 자막을 넣거나, 마우스를 사용할 수 없는 사람들을 위해 키보드를 통해서도 웹을 이용할 수 있게 하거나(혹은 그 반대), 이미지에 대체 텍스트를 제공하는 간단한 방법들까지 모두 웹 접근성에 해당합니다.
+아래 링크에 접근성에 대한 지침이나 제작기법 등의 문서가 상세하게 정리되어 있으니 참고하세요.
+
+[웹 접근성 연구소](https://www.wah.or.kr:444/Accessibility/define.asp)
+[한국형 웹 콘텐츠 접근성 지침 2.1](https://www.wah.or.kr:444/Participation/guide.asp)
+[웹 콘텐츠 제작기법](https://www.wah.or.kr:444/Participation/technique.asp)
+
+> 웹의 힘은 그것의 보편성에 있다. 장애에 구애 없이 모든 사람이 접근할 수 있는 것이 필수적인 요소이다.
+> **팀 버너스 리 경 - 웹의 창시자**
+
+#### 정보 통신 보조기기
+
+장애인의 경우 다음과 같은 정보 통신 보조기기를 통해 웹 콘텐츠에 접근할 수 있어야 합니다.
+이런 보조기기는 개인 구매 혹은 정부 기관이나 장애인 복지시설에서 임대하여 사용할 수 있습니다.
+
+![정보 통신 보조 기기들](https://heropy.blog/images/screenshot/html-css-starter/assistiv_technology.jpg)
+
+- 한손 사용자용 키보드: 편마비 장애인을 위해 한손으로 타이핑하게 디자인되어있는 키보드 
+- 큰 키 키보드: 키보드의 입력 버튼을 크게 만들어 손 떨림이나 상지 기능에 장애가 있는 분에게 적합하며, 키가드가 있어 오타를 방지할 수 있는 특수 키보드 
+- n-Abler 조이스틱: 팔의 움직임이 원활하지 못해 일반 마우스를 사용하기 어려운 분들을 위한 조이스틱 마우스 
+- SmartNav: 상지 및 하지를 사용하기 어려운 분들이 머리의 움직임을 통해(적외선 및 난반사 스티커 활용) 컨트롤할 수 있는 특수 마우스 
+- 소리 알리미: 소리 정보를 불빛과 진동으로 알려주는 청각장애인용 무선신호기
+
+#### 웹 접근성 품질인증 마크
+
+![웹 접근성 품질인증 마크](https://heropy.blog/images/screenshot/html-css-starter/web_access_mark.jpg)
+
+장애인 및 고령자가 웹 사이트 이용에 불편이 없도록 웹 접근성 표준을 준수한 우수 사이트에 대해 품질을 인증하고 마크를 부여하는 제도로써 「국가정보화기본법」제32조의2 및 동법 시행규칙 제3조의3에 의거 과학기술정보통신부가 지정한 웹 접근성 품질인증 기관을 통해 심사 및 인증을 받을 수 있습니다.
+서면 심사와 기술 심사 등을 거쳐 페이지 수에 따라 기본 100만원 이상의 심사 비용을 지불해야 합니다.
+
+> 현실적으론 개인이나 중소기업 사이트에서 획득하기는 쉽지 않습니다.
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 웹 개발을 위한 에디터
+---
+포토샵, 스케치3 같은 한정된 툴에 종속되는 웹앱 디자인 등과는 다르게 웹 개발은 툴에 대한 종속성이 거의 없습니다.
+심지어 메모장을 사용해도 상관없지만, 개발 퍼포먼스를 생각해서 좋은 에디터를 고르는 것을 추천합니다.
+HTML, CSS, JS를 위한 웹 개발(프론트엔드, Node.js) 에디터 중 실무에서 많이 사용되는 크로스 플랫폼(Windows, macOS) 에디터들을 간단하게 소개합니다.
+
+> 다음은 모두 좋은 에디터들입니다.
+> 주관적인 관점에서 작성했으니 참고만 하시고 모두 한 번씩 써본 후 자신에게 맞는 에디터를 선택하시길 바랍니다.
+
+### Sublime Text
+
+![Sublime Text Icon](https://heropy.blog/images/screenshot/html-css-starter/logo_sublime_text.jpg)
+
+https://www.sublimetext.com/
+
+상대적으로 가볍고 성능 저하가 적은 편이라고 합니다.
+많이 써보지 않아서 평가는 생략합니다.
+무료입니다.
+
+### Atom
+
+![Atom Icon](https://heropy.blog/images/screenshot/html-css-starter/logo_atom.jpg)
+
+https://atom.io/
+
+깃헙(GitHub)에서 만든 텍스트 에디터입니다.
+확장 기능도 충분하고 외국에선 인기가 많다고 합니다.
+(2018년 깃헙이 MS에 인수되었는데 Atom의 미래는?)
+Windows에서의 사용은 아쉬운 부분이 많네요.
+macOS에서는 문서 작업 시 자주 사용합니다.
+무료입니다.
+
+### Brackets
+
+![Brackets Icon](https://heropy.blog/images/screenshot/html-css-starter/logo_brackets.jpg)
+
+http://brackets.io/
+
+어도비(Adobe)에서 만든 텍스트 에디터입니다.
+Creative Cloud 제품군이 아니고 오픈소스로 풀려 있습니다.
+Live Preview 기능이 기본으로 제공되는 등 시각적인 결과물을 확인하는데 특화되어 있으나(역시 어도비!) 확장 기능이나 특히 성능 최적화에 대해선 아쉬운 감이 있습니다.(역시 어도비..)
+무료입니다.
+
+### VS Code
+
+![VS Code Icon](https://heropy.blog/images/screenshot/html-css-starter/logo_vs_code.jpg)
+
+https://code.visualstudio.com/
+
+VS Code(VisualStudio Code)는 마이크로소프트(MS)에서 만든 텍스트 에디터입니다.
+가볍게 시작할 수 있고 확장 기능이 상당히 많습니다.
+2018 Stack Overflow 설문조사에서 에디터 인기도 1위를 기록했다고 하네요.
+무료입니다.
+
+### WebStorm
+
+![WebStorm Icon](https://heropy.blog/images/screenshot/html-css-starter/logo_webstorm.jpg)
+
+https://www.jetbrains.com/webstorm/
+
+JetBrain에서 만드는 [통합 개발 환경(IDE)](https://ko.wikipedia.org/wiki/통합_개발_환경) 프로그램 중 하나입니다.
+별도의 확장 기능이 거의 필요 없으며 대부분의 프로젝트를 바로 시작할 수 있습니다.
+한 번 쓰면 다른 에디터로 넘어가기 어려울 정도로 편한 권장 프로그램이지만 유료라는 게 함정.
+단, 학생 라이선스를 얻으면 무료로 사용하실 수 있고 30일 평가판도 있으니 여유가 있다면 써보시길 권장합니다.
+
+> 구독형 프로그램으로 [개인 라이선스](https://www.jetbrains.com/webstorm/buy/#edition=personal)는 1년 $59입니다. 비싼 편은 아니라고 생각합니다.
+
+<br/>
+
+<br/>
+
+<br/>
+
+## VS Code 설치 및 설정
+---
+저는 무료 프로그램으로 VS Code를 선택했습니다.(회사에서는 WebStorm을 사용합니다)
+설치부터 단축키 사용, 확장 기능 등 웹 개발을 위한 에디터를 준비합시다!
+
+### 설치
+
+자신의 운영체제(Windows, macOS, Linux)에 맞는 Stable 버전을 설치하세요.
+별도 설정값을 무시하고 다음/다음을 눌러 진행하세요.
+
+![VS Code 다운로드](https://heropy.blog/images/screenshot/html-css-starter/vs_code_download.jpg)
+
+#### 인터페이스
+
+![VS Code Interface](https://heropy.blog/images/screenshot/html-css-starter/vs_code_interface.jpg)
+
+### 확장 기능(Extensions)
+
+![사용자 인터페이스에서 확장 기능 아이콘](https://heropy.blog/images/screenshot/html-css-starter/vs_code_extensions_icon.jpg)
+
+다른 에디터도 동일하지만 VS Code는 확장 기능을 제공하며 최초 설치한 버전에서 제공하지 않는 다양한 확장 기능을 외부에서 다운로드받아(설치) 연결 후 사용할 수 있습니다.(대부분 에디터 자체에서 확장 기능을 검색할 수 있습니다)
+에디터의 버전업 과정에서 자체적으로 흡수하는 기능도 있을 수 있으므로 몇몇 확장 기능은 에디터의 버전에 따라 이미 지원하고 있을 수 있으니 해당 기능이 제공되는지 확인하고 설치하시는 것을 추천합니다.
+
+#### Korean Language Pack for Visual Studio Code
+
+VS Code의 거의 모든 메뉴가 한국어로 변경됩니다.
+
+#### Beautify
+
+코드 가독성을 위해 코드 작성 스타일을 (아름답게) 수정합니다.입문자들에게 적극 추천합니다.
+
+1. 이 `Preferences > Keyboard Shortcut` 선택
+2. 이 `HookyQR.beautify`를 검색(`HookyQR.beautifyFile` 아니에요!)
+3. 이 `키 바인딩` 선택
+4. 원하는 단축키 등록
+
+> “Alt + Ctrl + L”(Windows) / “Alt + Cmd + L”(macOS)을 추천합니다.
+
+#### Live Server
+
+하단 상태 바(Status bar)에서 `Go Live` 선택
+또는,
+HTML 화면에서 우클릭 > `Open with Live Server` 선택
+
+> VS Code 버전에 따라서 이미 설치되어 있을 수 있습니다.
+
+#### Auto Rename Tag
+
+태그 이름을 수정할 때 열린 태그와 닫힌 태그가 쌍으로 수정됩니다.
+각각 수정해야 하는 번거로움을 줄일 수 있습니다.
+
+#### 그 외 추천
+
+다음 확장 기능들이 당장 필요하지는 않을 겁니다.
+나중에 살펴보세요.
+
+[Terminal](https://marketplace.visualstudio.com/items?itemName=formulahendry.terminal)
+[Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
+[Turbo Console log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+[Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
+
+[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+### 알아두면 좋은 단축키
+
+`Preferences > Keyboard Shortcut(바로 가기 키)` 에서 단축키를 확인하거나 변경할 수 있습니다.
+
+> `"`를 사용하면 키 바인딩을 검색할 수 있습니다.
+> `"`를 닫으면 정확한 검색을 요구하므로 `"cmd + p`와 같이 `"`를 닫지 않고 검색하는 것을 추천합니다.
+
+| Windows 단축키            | macOS 단축키              | 설명                                      |
+| ------------------------- | ------------------------- | ----------------------------------------- |
+| “Ctrl + B”                | “Cmd + B”                 | 사이드바 열기/닫기                        |
+| “Ctrl + P”                | “Cmd + P”                 | 빠른 열기(파일이나 기호 탐색)             |
+| “Ctrl + Shift + P”        | “Cmd + Shift + P”         | 모든 명령 표시(에디터의 모든 명령에 접근) |
+| “Ctrl + F”                | “Cmd + F”                 | 찾기(검색)                                |
+| “Ctrl + H”                | “Cmd + Opt(Alt) + F”      | 찾기(검색)/바꾸기(대체)                   |
+| “Alt + Up”                | “Alt + Up”                | 줄 위로 이동                              |
+| “Alt + Down”              | “Alt + Down”              | 줄 아래로 이동                            |
+| “Shift + Alt + UpArrow”   | “Shift + Alt + UpArrow”   | 위에 줄 복사                              |
+| “Shift + Alt + DownArrow” | “Shift + Alt + DownArrow” | 아래 줄 복사                              |
+| “Tab”                     | “Tab”                     | 들여쓰기                                  |
+| “Shift + Tab”             | “Shift + Tab”             | 내어쓰기                                  |
+| “Ctrl + PageUp”           | “Cmd + Shift + [”         | 이전 편집기 열기(좌측 창으로 전환)        |
+| “Ctrl + PageDown”         | “Cmd + Shift + ]”         | 다음 편집기 열기(우측 창으로 전환)        |
+| “Ctrl + \”                | “Cmd + \”                 | 편집기 분할(백슬래쉬)                     |
+| “Ctrl + 숫자”             | “Cmd + 숫자”              | `숫자`번째 분할된 편집기 그룹에 포커스    |
+| “Ctrl + W”                | “Cmd + W”                 | 편집기 닫기                               |
+
+#### 약어로 랩핑(Wrap)
+
+1. 랩핑할 코드 선택
+2. 모든 명령 표시 실행 / “Ctrl + Shift + P”(Windows), “Cmd + Shift + P”(macOs)
+3. `Emmet: Wrap with Abbreviation(Emmet: 약어로 랩핑)`를 입력하거나 목록에서 선택(“Enter”)
+4. `div`, `span` 등의 Emmet 문법(ex: `.wrapper`, `span.bold`)을 입력
+5. 완료(“Enter”)
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 웹에서 사용하는 이미지
+---
+### 비트맵과 벡터 이미지
+
+이미지(그래픽)는 크게 비트맵과 벡터로 구분됩니다.
+
+비트맵(Bitmap)은 각 픽셀이 모여 만들어진 정보의 집합으로 레스터(Raster) 이미지라고도 부릅니다.
+픽셀 단위로 화면에 렌더링합니다.(렌더링: 컴퓨터가 화면에 그림을 그려서 우리가 볼 수 있게 합니다)
+우리가 일반적으로 사용하는 대부분의 이미지가 비트맵 형식입니다.
+그림판, 포토샵과 같은 툴로 편집할 수 있습니다.
+
+벡터(Vector)는 수학적 정보의 형태(Shape)들이 만들어내는 결과물입니다.
+이미지가 가지고 있는 점, 선, 면의 위치(좌표), 색상 등의 정보를 온전히 가지고 있으며 그를 화면에 렌더링합니다.
+따라서 좀 더 많은 연산을 해야 하지만, 대신 해상도(픽셀)에 영향을 비트맵 이미지와 달리 해상도로부터 자유롭게 렌더링할 수 있습니다.
+쉽게 말하면 확대 및 축소를 해도 이미지가 깨지지 않죠.
+또한 수학적 정보만을 가지고 있기 때문에 이미지 확대/축소에 따른 용량 변화가 없습니다.
+일러스트 같은 툴로 편집할 수 있습니다.
+
+![비트맵과 벡터의 차이](https://heropy.blog/images/screenshot/html-css-starter/difference_bitmap_vector.jpg)
+
+| 이미지 종류 | 장점                                     | 단점                                                  |
+| ----------- | ---------------------------------------- | ----------------------------------------------------- |
+| 비트맵      | 정교하고 다양한 색상을 자연스럽게 표현   | 확대/축소 시 계단 현상, 품질 저하                     |
+| 벡터        | 확대/축소에서 자유로움, 용량 변화가 없음 | 정교한 이미지(인물, 풍경 사진 같은)를 표현하기 어려움 |
+
+> [Sketch 3](https://www.sketch.com/)는 이미지의 편집보단 벡터 기반의 UI 제작 툴이라고 볼 수 있습니다.
+
+### JPG(JPEG)
+
+JPG(Joint Photographic coding Experts Group) Full-color와 Gray-scale의 압축을 위해 만들어졌으며 압축률이 훌륭해 사진이나 예술 분야에서 많이 사용됩니다.
+
+- 손실 압축
+- 표현 색상도(24비트, 약 1600만 색상) 뛰어나 고해상도 표시장치에 적합
+- 이미지의 품질과 용량을 쉽게 조절 가능
+- 가장 널리 쓰이는 이미지 포맷
+
+> 높은 압축률(적은 용량)!
+
+### PNG
+
+PNG(Portable Network Graphics)는 Gif의 대체 포맷으로 개발되었습니다.
+
+- 비손실 압축
+- 8비트(256 색상) / 24비트(약 1600만 색상) 컬러 이미지 처리
+- Alpha Channel 지원(투명도)
+- W3C 권장 포맷
+
+> 투명도 지원!
+
+### GIF
+
+GIF(Graphics Interchange Format)는 이미지 파일 내에 이미지 및 문자열 같은 정보들을 저장할 수 있습니다.
+
+- 비손실 압축
+- 여러 장의 이미지를 한 개의 파일에 담을 수 있음(움짤, 애니메이션)
+- 8비트 컬러만 지원(다양한 색상을 표현하는 작업에는 적합하지 않음)
+
+> 동영상 같은 이미지!(애니메이션)
+
+### WEBP
+
+JPG, PNG, GIF를 모두 대체할 수 있는 구글이 개발한 이미지 포맷입니다.
+
+- 완벽한 손실/비손실 압축 지원
+- GIF 같은 애니메이션 지원
+- Alpha Channel 지원(손실, 비손실 모두)
+
+> 완벽한 포맷! 그러나 지원 브라우저가…
+
+[Support Browser for Webp](https://caniuse.com/#feat=webp)
+
+### SVG
+
+SVG(Scalable Vector Graphics)는 마크업 언어(HTML/XML) 기반의 벡터 그래픽을 표현하는 포맷입니다.
+
+- 해상도의 영향에서 자유로움
+- CSS로 Styling 가능
+- JavaScript로 Event Handling 가능
+- 코드 혹은 파일로 사용 가능
+
+> 벡터 이미지에 익숙하지 않다면 다루기 조금 까다로울 수 있습니다.
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 특수 문자 용어 정리
+---
+
+| 기호 | 영어(발음)                               | 한글           |
+| ---- | ---------------------------------------- | -------------- |
+| `    | Grave(그레이브)                          | -              |
+| ~    | Tilde(틸드)                              | 물결표시       |
+| !    | Exclamation(엑스클러메이션) mark         | 느낌표         |
+| @    | At(엣) sign                              | 골뱅이         |
+| #    | Number(넘버) sign, Sharp(샵)             | 샵, 우물 정    |
+| $    | Dollar(달러) sign                        | 달러           |
+| %    | Percent(퍼센트) sign                     | 퍼센트         |
+| ^    | Caret(캐럿)                              | -              |
+| &    | Ampersand(엠퍼센드)                      | -              |
+| *    | Asterisk(에스터리스크)                   | 별표           |
+| -    | Hyphen(하이픈), Dash(대쉬)               | 마이너스       |
+| _    | Underscore(언더스코어), Low dash(로대쉬) | 밑줄           |
+| =    | Equals(이퀄) sign                        | 이꼬르         |
+| “    | Quotation(쿼테이션) mark                 | 큰 따옴표      |
+| ‘    | Apostrophe(아포스트로피)                 | 작은 따옴표    |
+| :    | Colon(콜론)                              | 땡땡이         |
+| ;    | Semicolon(세미콜론)                      | 털 달린 땡땡이 |
+| ,    | Comma(콤마)                              | 쉼표           |
+| .    | Period(피리어드), Dot(닷)                | 점, 마침표     |
+| ?    | Question(퀘스천) mark                    | 물음표         |
+| /    | Slash(슬래쉬)                            | -              |
+| \|   | Vertical bar(버티컬 바)                  | -              |
+| \    | Backslash(백슬래쉬)                      | -              |
+| ()   | Parenthesis(퍼렌서시스)                  | (소)괄호       |
+| {}   | Brace(브레이스)                          | 중괄호         |
+| []   | Bracket(브래킷)                          | 대괄호         |
+| <>   | Angle Bracket(앵글 브래킷)               | 꺽쇠괄호       |
+
+
+[HTML Entity List](https://www.freeformatter.com/html-entities.html)
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 오픈소스 라이선스
+---
+> 오픈소스란 어떤 제품을 개발하는 과정에 필요한 소스 코드나 설계도를 누구나 접근해서 열람할 수 있도록 공개하는 것.
+
+오픈소스라 하면 보통 무료 저작권이고 공짜로 사용해도 문제가 없다고 생각하지만 사실 다양한 종류의 오픈소스 라이선스가 존재하며 개인적 이용은 가능하지만, 상업적 이용에 제한이 있거나 경우에 따라 비용을 지불해야 할 수도 있습니다.
+
+현실적으론 처음부터 끝까지 모든 코드를 직접 작성할 수 없기 때문에 많은 경우 오픈소스에 의존하게 됩니다. 개인적인 사용을 목적으로는 문제가 없겠지만, 회사에서(상업적으로) 아무 생각 없이 사용하다가는 문제가 돼서 해고당하거나 피해 보상을 해줘야 할지도 모릅니다.
+물론 인터넷에 떠도는 코드 몇 줄 복사해서 썼다고 그 정도 심각한 문제가 되진 않겠지만, 항상 조심하는 것이 좋습니다.
+회사에서 작업 중에 괜찮은 오픈소스를 찾았다면 반사적으로 ‘License’부터 찾으세요!
+
+수많은 라이선스를 다 공부할 필요는 없고, 보기만 해도 흐뭇해지는 라이선스를 몇 가지 소개합니다.
+
+### Apache License
+
+아파치 소프트웨어 재단에서 자체 소프트웨어에 적용하기 위해 만든 라이선스입니다.
+개인적/상업적 이용, 배포, 수정, 특허 신청이 가능합니다.
+
+### MIT License
+
+매사추세츠공과대학(MIT)에서 소프트웨어 학생들을 위해 개발한 라이선스입니다.
+개인 소스에 이 라이선스를 사용하고 있다는 표시만 지켜주면 되며, 나머지 사용에 대한 제약은 없기 때문에 인기가 많습니다.
+
+### BSD License
+
+BSD(Berkeley Software Distribution)는 버클리 캘리포니아대학에서 개발한 라이선스입니다.
+MIT와 동일하게 라이선스 표시만 지켜주시면 됩니다.
+
+### Beerware
+
+오픈소스 개발자에게 맥주를 사줘야 하는 라이선스입니다.
+물론 만날 수 있다면 말이죠!
+
+그 외 더 많은 오픈소스 라이선스에 대한 정보는 [OpenSource.org](https://opensource.org/licenses)에서 확인하실 수 있습니다.
+
+<br/>
+
+
+
+
+
+
+
+## 참고
+---
+패스트캠퍼스(박영웅 강사님) : 올인원 패키지 : 프론트엔드 개발 with React.js
+- [https://heropy.blog/2019/04/24/html-css-starter/](https://heropy.blog/2019/04/24/html-css-starter/)
+
+<br/>
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
