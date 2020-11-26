@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: RDBMS
-slug: rdbms
-category: rdbms
+title: SQL
+slug: sql
+category: sql
 menu: false
 order: 1
 ---

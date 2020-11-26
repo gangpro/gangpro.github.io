@@ -1,10 +1,10 @@
 ---
 layout: list
-title: RDBMS
-slug: rdbms
+title: SQL
+slug: sql
 menu: true
 submenu: false
 order: 5
 description: >
-  데이터베이스 관련 
+  SQL 관련 
 ---
