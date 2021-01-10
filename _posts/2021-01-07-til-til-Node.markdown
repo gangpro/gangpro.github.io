@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[따라하기] Node & React를 활용하여 Docker에 서버 구축'
+title: '[TIL] Node & React를 활용하여 Docker에 서버 구축'
 subtitle: 
 categories: til
 tags: til node react docker
