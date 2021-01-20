@@ -5,7 +5,7 @@ subtitle:
 categories: til
 tags: til python
 comments: true
-date: 2019-02-01 00:12:17 +0900
+date: 2019-02-02 00:12:17 +0900
 lastmod: 2019-02-02 12:30:17 +0900
 sitemap:
   changefreq: daily
