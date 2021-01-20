@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: SQL
-slug: sql
-category: sql
+title: ENV
+slug: env
+category: env
 menu: false
 order: 1
 ---

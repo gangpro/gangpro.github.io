@@ -1,10 +1,10 @@
 ---
 layout: list
-title: SQL
-slug: sql
+title: ENV
+slug: env
 menu: true
 submenu: false
 order: 5
 description: >
-  SQL 관련 
+  개발환경구축 관련 
 ---
