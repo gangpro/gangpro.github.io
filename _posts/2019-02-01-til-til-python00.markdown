@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 파이썬 개발환경 구축'
+title: '[python] 파이썬 개발환경 구축'
 subtitle: 
 categories: til
 tags: til python
