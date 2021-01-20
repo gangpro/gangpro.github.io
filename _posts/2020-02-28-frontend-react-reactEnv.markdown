@@ -3,7 +3,7 @@ layout: post
 title: '[react] 리엑트 환경구축'
 subtitle: 
 categories: frontend
-tags: react
+tags: env react
 comments: true
 date: 2020-02-28 10:00:17 +0900
 lastmod: 2020-02-28 11:00:17 +0900

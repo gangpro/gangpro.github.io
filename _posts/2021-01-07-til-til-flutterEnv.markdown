@@ -3,7 +3,7 @@ layout: post
 title: '[TIL] macOS에 Flutter 개발환경구축'
 subtitle: 
 categories: til
-tags: til flutter
+tags: env til flutter
 comments: true
 date: 2021-01-10 23:12:17 +0900
 lastmod: 2021-01-11 13:00:17 +0900

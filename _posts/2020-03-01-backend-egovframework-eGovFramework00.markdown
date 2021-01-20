@@ -1,9 +1,9 @@
 ---
 layout: post
-title: '[eGovFrame] 전자정부 표준프레임워크 환경구축'
+title: '[eGovFrame] 전자정부 표준프레임워크 개발환경구축'
 subtitle: 
 categories: backend
-tags: egovframework Spring
+tags: env egovframework spring
 comments: true
 date: 2020-03-01 10:00:17 +0900
 lastmod: 2020-03-04 18:10:17 +0900
