@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[env] 파이썬 환경구축'
+title: '[env] macOS에 파이썬 환경구축'
 subtitle: 
 categories: env
 tags: env python
@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-맥북에 파이썬 개발환경 구축하기<br/>
+macOS에 파이썬 개발환경 구축하기<br/>
 
 ## 파이썬 개발환경 구축
 ---
