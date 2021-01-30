@@ -483,5 +483,4 @@ $ nodemon server.js
 
 - 따라하기 블로그 : [https://dev.to/numtostr/running-react-and-node-js-in-one-shot-with-concurrently-2oac](https://dev.to/numtostr/running-react-and-node-js-in-one-shot-with-concurrently-2oac)
 - 소스코드 참고 블로그 : [https://github.com/boffti/cfu](https://github.com/boffti/cfu)
-<br/>
-개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
+- 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>

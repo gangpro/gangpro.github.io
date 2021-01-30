@@ -211,6 +211,4 @@ main() {
 
 ## 참고
 - 유튜브 강의 : [https://www.youtube.com/watch?v=nRsxWt3BWzM](https://youtu.be/nRsxWt3BWzM)
-
-<br/>
-개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>
+- 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>

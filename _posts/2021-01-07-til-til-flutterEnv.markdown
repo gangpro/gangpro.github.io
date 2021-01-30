@@ -694,9 +694,10 @@ Doctor summary (to see all details, run flutter doctor -v):
 ```
 
 ## 개발환경 구축 완료 :)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf587f20-69e5-49be-a01d-b4ae0c12a57f/Screen_Shot_2021-01-11_at_0.13.33.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf587f20-69e5-49be-a01d-b4ae0c12a57f/Screen_Shot_2021-01-11_at_0.13.33.png)
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c445ef76-d299-47c9-84dd-212f52968790/Screen_Shot_2021-01-11_at_0.32.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c445ef76-d299-47c9-84dd-212f52968790/Screen_Shot_2021-01-11_at_0.32.50.png)
 
 ## 참고
-
-- 유튜브 강의 : [https://youtu.be/3JMjR_ahT44]
-<br/>
-개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
+- 유튜브 강의 : [https://youtu.be/3JMjR_ahT44](https://youtu.be/3JMjR_ahT44])
+- 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>
