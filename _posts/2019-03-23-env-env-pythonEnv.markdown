@@ -3,7 +3,7 @@ layout: post
 title: '[env] 파이썬 환경구축'
 subtitle: 
 categories: env
-tags: python env
+tags: env python
 comments: true
 date: 2019-03-23 10:00:17 +0900
 lastmod: 2019-03-23 10:00:17 +0900
