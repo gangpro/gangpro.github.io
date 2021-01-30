@@ -15,6 +15,16 @@ published: true
 
 하둡(hadoop) 에코시스템 pig<br />
 
+# PIG
+> 개발환경<br> 
+> OS : Macbook Pro, macOS Mojave<br>
+> VirtualBox : Version 6.0.4<br>
+> VM : Enterprise Linux<br>
+> JDK : jdk1.8.0_211<br>
+> Hadoop 1.2.1<br>
+> hive 1.2.1<br>
+> pig 0.12.0<br>
+
 ## [0] intro
 * Pig Philosophy : https://stayrelevant.globant.com/en/pig/
 * Pig Latin Statemnts : https://pig.apache.org/docs/latest/start.html#pl-statements
