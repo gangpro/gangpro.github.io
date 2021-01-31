@@ -2,7 +2,7 @@
 layout: post
 title: '[hadoop] macOS에 하둡(hadoop) 개발환경구축'
 subtitle: 
-categories: env
+categories: til
 tags: til env hadoop
 comments: true
 date: 2019-04-23 00:12:17 +0900
