@@ -2,7 +2,7 @@
 layout: post
 title: '[env] Node & React를 활용하여 Docker에 서버 구축'
 subtitle: 
-categories: til
+categories: env
 tags: til env node react docker
 comments: true
 date: 2021-01-04 00:12:17 +0900
