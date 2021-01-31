@@ -3,7 +3,7 @@ layout: post
 title: '[hadoop] 하둡(hadoop) 에코시스템 - sqoop'
 subtitle: 
 categories: til
-tags: til env hadoop
+tags: til hadoop
 comments: true
 date: 2019-04-24 14:12:17 +0900
 lastmod: 2019-04-24 20:30:17 +0900

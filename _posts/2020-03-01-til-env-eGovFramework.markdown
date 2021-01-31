@@ -2,8 +2,8 @@
 layout: post
 title: '[env] macOS에 전자정부 표준프레임워크 개발환경구축'
 subtitle: 
-categories: env
-tags: til env egovframework spring
+categories: til
+tags: env egovframework spring
 comments: true
 date: 2020-03-01 10:00:17 +0900
 lastmod: 2020-03-04 18:10:17 +0900

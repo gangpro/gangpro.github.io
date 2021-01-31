@@ -3,7 +3,7 @@ layout: post
 title: '[env] macOS에 Flask 개발환경구축'
 subtitle: 
 categories: til
-tags: til env flask
+tags: env flask
 comments: true
 date: 2019-06-06 00:12:17 +0900
 lastmod: 2019-06-06 10:30:17 +0900

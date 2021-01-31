@@ -3,7 +3,7 @@ layout: post
 title: '[env] macOS에 파이썬 개발환경구축'
 subtitle: 
 categories: til
-tags: til env python
+tags: env python
 comments: true
 date: 2019-03-23 10:00:17 +0900
 lastmod: 2019-03-23 10:00:17 +0900

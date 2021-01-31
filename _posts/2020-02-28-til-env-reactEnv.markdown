@@ -2,8 +2,8 @@
 layout: post
 title: '[env] macOS에 React 개발환경구축'
 subtitle: 
-categories: env
-tags: til env react
+categories: til
+tags: env react
 comments: true
 date: 2020-02-28 10:00:17 +0900
 lastmod: 2020-02-28 11:00:17 +0900
