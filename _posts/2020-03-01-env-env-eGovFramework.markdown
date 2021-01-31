@@ -1,8 +1,8 @@
 ---
 layout: post
-title: '[eGovFrame] 전자정부 표준프레임워크 개발환경구축'
+title: '[eGovFrame] macOS에 전자정부 표준프레임워크 개발환경구축'
 subtitle: 
-categories: backend
+categories: env
 tags: env egovframework spring
 comments: true
 date: 2020-03-01 10:00:17 +0900
@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-맥북에 전자정부 표준프레임워크 환경구축 하기<br />
+macOS에 전자정부 표준프레임워크 개발환경구축<br />
 
 > 개발프레임워크는 정보시스템 개발을 위해 필요한 기능 및 아키텍처를 미리 만들어 제공함으로써 효율적인 어플리케이션 구축을 지원합니다. “전자정부 표준프레임워크”는 공공사업에 적용되는 개발프레임워크의 표준 정립으로 응용 SW 표준화, 품질 및 재 사용성 향상을 목표로 합니다. 이를 통해“전자정부 서비스의 품질향상” 및 “정보화 투자 효율성 향상”을 달성하고, 대ㆍ중소기업이 동일한 개발기반 위에서 공정 경쟁이 가능하게 됩니다.
 >
