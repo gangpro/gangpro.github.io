@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] 장고와 AWS 데이터베이스 RDS 사용'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 10:20:17 +0900
 lastmod: 2020-02-20 10:30:17 +0900

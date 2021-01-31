@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] Django AWS 배포해보기'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 09:20:17 +0900
 lastmod: 2020-02-20 09:30:17 +0900

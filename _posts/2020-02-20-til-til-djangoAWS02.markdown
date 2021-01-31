@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] Django 장고 프로젝트 생성'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 09:40:17 +0900
 lastmod: 2020-02-20 09:50:17 +0900

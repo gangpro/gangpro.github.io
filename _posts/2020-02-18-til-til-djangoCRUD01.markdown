@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoCRUD] 장고 CRUD 데이터베이스 객체 정의'
 subtitle: 
-categories: backend
-tags: django djangoCRUD
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 16:40:17 +0900
 lastmod: 2020-02-18 16:45:17 +0900

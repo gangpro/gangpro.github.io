@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoBasic] 새로운 Utilities 앱 생성 및 응용하기'
 subtitle: 
-categories: backend
-tags: django basic
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 15:46:17 +0900
 lastmod: 2020-02-18 16:05:17 +0900

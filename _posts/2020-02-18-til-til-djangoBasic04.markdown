@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoBasic] 장고 스타일 활용하기'
 subtitle: 
-categories: backend
-tags: django basic
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 15:45:17 +0900
 lastmod: 2020-02-18 15:45:17 +0900

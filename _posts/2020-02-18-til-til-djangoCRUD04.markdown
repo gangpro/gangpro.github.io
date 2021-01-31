@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoCRUD] 장고 RESTful 웹 서비스 구성하기'
 subtitle: 
-categories: backend
-tags: django djangoCRUD
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 17:20:17 +0900
 lastmod: 2020-02-18 17:25:17 +0900

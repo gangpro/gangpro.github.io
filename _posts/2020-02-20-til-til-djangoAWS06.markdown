@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] AWS Django 파일 업로드 적용하기'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 10:10:17 +0900
 lastmod: 2020-02-20 10:20:17 +0900

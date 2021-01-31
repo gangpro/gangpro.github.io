@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] Django 환경 설정'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 09:30:17 +0900
 lastmod: 2020-02-20 09:40:17 +0900

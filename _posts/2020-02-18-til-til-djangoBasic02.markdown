@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoBasic] ASCII art API 활용하기'
 subtitle: 
-categories: backend
-tags: django basic
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 11:35:17 +0900
 lastmod: 2020-02-18 14:40:17 +0900

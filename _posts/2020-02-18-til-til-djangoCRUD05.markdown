@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoCRUD] 장고 게시판에 댓글 기능 구현하기'
 subtitle: 
-categories: backend
-tags: django djangoCRUD
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 17:25:17 +0900
 lastmod: 2020-02-18 17:30:17 +0900

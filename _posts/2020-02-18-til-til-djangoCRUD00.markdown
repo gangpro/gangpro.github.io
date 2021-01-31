@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoCRUD] 장고 CRUD 앱 생성'
 subtitle: 
-categories: backend
-tags: django djangoCRUD
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 16:30:17 +0900
 lastmod: 2020-02-18 16:35:17 +0900

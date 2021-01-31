@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoAWS] AWS Django 웹 서버 연결을 위한 WSGI'
 subtitle: 
-categories: backend
-tags: django djangoAWS AWS
+categories: til
+tags: til django aws
 comments: true
 date: 2020-02-20 10:00:17 +0900
 lastmod: 2020-02-20 10:10:17 +0900

@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoBasic] 장고 폼 태그 사용해서 사용자 정보 받기'
 subtitle: 
-categories: backend
-tags: django basic
+categories: til
+tags: til django
 comments: true
 date: 2020-02-18 11:35:17 +0900
 lastmod: 2020-02-18 11:35:17 +0900

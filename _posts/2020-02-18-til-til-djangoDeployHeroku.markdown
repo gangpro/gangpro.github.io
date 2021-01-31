@@ -2,8 +2,8 @@
 layout: post
 title: '[DjangoHeroku] 장고 heroku에 배포하기'
 subtitle: 
-categories: backend
-tags: django deploy heroku
+categories: til
+tags: til django heroku
 comments: true
 date: 2020-02-18 17:35:17 +0900
 lastmod: 2020-02-18 17:50:17 +0900
