@@ -1,9 +1,9 @@
 ---
 layout: post
-title: '[TIL] Node & React를 활용하여 Docker에 서버 구축'
+title: '[env] Node & React를 활용하여 Docker에 서버 구축'
 subtitle: 
 categories: til
-tags: til node react docker
+tags: til env node react docker
 comments: true
 date: 2021-01-04 00:12:17 +0900
 lastmod: 2021-01-07 20:30:17 +0900

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: '[env] 리엑트 환경구축'
+title: '[env] React 개발환경구축'
 subtitle: 
 categories: env
-tags: env react
+tags: til env react
 comments: true
 date: 2020-02-28 10:00:17 +0900
 lastmod: 2020-02-28 11:00:17 +0900
