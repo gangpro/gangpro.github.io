@@ -2,7 +2,7 @@
 layout: tag-blog
 title: ENV
 slug: env
-category: env
+category: dev
 menu: false
-order: 1
+order: 2
 ---
