@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - 데이터 제한 및 정렬'
+title: '[oracle] 오라클 SQL - 데이터 제한 및 정렬'
 subtitle: 
 categories: til
 tags: til oracle sql

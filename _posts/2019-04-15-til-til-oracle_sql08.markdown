@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - SET 연산자'
+title: '[oracle] 오라클 SQL - SET 연산자'
 subtitle: 
 categories: til
 tags: til oracle sql

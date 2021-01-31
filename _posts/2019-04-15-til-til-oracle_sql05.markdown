@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - 복수행 함수'
+title: '[oracle] 오라클 SQL - 복수행 함수'
 subtitle: 
 categories: til
 tags: til oracle sql

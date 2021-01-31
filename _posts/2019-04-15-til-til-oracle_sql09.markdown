@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - DML, TCL, 읽기 일관성 및 Lock'
+title: '[oracle] 오라클 SQL - DML, TCL, 읽기 일관성 및 Lock'
 subtitle: 
 categories: til
 tags: til oracle sql

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - 조인(Join)'
+title: '[oracle] 오라클 SQL - 조인(Join)'
 subtitle: 
 categories: til
 tags: til oracle sql

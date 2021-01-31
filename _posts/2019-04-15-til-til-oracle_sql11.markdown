@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - View, Sequence, Index, Synonym, 데이터 연결 4가지 방법'
+title: '[oracle] 오라클 SQL - View, Sequence, Index, Synonym, 데이터 연결 4가지 방법'
 subtitle: 
 categories: til
 tags: til oracle sql

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 오라클 SQL - Table'
+title: '[oracle] 오라클 SQL - Table'
 subtitle: 
 categories: til
 tags: til oracle sql
