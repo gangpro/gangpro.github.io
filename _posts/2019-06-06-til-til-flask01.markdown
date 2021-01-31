@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 01. Flask 설치 및 개발환경구축'
+title: '[flask] 플라스크 - 01. Flask 설치 및 개발환경구축'
 subtitle: 
 categories: til
 tags: til flask

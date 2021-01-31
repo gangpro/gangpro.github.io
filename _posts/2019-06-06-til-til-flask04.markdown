@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 04. Flask Send & Receive'
+title: '[flask] 플라스크 - 04. Flask Send & Receive'
 subtitle: 
 categories: til
 tags: til flask

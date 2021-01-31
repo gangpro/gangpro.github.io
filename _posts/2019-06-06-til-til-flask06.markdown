@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 06. Flask 로또 앱 만들기'
+title: '[flask] 플라스크 - 06. Flask 로또 앱 만들기'
 subtitle: 
 categories: til
 tags: til flask

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 하둡(hadoop) 에코시스템 - hive'
+title: '[hadoop] 하둡(hadoop) 에코시스템 - hive'
 subtitle: 
 categories: til
 tags: til env hadoop

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 05. Flask 로그인 페이지 만들기'
+title: '[flask] 플라스크 - 05. Flask 로그인 페이지 만들기'
 subtitle: 
 categories: til
 tags: til flask

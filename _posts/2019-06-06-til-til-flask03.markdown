@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 03. Flask 활용한 fake naver'
+title: '[flask] 플라스크 - 03. Flask 활용한 fake naver'
 subtitle: 
 categories: til
 tags: til flask

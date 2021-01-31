@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] macOS에 하둡(hadoop) 개발환경구축'
+title: '[hadoop] macOS에 하둡(hadoop) 개발환경구축'
 subtitle: 
 categories: til
 tags: til env hadoop
