@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[env] React 개발환경구축'
+title: '[env] macOS에 React 개발환경구축'
 subtitle: 
 categories: env
 tags: til env react
