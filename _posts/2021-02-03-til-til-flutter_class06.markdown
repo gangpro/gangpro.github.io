@@ -134,6 +134,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+### 기본 앱 화면
+<img width="483" alt="Screen Shot 2021-02-03 at 23 57 26" src="[https://user-images.githubusercontent.com/59175609/106765283-fb6a7280-667b-11eb-8f73-cd4aa1ca987c.png](https://user-images.githubusercontent.com/59175609/106765283-fb6a7280-667b-11eb-8f73-cd4aa1ca987c.png)">
 
 
 ## 참고
