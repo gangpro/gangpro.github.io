@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[til] 플로터(flutter) - 앱 만들기'
+title: '[til] 플로터(flutter) - 프로젝트 폴더와 기본 코드 이해하기'
 subtitle: 
 categories: til
 tags: til flutter
@@ -13,10 +13,10 @@ sitemap:
 published: true
 ---
 
-플로터(flutter) 앱 만들기<br />
+플로터(flutter) 프로젝트 폴더와 기본 코드 이해하기<br />
 
 
-# Flutter 앱 만들기
+# Flutter 프로젝트 폴더와 기본 코드 이해하기
 
 ## 1.  Flutter 프로젝트 폴더의 구성
 
