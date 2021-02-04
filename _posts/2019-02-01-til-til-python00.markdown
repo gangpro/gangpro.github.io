@@ -459,10 +459,5 @@ Users/kang/.jupyter/jupyter_notebook_config.py
  
 * 끝!
 
-
-
-
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

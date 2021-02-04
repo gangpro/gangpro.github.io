@@ -29,6 +29,7 @@ published: true
 <br>
 
 # 2. 문자열 (string)
+```
     a = 'Hello World'
     b = "Hello World"
     c = "Hello\nWorld"     # 여러줄에 걸친 문자열을 만들고 싶을 때 (자바에서는 이스케이프 문자(\n)를 사용) #개행문자를 이용
@@ -45,7 +46,8 @@ published: true
     # 결과값 : Hello
               World
               !!!
-              
+```
+      
 ## 문자열에 대한 "+ 연산" 부연 설명
 * 일반적인 문자열의 연결은 "+" 기호를 이용한다.
 ###
