@@ -5,7 +5,7 @@ subtitle:
 categories: til
 tags: til python
 comments: true
-date: 2019-02-01 00:12:17 +0900
+date: 2019-02-01 00:10:17 +0900
 lastmod: 2019-02-01 11:30:17 +0900
 sitemap:
   changefreq: daily
@@ -16,8 +16,9 @@ published: true
 파이썬에 대해서<br />
 
 # Python (programming language)
-> 파이썬(영어: Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum)이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다. 파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다. [[위키백과]](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC)<br>
-<br>
+> 파이썬(영어: Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum)이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다. 파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다. [[위키백과]](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC)
+
+
 
 ## Cell in jupyter notebook
 * cell 의미 : 각각 칸을 cell이라고 부른다.
@@ -26,7 +27,8 @@ published: true
 * 셀 단축키 d : 지우고 싶은 cell을 누른 후에 dd를 누르면 cell이 지워진다.
 * 명령창 단축키 shift + enter : 현재 cell을 실행시키고 아래쪽에 cell을 생성
 * 왼쪽 In [N] 의미는 N번째로 실행 됐다는 표시. 이는 각 셀이 나뉘어있지만 시스템 내에서는 연결이 되어 있다는 뜻.
-<br>
+
+
 
 ## 주석 처리 방법
 ```
@@ -62,7 +64,7 @@ published: true
 * 파이썬에서 int, double과 같은 개체 분류를 할 필요가 없다.
 <br>
 
-## python은 문자의 개념이 존재하지 않는다.
+### python은 문자의 개념이 존재하지 않는다.
 ```
     a = 'Hello World'
     b = "Hello World"
@@ -71,7 +73,7 @@ published: true
 * 나의 경우는 큰따옴표만 사용할 것이다.
 ```
 
-## 파이썬에서 단항 증감연산자는 존재하지 않는다.
+### 파이썬에서 단항 증감연산자는 존재하지 않는다.
 ```
     a = 100
     a += 1          a++ 문법은 에러 발생
@@ -79,19 +81,19 @@ published: true
 * ++, -- 연산자가 없어서 => +=, -=로 사용해야 한다.<br>
 ```
 
-## 여러 변수에 값을 쉽게 할당(assign) 할 수 있다.
+### 여러 변수에 값을 쉽게 할당(assign) 할 수 있다.
 ```
     a, b, c = 10, 20, 30
 ```
 
-## 두개의 변수 값을 바꿀 때 swap 처리
+### 두개의 변수 값을 바꿀 때 swap 처리
 ```
     a, b = 10, 20
     b, a = a, b
     print(a,b)
-````
+```
 
-## del 변수명 (변수 삭제)
+### del 변수명 (변수 삭제)
 ```
     a = 100    #변수 지정
     print(a)   #변수 사용
@@ -99,7 +101,7 @@ published: true
     print(a)   #변수가 없기 때문에 에러 발생
 ```
 
-## print() 함수의 특징
+### print() 함수의 특징
 ```
     print("이것은")
     print("소리 없는")
@@ -121,7 +123,7 @@ published: true
     이것은 소리 없는 아우성!!
 ```
 
-## print() 와 display() 차이
+### print() 와 display() 차이
 ```
     import numpy as np     # numpy는 추후 배울 내용으로 예시를 위해 잠시 사용
 
@@ -136,7 +138,7 @@ published: true
                   # ※ cell 안에서 맨 마지막에 있을 때만 실행 가능
 ```
 
-## cell 실행시키는데 걸리는 시간 확인
+### cell 실행시키는데 걸리는 시간 확인
 ```
     %%time
     # 결과값 : 
@@ -147,15 +149,16 @@ published: true
     # 이런 오류를 볼 수 있음.. UsageError: Line magic function `%%time` not found.
 ```
 
-## input()
+### input()
 * 입력 받은 내용은 무조건 문자열로 처리된다.
-###
+```
     a = input("이메일 주소를 입력하세요 : ")
     print(a)
+```
 <img width="902" alt="input()" src="https://user-images.githubusercontent.com/46523571/54869450-c9c7c580-4ddb-11e9-9e30-6c40c38e9a33.png">
 
 
-## %%time - 해당 cell을 실행시키는데 걸리는 시간
+### %%time - 해당 cell을 실행시키는데 걸리는 시간
 ```
     # 집계함수가 필요한 이유
     # 수학식을 이용하면 모든 집계함수를 프로그램적으로 구현 할 수 있다.
@@ -189,6 +192,10 @@ published: true
             CPU times: user 58.8 ms, sys: 911 µs, total: 59.7 ms
             Wall time: 58.6 ms
 ```
+
+
+
+
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -24,11 +24,12 @@ published: true
 5. 딕셔너리 (dictionary) : key와 value가 쌍으로 구성이 되어 있는것.  #자바에서 해쉬맵과 같은 형태
 6. 집합 (Set) : 자바에서 Set과 유사
 7. 논리형 (bool) : True와 False가 있다. true와 false가 아니다. 첫글자는 무조건 대문자!
-8. **날짜 (date)**     
-<br>
-<br>
+8. **날짜 (date)** 
+
+
 
 # 8. 날짜 (date)
+```
     from datetime import date, datetime
     # date, datetime 객체 import 하기
 
@@ -53,8 +54,10 @@ published: true
     print("{}시".format(today.hour))     #결과값 : 15시
     print("{}분".format(today.minute))   #결과값 : 42분
     print("{}초".format(today.second))   #결과값 : 58초
+```
     
 ## 날짜 연산( date, datetime, timedelta, relativedelta)
+```
     from datetime import date, datetime, timedelta
     # days, hours, minutes, seconds, weeks 사용 가능 O
     # timedelta로는 years, months는 사용 불가능 X
@@ -93,8 +96,10 @@ published: true
     print(today + months)    #결과값 : 2018-12-13 16:14:18.287608
     
     # ※ 만약 현재 날짜가 3월 31일인데 1달 전 날짜를 구하면 -> 2월 31일이 존재하지 않기 때문에 2월 28일이 된다.
+```
 
-# 날짜 연산 formatting
+### 날짜 연산 formatting
+```
     from datetime import datetime
     
     today = datetime.today()
@@ -110,10 +115,11 @@ published: true
         
     print("현재 시간은 : {}".format(today.strftime("%Y년 %m월 %d일 %H시 %M분 %S초"))) # %H : hour, %M : minute, %S : second
     # 결과값 : 현재 시간은 : 2019년 02월 13일 16시 22분 31초     
-    
+```
+
+
+
 
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -24,9 +24,9 @@ published: true
 5. 딕셔너리 (dictionary) : key와 value가 쌍으로 구성이 되어 있는것.  #자바에서 해쉬맵과 같은 형태
 6. 집합 (Set) : 자바에서 Set과 유사
 7. 논리형 (bool) : True와 False가 있다. true와 false가 아니다. 첫글자는 무조건 대문자!
-8. 날짜 (date)     
-<br>
-<br>
+8. 날짜 (date)
+
+
 
 # 2. 문자열 (string)
 ```
@@ -50,13 +50,14 @@ published: true
       
 ## 문자열에 대한 "+ 연산" 부연 설명
 * 일반적인 문자열의 연결은 "+" 기호를 이용한다.
-###
+```
     first = "This is a"
     middle = " sample"
     last = " Text."
     print(first + middle + last)
     # 결과값 : This is a sample Text.
-###    
+```
+```
     first = "This is a"
     middle = " sample"
     last = " Text."
@@ -75,7 +76,8 @@ published: true
          12 print(result)
     
     TypeError: must be str, not int
-###
+```
+```
     first = "This is a"
     middle = " sample"
     last = " Text."
@@ -83,14 +85,18 @@ published: true
     result = first + str(a)     # str() : 문자열로 변환     #str() 안에 들어온 것을 문자열로 바꾸는 함수
     print(result)
     # 결과값 : This is a100
+```
 
 ## 문자열에 대한 "* 연산" 부연 설명
+```
     text = "python!"
     result = text * 3     # text+text+text와 같은 의미이다.
     print(result)
     # 결과값 : python!python!python!
-    
+```
+
 ## 문자열 indexing     #배열처럼 쓸 수 있다.
+```
     str = "Talk is a cheap. Show me the Code"
     print(str[0])     # 0번째 index의 값을 알아오는것.
     # 결과값 : T
@@ -103,8 +109,10 @@ published: true
     
     print(str[-4])
     # 결과값 : C
+```
 
 ## 문자열 slicing (즉 서브문자 가져오기)
+```
     str = "Talk is a cheap. Show me the Code"
     result = str[0:4]     #0번째에서 3번째까지 총 4개 가져오기
                             # [idx1:idx2] 
@@ -117,8 +125,10 @@ published: true
     
     print(result)  
     # 결과값 : Talk is a cheap. Show me the Code
+```
 
 ## 문자열 안에 연산자
+```
     str = "Talk is a cheap. Show me the Code"
     
     print("cheap" in str)     # str 안에 해당 문자열("cheap")이 있니 없니? 결과값 있으면 True가 나온다.     
@@ -129,8 +139,10 @@ published: true
     
     print("Cheap" not in str)     # str 안에 해당 문자열("Cheap")이 없다면 결과값은 True 있다면 False가 나온다.
     # 결과값 : True   
+```
 
 ## 문자열 formatting (%d, %f, %s)
+```
     amount = 10                             # %f : 실수
     str = "나는 사과 %d개가 있어요." %amount     # %d : 정수     # %뒤에 변수나 함수를 쓰면 인자값이 들어간다. 숫자만
     str = "나는 사과 %s개가 있어요." %"다섯"     # %s : 문자열     # %뒤에 변수나 함수를 쓰면 인자값이 들어간다. 문자만
@@ -152,14 +164,18 @@ published: true
     str = "원주율은 %.3f입니다." %3.1415926535     # 소수점 셋째자리까지 # 넷째자리에서 반올림처리 후 3.142
     print(str)         
     # 결과값 : 원주율은 3.142입니다. 
+```
 
 ## 문자열 함수 type()
+```
     str = "hello"
     print(type(str))
     # 결과값 : <class 'str'>  
     # str의 데이터 타입을 출력 #클래스 str의 인스턴스(객체로서)야 : type()
+```
 
-## 문자열 함수 dir()    
+## 문자열 함수 dir()   
+``` 
     str = "hello"
     print(dir(str))
 
@@ -167,8 +183,10 @@ published: true
     # 해당 인스턴스(개체)가 갖고 있는 필드와 메소드를 사용할 수 있는지 알려준다.
     # 객체가 가지고 있는 property와 #method를 리스트로 리턴
     # 결과값 : ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
 
 ## 문자열 함수 .count     .find     .index
+```
     str = "cocacola"
     result = len(str)           # 인자로 들어오는 것의 개수를 count
     result = str.count("c")     # 인자로 들어온 문자열이 몇개 있는지를 count (= str 안에 "c"의 문자 개수를 count)
@@ -176,16 +194,20 @@ published: true
     result = str.find("o")      # 인자로 들어온 문자열이 맨 처음 나타나는 위치(index)를 리턴    # 1이 나온다 이유는 숫자는 0부터 시작하니
     result = str.find("ca22")   # 인자로 들어온 문자열이 맨 처음 나타나는 위치(index)를 리턴    # 찾지 못하면 -1 return
     #result = str.index("ca44") # find()와 동일한데 찾지 못하면 에러 발생
+```
 
 ## 문자열 함수 .join
+```
     a = "-"
     b = "abcdef"
     result = a.join(b)
     print(result)
     # 결과값 : a-b-c-d-e-f
     # 각각의 문자열 사이사이에 내가 원하는 특수기호를 넣고 싶을 때 사용한다.
+```
 
 ## 문자열 함수 .upper     .lower    .strip
+```
     str = "     Hello      World      "
     print(str.upper())     #문자열 대문자로 변환
     # 결과값 :      HELLO      WORLD   # 공백발생      
@@ -197,11 +219,13 @@ published: true
     
     print(str.strip())     #문자열의 양쪽 공백 제거
     # 결과값 : Hello      World   # 양쪽 공백 제거
+```
 
 ## 문자열 함수 .replace    .split
 * 문자열은 기본적으로 불변의(immutable) 특성이 있다.
 * 함수를 적용해도 원본 문자열은 변하지 않는다.
-###
+
+```
     str = "Show me the Code"
     result = str.replace("Code", "Money")
     print(result)     # 원래 문자열 Code가 바뀐게 아니라 결과값만 변한 것이다라고 생각하기.
@@ -219,17 +243,19 @@ published: true
     result = str.split("::") #list로 결과 return     # "::" 값을 넣으면 :: 값을 기준으로 나뉜다.
     print(result)
     # 결과값 : ['a', 'b', 'c', 'd', 'e']
-    
+```
+
 ## 문자열 함수 .format
 * python에서 일반적으로 사용되는 문자열
-
 * 아래와 같이 해도 되지만 formatting method를 쓰자.
-###
+```
     str = "나는 사과 %d개 있어요!!" %5
     print(str)
     # 결과값 : 나는 사과 5개 있어요!!
+```
 
 ## 문자열 함수. formatting method .format(인자값)
+```
     str = "나는 사과 {0}개 있어요!!".format(3)     #  중괄호 안에 인덱스를 넣어도 안 넣어도 됨 ex) {} or {0}
     str = "나는 사과 {}개 있어요!!".format(3)
     print(str)
@@ -249,9 +275,10 @@ published: true
     str = "원주율은 {0:0.3f}입니다.".format(3.141592) #앞의 0는 순번, 0.3f는 소수점 세자리까지
     print(str)
     # 결과값 : 원주율은 3.142입니다.
-    
-###
-    # 천단위마다 "," 출력
+```
+
+## 천단위마다 "," 출력
+```
     num = 1234567890
     str = "{0}".format(num)   
     print(str)
@@ -261,8 +288,10 @@ published: true
     str = "{0:,}".format(num)
     print(str)
     # 결과값 : 1,234,567,890
-###    
-    # 백분율 처리(반올림 처리 가능)
+```
+
+## 백분율 처리(반올림 처리 가능)
+```
     num = 0.87356
     str = "{0:.0%}".format(num)
     print(str)
@@ -272,13 +301,11 @@ published: true
     str = "{0:.2%}".format(num)
     print(str)
     # 결과값 : 87.36%
-
+```
 
 
 
 
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

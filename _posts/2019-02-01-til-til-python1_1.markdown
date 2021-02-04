@@ -24,9 +24,9 @@ published: true
 5. 딕셔너리 (dictionary) : key와 value가 쌍으로 구성이 되어 있는것.  #자바에서 해쉬맵과 같은 형태
 6. 집합 (Set) : 자바에서 Set과 유사
 7. 논리형 (bool) : True와 False가 있다. true와 false가 아니다. 첫글자는 무조건 대문자!
-8. 날짜 (date)     
-<br>
-<br>
+8. 날짜 (date)
+
+
 
 # 1. 숫자형 (number)
 * 자바에서 int, double, float 등이 있지만, 파이썬에서는 없다. 그냥 쓰면 된다.
@@ -65,6 +65,10 @@ published: true
     print(result)
     # 결과값 : 1
 ```
+
+
+
+
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
