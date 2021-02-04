@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[til] 플로터(flutter) - 위젯이란?'
+title: '[TIL] 플로터(flutter) - 위젯이란?'
 subtitle: 
 categories: til
 tags: til flutter

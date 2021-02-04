@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] Deep Learning CNN 이미지 처리'
+title: '[python] Deep Learning CNN 이미지 처리'
 subtitle: 
 categories: til
 tags: til

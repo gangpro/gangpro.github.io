@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] Deep Learning'
+title: '[python] Deep Learning'
 subtitle: 
 categories: til
 tags: til

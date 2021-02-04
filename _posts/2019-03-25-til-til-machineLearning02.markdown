@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] Machine Learning Tensorflow에 대해서'
+title: '[python] Machine Learning Tensorflow에 대해서'
 subtitle: 
 categories: til
 tags: til

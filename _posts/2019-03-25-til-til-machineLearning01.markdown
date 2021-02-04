@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] Machine Learning 통계 목적에 따른 분류'
+title: '[python] Machine Learning 통계 목적에 따른 분류'
 subtitle: 
 categories: til
 tags: til

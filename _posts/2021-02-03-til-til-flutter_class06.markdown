@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[til] 플로터(flutter) - 프로젝트 폴더와 기본 코드 이해하기'
+title: '[TIL] 플로터(flutter) - 프로젝트 폴더와 기본 코드 이해하기'
 subtitle: 
 categories: til
 tags: til flutter
