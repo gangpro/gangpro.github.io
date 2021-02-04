@@ -462,11 +462,5 @@ Python Anaconda 3.7버전 2018.12 ( Anaconda3-2018.12-MacOSX-x86_64.pkg )
 **공식 영문 홈페이지** <br>
 [https://docs.anaconda.com/anaconda/install/mac-os/](https://docs.anaconda.com/anaconda/install/mac-os/)
 
-
-
-
-## 환경
----
-> macOS Mojave 10.14.3.
-> python 3.6.8, 
-> Python Anaconda 3.7, 2018.12.
+## References
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

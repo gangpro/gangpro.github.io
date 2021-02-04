@@ -22,62 +22,55 @@ published: true
 ## **Pandas DataReader Package 설치**
 
 * 터미널 실행
-
-
-        $ KANGs-MacBook-Pro ~ $ cd ~
-          ↳ cd ~ : 최상위 폴더로 이동
+```
+  $ KANGs-MacBook-Pro ~ $ cd ~
+    ↳ cd ~ : 최상위 폴더로 이동
+```
 
 * 가상환경 접속
-
-
-        $ KANGs-MacBook-Pro ~ $ source activate data_env
+```
+  $ KANGs-MacBook-Pro ~ $ source activate data_env
+```
 
 * pandas_datareader 설치
-
-
-        $ (data_env) KANGs-MacBook-Pro:~ kang$ pip install pandas_datareader
-        Collecting pandas_datareader
-          Downloading https://files.pythonhosted.org/packages/cc/5c/ea5b6dcfd0f55c5fb1e37fb45335ec01cceca199b8a79339137f5ed269e0/pandas_datareader-0.7.0-py2.py3-none-any.whl (111kB)
-            100% |████████████████████████████████| 112kB 1.3MB/s 
-        Requirement already satisfied: pandas>=0.19.2 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas_datareader) (0.24.1)
-        Collecting wrapt (from pandas_datareader)
-          Downloading https://files.pythonhosted.org/packages/67/b2/0f71ca90b0ade7fad27e3d20327c996c6252a2ffe88f50a95bba7434eda9/wrapt-1.11.1.tar.gz
-        Collecting requests>=2.3.0 (from pandas_datareader)
-          Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
-            100% |████████████████████████████████| 61kB 4.6MB/s 
-        Collecting lxml (from pandas_datareader)
-          Downloading https://files.pythonhosted.org/packages/b5/5c/27b381a7d5b24ee4b9da1b02269a305bdc4fc30a3ea5bb21a5a98194850d/lxml-4.3.1-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.8MB)
-            100% |████████████████████████████████| 8.8MB 5.4MB/s 
-        Requirement already satisfied: python-dateutil>=2.5.0 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (2.7.5)
-        Requirement already satisfied: numpy>=1.12.0 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (1.16.1)
-        Requirement already satisfied: pytz>=2011k in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (2018.9)
-        Collecting urllib3<1.25,>=1.21.1 (from requests>=2.3.0->pandas_datareader)
-          Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
-            100% |████████████████████████████████| 122kB 3.1MB/s 
-        Requirement already satisfied: certifi>=2017.4.17 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from requests>=2.3.0->pandas_datareader) (2018.11.29)
-        Requirement already satisfied: idna<2.9,>=2.5 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from requests>=2.3.0->pandas_datareader) (2.8)
-        Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.3.0->pandas_datareader)
-          Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
-            100% |████████████████████████████████| 143kB 19.2MB/s 
-        Requirement already satisfied: six>=1.5 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas>=0.19.2->pandas_datareader) (1.12.0)
-        Building wheels for collected packages: wrapt
-          Building wheel for wrapt (setup.py) ... done
-          Stored in directory: /Users/kang/Library/Caches/pip/wheels/89/67/41/63cbf0f6ac0a6156588b9587be4db5565f8c6d8ccef98202fc
-        Successfully built wrapt
-        Installing collected packages: wrapt, urllib3, chardet, requests, lxml, pandas-datareader
-        Successfully installed chardet-3.0.4 lxml-4.3.1 pandas-datareader-0.7.0 requests-2.21.0 urllib3-1.24.1 wrapt-1.11.1
-
- 
+```
+  $ (data_env) KANGs-MacBook-Pro:~ kang$ pip install pandas_datareader
+  Collecting pandas_datareader
+    Downloading https://files.pythonhosted.org/packages/cc/5c/ea5b6dcfd0f55c5fb1e37fb45335ec01cceca199b8a79339137f5ed269e0/pandas_datareader-0.7.0-py2.py3-none-any.whl (111kB)
+      100% |████████████████████████████████| 112kB 1.3MB/s 
+  Requirement already satisfied: pandas>=0.19.2 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas_datareader) (0.24.1)
+  Collecting wrapt (from pandas_datareader)
+    Downloading https://files.pythonhosted.org/packages/67/b2/0f71ca90b0ade7fad27e3d20327c996c6252a2ffe88f50a95bba7434eda9/wrapt-1.11.1.tar.gz
+  Collecting requests>=2.3.0 (from pandas_datareader)
+    Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
+      100% |████████████████████████████████| 61kB 4.6MB/s 
+  Collecting lxml (from pandas_datareader)
+    Downloading https://files.pythonhosted.org/packages/b5/5c/27b381a7d5b24ee4b9da1b02269a305bdc4fc30a3ea5bb21a5a98194850d/lxml-4.3.1-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (8.8MB)
+      100% |████████████████████████████████| 8.8MB 5.4MB/s 
+  Requirement already satisfied: python-dateutil>=2.5.0 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (2.7.5)
+  Requirement already satisfied: numpy>=1.12.0 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (1.16.1)
+  Requirement already satisfied: pytz>=2011k in /anaconda3/envs/data_env/lib/python3.6/site-packages (from pandas>=0.19.2->pandas_datareader) (2018.9)
+  Collecting urllib3<1.25,>=1.21.1 (from requests>=2.3.0->pandas_datareader)
+    Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
+      100% |████████████████████████████████| 122kB 3.1MB/s 
+  Requirement already satisfied: certifi>=2017.4.17 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from requests>=2.3.0->pandas_datareader) (2018.11.29)
+  Requirement already satisfied: idna<2.9,>=2.5 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from requests>=2.3.0->pandas_datareader) (2.8)
+  Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.3.0->pandas_datareader)
+    Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+      100% |████████████████████████████████| 143kB 19.2MB/s 
+  Requirement already satisfied: six>=1.5 in /anaconda3/envs/data_env/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas>=0.19.2->pandas_datareader) (1.12.0)
+  Building wheels for collected packages: wrapt
+    Building wheel for wrapt (setup.py) ... done
+    Stored in directory: /Users/kang/Library/Caches/pip/wheels/89/67/41/63cbf0f6ac0a6156588b9587be4db5565f8c6d8ccef98202fc
+  Successfully built wrapt
+  Installing collected packages: wrapt, urllib3, chardet, requests, lxml, pandas-datareader
+  Successfully installed chardet-3.0.4 lxml-4.3.1 pandas-datareader-0.7.0 requests-2.21.0 urllib3-1.24.1 wrapt-1.11.1
+``` 
 * 이제 jupyter notebook에서 pandas_datareader import 사용 가능.
-
-
 
 # Pandas Aggregate Function
 > pandas : python의 data analysis의 핵심 library<br>
 > pandas는 고유하게 정의된 두개의 자료구조를 이용(시리즈, 데이터프레임)<br>
-
-<br>
-<br>
 
 ## DataFrame의 집계함수
 * 변량 : 숫자들 ~ 평균 : 변량의 합 / 인원 수 편차 : 변량 - 평균 편차제곱 : 편차 * 편차 분산 : 편차의 제곱의 평균 표준편차 : 루트 분산
@@ -89,7 +82,7 @@ published: true
 * 편차(deviation) : 확률변수 X와 평균값에 대한 차이
 * 분산(variance) : 편차의 제곱의 평균
 * 표준편차(standard deviation) : 분산의 제곱근
-###
+```
     import numpy as np
     
     arr = np.array([1,2,3,4,5], dtype=np.int64)
@@ -97,10 +90,11 @@ published: true
     print(arr.mean())   # 평균    # 결과값 : 3.0
     print(arr.var())    # 분산    # 결과값 : 2.0
     print(arr.std())    # 표준편차 # 결과값 : 1.4142135623730951
+```
 
 ## 공분산(cov, covariance)
 * 확률 변수가 2개일 때의 관계를 알아 볼때 공분산을 쓴다.
-###
+```
     # 확률변수 X와 Y의 관계를 알기 위해서 사용하는 값
     # X가 변할때 Y가 변하는 방향을 알기 위해서 사용
     # X, Y가 서로 독립이면 공분산 0
@@ -112,10 +106,11 @@ published: true
     
     # 두 확률변수의 관계정도(strength)를 측정하기가 좋지 않다. => 상관계수
     # 양수든 음수든 상관없이 두개의 밀접한 관계를 알 수 있는 건 => 상관계수
+```
 
 ## 공분산이 양수인 경우
 * 예) KOSPI지수와 삼성전자 주가
-###
+```
     # 사이트에서 바로 분석하는 방법
     import numpy as np
     import pandas as pd
@@ -129,13 +124,14 @@ published: true
     df_KOSPI = pdr.DataReader("^KS11","yahoo",start,end)   #사이트에서 정보 가져오기
     df_KOSPI.to_json("./data/stock/KOSPI.json")   # 정보를 파일로 저장
     df_KOSPI.head(5)
+```
 <img width="712" alt="Screen Shot 2019-03-25 at 6 32 53 PM" src="https://user-images.githubusercontent.com/46523571/54909001-83ce4700-4f2c-11e9-9c03-278b5e84f1c6.png">
 
 ## 공분산이 양수인 경우
 * 예) KOSPI지수와 삼성전자 주가
 * 위의 방법으로 접속 불가능시 아래와 같이 실행
 * 파일로 분석하는 방법
-### 
+```
     import numpy as np
     import pandas as pd
     import datetime
@@ -165,10 +161,11 @@ published: true
     # (1,0) SE & KOSPI
     # (1,1) SE & SE
     # 값의 의미는 모르겠으나 양수이기 때문에 양의 공분산이라는걸 알 수 있다.
+```
 
 ## 공분산이 음수인 경우¶
 * 예) 남북경협주와 방산주
-###
+```
     # 파일로 분석하는 방법
     
     import numpy as np
@@ -200,6 +197,7 @@ published: true
     # (1,0) LIG BUSAN
     # (1,1) LIG LIG
     # 값의 의미는 모르겠으나 양수이기 때문에 양의 공분산이라는걸 알 수 있다.
+```
 
 ## 상관관계(corelation), 상관계수(corelation coefficient)
 * 상관관계(corelation)
@@ -212,6 +210,7 @@ published: true
   - 그래서 오류의 소지가 다분하다.
 
 ## 상관계수 구해보기(1)
+```
     import numpy as np
     import pandas as pd
     import datetime
@@ -234,8 +233,10 @@ published: true
     # (1,1) df_SE df_SE
     
     # 0~0.3 약한관계, 0.3~0.7 중간관계, 0.7~1 강한관계를 뜻한다.
+```
 
 ## 상관계수 구해보기(2)
+```
     import numpy as np
     import pandas as pd
     import datetime
@@ -254,8 +255,10 @@ published: true
     #        [-0.71100361,  1.        ]])
     
     # 0~0.3 약한관계, 0.3~0.7 중간관계, 0.7~1 강한관계를 뜻한다.
+```
 
 ## pandas 통계적 함수 사용
+```
     # numpy를 이용해서 통계적인 내용을 해왔다.
     # 이번엔 pandas(DataFrame)를 이용한 통계적인 함수 사용법을 알아보자.
     import numpy as np
@@ -273,6 +276,7 @@ published: true
     display(df.sum())   # axis가 생략, axis=0 default
     display(df.mean())   # default로 NaN은 배제하고 계산
     display(df.sum(axis=1))   # 축을 기준으로 Series형태로 계산된다.
+```
 <img width="194" alt="Screen Shot 2019-03-25 at 6 38 41 PM" src="https://user-images.githubusercontent.com/46523571/54909307-39999580-4f2d-11e9-8eab-36c65ddc74b4.png">
 
 ## 간단한 문제
@@ -281,7 +285,7 @@ published: true
 * one column의 결측값은 one column의 평균으로 대체
 * two column의 결측값은 two column의 최소값으로 대체
 * 결측값을 대체하고 DataFrame을 출력
-###   
+```
     import numpy as np
     import pandas as pd
     
@@ -304,9 +308,11 @@ published: true
     
     print("▼ 결과값")
     display(df)   # 결측값을 대체하고 DataFrame을 출력
+```
 <img width="171" alt="Screen Shot 2019-03-25 at 6 40 06 PM" src="https://user-images.githubusercontent.com/46523571/54909391-6cdc2480-4f2d-11e9-9ce7-110920967551.png">
 
 ## DataFrame에서 공분산과 상관계수 구하기 +@ JSON 파일 기준으로
+```
     import numpy as np
     import pandas as pd
     
@@ -325,11 +331,12 @@ published: true
     
     display(df.cov())    # DataFrame 공분산 구하기
     display(df.corr())   # DataFrame 상관계수 구하기
+```
 <img width="574" alt="Screen Shot 2019-03-25 at 6 40 42 PM" src="https://user-images.githubusercontent.com/46523571/54909418-82e9e500-4f2d-11e9-9f35-e704fd80249a.png">
 
 ## DataFrame이 제공하는 유용한 함수
 *  정렬(1) index를 통해서 정렬
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -347,12 +354,13 @@ published: true
     # sort_index() 인덱스를 이용해서 재정렬 할 수 있다.
     display(df2.sort_index(axis=0, ascending=False))   #axis=0(행 방향으로 정렬)   #False(내림차순)
     display(df2.sort_index(axis=1, ascending=False))   #axis=1(열 방향으로 정렬)   #False(내림차순)
-                                  #default값은 오름차순 그래서 False하면 내림차순이 된다
+                                  #default값은 오름차순 그래서 False하면 내림차순이 된다.
+```
 <img width="229" alt="Screen Shot 2019-03-25 at 6 42 05 PM" src="https://user-images.githubusercontent.com/46523571/54909495-b3318380-4f2d-11e9-8486-aa06f76a9649.png">
 
 ## DataFrame이 제공하는 유용한 함수
 *  정렬(2) data값을 통해서 정렬
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -368,6 +376,7 @@ published: true
     
     display(df.sort_values(by="B", ascending=False))   #default 값은 오름차순 그래서 False는 내림차순
     display(df.sort_values(by=["B","A"])) #B를 갖고 정렬한다음 값이 같으면 A를 기준으로 정렬해
+```
 <img width="225" alt="Screen Shot 2019-03-25 at 6 43 02 PM" src="https://user-images.githubusercontent.com/46523571/54909553-d9572380-4f2d-11e9-8a7c-9925a5b473d5.png">
 
 
@@ -376,7 +385,7 @@ published: true
 * value_counts()
 * isin()
 * lambda 입력값 : 해야할 일
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -409,12 +418,13 @@ published: true
     display(df.apply(func,axis=1))
     df["Max-Min"] = df.apply(func,axis=1)
     display(df)
+```
 <img width="345" alt="Screen Shot 2019-03-25 at 6 44 11 PM" src="https://user-images.githubusercontent.com/46523571/54909622-ff7cc380-4f2d-11e9-961f-ba1926c2bb18.png">
 <img width="321" alt="Screen Shot 2019-03-25 at 6 44 15 PM" src="https://user-images.githubusercontent.com/46523571/54909631-04417780-4f2e-11e9-9b01-cf0884655ca3.png">
 
 ## DataFrame이 제공하는 유용한 함수 merge(1)
 * merge : (1) key값이 같은 경우의 merge
-###
+```
     #(1) key값이 같은 경우의 merge
     # Pandas(merge) = SQL(Inner join, Outer join, Left Outer join, Right Outer join)
     # merge() 함수를 이용해서 join 작업을 수행(DataFrame의 결합)
@@ -438,11 +448,12 @@ published: true
     
     print("▼ right join")
     display(pd.merge(df1, df2, on="학번", how="right"))
+```
 <img width="240" alt="Screen Shot 2019-03-25 at 6 45 08 PM" src="https://user-images.githubusercontent.com/46523571/54909699-22a77300-4f2e-11e9-8284-625763494503.png">
 
 ## DataFrame이 제공하는 유용한 함수 merge(2)
 * merge : (2) key값이 다른 경우의 merge
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -453,11 +464,12 @@ published: true
     
     # df1과 df2의 키값이 다른 경우 사용법
     pd.merge(df1, df2, left_on="학번", right_on="학생학번", how="inner")
+```
 <img width="301" alt="Screen Shot 2019-03-25 at 6 45 32 PM" src="https://user-images.githubusercontent.com/46523571/54909802-56829880-4f2e-11e9-831d-6aeb54e165ad.png">
 
 ## DataFrame이 제공하는 유용한 함수 merge(3)
 * merge : (3) column기반과 index기반의 merge
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -469,19 +481,8 @@ published: true
     display(df1)   #학번이 column으로 잡히고
     display(df2)   #학번이 index로 잡힘
     display(pd.merge(df1, df2, left_on="학번", right_index=True, how="inner"))
+```
 <img width="250" alt="Screen Shot 2019-03-25 at 6 47 03 PM" src="https://user-images.githubusercontent.com/46523571/54909848-71550d00-4f2e-11e9-82cb-e563a276bcc7.png">
 
-
-
-
-
-
-
-
-
-
-
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

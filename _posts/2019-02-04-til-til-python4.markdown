@@ -55,32 +55,31 @@ published: true
 > class가 가지는 기능 중 하나는 캡슐화(encapsulation)<br>
 > 관련이 있는 특성(field)과 기능(method)을 class라는 하나의 단위로 묶는 역할<br>
 
-
-<br>
-<br>
-
 ## python의 module
 * python의 변수, 함수, 클래스를 모아 놓은 파일, 다른 python program에서 불러다 사용할 수 있는 파일
 * import : module을 사용할 수 있도록 만들어 주는 keyword
 * import 모듈이름(파일명)  -> 파일은 홈화면에서 text 새로 만들어서 쓰면 된다.
 * import 모듈이름 as 별명
 * from 모듈이름 import 함수, 변수, 클래스
-###
+```
     import module1 as m1     # module1(모듈)을 as를 이용해 m1으로 축약해서 쓸 수 있다.
     
     print(module1.PI)
     # 결과값 : 3.1415926535
     print(m1.PI)
     # 결과값 : 3.1415926535
-###    
+```
+
+```
     from module1 import my_sum    # 해당 module1에서 my_sum(해당 모듈안에 함수)을 사용한다는 의미
                                   # 여기서 module1을 라이브러리라 칭한다.
     
     print(my_sum(10, 20))
     # 결과값 : 30
-
+```
 
 ## module을 불러올 수 있는 폴더들이 있다.
+```
     import sys
     sys.path     # list
     sys.path.append("/Users/kang/Documents/Python/python_lib")      # list에 내가 원하는 요소를 붙인다.
@@ -96,6 +95,7 @@ published: true
      '/Users/kang/.ipython',
      '/Users/kang/Documents/Python/python_lib',
      '/Users/kang/Documents/Python/python_lib']
+```
         
 ## python module을 관리하기 위한 방안
 * 가장 일반적으로 쉽게 생각할 수 있는 방안
@@ -104,7 +104,7 @@ published: true
 * package는 결국 폴더로 표현
 * import 할 때 module이 package안에 포함되어 있으면
 * package이름을 명시해야 한다.
-### 
+```
     # 이렇게 써도 되지만 아래와 같이 from import를 일반적으로 많이 쓴다.
     
     import myPackage.inner.myModule
@@ -112,24 +112,13 @@ published: true
     
     import myPackage.inner.myModule as haha     # as를 써서 줄일 수 있다.
     print(haha.my_variable)
+```
     
-
 ## 가장 정형화된 형태
+```
     from myPackage.inner import myModule     #myPackage.inner로부터 myModule 임포트해
     print(myModule.my_variable)
-    
-
-
-
-
-
-
-
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

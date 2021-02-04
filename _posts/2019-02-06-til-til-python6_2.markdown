@@ -24,9 +24,6 @@ published: true
 >  - Series를 여러개 컬럼형태로 모아 놓은게 DataFrame
 >  - 다른 데이터 타입을 가져도 된다.
 
-<br>
-<br>
-
 ## import pandas as pd
 * pandas를 사용하기 위해서는 module을 import 사용해야한다.
 * 일반적으로 as(얼리아싱)을 써서 pd라고 정해서 사용한다.(전세계적으로 pd를 쓴다.)
@@ -35,7 +32,7 @@ published: true
 * DataFrame : 가장 흔하게 사용하는 자료구조
 * 2차원 배열, 행과 열로 구성되어 있는 Table형태의 자료형
 * DataFrame 생성(Dictionary를 이용해서)
-###
+```
     import numpy as np
     import pandas as pd
     #                 ▼ 값에 리스트 또는 집합형태의 자료는 모두 가능
@@ -46,9 +43,10 @@ published: true
     
     df = pd.DataFrame(data)
     display(df)
+```
 <img width="210" alt="Screen Shot 2019-03-25 at 5 30 04 PM" src="https://user-images.githubusercontent.com/46523571/54905161-aad44b00-4f23-11e9-9e79-2601dfea5c39.png">
 
-###    
+```
     import numpy as np
     import pandas as pd
     
@@ -72,8 +70,10 @@ published: true
     
     # DataFrame 전체 요소의 개수
     print(df.size)     # 결과값 : 15   -> 전체 요소의 개수
+```
 
 ## 표로 표시 방법
+```
     import numpy as np
     import pandas as pd
 
@@ -83,18 +83,21 @@ published: true
     
     df = pd.DataFrame(data)
     display(df)   # column에 대한 정보도 확인이 가능
+```
 <img width="222" alt="Screen Shot 2019-03-25 at 5 32 30 PM" src="https://user-images.githubusercontent.com/46523571/54905272-fbe43f00-4f23-11e9-833a-0eb64e66ecc2.png">
 
-###    
+```
     print(df.index)   # 결과값 : RangeIndex(start=0, stop=5, step=1)
     df.columns        # column에 대한 기본 정보를 알려줌
                       # Index(['names', 'year', 'points'], dtype='object')
     df.index.name = "학생순번"     # 인덱스명 정의
     df.columns.name = "학생정보"   # 컬럼명 정의
     display(df)
+```
 <img width="258" alt="Screen Shot 2019-03-25 at 5 33 04 PM" src="https://user-images.githubusercontent.com/46523571/54905305-0f8fa580-4f24-11e9-983e-a40f7213b3a4.png">
 
 ## 데이터 표준(CSV, XML, JSON)
+```
     # 일반적으로 데이터를 주고받기 위해서 데이터를 표현하는 표준
     # 1. CSV방식(comma seperated value)
     #    - ','를 기준으로 데이터를 분리해서 표현하는 방식
@@ -110,8 +113,10 @@ published: true
     # 3. JSON(JavaScript Object Notation)
     #    예) {age:10, name:홍길동, address:서울}      ※ 파이썬 딕셔너리와 비슷
     #    - 장점 : 유지보수성이 좋다. XML보다 데이터 크기도 작다.
+```
 
 ## CSV
+```
     # CSV파일로부터 데이터를 읽어서 DataFrame을 생성
     
     import numpy as np
@@ -120,9 +125,11 @@ published: true
     df = pd.read_csv("./data/sample/student.csv")   # data 폴더 참고
     print(df)
     display(df)
+```
 <img width="243" alt="Screen Shot 2019-03-25 at 5 35 32 PM" src="https://user-images.githubusercontent.com/46523571/54905454-68f7d480-4f24-11e9-8e8a-4a08ddb2f44e.png">
 
 ###
+```
     # CSV파일로부터 데이터를 읽어서 DataFrame을 생성
     
     import numpy as np
@@ -138,9 +145,11 @@ published: true
     #ratings = np.loadtxt("./data/movie/ratings.csv",   # 파일 경로
     #                    delimiter=",",        # delimiter 구분자 뭐야?
     #                    skiprows=1)           # 첫번째줄은 스킵해줘
+```
 <img width="677" alt="Screen Shot 2019-03-25 at 5 37 55 PM" src="https://user-images.githubusercontent.com/46523571/54905587-becc7c80-4f24-11e9-991b-2f2c575598b4.png">
 
 ## 중간 정리
+```
     # Pandas
     # 1. Series
     #    - sumpy 1차원 array와 유사
@@ -149,8 +158,10 @@ published: true
     # 2. DataFrame
     #    - 여러개의 Series를 모아놓은 Table형식의 자료구조
     #    - Dictionary를 이용한 DataFrame 생성
+```
 
 ## Dictionary를 이용한 DataFrame 생성
+```
     import numpy as np
     import pandas as pd
     
@@ -172,9 +183,11 @@ published: true
     
     df = pd.DataFrame(my_dict)   # 자동으로 key값을 column으로 변환, value값은 row로 변환, index는 지정해주지 않으면 0부터 시작
     display(df)
+```
 <img width="234" alt="Screen Shot 2019-03-25 at 5 40 07 PM" src="https://user-images.githubusercontent.com/46523571/54905729-0d7a1680-4f25-11e9-8bd7-6364eb93a5b2.png">
 
 ## DataFrame의 index와 column 재정의
+```
     #DataFrame의 index와 column을 재정의하려면 어떻게?
     import numpy as np
     import pandas as pd
@@ -189,9 +202,11 @@ published: true
                      columns=["학과","이름","학점","학년","등급"],
                      index=["one","two","three","four"])
     display(df)
+```
 <img width="471" alt="Screen Shot 2019-03-25 at 6 01 59 PM" src="https://user-images.githubusercontent.com/46523571/54907117-220bde00-4f28-11e9-93d2-a1a021736727.png">
 
 ## DataFrame 기본분석함수 describe()
+```
     #DataFrame은 기본 분석 함수를 가지고 있다.
     import numpy as np
     import pandas as pd
@@ -206,9 +221,11 @@ published: true
     
     #DataFrame에 대해 기본 집계함수를 실행해서 결과를 출력
     display(df.describe())
+```
 <img width="232" alt="Screen Shot 2019-03-25 at 6 02 48 PM" src="https://user-images.githubusercontent.com/46523571/54907179-3c45bc00-4f28-11e9-9383-cd519df899f8.png">
 
 ## DataFrame 특정 column 출력방법
+```
     # 특정 컬럼만 출력하고 싶다.
     import numpy as np
     import pandas as pd
@@ -229,9 +246,10 @@ published: true
     df.이름
     
     type(df["이름"])   # 결과값 : pandas.core.series.Series
+```
 <img width="403" alt="Screen Shot 2019-03-25 at 6 03 27 PM" src="https://user-images.githubusercontent.com/46523571/54907221-4ebff580-4f28-11e9-8f1e-e7d8fd87189b.png">
 
-###
+```
     # DataFrame에서 특정 column을 출력하면 view가 된다.
     # View를 사용하지 않고 새로운 Series를 생성하려면 copy()를 이용
     
@@ -255,9 +273,11 @@ published: true
     new_name["three"] = "유관순"   # three 홍길동 -> three 유관순 으로 변경
     display(new_name)
     display(df)
+```
 <img width="310" alt="Screen Shot 2019-03-25 at 6 04 14 PM" src="https://user-images.githubusercontent.com/46523571/54907269-69926a00-4f28-11e9-91c5-e8626f2e2686.png">
 
 ## indexcing 3가지 & slicing
+```
     # indexing에는 3가지 방법이 있다.
     # 일반 indexing, boolean indexing, fancy indexing & slicing
     
@@ -288,8 +308,10 @@ published: true
     # - index 부분에 index 배열을 사용하는 indexing 방법
     print("fancy indexing---------------------------------")
     print(arr[[1,4]])   # 결과값 : [2 5]
+```
 
 ## DataFrame에 fancy indexing 사용 방법
+```
     # DataFrame에 대해서 fancy indexing을 사용할 수 있다.
     import numpy as np
     import pandas as pd
@@ -306,9 +328,11 @@ published: true
     display(df["이름"])   #"이름"의 Series만 가져온다.
     display(df[["이름","학년"]])   #"이름"과 "학년" 두개를 fancy indexing 했으니
                                  #Series가 아닌 DataFrame으로 나온다.
+```
 <img width="333" alt="Screen Shot 2019-03-25 at 6 06 43 PM" src="https://user-images.githubusercontent.com/46523571/54907404-c3932f80-4f28-11e9-8c19-8c4b0010291a.png">
 
 ## 특정 column 값 추가하는 방법
+```
     # indexcing을 이용해 DataFrame에서 특정 column을 선택할 수 있다.
     import numpy as np
     import pandas as pd
@@ -334,10 +358,12 @@ published: true
                          ["김길동", "F"],
                          ["김길동", "F"]]
                         
-    display(df)        
+    display(df)   
+```     
 <img width="325" alt="Screen Shot 2019-03-25 at 6 07 19 PM" src="https://user-images.githubusercontent.com/46523571/54907445-dc034a00-4f28-11e9-91e5-489d77e47074.png">
 
 ## 새로운 column 추가 방법 4가지
+```
     # 기존 DataFrame에 새로운 column을 추가해 보기
     # 새로운 column을 정의하고 그 값을 명시
     # scalar, python list, numpy array, pandas Series를 이용
@@ -381,10 +407,12 @@ published: true
     df["나이"] = pd.Series([20,22,21],
                           index=["one","two","four"])
     display(df)    
+```
 <img width="421" alt="Screen Shot 2019-03-25 at 6 08 27 PM" src="https://user-images.githubusercontent.com/46523571/54907504-09e88e80-4f29-11e9-9cd0-c63ff35f8784.png">
 <img width="851" alt="Screen Shot 2019-03-25 at 6 08 40 PM" src="https://user-images.githubusercontent.com/46523571/54907519-0fde6f80-4f29-11e9-9f8e-8111427a6b96.png">
 
 ## 기존 column에 연산을 해서 새로운 column 생성
+```
     # 기존 DataFrame에 새로운 column을 추가해 보기
     # 기존 column에서 연산을 해서 새로운 column을 생성할 수 있다.
     
@@ -411,9 +439,11 @@ published: true
     print("▼ 학점 가지고 장학여부를 확인 할 수 있다.")
     df["장학여부"] = df["학점"] > 5.0
     display(df)
+```
 <img width="396" alt="Screen Shot 2019-03-25 at 6 09 35 PM" src="https://user-images.githubusercontent.com/46523571/54907566-2ab0e400-4f29-11e9-9fa4-4d01aa3bc3f4.png">
 
 ## 특정 column 삭제 방법(1),(2-1),(2-2)
+```
     # DataFrame에 특정 column을 삭제할 수 있다.
     import numpy as np
     import pandas as pd
@@ -445,9 +475,11 @@ published: true
     new_df = df.drop("등급", axis = 1, inplace = False)  
                 #inplace=False(df원본은 건들지 말고 삭제처리한 결과df를 return 하라는 의미(복사본)
     display(df)
+```
 <img width="495" alt="Screen Shot 2019-03-25 at 6 10 19 PM" src="https://user-images.githubusercontent.com/46523571/54907607-46b48580-4f29-11e9-8de3-7ca4c465107e.png">
 
 ## DataFrame의 행 제어
+```
     # row(행) 제어할 때 index를 사용할 수 없다.
     # row(행) 제어할 때 slicing은 사용할 수 없다.   #원본에서 부분을 view로 뽑아오기 때문에 가능
     
@@ -475,9 +507,11 @@ published: true
     
     print("값 slicing")
     display(df["one":"three"])
+```
 <img width="306" alt="Screen Shot 2019-03-25 at 6 11 24 PM" src="https://user-images.githubusercontent.com/46523571/54907671-6ba8f880-4f29-11e9-93f5-689ea7c038b7.png">
 
 ## DataFrame의 행 제어 loc
+```
     import numpy as np
     import pandas as pd
     
@@ -506,10 +540,12 @@ published: true
     
     print("▼ .loc 사용하여 boolean indexing을 사용하여 특정값들(이름과 학점) 출력 방법")
     display(df.loc[df["학점"] > 3.0, ["이름","학점"]])  #성적이 3.0 이상인 애들의 이름과 학점 출력 방법
+```
 <img width="397" alt="Screen Shot 2019-03-25 at 6 12 44 PM" src="https://user-images.githubusercontent.com/46523571/54907749-9bf09700-4f29-11e9-8740-5dcedba1ca39.png">
 <img width="695" alt="Screen Shot 2019-03-25 at 6 12 50 PM" src="https://user-images.githubusercontent.com/46523571/54907755-a01cb480-4f29-11e9-85ea-62cdda7315df.png">
 
 ## 중간정리
+```
     # Pandas
     # 1. Series
     # 2. DataFrame (일반적으로 사용하는 자료구조)
@@ -569,8 +605,10 @@ published: true
     df.loc[["2019001","2019003"]]   # fancy indexing 가능
     df.loc["2019001","이름"]   # 특정 행에대한 열 값 출력
     df.loc["2019001",["이름", "학과"]]   # 특정 행에대한 열 값 출력
+```
 
 ## DataFrame에 새로운 행 추가
+```
     import numpy as np
     import pandas as pd
     
@@ -601,10 +639,12 @@ published: true
     print("▼ 행 삭제")
     df.drop("one",axis=0,inplace=True)   # axis=0 행방향으로 삭제
     display(df)
+```
 <img width="512" alt="Screen Shot 2019-03-25 at 6 14 24 PM" src="https://user-images.githubusercontent.com/46523571/54907838-d6f2ca80-4f29-11e9-89c6-9e6146fa80b1.png">
 <img width="329" alt="Screen Shot 2019-03-25 at 6 14 29 PM" src="https://user-images.githubusercontent.com/46523571/54907851-dfe39c00-4f29-11e9-8f5c-8b463b9b1d46.png">
 
 ## NaN 값의 처리(1) 처리
+```
     # NaN값의 처리
     
     import numpy as np
@@ -622,9 +662,11 @@ published: true
     df["D"] = [7,np.nan,4,np.nan]   # "D" column을 추가하고 값을 넣기  # np.nan은 실수
     # nan을 쉽게 생각하면 홈페이지 가입할 때 빈칸 냅두고 작성 한 것을 nan 처리한다고 생각하면 된다.
     display(df)
+```
 <img width="245" alt="Screen Shot 2019-03-25 at 6 24 45 PM" src="https://user-images.githubusercontent.com/46523571/54908454-4a490c00-4f2b-11e9-9ccf-9ced66ddef44.png">
 
 ## NaN 값의 처리(2) 삭제
+```
     # 삭제
     # 결측값을 제거
     # NaN이 포함된 행을 모두 삭제(#nan 삭제 방법)
@@ -638,8 +680,10 @@ published: true
     #df.dropna(how="all", inplace=True) #how="all"는 모든 column이 NaN이면 해당 행을 삭제
                                         # inplace=True 원본지우기, inplace=False 원본보존 
     #display(df)
+```
 
 ## NaN 값의 처리(3) 대체
+```
     # 대체
     # 다른 값으로 대체 처리(NaN이 많은 경우 다른 값으로 대체 처리할때가 있다.)
     df.fillna(value=0, inplace=True)     # 기본값은 False이다.   
@@ -650,12 +694,8 @@ published: true
     #display(df.isnull())   # 전체 True/False 값으로 변경하여 NaN값만 True로 변경 나머진 False
     
     #(2)
-    #display(df.isnull()["D"]) # 해당 열에서만 True/False 값으로 변경하여 NaN값만 True로 변경 나머진 False  
-
-
-
+    #display(df.isnull()["D"]) # 해당 열에서만 True/False 값으로 변경하여 NaN값만 True로 변경 나머진 False 
+``` 
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

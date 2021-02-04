@@ -1,12 +1,12 @@
 ---
 layout: post
-title: '[TIL] Tensorflow에 대해서'
+title: '[TIL] Machine Learning Tensorflow에 대해서'
 subtitle: 
 categories: til
 tags: til
 comments: true
-date: 2019-03-26 00:12:17 +0900
-lastmod: 2019-03-26 12:30:17 +0900
+date: 2019-03-25 00:12:17 +0900
+lastmod: 2019-03-25 12:30:17 +0900
 sitemap:
   changefreq: daily
   priority: 1
@@ -20,14 +20,12 @@ Tensorflow에 대해서<br />
 # Tensorflow
 > google이 만든 머신러닝을 위한 library(python, c 언어로 구성)<br>
 
-<br>
-
 ## import tensorflow as tf
 * tensorflow를 사용하기 위해서는 module을 import 사용해야한다.
 * 일반적으로 as(얼리아싱)을 써서 tf라고 정해서 사용한다.(전세계적으로 tf를 쓴다.)
 
-
-## tensorflow를 이용한 Hello World 출력해보자.    
+## tensorflow를 이용한 Hello World 출력해보자.   
+``` 
     # tesorflow의 구성요소(3가지)
     # 1. node : 수학적인 연산을 담당, 데이터의 입출력 담당.
     # 2. Tensor : 다차원 array(matrix(2차원))    -> 데이터
@@ -42,10 +40,13 @@ Tensorflow에 대해서<br />
     # constant       # 상수
     # shape : (3,)   # 데이터 3개의 1차원,   (3,4) 2차원   (2,3,4) 3차원    
                      # () 차원이 없다. 즉 리스트가 아닌 scalar라는 의미.
-###
+
+
     # 결과값 : Hello World
+```
 
 ## 간단한 수학 연산 수행
+```
     import tensorflow as tf
     
     node1 = tf.constant(10, dtype=tf.float32)   # 노드가 갖고 잇는 상수값을 만들 때 constant 사용
@@ -57,8 +58,10 @@ Tensorflow에 대해서<br />
     sess = tf.Session()
     print(sess.run(node3))                 # 결과값 : 30.0 
     print(sess.run([node1,node2,node3]))   # 결과값 :  [10.0, 20.0, 30.0] # 배열의 리스트 형태  
+```
 
 ## placeholder(데이터를 받아들이는 그릇)
+```
     import tensorflow as tf
     
     node1 = tf.placeholder(dtype=tf.float32)   # 그릇을 만들었기 때문에 나중에 값을 채워줘야 함.
@@ -81,8 +84,10 @@ Tensorflow에 대해서<br />
             1
             2.0
     # 즉 들어가야할 값에 list, dictionary, numpy array 등 값이 들어 갈 수 있다.
+```
 
 ## tensors의 다차원 매트릭스
+```
     import tensorflow as tf
     
     node1 = tf.constant(3, dtype=tf.float32)
@@ -90,8 +95,10 @@ Tensorflow에 대해서<br />
     
     node2 = tf.constant([1,2,3], dtype=tf.float32)
     print(node2)    # 결과값 : Tensor("Const_20:0", shape=(3,), dtype=float32)
+```
 
 ## 간단한 linear regression을 이용한 mechine learning (1)
+```
     #(1)
     # 간단한 linear regression을 이용한 mechine learning
     # 여기서 간단한 의미는 x축 하나, y축 하나라는 의미.
@@ -132,7 +139,9 @@ Tensorflow에 대해서<br />
         # train을 실행시켜서 cost값을 낮추는 작업  # [] 안에 실행할 노드를 다 적는다.
         if step % 300 == 0:   # 300번 반복 될 때마다 출력한다는 if문
             print("w:{}, b:{}, cost:{}".format(w_val,b_val,cost_val))
-###            
+
+
+
     # 결과값 : 
     w:[1.0325751], b:[0.5345425], cost:8.078195571899414
     w:[2.007141], b:[0.9837667], cost:3.798652323894203e-05
@@ -143,9 +152,11 @@ Tensorflow에 대해서<br />
     w:[2.000196], b:[0.99955595], cost:2.8471143664887677e-08
     w:[2.0000968], b:[0.9997812], cost:6.9046754980206515e-09
     w:[2.0000463], b:[0.999895], cost:1.5799438424224377e-09
-    w:[2.0000246], b:[0.9999456], cost:4.3125206183880493e-10        
+    w:[2.0000246], b:[0.9999456], cost:4.3125206183880493e-10      
+```  
 
 ## 간단한 linear regression을 이용한 mechine learning (2)
+```
     #(2)
     # 간단한 linear regression을 이용한 mechine learning
     # 여기서 간단한 의미는 x축 하나, y축 하나라는 의미.
@@ -194,8 +205,10 @@ Tensorflow에 대해서<br />
             
     # 학습 끝! 
     # Prediction
-    sess.run(H,feed_dict={x:10})   #H 가설, feed_dict=  x값에 10이 들어가면 값이 얼마니?   
-###                                     
+    sess.run(H,feed_dict={x:10})   #H 가설, feed_dict=  x값에 10이 들어가면 값이 얼마니?  
+
+
+
     # 결과값 : 
     w:[1.3896229], b:[-0.06446765], cost:6.904306888580322
     w:[2.142508], b:[0.676046], cost:0.015127833932638168
@@ -209,6 +222,7 @@ Tensorflow에 대해서<br />
     w:[2.000444], b:[0.99899125], cost:1.4664580305634445e-07                                     
     
     array([21.001682], dtype=float32)
+```
 
 ## 기본적인 Linear regression에 대한 예제
 * training data set(준비 데이터)
@@ -221,7 +235,7 @@ Tensorflow에 대해서<br />
 * 실제 학습을 진행하는 과정
 * 직선 그리기
 * Prediction(예측)
-###
+```
     %matplotlib inline
     # 기본적인 linear regression에 대한 예제
     
@@ -284,20 +298,25 @@ Tensorflow에 대해서<br />
     # 이런 경우 학습이 제대로 이루어지지 않은 상태이다. 
     # 입력데이터에 대한 처리가 이루어져야 정상적으로 학습이 진행 될 수 있다. 
     # 만약 학습이 정상적으로 이루어졌으면 W,b값이 결정되게 된다.
-###     
+
+
+
     # 직선 그리기
     x_line = np.arange(0,20,1)
     y_line = np.array([ sess.run(W) * t + sess.run(b) for t in x_line ])
     plt.plot(x_line,y_line,"r")
     plt.show()
+```
 <img width="468" alt="Screen Shot 2019-03-26 at 1 22 53 AM" src="https://user-images.githubusercontent.com/46523571/54936382-b34d7580-4f65-11e9-9846-6094fcb9c2bb.png">
 
-###    
+```
     # Prediction(예측)
     sess.run(H,feed_dict={X:15})
     # 결과값 : array([32.628284], dtype=float32)
+```
 
 ## ozone데이터를 이용한 linear regression 예제
+```
     %matplotlib inline
     
     import numpy as np
@@ -328,10 +347,12 @@ Tensorflow에 대해서<br />
     plt.scatter(x,y)   # 흙뿌리기
     plt.plot(x,w*x+b,"r")   # 선
     plt.show()
+```
 
 <img width="486" alt="Screen Shot 2019-03-29 at 11 33 02 AM" src="https://user-images.githubusercontent.com/46523571/55205505-7d82e800-5216-11e9-8759-0e1b33f832d4.png">
 
 ## 다중선형회귀분석 Multivariable(multiple) linear regression - 성적예측문제
+```
     # 다중선형회귀분석 Multivariable(multiple) linear regression
     # 입력파라미터가 많다는 뜻. x1,x2,x3=입력파라미터, y= label
     
@@ -389,10 +410,12 @@ Tensorflow에 대해서<br />
     sess.run(H,feed_dict={X:[[60, 70, 50]]})
     
     # (참고) 결과값에 NaN이 뜨는 이유는 최저값에서 계속 왔다갔다 한다는 의미이다.
+```
 
 <img width="387" alt="Screen Shot 2019-03-29 at 11 34 08 AM" src="https://user-images.githubusercontent.com/46523571/55205528-9f7c6a80-5216-11e9-8e0c-a4cd4ddae151.png">
 
 ## 다중선형회귀분석 Multivariable(multiple) linear regression - 오존 예측 문제
+```
     # 다중선형회귀분석 Multivariable(multiple) linear regression
     # 입력파라미터가 많다는 뜻. x1,x2,x3=입력파라미터, y= label
     
@@ -465,8 +488,10 @@ Tensorflow에 대해서<br />
     
     # Prediction(예측)
     sess.run(H,feed_dict={X:[[300, 13.4, 97]]})
+```
 
 ## 다중선형회귀분석 Multivariable(multiple) linear regression - 오존 예측 문제 sklearn 사용
+```
     import pandas as pd
     import tensorflow as tf
     import matplotlib
@@ -517,11 +542,12 @@ Tensorflow에 대해서<br />
     
     # Prediction(예측)
     sess.run(H,feed_dict={X:[[300, 13.4, 97]]})
+```
 
 ## Simple Linear Regression
 * Simple Linear Regression (입력파라미터가 1개라는 걸 simple Linear Regression)
 * Multiple Linear Regression (입력파라미터가 여러개라는 걸 multiple Linear Regression)
-###
+```
     import tensorflow as tf
     import matplotlib
     import matplotlib.pyplot as plt
@@ -571,10 +597,12 @@ Tensorflow에 대해서<br />
     #합격하려면 5.9시간 정도는 공부를 해야 합격할 수 있다는 예측이 가능해 진다.
     
     # Prediction(예측)
+```
 
 <img width="516" alt="Screen Shot 2019-03-29 at 11 38 49 AM" src="https://user-images.githubusercontent.com/46523571/55205701-3f39f880-5217-11e9-9b7b-1fd2efeaef97.png">
 
 ## 로지스틱 회귀(Logistic Regression)
+```
     %matplotlib inline
     import numpy as np
     import matplotlib
@@ -599,10 +627,12 @@ Tensorflow에 대해서<br />
     
     # clf 모델에 대해서 그림
     mglearn.plots.plot_2d_separator(clf,x,fill=False, eps=0.5)
+```
     
 <img width="448" alt="Screen Shot 2019-03-29 at 11 39 20 AM" src="https://user-images.githubusercontent.com/46523571/55205715-4f51d800-5217-11e9-8b91-eebb1f151a90.png">
 
 ## Tensorflow를 이용한 logistiic regression
+```
     # Tensorflow를 이용한 logistiic regression
     
     import tensorflow as tf
@@ -671,10 +701,12 @@ Tensorflow에 대해서<br />
     print("예측값 : {}".format(sess.run(predict,feed_dict={X:[[5,1]]})))  # 5시간에 1년  합격
     print("예측값 : {}".format(sess.run(predict,feed_dict={X:[[4,1]]})))  # 4시간에 1년  합격
     print("예측값 : {}".format(sess.run(predict,feed_dict={X:[[3,1]]})))  # 3시간에 1년  탈락
+```
     
 <img width="292" alt="Screen Shot 2019-03-29 at 11 39 55 AM" src="https://user-images.githubusercontent.com/46523571/55205740-6395d500-5217-11e9-82c8-618dadbbdb9c.png">
 
 ## 실습예제 1 : 타이타닉
+```
     # Titanic 분석(Tensorflow)
     import tensorflow as tf
     import numpy as np
@@ -755,6 +787,7 @@ Tensorflow에 대해서<br />
     print("-" * 50)
     print("정확도(%) : {}".format(100 * sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     print("※ 참고 : 학습한 데이터를 갖고 예측을 한거라 정확도가 엄청 높게 나온다.")
+```
 
 <img width="610" alt="Screen Shot 2019-03-29 at 11 41 19 AM" src="https://user-images.githubusercontent.com/46523571/55205783-95a73700-5217-11e9-97ba-1a40d7bae937.png">
 
@@ -764,7 +797,7 @@ Tensorflow에 대해서<br />
 * gpa 학부 성적
 * rank 등급(1 > 2 > 3)
 * 주어진 데이터의 70%를 학습용으로 사용하고 나머지 30%를 검증용으로 사용.
-###
+```
     # admission 분석(Tensorflow)
     import tensorflow as tf
     import numpy as np
@@ -852,10 +885,12 @@ Tensorflow에 대해서<br />
         print("축하합니다. 합격입니다. {}".format(result))
     else:
         print("불합격입니다. {}".format(result))
+```
 
 <img width="559" alt="Screen Shot 2019-03-29 at 11 42 10 AM" src="https://user-images.githubusercontent.com/46523571/55205810-b3749c00-5217-11e9-96e3-6b379d8be5ac.png">
 
 ## 중간정리
+```
     # < Machine Learning >
     # - Supervised Learning (지도학습)
     #   - training data set에 label이 있다.(Y의 결과값이 있는 것). 입력값에 의해서 결과값이 나온다.
@@ -876,9 +911,11 @@ Tensorflow에 대해서<br />
     
     # - UnSupervised Learning (비지도학습)
     #   - training data set에 label이 없다.
+```
 
 
 ## Multinomial Classification 실습 p.87
+```
     import tensorflow as tf
     
     # 1. data loading
@@ -946,10 +983,12 @@ Tensorflow에 대해서<br />
         print("B")
     else:
         print("C")
+```
 
 <img width="298" alt="Screen Shot 2019-03-29 at 11 44 50 AM" src="https://user-images.githubusercontent.com/46523571/55205914-12d2ac00-5218-11e9-84a6-39058584dc56.png">
 
 ## 실습예제 : BMI p.102
+```
     import tensorflow as tf
     import numpy as np
     import pandas as pd
@@ -1025,10 +1064,12 @@ Tensorflow에 대해서<br />
     
     print("정확도(%) : {}".format(100 * sess.run(accuracy, feed_dict={X:test_x_data, Y:test_y_data})))
     print("예측도 : {}".format(sess.run(H, feed_dict={X:scaler.transform([[188,75]])})))
+```
 
 <img width="498" alt="Screen Shot 2019-03-29 at 11 45 41 AM" src="https://user-images.githubusercontent.com/46523571/55205954-33026b00-5218-11e9-8029-ef1f254105ff.png">
 
 ## MINIST - Multinomail Classfication
+```
     # MINIST - Multinomail Classfication
     # 입력데이터 - 이미지에 대한 pixel data가 들어온다.
     # 원래 이미지 데이터는 3차원 데이터인데 흑백이고, 
@@ -1116,19 +1157,13 @@ Tensorflow에 대해서<br />
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:mnist.test.images, Y:mnist.test.labels})))
     
     #정확도가 90% 정도가 나온다. 그 이상가기 힘들어서 deep learning 기술을 사용하면 99%까지 올릴 수 있다.
-
-
-
-
+```
 
 ## tensorflow 버전 확인.
+```
     import tensorflow as tf
     print(tf.__version__)
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

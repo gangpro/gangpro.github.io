@@ -13,14 +13,15 @@ sitemap:
 published: true
 ---
 
-파이썬 Control Statement에 대해서 <br />
+파이썬 Control Statement에 대해서 </br>
+
+
 
 # Python Control Statement
-> Python Control Statement에 대해서    
-<br>
-<br>
+> Python Control Statement에 대해서
 
 ## 기본 for문 (1)
+```
     my_list = [5, 8, 2, 4, 10]
     
     sum = 0
@@ -29,8 +30,10 @@ published: true
         
     print("리스트의 총 합은 : {}".format(sum))
     # 결과값 : 리스트의 총 합은 : 29
+```
     
 ## 기본 for문 (2)
+```
     my_list = [5, 8, 2, 4, 10]
     
     sum = 0
@@ -39,8 +42,10 @@ published: true
         
     print("리스트의 총 합은 : {}".format(sum))
     # 결과값 : 리스트의 총 합은 : 29
+```
     
 ## 기본 for문 (3)
+```
     my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     
     score1 = [ tmp * 2 for tmp in my_list]
@@ -48,8 +53,10 @@ published: true
     
     print(score1)
     # 결과값 : [2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
     
 ## 기본 for문 (4)
+```
     my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     
     score1 = [ tmp * 2 for tmp in my_list if tmp % 2 == 0]
@@ -60,12 +67,11 @@ published: true
     
     print(score1)
     # 결과값 : [4, 8, 12, 16]
+```
 
 
 
 
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

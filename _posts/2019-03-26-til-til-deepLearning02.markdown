@@ -20,11 +20,14 @@ Deep Learning CNN 이미지 처리<br />
 # Deep Learning CNN
 
 ## gpu_env 가상환경 설치 후 확인 
+```
     import tensorflow as tf
     tf.test.is_gpu_available()
+```
     
 # CNN(Convolution Neural Networks) 이미지 처리
 ## Simple CNN 이미지 처리 - Convolution + Relu 처리(1)(보통 처리)
+```
     # pdf.p.82
     # 보통 처리 방법
     import tensorflow as tf
@@ -77,10 +80,12 @@ Deep Learning CNN 이미지 처리<br />
     
     sess = tf.Session()
     sess.run(conv2d)
+```
 
 <img width="518" alt="Screen Shot 2019-03-29 at 1 04 54 PM" src="https://user-images.githubusercontent.com/46523571/55208875-45ce6d00-5223-11e9-9050-882332baa94c.png">
 
 ## Simple CNN 이미지 처리 - Convolution + Relu 처리(2)(깔끔한 처리)
+```
     # pdf.p.82
     # 깔끔한 처리 방법
     import tensorflow as tf
@@ -109,8 +114,10 @@ Deep Learning CNN 이미지 처리<br />
                               strides=1, activation=tf.nn.relu)
     sess = tf.Session()
     sess.run(conv2d)
+```
 
 ## Simple CNN 이미지 처리 - MAX pooling 처리 방법
+```
     import tensorflow as tf
     import numpy as np
     
@@ -122,10 +129,12 @@ Deep Learning CNN 이미지 처리<br />
     # strides= 스트라이드
     pool = tf.nn.max_pool(images, ksize=[1,2,2,1], strides=[1,1,1,1], padding="SAME")
     sess.run(pool)
+```
 
 <img width="351" alt="Screen Shot 2019-03-31 at 1 57 01 AM" src="https://user-images.githubusercontent.com/46523571/55279139-76fc8980-5358-11e9-9451-5346db6068e1.png">
 
 ## MNIST 이미지 1장으로 image 처리(1)
+```
     from tensorflow.examples.tutorials.mnist import input_data
     import tensorflow as tf
     import matplotlib
@@ -140,10 +149,12 @@ Deep Learning CNN 이미지 처리<br />
     # 2번 처리 확인차 실행
     plt.imshow(img.reshape(28,28), cmap="Greys")
     plt.show
+```
 
 <img width="547" alt="Screen Shot 2019-03-31 at 1 58 48 AM" src="https://user-images.githubusercontent.com/46523571/55279147-8bd91d00-5358-11e9-9bee-0bc992c641eb.png">
 
 ## MNIST 이미지 1장으로 Convolution 처리(2)
+```
     from tensorflow.examples.tutorials.mnist import input_data
     import tensorflow as tf
     import matplotlib
@@ -197,10 +208,12 @@ Deep Learning CNN 이미지 처리<br />
         axes[idx].imshow(t_img.reshape(14,14), cmap="Greys")
     
     plt.show()
+```
 
 <img width="575" alt="Screen Shot 2019-03-31 at 1 59 25 AM" src="https://user-images.githubusercontent.com/46523571/55279158-a27f7400-5358-11e9-932c-da72092cbfd3.png">
 
 ## MNIST 이미지 1장으로 Convolution -> Relu -> MAX pooling 처리(3)
+```
     from tensorflow.examples.tutorials.mnist import input_data
     import tensorflow as tf
     import matplotlib
@@ -264,10 +277,12 @@ Deep Learning CNN 이미지 처리<br />
         axes[idx].imshow(t_img.reshape(7,7), cmap="Greys")
     
     plt.show()
+```
 
 <img width="553" alt="Screen Shot 2019-03-31 at 2 00 00 AM" src="https://user-images.githubusercontent.com/46523571/55279163-b6c37100-5358-11e9-9909-42c7c8c75f47.png">
 
 ## MNIST 이미지 1장으로 Convolution -> Relu -> MAX pooling -> CNN 처리(4)
+```
     # pdf.p.91
     from tensorflow.examples.tutorials.mnist import input_data
     import tensorflow as tf
@@ -397,10 +412,12 @@ Deep Learning CNN 이미지 처리<br />
     #= 정확도가 0.9909 나왔으니 99% 나옴.
     # 앙상블 
     # 100%를 만드는 방법은 이렇게 처리한 방법을 10번 한 다음 적절하게 처리 처리하면 99%보다 조금 더 높아진다.
+```
 
 <img width="552" alt="Screen Shot 2019-03-31 at 2 00 34 AM" src="https://user-images.githubusercontent.com/46523571/55279170-cb076e00-5358-11e9-9200-bc2d44d5b8f7.png">
 
 ## ensemble(앙상블)
+```
     # Kaggle MNIST 문제를 작성 중 예측값을 더 높이는 방법
     
     # 우리의 MNIST의 해결 Mechanism
@@ -425,8 +442,10 @@ Deep Learning CNN 이미지 처리<br />
     # ...
     # model 10 => [0.22, 0.12, 0.26, ..., 0.25]
     # 각 열을 sum => [0.47, 0.24, 0.72, ..., 0.57] 이렇게 합친 후 argmax처리 한 후 label과 비교해서 예측
+```
 
 ## 앙상블 간단한 예제
+```
     import tensorflow as tf
     
     # python class 안에 정의 되어있는 함수의 첫번째 키워드에 self를 넣어야한다. (참고: 꼭 그런건 아님..)
@@ -453,8 +472,10 @@ Deep Learning CNN 이미지 처리<br />
     stu2 = Student("김길동",30,50,80)
     # 각각 함수 호출
     print(stu2.calc_avg())            # 결과값 : 53.333333333333336
+```
 
 ## 앙상블 조금 더 상세히 체크
+```
     import tensorflow as tf
     import pandas as pd
     
@@ -497,15 +518,7 @@ Deep Learning CNN 이미지 처리<br />
     model1 = CNNModel("model3",sess)
     model1.build_model()   # model1의 graph를 생성
     model1.exec_train(x_data)    # 학습
-        
-        
-        
-
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

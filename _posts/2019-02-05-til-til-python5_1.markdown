@@ -21,7 +21,6 @@ published: true
 
 
 ## **NumPy Library**<br>
-
 np는 Numerical Python의 약자(수치적인 처리를 하는 파이썬)(수치 계산에 특화, 1차원 백터, 다차원 매트릭스)
 Vector(1차원 배열), Matrix(다차원 배열)연산에 상당한 편의성 제공
 Pandas, matplotlib의 기반이 되는 library
@@ -37,90 +36,89 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
 
 
 * 터미널 실행
-
-
-        $ KANGs-MacBook-Pro ~ $ cd ~
-          ↳ cd ~ : 최상위 폴더로 이동
+```
+    $ KANGs-MacBook-Pro ~ $ cd ~
+        ↳ cd ~ : 최상위 폴더로 이동
+```
 
 * 가상환경 접속
-
-
-        $ KANGs-MacBook-Pro ~ $ source activate data_env
+```
+    $ KANGs-MacBook-Pro ~ $ source activate data_env
+```
 
 * NumPy 설치
+```
+    $ KANGs-MacBook-Pro ~ $ conda install numpy
+    Solving environment: done
 
 
-        $ KANGs-MacBook-Pro ~ $ conda install numpy
-        Solving environment: done
+    ==> WARNING: A newer version of conda exists. <==
+        current version: 4.5.12
+        latest version: 4.6.3
 
+    Please update conda by running
 
-        ==> WARNING: A newer version of conda exists. <==
-          current version: 4.5.12
-          latest version: 4.6.3
-        
-        Please update conda by running
-        
-            $ conda update -n base -c defaults conda
+        $ conda update -n base -c defaults conda
 
 
 
-        ## Package Plan ##
-        
-          environment location: /anaconda3/envs/data_env
-        
-          added / updated specs: 
-            - numpy
-        
-        
-        The following packages will be downloaded:
-        
-            package                    |            build
-            ---------------------------|-----------------
-            mkl_fft-1.0.10             |   py36h5e564d8_0         156 KB
-            mkl_random-1.0.2           |   py36h27c97d8_0         382 KB
-            certifi-2018.11.29         |           py36_0         146 KB
-            ca-certificates-2019.1.23  |                0         126 KB
-            numpy-1.15.4               |   py36hacdab7b_0          47 KB
-            numpy-base-1.15.4          |   py36h6575580_0         4.1 MB
-            ------------------------------------------------------------
-                                                   Total:         4.9 MB
-        
-        The following NEW packages will be INSTALLED:
-        
-            blas:            1.0-mkl                       
-            intel-openmp:    2019.1-144                    
-            libgfortran:     3.0.1-h93005f0_2              
-            mkl:             2019.1-144                    
-            mkl_fft:         1.0.10-py36h5e564d8_0         
-            mkl_random:      1.0.2-py36h27c97d8_0          
-            numpy:           1.15.4-py36hacdab7b_0         
-            numpy-base:      1.15.4-py36h6575580_0         
-        
-        The following packages will be UPDATED:
-        
-            ca-certificates: 2019.1.23-0           anaconda --> 2019.1.23-0      
-            certifi:         2018.11.29-py36_0     anaconda --> 2018.11.29-py36_0
-        
-        The following packages will be DOWNGRADED:
-        
-            openssl:         1.1.1-h1de35cc_0      anaconda --> 1.1.1a-h1de35cc_0
-        
-        
-        Proceed ([y]/n)?  y																		<- y
-         ↳ 설치를 원할 시 y 버튼을 클릭하고 엔터!
-        
-        
-        Downloading and Extracting Packages
-        mkl_fft-1.0.10       | 156 KB    | ##################################### | 100% 
-        mkl_random-1.0.2     | 382 KB    | ##################################### | 100% 
-        certifi-2018.11.29   | 146 KB    | ##################################### | 100% 
-        ca-certificates-2019 | 126 KB    | ##################################### | 100% 
-        numpy-1.15.4         | 47 KB     | ##################################### | 100% 
-        numpy-base-1.15.4    | 4.1 MB    | ##################################### | 100% 
-        Preparing transaction: done
-        Verifying transaction: done
-        Executing transaction: done
+    ## Package Plan ##
 
+        environment location: /anaconda3/envs/data_env
+
+        added / updated specs: 
+        - numpy
+
+
+    The following packages will be downloaded:
+
+        package                    |            build
+        ---------------------------|-----------------
+        mkl_fft-1.0.10             |   py36h5e564d8_0         156 KB
+        mkl_random-1.0.2           |   py36h27c97d8_0         382 KB
+        certifi-2018.11.29         |           py36_0         146 KB
+        ca-certificates-2019.1.23  |                0         126 KB
+        numpy-1.15.4               |   py36hacdab7b_0          47 KB
+        numpy-base-1.15.4          |   py36h6575580_0         4.1 MB
+        ------------------------------------------------------------
+                                                Total:         4.9 MB
+
+    The following NEW packages will be INSTALLED:
+
+        blas:            1.0-mkl                       
+        intel-openmp:    2019.1-144                    
+        libgfortran:     3.0.1-h93005f0_2              
+        mkl:             2019.1-144                    
+        mkl_fft:         1.0.10-py36h5e564d8_0         
+        mkl_random:      1.0.2-py36h27c97d8_0          
+        numpy:           1.15.4-py36hacdab7b_0         
+        numpy-base:      1.15.4-py36h6575580_0         
+
+    The following packages will be UPDATED:
+
+        ca-certificates: 2019.1.23-0           anaconda --> 2019.1.23-0      
+        certifi:         2018.11.29-py36_0     anaconda --> 2018.11.29-py36_0
+
+    The following packages will be DOWNGRADED:
+
+        openssl:         1.1.1-h1de35cc_0      anaconda --> 1.1.1a-h1de35cc_0
+
+
+    Proceed ([y]/n)?  y																		<- y
+        ↳ 설치를 원할 시 y 버튼을 클릭하고 엔터!
+
+
+    Downloading and Extracting Packages
+    mkl_fft-1.0.10       | 156 KB    | ##################################### | 100% 
+    mkl_random-1.0.2     | 382 KB    | ##################################### | 100% 
+    certifi-2018.11.29   | 146 KB    | ##################################### | 100% 
+    ca-certificates-2019 | 126 KB    | ##################################### | 100% 
+    numpy-1.15.4         | 47 KB     | ##################################### | 100% 
+    numpy-base-1.15.4    | 4.1 MB    | ##################################### | 100% 
+    Preparing transaction: done
+    Verifying transaction: done
+    Executing transaction: done
+```
  
 * 이제 jupyter notebook에서 Numpy import 사용 가능.
 
@@ -148,7 +146,7 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
 ## import numpy as np
 * numpy를 사용하기 위해서는 module을 import 사용해야한다.
 * 일반적으로 as(얼리아싱)을 써서 np라고 정해서 사용한다.(전세계적으로 np를 쓴다.)
-###
+```
     import numpy as np
     
     # python list
@@ -173,12 +171,13 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
                    #         [4 5 6]]     2행 3열짜리 2차원 배열구조( 수학적 매트릭스 )
         
     # 다시 말해, list를 이용해서 numpy array를 생성할 수 있다.
+```
 
 
 ## list를 이용해서 numpy array를 생성할 수 있다.
 * Q. data type이 가지각색인 list를 이용해서 numpy array를 만들면 어떻게 되는가?
 * A. 여러개의 data type이 섞여 있는 경우 모든 데이터를 문자열 형태로 바꾼다.
-###
+```
     import numpy as np
     
     my_list = [100,3.14,"홍길동",True]     # 다른 데이터 타입의 리스트
@@ -187,10 +186,11 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
 
     # 문자열을 기반으로 한 numpy array가 생성
     # 다른데이터 타입이 섞여 있는 경우 모든 데이터를 문자열 형태로 바꾼다. U32:유니코드
+```
 
 ## indexing 표현법
 * list indexing & array indexing
-###
+```
     import numpy as np
     
     # 5를 출력해보자
@@ -202,11 +202,11 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     print(arr)               # 결과값 : [[1 2 3]
                                         [4 5 6]]
     print(arr[1,1])          # 결과값 : 5   # array의 indexing    # 행과 열의 순서로 콤마로 구분
-
+```
 
 ## numpy array 생성시 data type을 지정할 수 있다.(정수를 실수로, 실수를 정수로 등)
 * 데이터타입을 잘못 선택하면 데이터 이상현상이 일어날 수 있다. 소수점을 날려버린다든가 등~
-###
+```
     import numpy as np
     
     my_list = [[1,2,3],[4,5,6]]
@@ -220,12 +220,13 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     print(arr)        # 결과값 : [['1' '2' '3']   # 배열의 내용을 출력
                                  ['4' '5' '6']]
     print(arr[1,1])   # 결과값 : 5
+```
 
 ## numpy array의 차원의 개수, 크기
 * .ndim
 * .shape
 * .size
-###
+```
     import numpy as np
     
     my_list = [1,2,3,4,5]
@@ -241,22 +242,24 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     print(arr.shape)    # 배열의 형태(행과 열의 개수) tuple로 출력   #결과값 : <- 2개 나오면 2차원(행, 열)
     print(len(arr))     # 2차원이지만 1차원 형태의 길이를 알아옴  #결과값 : 2 <- 행의 개수만 출력 #그래서잘안씀
     print(arr.size)     # 배열 안의 전체 요소의 개수   #결과값 : 6 < -행, 열 구분없이 요소만 출력
+```
 
 ## numpy array의 axis(축))
 * axis는 차원에 영향을 받는다.
 * nbarray가 1차원이면 axis = 0
 * nbarray가 2차원이면 axis = 0, axis = 1
 * nbarray가 3차원이면 axis = 0, axis = 1, axis = 2
-###
+
 * nbarray가 1차원이면 axis = 0
 * [1 2 3 4 5 6] 열 진행방향으로 진행하는군아라고 인식하면 된다.
-###
+
 * nbarray가 2차원이면 axis = 0, axis = 1
 * axis=0은 행의 방향(위에서 아래로), axis=1은 행의 방향(왼쪽에서 오른쪽으로)
 * [[1 2 3] 
 *  [4 5 6] 
 
 ## numpy array는 형태를 내가 원하는 차원으로 변환시킬 수 있다.
+```
     import numpy as np
     
     arr = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
@@ -285,8 +288,10 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
                                 #
                                 # [[ 9 10]
                                 #  [11 12]]]
+```
 
 ## numpy array의 type을 다른 type으로 변환
+```
     import numpy as np
     
     # 기본값
@@ -303,8 +308,10 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     arr2 = arr.astype(np.str) #위쪽에서 만든 arr를 astype()을 이용해서 뒤에 있는 str 타입으로 변경
     print(arr2)       # 결과값 : ['1' '2' '3' '4' '5']
     print(arr2.dtype) # 결과값 : <U21 : 유니코드를 의미
+```
 
 ## 다양한 생성 함수 .zeros
+```
     import numpy as np
     
     # 형태1
@@ -323,37 +330,39 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     
     # default dtype값이 float64이기 때문에 int64로 바꾸고 싶으면 아래와 같이.
     arr = np.zeros((3,4), dtype=np.int64)
+```
 
 ## 다양한 생성함수들
 * .ones
 * .empty
 * .full
-###
+```
     import numpy as np
-    
     
     arr = np.ones((2,3), dtype=np.int64) # 1로 채운다.
     arr = np.empty((3,3))   # 초기값을 안주고 공간만 만들기. 쓰레기값이 있을 수 있다.
     arr = np.full((3,4),10) # 내가 원하는 값으로 초기화
     arr1 = np.full_like(arr.20)   # 특정 array의 shape와 같은 array를 만든다.
     # zeros_like   ones_like   empty_like   full_like
+```
 
 ## python range()와 numpy arrange()
 * python -> range()
 * numpy -> arrange()
 * 0이상 10미만의 1의 크기로 증가하는 요소를 가지는 numpy array 생성
-###
+```
     import numpy as np
     
     arr = np.arange(0,10,1) 
     print(arr)
     # 결과값 : [0 1 2 3 4 5 6 7 8 9]
+```
 
 ## random 함수는 실행시킬 때마다 다른 값을 추출한다.
 * random 값 도출도 하나의 알고리즘을 이용한 순열을 프로그램적으로 뽑아내느 것.
 * 이 알고리즘을 사용할 때 특정 초기값을 이용해서 알고리즘을 돌린다.
 * (seed값) 만약 이 seed값이 동일하다면 random 알고리즘은 당연히 같은 난수를 도출한다.(난수의 재연)
-###
+```
     import numpy as np
     
     np.random.seed(5)   #seed 값 고정을 통한 난수 재연
@@ -362,6 +371,7 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     # 결과값 : [[99 78 61 16]
                [73  8 62 27]
                [30 80  7 76]]
+```
 
 ## (중간 정리) NumPy 특징
 1. NumPy 특징
@@ -380,7 +390,7 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
 ## numpy의 파일 입출력은 크게 2가지로 나누어진다.
 1. binary 형태로 저장하고 불러올 수 있다. (눈으로 확인 불가능)
 2. text 형태로 저장하고 불러올 수 있다. (눈으로 확인 가능)
-###
+```
     # 1. binary 형태로 저장하고 불러올 수 있다. (눈으로 확인 불가능)
     import numpy as py
     
@@ -405,7 +415,7 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     
     new_arr1["arr_0"]   #배열을 여러개 읽어들였을 때 각각의 배열에 대한 reference 사용법
     new_arr1["arr_1"]   #new_arr1.files를 검색 후 이렇게 2개를 쓸 수 있다
-###
+
     # 2. text 형태로 저장하고 불러올 수 있다. (눈으로 확인 가능)
     import numpy as py
     
@@ -423,8 +433,10 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     # text file에서 데이터를 불러오기 위해서는
     new_arr = np.loadtxt("./savetxt.csv", delimiter=",", dtype=np.float64)
     print(new_arr)
+```
 
 ## skiprows, dtype
+```
     import numpy as py
     
     # skiprows = 1 위에서 1줄을 날려버리고 아래를 출력(필드나 설명같은게 첫번째 오기때문에 필요없을때 스킵)
@@ -442,12 +454,7 @@ ndarray(n-dimension array) : 1차원 배열, 2차원 배열, 다차원 배열
     
     print((new_arr[1][1]).decode())
     # 결과값 : "MECHANIC"
-
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

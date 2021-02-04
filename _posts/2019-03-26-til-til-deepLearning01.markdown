@@ -19,6 +19,7 @@ Deep Learning에 대해서<br />
 # Deep Learning
 
 ## AND True Table - AND 연산이 로지스틱 학습이 가능한지 알아보자
+```
     # AND 연산에 학습이 가능한지 알아보자. pdf.p.8
     # Logistic Regression
     import tensorflow as tf
@@ -64,10 +65,11 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 거의 무조건 1 나옴.
-
+```
 <img width="301" alt="Screen Shot 2019-03-29 at 12 58 30 PM" src="https://user-images.githubusercontent.com/46523571/55208668-5e8a5300-5222-11e9-9a7a-98165dfe17af.png">
 
 ## OR True Table - OR 연산이 로지스틱 학습이 가능한지 알아보자
+```
     # OR 연산에 학습이 가능한지 알아보자. pdf.p.8
     # Logistic Regression
     import tensorflow as tf
@@ -113,10 +115,12 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 거의 무조건 1 나옴.
+```
 
 <img width="293" alt="Screen Shot 2019-03-29 at 12 59 10 PM" src="https://user-images.githubusercontent.com/46523571/55208686-7661d700-5222-11e9-9981-f7d54e15c5a1.png">
 
 ## XOR True Table - XOR 연산이 로지스틱 학습이 가능한지 알아보자
+```
     # XOR 연산에 학습이 가능한지 알아보자. pdf.p.8
     # Logistic Regression
     import tensorflow as tf
@@ -162,10 +166,11 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 0.25~0.75 정도 나옴.
-
+```
 <img width="293" alt="Screen Shot 2019-03-29 at 12 59 42 PM" src="https://user-images.githubusercontent.com/46523571/55208701-8974a700-5222-11e9-8648-7bb4fa746e75.png">
 
 ## Multiple layer를 이용한 XOR문제 해결방법(layer 2개 사용)
+```
     ### Multiple layer를 이용한 XOR문제 해결   # pdf p.21
     import tensorflow as tf
     
@@ -220,10 +225,12 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 0.5~1 정도 나옴.
+```
 
 <img width="292" alt="Screen Shot 2019-03-29 at 1 00 17 PM" src="https://user-images.githubusercontent.com/46523571/55208735-a8733900-5222-11e9-8ce5-c5f7267b4a28.png">
 
 ## Multiple layer를 이용한 XOR문제 해결방법(layer 여러개 방법)
+```
     ### Multiple layer를 이용한 XOR문제 해결   # pdf p.21
     import tensorflow as tf
     
@@ -279,10 +286,12 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 1 정도 나옴.
+```
 
 <img width="300" alt="Screen Shot 2019-03-29 at 1 01 09 PM" src="https://user-images.githubusercontent.com/46523571/55208761-bd4fcc80-5222-11e9-9764-8e96df0e6aeb.png">
 
 ## Multiple layer를 이용한 XOR문제 해결방법(layer 여러개 + depth여러개 방법)
+```
     ### Multiple layer를 이용한 XOR문제 해결   # pdf p.21
     import tensorflow as tf
     
@@ -342,10 +351,12 @@ Deep Learning에 대해서<br />
     accuracy = tf.reduce_mean(tf.cast(correct, dtype=tf.float32))
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:x_data, Y:y_data})))
     #= 정확도 : 1 정도 나옴.
+```
 
 <img width="354" alt="Screen Shot 2019-03-29 at 1 01 41 PM" src="https://user-images.githubusercontent.com/46523571/55208780-d2c4f680-5222-11e9-9a1c-36c70f645518.png">
 
 ## (복습) MNIST Multinomial Classification
+```
     # MNIST Multinomial Classification 머신러닝에서 로지스틱 1개를 가지고 mnist 처리
     from tensorflow.examples.tutorials.mnist import input_data
     import tensorflow as tf
@@ -432,6 +443,7 @@ Deep Learning에 대해서<br />
     print("정확도 : {}".format(sess.run(accuracy, feed_dict={X:mnist.test.images, Y:mnist.test.labels})))
     
     #정확도가 90% 정도가 나온다. 그 이상가기 힘들어서 deep learning 기술을 사용하면 99%까지 올릴 수 있다.
+```
 
 <img width="551" alt="Screen Shot 2019-03-29 at 1 02 40 PM" src="https://user-images.githubusercontent.com/46523571/55208807-f425e280-5222-11e9-90f9-25e70d831df9.png">
 
@@ -442,6 +454,7 @@ Deep Learning에 대해서<br />
   * (※ 학습할 땐 몇개를 끄고, 테스트할 땐 다 키고 한다.)
 
 ## ReLU(Rectified Linear Unit) & W 초기값 수정
+```
     # MNIST Multinomial Classification 머신러닝에서 로지스틱 1개를 가지고 mnist 처리
     # MNIST - Neural Network(wide & deep) 
     #         => Sigmoid => ReLU로 변경                         => 91% 나옴
@@ -650,15 +663,9 @@ Deep Learning에 대해서<br />
     
     
     # 딥러닝을 통해 정확도가 98%이상으로 향상됐다.
+```
 
 <img width="551" alt="Screen Shot 2019-03-29 at 1 03 38 PM" src="https://user-images.githubusercontent.com/46523571/55208837-19b2ec00-5223-11e9-95e6-12c1c8ad3c75.png">
 
-
-
-
-
-
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -18,9 +18,8 @@ published: true
 # Matplotlib
 > 결과값을 수치가 아닌 그래프로 나타내는 함수
 
-<br>
-
 ## %matplotlib inline과 %matplotlib nbagg
+```
     # numpy나 pandas를 이용해서 데이터 분석을 한 후
     # 해당 결과를 수치로 보는것보다는 그래프로 보는게 좋다.
     
@@ -36,8 +35,10 @@ published: true
     # nbagg : 그래프를 만든 후 interactive(상호작용)하게 그래프를 조작할 수 있는 창이 뜬다.
     # 이후 만들어진 그래프를 조작 후 내가 설정한 값으로 그래프를 저장할 수 있다.
     # Stop interaction 버튼 누르면 내가 정한 설정값으로 그래프가 저장된다.
+```
 
 ## numpy를 이용한 line graphe 작성
+```
     %matplotlib inline
     
     import numpy as np
@@ -61,9 +62,11 @@ published: true
                                   # "r" red, "g" green, "b" blue, "y" yellow, "w" white
     display(plt.show())
     # 한글이 깨진다... 해결방법은 아래와 같다.
+```
 <img width="665" alt="Screen Shot 2019-03-26 at 12 26 59 AM" src="https://user-images.githubusercontent.com/46523571/54932300-ebe95100-4f5d-11e9-8c4d-f4eb022a3c32.png">
 
 ## 맥에서 사용가능한 시스템의 TTF 폰트 목록 확인하기
+```
     import matplotlib.font_manager as font_manager
     
     font_list = font_manager.findSystemFonts(fontpaths=None, fontext='ttf')
@@ -73,25 +76,28 @@ published: true
     
     # 처음 10개만 출력
     font_list[:10] 
+```
 <img width="635" alt="Screen Shot 2019-03-26 at 12 28 24 AM" src="https://user-images.githubusercontent.com/46523571/54932391-15a27800-4f5e-11e9-8b68-8a0fde1c508f.png">
 
 ## 맥에서 사용 가능한 ttf 폰트 목록
 * 사용가능한 폰트 목록 중 Apple글꼴(이름에 'Apple'이 포함된) 폰트 목록만 추출
-###
+```
     import matplotlib
     import matplotlib.font_manager
     
     [f.name for f in matplotlib.font_manager.fontManager.ttflist if 'Apple' in f.name]
+```
 <img width="207" alt="Screen Shot 2019-03-26 at 12 29 46 AM" src="https://user-images.githubusercontent.com/46523571/54932521-484c7080-4f5e-11e9-9728-7e2b0e46e275.png">
 
 ## 맥에서 사용 가능한 ttf 폰트 경로 찾기
 * 사용가능한 폰트 목록 중 Apple글꼴(이름에 'Apple'이 포함된) 폰트 경로 추출 
-###
+```
     import matplotlib
     import matplotlib.font_manager
     
     
     [(f.name, f.fname) for f in matplotlib.font_manager.fontManager.ttflist if 'Apple' in f.name]
+```
 <img width="838" alt="Screen Shot 2019-03-26 at 12 30 30 AM" src="https://user-images.githubusercontent.com/46523571/54932584-65813f00-4f5e-11e9-8915-50161f9759db.png">
 
 ## 폰트를 지정하는 두가지 방법
@@ -114,6 +120,7 @@ published: true
   - plt.text(0, 0, "Sample Text", fontproperties=fontprop)
 
 ## 그래프 내 한글처리 방법(1) - font_prop
+```
     %matplotlib nbagg
     
     import numpy as np
@@ -141,9 +148,11 @@ published: true
     plt.plot(x_data,y_data,"r")   # (x축, y축, 색옵션)
                                   # "r" red, "g" green, "b" blue, "y" yellow, "w" white
     plt.show()
+```
 <img width="1045" alt="Screen Shot 2019-03-26 at 12 33 30 AM" src="https://user-images.githubusercontent.com/46523571/54932784-ca3c9980-4f5e-11e9-8169-035f94246f82.png">
 
 ## 그래프 내 한글처리 방법(2) - font_family
+```
     %matplotlib inline
     
     import numpy as np
@@ -177,9 +186,11 @@ published: true
     plt.plot(x_data,y_data,"r")   # (x축, y축, 색옵션)
                                   # "r" red, "g" green, "b" blue, "y" yellow, "w" white
     plt.show()
+```
 <img width="651" alt="Screen Shot 2019-03-26 at 12 34 38 AM" src="https://user-images.githubusercontent.com/46523571/54932871-f35d2a00-4f5e-11e9-81b7-ff83fc2dcd5d.png">
 
 ## Series 을 이용한 line plotting  
+```
     import numpy as np
     import pandas as pd
     import matplotlib
@@ -196,9 +207,11 @@ published: true
     plt.plot(s,label="오렌지가격")
     plt.legend()                 # 옵션 : 범례 표현
     plt.show()
+```
 <img width="651" alt="Screen Shot 2019-03-26 at 12 35 46 AM" src="https://user-images.githubusercontent.com/46523571/54932963-1b4c8d80-4f5f-11e9-945e-8536902b113e.png">
 
 ## DataFrame을 이용한 line plotting
+```
     # Series의 column 단위로 그래프를 그려준다.
     
     import numpy as np
@@ -218,9 +231,11 @@ published: true
     plt.plot(df)
     plt.legend()               # 옵션 : 범례 표현
     plt.show()
+```
 <img width="672" alt="Screen Shot 2019-03-26 at 12 36 40 AM" src="https://user-images.githubusercontent.com/46523571/54933020-3b7c4c80-4f5f-11e9-8f9c-f329b860c1b4.png">
 
 ## 예제(Series) - 한 사람의 국어, 영어, 수학 점수를 표현
+```
     import numpy as np
     import pandas as pd
     import matplotlib
@@ -239,9 +254,11 @@ published: true
     plt.xlabel("과목")    # 옵션 : x축 의미
     plt.ylabel("점수")    # 옵션 : y축 의미
     plt.show()
+```
 <img width="670" alt="Screen Shot 2019-03-26 at 12 37 32 AM" src="https://user-images.githubusercontent.com/46523571/54933099-5b137500-4f5f-11e9-8828-b0a70b6bf553.png">
 
 ## 예제(DataFrame) - 여러 사람의 국어, 영어, 수학, 과학 점수를 표현
+```
     import numpy as np
     import pandas as pd
     import matplotlib
@@ -262,11 +279,12 @@ published: true
     df1.plot(kind="bar")
     df2.plot(kind="bar")
     plt.show()
+```
 <img width="638" alt="Screen Shot 2019-03-26 at 12 38 15 AM" src="https://user-images.githubusercontent.com/46523571/54933158-754d5300-4f5f-11e9-9d29-2fa56a8aaf92.png">
 
 ## 산점도(scatter)
 * 두개의 독립변수 X, Y의 관계를 알아보기 위해 사용.
-###
+```
     %matplotlib inline
     
     import numpy as np
@@ -278,10 +296,9 @@ published: true
     
     plt.scatter(x,y)
     plt.show()
+```
 <img width="499" alt="Screen Shot 2019-03-26 at 12 39 03 AM" src="https://user-images.githubusercontent.com/46523571/54933217-901fc780-4f5f-11e9-9e1a-e11ff80e9525.png">
 
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

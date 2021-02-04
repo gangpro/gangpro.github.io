@@ -38,19 +38,18 @@ published: true
 
 
 * 터미널 실행
-
-
+```
         $ KANGs-MacBook-Pro ~ $ cd ~
           ↳ cd ~ : 최상위 폴더로 이동
+```
 
 * 가상환경 접속
-
-
+```
         $ KANGs-MacBook-Pro ~ $ source activate data_env
+```
 
 * Pandas 설치
-
-
+```
         $ (data_env) KANGs-MacBook-Pro:~ kang$ conda install pandas
         Solving environment: done
         
@@ -98,21 +97,16 @@ published: true
         Preparing transaction: done
         Verifying transaction: done
         Executing transaction: done
-
-
+```
  
 * 이제 jupyter notebook에서 판다스 import 사용 가능.
-
-
-
-<br>
-<br>
 
 ## import pandas as pd
 * pandas를 사용하기 위해서는 module을 import 사용해야한다.
 * 일반적으로 as(얼리아싱)을 써서 pd라고 정해서 사용한다.(전세계적으로 pd를 쓴다.)
 
-# Numpy Array & Pandas Series 비교
+## Numpy Array & Pandas Series 비교
+```
     import numpy as np    # numpy
     import pandas as pd   # pandas 모듈을 쓸때 보통 numpy 모듈과 함께 쓴다.
     
@@ -163,8 +157,10 @@ published: true
     
     print(type(s.values))      # s.value가 어떤 class의 객체인지 확인가능 
     # 결과값 : <class 'numpy.ndarray'>
+```
     
 ## Series에 대한 indexing과 slicing
+```
     import numpy as np
     import pandas as pd
     
@@ -203,8 +199,10 @@ published: true
             b    -5
             a    10
             dtype: int64
+```
 
 ## Series 안의 데이터 출력 방법(1)&(2)
+```
     import numpy as np
     import pandas as pd
     
@@ -217,12 +215,13 @@ published: true
     # Series안의 집계함수를 써서 출력(지향) - (2) 좋은 방법
     print("Series안의 데이터 총합 : {}".format(s.sum()))
     # 결과값 : Series안의 데이터 총합 : 105
+```
 
 ## Series 생성하는 방법 list() & dictionary{ : }, 이름부여
 * Series를 생성하는 방법 중에 list를 이용하는 방법이 있다.
 * ex) s = pd.Series([1,2,3,4,5])
 * Series를 dictionary를 이용해서 만들 수 있다.
-###
+```
     import numpy as np
     import pandas as pd
     
@@ -263,10 +262,7 @@ published: true
             INCHEON    5000
             JEJU       2000
             Name: 지역별 가격 데이터, dtype: int64
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
