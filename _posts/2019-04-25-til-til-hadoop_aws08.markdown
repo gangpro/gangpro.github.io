@@ -53,7 +53,7 @@ Hadoop Cluster 시작과 종료<br />
 
 
 ## HDFS & 맵리듀스 모두 시작
-###
+
     # hdfs & mapred 시작
     [ec2-user@namenode conf]$ start-all.sh
     starting namenode, logging to /home/ec2-user/hadoop/logs/hadoop-ec2-user-namenode-namenode.localdomain.out
