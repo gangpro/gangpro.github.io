@@ -1,0 +1,547 @@
+---
+layout: post
+title: '[CSS] CSS 첫걸음'
+subtitle: 
+categories: til
+tags: til css
+comments: true
+date: 2020-03-04 20:01:17 +0900
+lastmod: 2020-03-04 20:01:17 +0900
+sitemap:
+  changefreq: daily
+  priority: 1
+published: true
+---
+
+CSS 첫걸음 <br/>
+
+
+## 이보다 쉬울 수 없는 CSS 문법
+---
+CSS 문법은 HTML 보다 더 쉽습니다.
+
+아래 예시처럼 선택자, 속성, 값이 있으며 무엇을 의미하는지 이해하는 것으로 기본 문법은 충분합니다!
+
+```css
+div {
+  font-size: 20px;
+  color: red;
+}
+
+/* 다음과 같이 이해할 수 있습니다. */
+선택자 {
+  속성: 값;
+  속성: 값;
+}
+```
+
+
+
+### 선택자의 역할
+
+선택자는 HTML에 스타일(CSS)을 적용하기 위해 HTML의 특정한 요소를 선택하는 사인(sign)입니다.
+
+“빨강 글자색(CSS, `color: red;`)을 저기 제목(HTML, `<h1></h1>`)에 적용하겠어!”, “파랑 글자색(CSS, `color: blue;`)은 여기 본문(HTML, `<p></p>`)에 적용하겠어!”와 같이 적용할 스타일을 속성(`color`)과 값(`red`, `blue`)으로 나타내고 적용할 대상(H1, P)을 선택자로 나타냅니다.
+
+위 내용을 코드로 구성하면 다음과 같습니다.
+
+```html
+<div>
+  <h1>제목..</h1>
+  <p>본문..</p>
+</div>
+```
+
+```css
+h1 {
+  color: red;
+}
+p {
+  color: blue;
+}
+```
+
+
+
+### 속성(Properties)과 값(Value)
+
+속성과 값은 글자색은 무엇, 너비는 얼마, 여백은 얼마 같은 스타일을 지정할 때 사용합니다.
+
+```css
+div {
+  color: red; /* 글자색은 빨강 */
+  font-size: 20px; /* 글자 크기는 20px */
+  width: 300px; /* 가로 너비는 300px */
+  margin: 20px; /* 바깥 여백은 20px */
+  padding: 10px 20px; /* 안쪽 여백은 위아래 10px, 좌우 20px */
+  position: absolute; /* 위치는 부모 요소 기준, 흠.. 이게 무슨 뜻일까? */
+}
+```
+
+속성과 값은 많이 아는 것이 중요합니다.
+
+글자 크기를 키우고 싶은데 `font-size`가 어떤 역할을 하는지 모른다면 글자 크기를 조절할 방법이 없습니다.
+또한 위치(좌표)를 지정하고 싶은데 `position` 속성을 모르거나 혹은 그 속성의 값으로 사용하는 `absolute`가 어떤 의미를 갖는지 모르면 역시 방법이 없습니다.
+
+`I like`처럼 영어가 주어와 동사로 이루진 문법이 전부라고 가정해 봅시다. 문법은 매우 쉽겠지만 주어에 들어갈 단어는 `You`, `She`, `They` 등이 많은 단어가 있을 것이고, 동사에 들어갈 단어는 `love`, `work`, `eat` 등 수많은 단어들 들어갈 수 있겠죠?!
+
+많은 단어를 아는 만큼 풍부하고 멋진 문장을 만들 수 있듯, 많은 속성과 값을 아는 만큼 멋진 스타일을 만들어낼 수 있습니다!
+
+<br/>
+
+<br/>
+
+<br/>
+
+## CSS 선언 방식
+---
+이제 내가 작성한 CSS 코드를 어떻게 HTML에 적용할 수 있는지 알아봅시다.
+
+### 태그에 직접 작성하기(인라인)
+
+이 방법은 HTML 태그에 직접 작성하기 때문에 선택자가 필요하지 않습니다.
+
+```html
+<div style="color: red;">태그에 직접 작성1</div> <!-- red -->
+<div style="color: red;">태그에 직접 작성2</div> <!-- red -->
+<div style="color: red;">태그에 직접 작성3</div> <!-- red -->
+<div style="color: red;">태그에 직접 작성4</div> <!-- red -->
+```
+
+### HTML에 포함하기(내장)
+
+CSS만 따로 작성하기 때문에 선택자가 필요합니다.
+
+CSS 코드가 HTML의 `<style></style>` 안에 포함되어 있습니다.
+
+```html
+<head>
+  <style>
+    div {
+      color: red;
+    }
+  </style>  
+</head>
+<body>
+  <div>HTML에 포함1</div> <!-- red -->
+  <div>HTML에 포함2</div> <!-- red -->
+  <div>HTML에 포함3</div> <!-- red -->
+</body>
+```
+
+### HTML 외부에서 불러오기
+
+CSS 코드를 완전히 분리할 수 있습니다.
+
+분리된 하나의 CSS 파일을 여러 HTML 파일이 불러와서 사용할 수 있겠네요.
+
+```html
+<!-- HTML 1 -->
+<head>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div>HTML에 외부에서 불러오기1</div> <!-- red -->
+</body>
+```
+
+```html
+<!-- HTML 2 -->
+<head>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div>HTML에 외부에서 불러오기2</div> <!-- red -->
+</body>
+```
+
+```css
+/* main.css */
+div {
+  color: red;
+}
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 선택자
+---
+위에서 설명했듯 선택자는 HTML의 특정한 요소를 선택하는 사인(sign)입니다.
+
+여러 종류가 있는데 우선 그중 2가지만 알아보겠습니다.
+
+### 태그로 찾기
+
+선택자를 입력하는 부분에 적용하려는(찾으려는) 태그의 이름을 입력합니다.
+
+```css
+/*<h1>은 글자색이 빨강이야!*/
+h1 {
+  color: red;
+}
+/*<p>는 글자색이 파랑이야!*/
+p {
+  color: blue;
+}
+```
+
+```html
+<h1>제목1</h1> <!--red-->
+<h1>제목2</h1> <!--red-->
+<p>본문1</p> <!--blue-->
+<p>본문2</p> <!--blue-->
+```
+
+만약 ‘제목1’과 ‘본문1’에만 색상을 추가하고 싶다면 어떻게 해야 할까요?
+
+‘태그 선택자’만 가지고는 어렵겠네요..
+
+### 클래스로 찾기
+
+좀 더 명확하게 원하는 요소를 찾기 위해서 ‘클래스 선택자’라는 것이 존재합니다.
+
+예제를 봅시다.
+
+```css
+/*class="title"은 글자색이 빨강이야!*/
+.title {
+  color: red;
+}
+/*class="main-text"는 글자색이 파랑이야!*/
+.main-text {
+  color: blue;
+}
+```
+
+```html
+<h1 class="title">제목1</h1> <!--red-->
+<h1>제목2</h1>
+<p class="main-text">본문1</p> <!--blue-->
+<p>본문2</p>
+```
+
+`class`라는 HTML 속성에 원하는 별명을 입력합니다.
+
+제목에는 `title`을 본문에는 `main-text`라는 별명을 지정했네요.
+
+이제 CSS에서 이 별명을 기준으로 요소를 찾을 수 있습니다.
+
+단, 주의할 점은 선택자에 앞에 `.`이 붙는다는 것입니다.
+
+`.`은 클래스를 나타내며 CSS의 `.title`은 HTML의 `class="title"`와 동일합니다.
+
+`.`이 없는 선택자 `title`은 태그 `<title>`를 의미하게 되니 전혀 다른 뜻으로 인식됩니다.
+
+이처럼 `.`과 같은 특수한 기호들을 이용해서 HTML과 CSS를 매칭하므로 누락하기 쉽습니다. 
+
+따라서 꼼꼼한 선택자 작성이 중요합니다.
+
+<br />
+
+<br />
+
+<br />
+
+## 속성
+---
+이제 속성을 알아봅시다.
+
+크기, 여백, 색상 같은 눈에 보이는 스타일을 지정할 수 있습니다.
+
+### 크기
+
+#### width(가로 너비)
+
+요소의 가로 너비를 지정합니다.
+
+단위는 `px`(pixels)을 사용합니다.
+
+```css
+div {
+  width: 300px;
+  요소가로너비: 너비값;
+}
+```
+
+#### height(세로 너비)
+
+요소의 세로 너비를 지정합니다.
+
+```css
+div {
+  height: 150px;
+  요소세로너비: 너비값;
+}
+```
+
+#### font-size(글자 크기)
+
+요소 내용(Text)의 글자 크기를 지정합니다.
+
+```css
+div {
+  font-size: 16px;
+  글자크기: 크기값;
+}
+```
+
+### 여백
+
+#### margin(요소의 바깥 여백)
+
+요소의 바깥 여백을 지정합니다.
+
+바깥 여백은 요소와 요소 사이의 여백(거리, 공간)을 생성할 때 사용합니다.
+
+```css
+div {
+  margin: 20px;
+  요소바깥여백: 여백값;
+}
+```
+
+위 코드는 `margin`은 요소의 위, 아래, 좌, 우 모두 `20px`의 여백을 지정하겠다는 의미입니다.
+
+세분화하기 위해 아래와 같이 한 방향씩 지정할 수도 있습니다.
+
+위 코드와 아래 코드는 같은 의미입니다.
+
+```css
+div {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  요소바깥여백-위쪽: 여백값;
+  요소바깥여백-오른쪽: 여백값;
+  요소바깥여백-아래쪽: 여백값;
+  요소바깥여백-왼쪽: 여백값;
+}
+```
+
+#### padding(요소의 내부 여백)
+
+요소의 내부 여백을 지정합니다.
+
+내부 여백은 자식 요소를 감싸는 여백을 의미합니다.
+
+```css
+div {
+  padding: 20px;
+  요소내부여백: 여백값;
+}
+```
+
+`margin`과 같이 한 방향씩 지정할 수 있습니다.
+
+```css
+div {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  요소내부여백-위쪽: 여백값;
+  요소내부여백-오른쪽: 여백값;
+  요소내부여백-아래쪽: 여백값;
+  요소내부여백-왼쪽: 여백값;
+}
+```
+
+### 색상
+
+#### color(글자 색상)
+
+요소 내용(Text)의 글자 색상을 지정합니다.
+
+정말 많은 입문자가 `font-color`, `text-color`로 실수를 합니다만 그런 속성은 없습니다.
+
+```css
+div {
+  color: red;
+  글자색상: 빨강;
+}
+```
+
+#### background(요소 색상)
+
+요소의 배경 색상을 지정합니다.
+
+`color`는 글자의 색만 지정할 수 있으며, 요소의 (배경)색을 바꾸려면 `background-color`가 필요합니다.
+
+```css
+div {
+  background-color: red;
+  요소배경: 빨강;
+}
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+## CSS 예제
+---
+HTML 끝으로 작성했던 예제에 이어서 CSS를 적용해 봅시다.
+
+`example1` 디렉터리 안에 `css`라는 이름의 디렉터리를 추가로 생성합니다.(Side bar 영역에서 우클릭 > 새폴더 선택)
+생성한 `css` 디렉터리 안에 `main.css` 파일을 생성합니다.
+
+다음은 이 예제의 디렉터리와 파일 구조입니다.
+
+```bash
+/example1
+├─ /css
+│  └─ main.css
+└─ index.html
+```
+
+(아직 CSS 내용은 작성하지 않았지만) 생성한 `main.css` 파일은 기존의 `index.html` 파일과 연결해야 사용할 수 있습니다.
+
+`<link>`를 이용해 HTML 외부에 존재하는 CSS 파일(방금 생성한 `main.css`)을 연결합니다.
+
+```html
+<head>
+  <!-- 생략... -->
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+```
+
+연결이 되었으니 CSS를 다음과 같이 작성합니다.
+
+```css
+body {
+  /* 브라우저마다 기본 설정으로 BODY 요소에 margin과 padding의 값이 설정되어 있습니다. */
+  /* 각각의 브라우저마다 BODY 요소가 다른 값을 가지고 있을 수 있으므로 우리가 일정하게 초기화해서 사용합니다. */
+  /* 0은 단위를 사용하지 않습니다. */
+  margin: 0;
+  padding: 0;
+}
+.header {
+  /* 화면에는 다음의 값으로 랜더링 되어 있는데 여러 이유로(설명이 많이 필요합니다) 생략 가능합니다. */
+  /* width: 100%; */
+  /* height: 75px; */
+  background-color: white;
+  border-bottom: 1px solid lightgray; /* 요소테두리선-아래: 1px두께 가는실선 밝은회색; - header 하단에 회색의 선이 표시됩니다. */
+}
+.container {
+  /* height: 75px; */
+  width: 980px;
+  margin: auto; /* 요소바깥여백: 여백자동; - 이 속성과 값은 container를 수평 가운데 정렬하는 속성으로 쓰입니다. */
+}
+.container-left {
+  /* width: 370px; */
+  /* height: 75px; */
+  /* float: left; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.logo {
+  margin-right: 5px;
+  float: left; /* 수평정렬: 왼쪽부터차례대로; - logo와 menu를 수평 정렬하기 위해 사용되었습니다. 이 속성의 정확한 의미는 수평 정렬이 아니지만 쉽게 이해하도록 의역했습니다. */
+}
+.logo img { /* logo의 자식 요소인 img 태그 - 선택자에서 띄어쓰기는 자식요소를 의미합니다. */
+  display: block; /* 요소특성: 형태위주; - img(이미지) 하단에 생기는 불필요한 여백을 없애기 위해서 사용되었습니다. */
+}
+.menu {
+  float: left; /* logo와 menu를 수평 정렬하기 위해 사용되었습니다. */
+}
+.menu-item {
+  font-size: 16px;
+  padding: 8px 10px; /* padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; 과 같습니다. */
+  float: left; /* 각 menu-item들을 수평 정렬하기 위해 사용되었습니다. */
+}
+
+/* float: left; 를 사용하고 마무리할 때 필요한 코드입니다. */
+/* float: left;를 사용한 해당 HTML 요소의 부모 요소에게 class="clearfix"를 입력하여 CSS float 속성에서 발생하는 현상을 해제합니다. */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+```
+
+큰 단위의 요소(`header`)부터 코딩하는 방법과, 작은 단위 요소(`menu-item`나 `logo`)부터 코딩하는 방법을 번갈아 가면서 하나하나 변화를 눈으로 익히며 연습을 하시면 금방 익숙해질 겁니다.
+
+이 부분이 중요한데, `float: left`를 사용했다면 사용한 요소의 부모 요소에 꼭 `class="clearfix"`를 입력하고 변화를 확인하세요.(정확한 사용법과 의미는 상당한 분량이라서 여기서 설명하지 않겠습니다)
+
+최종 HTML은 다음과 같습니다. 기존과 달라진 부분을 잘 살펴보세요.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub</title>
+    <!-- link 요소가 추가 되었군요! -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="header">
+        <!-- clearfix 클래스 값이 추가 되었군요! -->
+        <!-- class 속성은 띄어쓰기로 여러 클래스를 구분하여 동시에 사용할 수 있습니다. -->
+        <!-- 아래 요소는 <div class="container" class="clearfix"> 와 같습니다. -->
+        <div class="container clearfix">
+            <!-- clearfix 클래스 값이 추가 되었군요! -->
+            <div class="container-left clearfix">
+                <div class="logo">
+                    <img src="https://heropcode.github.io/GitHub-Responsive/img/logo.svg" alt="GitHub Logo">
+                </div>
+                <!-- clearfix 클래스 값이 추가 되었군요! -->
+                <div class="menu clearfix">
+                    <div class="menu-item">Personal</div>
+                    <div class="menu-item">Open Source</div>
+                    <div class="menu-item">Business</div>
+                    <div class="menu-item">Explore</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+다음과 같은 결과가 나와야 합니다.
+
+![HTML 예제 결과 마지막](https://heropy.blog/images/screenshot/html-css-starter/html_example_result_final.jpg)
+
+
+
+## 앞으로..
+---
+작성하다보니 입문자들의 이해를 돕기 위해 생략하거나 의역한 부분이 많습니다.
+하지만 시작이 반이라고 여기까지 오셨다면 충분히 성공하셨다고 생각합니다.
+많은 비전공 입문자가 생소한 학습 환경에 좌절하지만, HTML/CSS가 사실 그렇게 어려운 내용은 아닙니다.
+자신감을 가질 필요가 있습니다!
+
+자, 그러면 입문은 끝났고 앞으로는 어떻게 학습해야 하는지 간단히 정리하겠습니다.
+
+원하는(학습하고자 하는) HTML, CSS, JavaScript(ECMAScript, ES)의 내용을 검색할 때는 `html div tag mdn` 혹은 `css background mdn`과 같이 ‘MDN’를 함께 검색하세요.
+[MDN 웹 문서](https://developer.mozilla.org/ko/)는 모질라(파이어폭스 웹 브라우저)의 공식 웹사이트로 대부분의 문서에서 여러 설명과 예제 그리고 한글을 지원하며 매우 신뢰할 수 있습니다.
+[W3C의 웹 표준 문서](https://www.w3.org/)가 교과서라면 MDN은 해설집 정도로 이해하시면 쉽겠네요.
+
+또는 [W3Schools 웹사이트](https://www.w3schools.com/)도 추천합니다. MDN과 다르게 영리 목적(배너 광고 등)의 사이트이지만 입문자가 접하기에 좋게 잘 구성되어 있습니다. 단, 정보의 신뢰도는 MDN보다 떨어집니다.
+
+끝까지 읽어주셔서 감사하고, 이 포스트가 많은 입문자들에게 도움이 되길 희망합니다.
+
+<br/>
+
+<br/>
+
+<br/>
+
+
+
+
+## 참고
+---
+패스트캠퍼스(박영웅 강사님) : 올인원 패키지 : 프론트엔드 개발 with React.js
+- [https://heropy.blog/2019/04/24/html-css-starter/](https://heropy.blog/2019/04/24/html-css-starter/)
+
+<br/>
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

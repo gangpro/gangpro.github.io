@@ -1,0 +1,132 @@
+---
+layout: post
+title: '[CSS] CSS 활용 - 단위'
+subtitle: 
+categories: til
+tags: til css
+comments: true
+date: 2020-03-04 20:04:17 +0900
+lastmod: 2020-03-04 20:04:17 +0900
+sitemap:
+  changefreq: daily
+  priority: 1
+published: true
+---
+
+CSS 활용 - 단위 <br/>
+
+
+## px
+---
+
+<br/>
+
+<br/>
+
+<br/>
+
+## %
+---
+
+<br/>
+
+<br/>
+
+<br/>
+
+## em
+---
+
+<br/>
+
+<br/>
+
+<br/>
+
+## rem
+---
+
+<br/>
+
+<br/>
+
+<br/>
+
+## vw & vh
+---
+vw : Viewport Weight : 화면에 출력하는 가로 너비 <br />
+vh : Viewport Height : 화면에 출력하는 세로 너비<br />
+
+```html
+<div class="container"></div>
+```
+
+```css
+.container {
+  width: 50vw;	/* 50%만 사용하겠다.*/
+  height: 200px;
+  background: red;
+}
+```
+
+```css
+.container {
+  width: vw;	/* 100% 사용하겠다.*/
+  height: 200px;
+  background: red;
+}
+```
+
+```css
+.container {
+  width: 200px;
+  height: 50vh;	/* 50%만 사용하겠다.*/
+  background: red;
+}
+```
+
+
+
+
+
+## vmin & vmax
+---
+vmin : Viewport Min : 화면에 출력하는 최소 너비 <br />
+vmax : Viewport Max : 화면에 출력하는 최대 너비<br />
+
+```html
+<div class="container"></div>
+```
+
+```css
+.container {
+  width: 50vmin;  /* 화면 전체 너비에 가장 짧은 것의 50%만 사용 */
+  height: 300px;
+  background: red;
+}
+```
+
+```css
+.container {
+  width: 50vmax;  /* 화면 전체 너비에 가장 긴 것의 50%만 사용 */
+  height: 300px;
+  background: red;
+}
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+
+
+
+## 참고
+---
+패스트캠퍼스(박영웅 강사님) : 올인원 패키지 : 프론트엔드 개발 with React.js
+- [https://heropy.blog/2019/04/24/html-css-starter/](https://heropy.blog/2019/04/24/html-css-starter/)
+
+<br/>
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

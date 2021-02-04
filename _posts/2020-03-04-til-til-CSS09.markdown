@@ -1,0 +1,648 @@
+---
+layout: post
+title: '[CSS] CSS 속성 - 전환, 변환'
+subtitle: 
+categories: til
+tags: til css
+comments: true
+date: 2020-03-04 20:09:17 +0900
+lastmod: 2020-03-04 20:09:17 +0900
+sitemap:
+  changefreq: daily
+  priority: 1
+published: true
+---
+
+CSS 속성 - 전환, 변환 <br/>
+
+
+## 전환
+---
+### Transitions
+
+CSS 속성의 전환 효과를 지정<br />
+
+CSS 속성의 시작과 끝을 지정(전환 효과)하여 중간 값을 애니매이션,  ``단축`` 속성을 갖고 있음.
+
+**속성 값**
+
+| 값                            | 의미                         | 기본값              |
+| ----------------------------- | ---------------------------- | ------------------- |
+| ``transition-property``       | 전환 효과를 사용할 속성 이름 | ``all``             |
+| ``transition-duration``       | 전환 효과의 지속시간 설정    | ``0s`` = ``1000ms`` |
+| ``transition-timing-fuction`` | 타이밍 함수 지정             | ``ease``            |
+| ``transition-delay``          | 전환 효과의 대기시간 설정    | ``0s`` = ``1000ms`` |
+
+
+
+**예제**
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 50px;
+  transition: 
+    width 1s, 
+    background 1s;
+/*   위 transition 이랑 같은 의미 */
+/*   
+  transition-property: width, background;
+  transition-duration: 1s; 
+  */
+}
+.box:hover {
+  width: 300px;
+  background: dodgerblue;
+}
+```
+
+
+
+<br />
+
+<br />
+
+<br />
+
+### Transition 개별속성
+---
+#### transition-property
+
+전환 효과를 사용할 속성 이름을 설정, ``개별`` 속성을 가짐.
+
+| 값        | 의미                         | 기본값 |
+| --------- | ---------------------------- | ------ |
+| all       | 모든 속성에 적용             | all    |
+| 속성 이름 | 전환 효과를 사용할 속성 이름 |        |
+
+
+
+**예제**
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 50px;
+  transition: all 1s;
+}
+.box:hover {
+  width: 300px;
+  background: dodgerblue;
+}
+```
+
+
+
+#### transition-duration
+
+전환 효과의 지속시간을 설정, ``개별`` 속성을 가짐.
+
+| 값   | 의미                      | 기본값              |
+| ---- | ------------------------- | ------------------- |
+| 시간 | 전환 효과가 지속되는 시간 | ``0s`` = ``1000ms`` |
+
+
+
+**예제**
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 50px;
+  transition-duration: 0.4s;
+}
+.box:hover {
+  width: 300px;
+  background: dodgerblue;
+}
+```
+
+
+
+#### transition-timing-function
+
+타이밍 함수(애니메이션 전환 효과를 계산하는 방법) 지정, ``개별`` 속성을 가짐.
+
+| 값                           | 의미                              | 기본값   | Cubic Bezier 값                   |
+| ---------------------------- | --------------------------------- | -------- | --------------------------------- |
+| ``ease``                     | 빠르게 - 느리게                   | ``ease`` | ``cubic-bezier(.25, .1, .25, 1)`` |
+| ``linear``                   | 일정하게                          |          | ``cubic-bezier(0, 0, 1, 1)``      |
+| ``ease-in``                  | 느리게 - 빠르게                   |          | ``cubic-bezier(.42, 0, 1, 1)``    |
+| ``ease-out``                 | 빠르게 - 느리게                   |          | ``cubic-bezier(0, 0, .58, 1)``    |
+| ``ease-in-out``              | 느리게 - 빠르게 - 느리게          |          | ``cubic-bezier(.42, 0, .58, 1)``  |
+| ``cubic-bezier(n, n, n, n)`` | 자신만의 값을 정의(``0`` ~ ``1``) |          |                                   |
+| ``steps(n)``                 | ``n` 번 분할된 애니메이션         |          |                                   |
+
+> [Easing Functions Cheat Sheet](https://easings.net/en) 참고
+
+
+
+**예제**
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 50px;
+  transition: 2s ease-out;
+/*   transition-timing-function: linear; */
+/*   transition: 2s steps(4); */
+}
+.box:hover {
+  width: 300px;
+  background: dodgerblue;
+}
+```
+
+
+
+
+
+#### transition-delay
+
+전환 효과가 몇 초 뒤에 시작할지 대기시간을 설정, ``개별`` 속성을 가짐.
+
+| 값   | 의미                       | 기본값 |
+| ---- | -------------------------- | ------ |
+| 시간 | 전환효과의 대기시간을 설정 | ``0s`` |
+
+
+
+**예제**
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 50px;
+  transition: 2s 2s;
+/*   앞에 있는게 duration 뒤에 있는게 delay */
+}
+.box:hover {
+  width: 300px;
+  background: dodgerblue;
+}
+```
+
+<br/>
+
+<br/>
+
+<br/>
+
+## 변환
+
+### Transforms
+
+요소의 변환 효과(변형)를 지정
+
+**사용법**
+
+```
+transform: 변환함수1 변환함수2 변환함수3 ...;
+transform: 원근법 이동 크기 회전 기울임;
+```
+
+```css
+.box {
+  transform: rotate(20deg) translate(10px, 0);
+ 				  /* 20도 각도 회전,  X축:10px Y축:0 이동 */
+}
+```
+
+
+
+<br />
+
+<br />
+
+<br />
+
+### Transform 2D 변환 함수
+
+| 값(변환함수)                 | 의미             | 단위       |
+| ---------------------------- | ---------------- | ---------- |
+| ``translate(x, y)``          | 이동(X축, Y축)   | 단위       |
+| ``translateX(x)``            | 이동(X축)        | 단위       |
+| ``translateY(y)``            | 이동(Y축)        | 단위       |
+| ``scale(x, y)``              | 크기(X축, Y축)   | 없음(배수) |
+| ``scaleX(x)``                | 크기(X축)        | 없음(배수) |
+| ``scaleY(y)``                | 크기(Y축)        | 없음(배수) |
+| ``rotate(degree)``           | 회전(각도)       | ``deg``    |
+| ``skew(x-deg, y-deg)``       | 기울임(X축, Y축) | ``deg``    |
+| ``skewX(x-deg)``             | 기울임(X축)      | ``deg``    |
+| ``sekwY(y-deg)``             | 기울임(Y축)      | ``deg``    |
+| ``matrix(n, n, n, n, n, n)`` | 2차원 변환 효과  | 없음       |
+
+
+
+**예제**
+
+```html
+<div class="box">123</div>
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  transform: {변환함수....}
+}
+```
+
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  transition: 1s;
+}
+.box:hover {
+  transform: translate(20px, 10px) skewX(20deg);
+}
+```
+
+
+
+<br />
+
+<br />
+
+<br />
+
+### Transform 3D 변환 함수
+
+| 값(변환함수)                                                 | 의미                            | 단위          |
+| ------------------------------------------------------------ | ------------------------------- | ------------- |
+| ``translate3d(x, y, z)``                                     | 이동(X축, Y축, Z축)             | 단위          |
+| ``translateZ(z)``                                            | 이동(Z축)                       | 단위          |
+| ``scale3ㅇ(x, y, z)``                                        | 크기(X축, Y축, Z축)             | 없음(배수)    |
+| ``scaleZ(z)``                                                | 크기(Z축)                       | 없음(배수)    |
+| ``rotate3d(x, y, z, a)``                                     | 회전(X벡터, Y벡터, Z벡터, 각도) | 없음, ``deg`` |
+| ``rotateX(x)``                                               | 회전(X축)                       | ``deg``       |
+| ``rotateY(y)``                                               | 회전(Y축)                       | ``deg``       |
+| ``rotateZ(z)``                                               | 회전(Z축)                       | ``deg``       |
+| ``perspective(n)``                                           | 원근법(거리)                    | 단위          |
+| ``matrix3d(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n,)`` | 3차원 변환 효과                 | 없음          |
+
+
+
+**예제**
+
+```html
+<img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+```
+
+```css
+img {
+  width: 300px;
+  border: 1px solid lightgray;
+  transition: 1s;
+  /* perspective 원근감 값은 transform에 가장 앞쪽에 배치해야 한다. */
+/*   transform: perspective(500px) rotateX(45deg); */
+  transform: perspective(500px) rotateY(45deg);
+}
+```
+
+
+
+<br />
+
+<br />
+
+<br />
+
+### Transform 변환 속성
+
+| 속성                    | 의미                                               |
+| ----------------------- | -------------------------------------------------- |
+| ``transform-origin``    | 요소 변환의 기준점을 설정                          |
+| ``transform-style``     | 3D 변환 요소의 자식 요소도 3D 변환을 사용할지 설정 |
+| ``perspective``         | 하위 요소를 관찰하는 원근 거리를 설정              |
+| ``perspective-origin``  | 원근 거리의 기준점을 설정                          |
+| ``backface-visibility`` | 3D 변환으로 회전된 요소의 뒷면 숨김을 설정         |
+
+
+
+#### transform-origin
+
+요소 변환의 기준점을 설정(기본값 정중앙(X축: 50%, Y축: 50%))
+
+**속성 값**
+
+| 값   | 의미                                         | 기본값 |
+| ---- | -------------------------------------------- | ------ |
+| X축  | ``left``, ``right``, ``center``, ``%``, 단위 | 50%    |
+| Y축  | ``top``, ``bottom``, ``center``, ``%``, 단위 | 50%    |
+| Z축  | 단위                                         | 0      |
+
+
+
+**예제**
+
+```html
+<img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+```
+
+```css
+img {
+  width: 200px;
+  border: 1px solid ligthgray;
+  transition: 1s;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%; /* 기본값 */
+}
+```
+
+
+
+#### transform-style
+
+3D 변환 요소의 자식 요소도 3D 변환을 사용할지 설정
+
+**속성 값**
+
+| 값              | 의미                                | 기본값   |
+| --------------- | ----------------------------------- | -------- |
+| ``flat``        | 자식 요소의 3D 변환을 사용하지 않음 | ``flat`` |
+| ``preserve-3d`` | 자식 요소의 3D 변환을 사용함        |          |
+
+
+
+**예제**
+
+```html
+<div class="perspective">
+  <div class="grand-parent">
+    <div class="parent">
+      <img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+    </div>
+  </div>
+</div>
+```
+
+```css
+.perspective {
+  width: 200px;
+  perspective: 500px;
+  padding: 70px;
+}
+.grand-parent {
+  width: 200px;
+  border: 3px solid dodgerblue;
+  transition: 1s;
+  transform: rotateX(-45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+.parent {
+  width: 200px;
+  border: 3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+img {
+  width: 200px;
+  border: 3px solid lightgray;
+  transition: 1s;
+  transform: rotateX(45deg);
+}
+```
+
+
+
+#### perspective
+
+하위 요소를 관찰하는 원근 거리를 설정
+
+**속성 값**
+
+| 값   | 의미                                  | 기본값 |
+| ---- | ------------------------------------- | ------ |
+| 단위 | ``px``, ``em``, ``cm`` 등 단위로 지정 |        |
+
+
+
+**예제**
+
+```html
+<div class="perspective">
+  <div class="grand-parent">
+    <div class="parent">
+      <img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+    </div>
+  </div>
+</div>
+```
+
+```css
+.perspective {
+  width: 200px;
+  perspective: 600px; /* 원근감 값을 잘 조절해서 해야 된다. */
+  padding: 70px;
+}
+.grand-parent {
+  width: 200px;
+  border: 3px solid dodgerblue;
+  transition: 1s;
+  transform: rotateX(-45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+.parent {
+  width: 200px;
+  border: 3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+img {
+  width: 200px;
+  border: 3px solid lightgray;
+  transition: 1s;
+  transform: rotateX(45deg);
+}
+```
+
+
+
+#### perspective 속성과 함수의 차이점
+
+| 속성/함수                    | 적용대상              | 기준점 설정            |
+| ---------------------------- | --------------------- | ---------------------- |
+| ``perspective``              | 관찰 대상의 부모 요소 | ``perspective-origin`` |
+| ``transform: perspective()`` | 관찰 대상             | ``transform-origin``   |
+
+> ``perspective`` 속성은 관찰 대상의 부모(조상) 요소에 적용하여 하위 요소들을 관찰하는 원근 거리를 설정하며,<br />
+> ``transform: perspective()`` 변환 함수는 관찰 대상에 직접 적용하여 그 대상을 관찰하는 원근 거리를 설정합니다.
+
+
+
+#### perspective-origin
+
+원근 거리의 기준점을 설정
+
+**속성 값**
+
+| 값   | 의미                                         | 기본값  |
+| ---- | -------------------------------------------- | ------- |
+| X축  | ``left``, ``right``, ``center``, ``%``, 단위 | ``50%`` |
+| Y축  | ``top``, ``bottom``, ``center``, ``%``, 단위 | ``50%`` |
+
+
+
+**관찰하는 요소 위치 참고**
+
+![IMG_0003](https://user-images.githubusercontent.com/46523571/68698911-4dc9fa00-05c5-11ea-9f73-8187210f005b.png)
+
+
+
+**예제**
+
+```html
+<div class="perspective">
+  <div class="grand-parent">
+    <div class="parent">
+      <img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+    </div>
+  </div>
+</div>
+```
+
+```css
+.perspective {
+  width: 200px;
+  perspective: 600px; /* 원근감 값을 잘 조절해서 해야 된다. */
+  perspective-origin: 50% 50%; /* 원근감 기준점 기본값 */
+  padding: 70px;
+}
+.grand-parent {
+  width: 200px;
+  border: 3px solid dodgerblue;
+  transition: 1s;
+  transform: rotateX(-45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+.parent {
+  width: 200px;
+  border: 3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg);
+  transform-style: preserve-3d;
+/* flat(기본값) -> preserve-3d(자식에도 3D 효과 넣겠다)  */
+}
+img {
+  width: 200px;
+  border: 3px solid lightgray;
+  transition: 1s;
+  transform: rotateX(45deg);
+}
+```
+
+
+
+#### backface-visibility
+
+3D 변환으로 회전된 요소의 뒷면 숨김을 설정
+
+**속성 값**
+
+| 값      | 의미             | 기본값  |
+| ------- | ---------------- | ------- |
+| visible | 뒷면 숨기지 않음 | visibel |
+| hidden  | 뒷면 숨김        |         |
+
+
+
+**예제**
+
+```html
+<img src="https://avatars1.githubusercontent.com/u/46523571?s=460&v=4" alt="KANGPRO">
+```
+
+```css
+img {
+  width: 300px;
+  border: 1px solid lightgray;
+  transition: 1s;
+/*   transform: perspective(400px) rotateY(0deg); */
+  transform: perspective(400px) rotateY(180deg); /* 반전 */
+  backface-visibility: hidden;
+}
+```
+
+
+
+#### matrix(a, b, c, d, e, f)(인수 6개)
+
+요소의 2차원 변환(Transforms) 효과를 지정<br />
+``scale()``, ``skew()``, ``translate()``, ``rotate()`` 를 지정
+
+> 요소에 일반 변환(Transforms) 함수(2D, 3D)를 사용하더라도 브라우저에 의해 ``matrix``함수로 계산되어 적용됩니다.(2D 변환함수는 ``matrix`` 로, 3D 변환 함수는 ``matrix3d`` 로) 따라서 일반적인 경우는 ``matrix`` 함수가 아닌 일반 변환 함수를 사용하면 됩니다.
+
+
+
+**예시**
+
+![IMG_0004](https://user-images.githubusercontent.com/46523571/68700080-abf7dc80-05c7-11ea-9aa0-d3bda293b317.png)
+
+
+
+<br/>
+
+<br/>
+
+<br/>
+
+
+
+
+## 참고
+---
+패스트캠퍼스(박영웅 강사님) : 올인원 패키지 : 프론트엔드 개발 with React.js
+
+<br/>
+개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
