@@ -20,8 +20,9 @@ published: true
 
 ## Net 매니저 실행
 * 터미널 실행
-###
+```
     [orcl:Disk1]$  netmgr
+```
    
 <img width="570" alt="Screen Shot 2019-04-05 at 3 55 54 PM" src="https://user-images.githubusercontent.com/46523571/55670098-1c64af80-58bb-11e9-8ad2-7ec97dbc433c.png">
 
@@ -45,23 +46,19 @@ published: true
 
 ## 리스너 상태 확인
 * 터미널 실행
-###
+```
     [orcl:Disk1]$ vi $ORACLE_HOME/network/admin/listener.ora
+```
 <img width="572" alt="Screen Shot 2019-04-05 at 4 05 20 PM" src="https://user-images.githubusercontent.com/46523571/55670156-fe4b7f00-58bb-11e9-9c07-72e6b607e886.png">
 * 현재 내 listener는 LISTENER, L2 2개
 <img width="573" alt="Screen Shot 2019-04-05 at 4 04 58 PM" src="https://user-images.githubusercontent.com/46523571/55670173-06a3ba00-58bc-11e9-9d76-d8d27328911c.png">
 
 ## 리스너 시작
 * 터미널 실행
-###
+```
     [orcl:Disk1]$ lsnrctl start
+```
 <img width="573" alt="Screen Shot 2019-04-05 at 4 12 14 PM" src="https://user-images.githubusercontent.com/46523571/55670157-fe4b7f00-58bb-11e9-9f96-9e8507befb48.png">
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

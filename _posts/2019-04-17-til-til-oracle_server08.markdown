@@ -21,7 +21,7 @@ published: true
 * https://docs.oracle.com/cd/E11882_01/server.112/e25494/create.htm#ADMIN11073
 
 ## 0.디렉토리 및 파라미터 파일 생성 
-    
+```
        [orcl:~]$ vi + $ORACLE_HOME/sqlplus/admin/glogin.sql 
             
             vi 편집기 실행
@@ -82,9 +82,10 @@ published: true
         
             remote_login_passwordfile = exclusive
             vi 편집기 종료
+```
             
 ## 1.Software 시작
-    
+```
        [prod:~]$ sqlplus / as sysdba
     
        SQL> startup nomount            
@@ -105,8 +106,10 @@ published: true
             oracle   10484     1  0 18:17 ?        00:00:00 asm_smon_+ASM
             oracle    4556     1  0 15:53 ?        00:00:00 ora_smon_prod
             oracle    8148     1  0 14:52 ?        00:00:01 ora_smon_orcl
+```
+
 ## 2.Create database 명령 실행 
-    
+```
        SQL> create database prod        --시간 소요 됨
             logfile group 1 ('$ORACLE_BASE/oradata/prod/redo01_a.log', 
                              '$ORACLE_BASE/oradata/prod/redo01_b.log') size 20m,
@@ -124,9 +127,10 @@ published: true
              INSTANCE_NAME                    STATUS
              -------------------------------- ------------------------
              prod                             OPEN
+```
 
 ## 3.필수 Script 수행
-    
+```
        SQL> alter user sys identified by oracle;        -- 기본 암호 : change_on_install -> 새로운 패스워드
             User altered.
        SQL> alter user system identified by oracle;     -- 기본 암호 : manager -> 새로운 패스워드
@@ -150,8 +154,10 @@ published: true
             DB 생성 완료!!!!! 축하합니다.
             
        SQL> exit
+```
 
 ## Test
+```
        [prod:~]$ ps -ef|grep smon
     
             oracle   24145     1  0 18:06 ?        00:00:00 ora_smon_prod   <-수동으로 만든거
@@ -204,7 +210,9 @@ published: true
             orcl:/u01/app/oracle/product/11.2.0/dbhome_1:N  --기존에 만들어져 있음 
             prod:/u01/app/oracle/product/11.2.0/dbhome_1:N  --추가하기
             vi 편집기 종료
-###
+```
+
+```
       [prod:~]$ export ORACLE_SID=prod      --prod로 접속
       [prod:~]$ sqlplus / as sysdba         --sqlplus 접속
       
@@ -242,13 +250,10 @@ published: true
            Grant succeeded.
        
       SQL> exit
-      
-     
-
-
-
+```
 
 ## 심심풀이
+```
     * 시스템 날짜 확인 
     SQL> select sysdate from dual;
     SYSDATE
@@ -272,14 +277,7 @@ published: true
     MONTHS_BETWEEN(SYSDATE,TO_DATE('09-DEC-86'))
     --------------------------------------------
                                       387.982642
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

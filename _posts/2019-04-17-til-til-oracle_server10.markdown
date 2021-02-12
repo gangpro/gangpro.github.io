@@ -27,13 +27,15 @@ published: true
 * 기타
  
 ## 서버측 설정 실습 : connect-time failover 및 connect-time load balance
-###    
+```
     --리스너 상태 확인 
     [orcl:~]$ ps -ef|grep lsnr      <-현재 리스너 상태 확인
     oracle   11705     1  0 08:27 ?        00:00:00 /u01/app/oracle/product/11.2.0/dbhome_1/bin/tnslsnr LISTENER -inherit
     oracle   12504 12467  0 10:21 pts/3    00:00:00 grep lsnr
     [orcl:~]$
-###
+```
+
+```
     --현재 실행 중인 리스터 정지
     [orcl:~]$ lsnrctl stop LISTENER     <-LISTNER 리스너 정지
     
@@ -44,7 +46,9 @@ published: true
     Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=edydr1p0.us.oracle.com)(PORT=1521)))
     The command completed successfully
     [orcl:~]$
-###
+```
+
+```
     --기존에 있던 리스너 삭제 후 수동으로 리스너 추가    
     [orcl:~]$ vi $ORACLE_HOME/network/admin/listener.ora
 
@@ -81,7 +85,9 @@ published: true
     
     ADR_BASE_L2 = /u01/app/oracle
     vi 편집기 종료
-###    
+```
+
+```
       --리스너 다시 시작해보기
       [orcl:~]$ lsnrctl start LISTENER        
             LSNRCTL for Linux: Version 11.2.0.1.0 - Production on 11-APR-2019 10:34:59
@@ -160,10 +166,11 @@ published: true
             Database mounted.
             Database opened.
       SQL>
+```
 
 ## 클라이언트 설정(Windows에서) 실습 : connect-time failover 및 connect-time load balance
 * Oracle XE가 설치된 경우
-###
+```
       C:\Users\student> sqlplus ora_user/hong@192.168.56.101:1521/orcl      <-별도의 설정파일이 없는 easy connect 방식
       SQL> exit
     
@@ -185,10 +192,10 @@ published: true
       vi 편집기 종료
       
       C:\Users\student> sqlplus ora_user/hong@_orcl
+```
 
 * Oracle Instant Client 이용하는 경우
-###
-
+```
     C:\Users\student> notepad ora_user.bat
 
          set PATH=C:\Users\student\instantclient_12_1;%path%
@@ -214,9 +221,10 @@ published: true
     C:\Users\student> ora_user
     
     SQL> exit
-
+```
 
 ## Database Link 활용하기
+```
       -> 새로운 명령 프롬프트 시작
     
       C:\Users\student> sqlplus ace29/me@70.12.114.184:1521/xe
@@ -243,12 +251,7 @@ published: true
            from emp_orcl e, departments d           <-e: ace 안에 VM 안의 orcl 데이터 , d:ace 안 데이터
            where e.department_id = d.department_id
            order by 1;
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

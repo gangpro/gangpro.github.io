@@ -25,13 +25,15 @@ published: true
   - Segment    : space occupying object
   - Extent     : continuous block  
   - Block      : (저장 및 I/O의 최소단위)
-###
+```
       cf.object와 segment 비교
     
          object  : table, index, undo, view, sequence, procedure, function, ...
          segment : table, index, undo, ...
+```
 
 ## 예제로 개념이해하기
+```
       (1)
     
       create table myts
@@ -40,7 +42,9 @@ published: true
     
       -> segment 몇 개? 0
       -> extent  몇 개? 2
-###
+```
+
+```
      (2)
     
       create table emp(컬럼 설정, ...)
@@ -53,7 +57,9 @@ published: true
       
       -> segment 몇 개? 1
       -> extent  몇 개? 5
-###
+```
+
+```
      (3)
     
       create table dept컬럼 설정, ...)
@@ -66,7 +72,9 @@ published: true
       
       -> segment 몇 개? 2
       -> extent  몇 개? 7
-###
+```
+
+```
       (4)
     
       Meta data를 쿼리해서 이런 상황을 확인해 봅시다.
@@ -89,12 +97,7 @@ published: true
            from dba_extents
            where owner = 'SH'
            and segment_name = 'TIMES';
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -19,15 +19,16 @@ published: true
 > 유저 보안 관리 : 11gWS1 교재 8장<br>
 
 ## 알고 있는 내용
-###
+```
       - create user 명령 : 사용자명, 암호, 공간 할당, ...
     
       - grant 권한         to 사용자 : 시스템 권한 관리
         grant 권한 on 객체 to 사용자 : 객체 권한 관리
+```
 
 ## 더 배울 내용
 * Role : 권한 관리의 편의를 위해 활용
-###    
+```
         [orcl:~]$ export ORACLE_SID=orcl
         [orcl:~]$ sqlplus / as sysdba
     
@@ -76,9 +77,10 @@ published: true
     
         grant create procedure
         to dev_role;
-###
+```
+
 * Profile : 자원 사용 제한 및 암호 관리
-###
+```
         https://oracle-base.com/articles/misc/basic-security-measures-for-oracle#password-aging-expiration-and-history
     
         SQL> 
@@ -100,13 +102,7 @@ published: true
     
         ALTER USER u1 PROFILE user_prof;
         ALTER USER u4 PROFILE user_prof;
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -19,6 +19,7 @@ published: true
 > 데이터베이스 인스턴스 관리 : 11gWS1 교재 4장<br>
 
 ## 인스턴스 관리를 위한 기본 지식
+```
     1. Management Framework : Linstenser, Database Control, Instance
     2. 파라미터 및 파라미터 파일
       - 파라미터 -> 
@@ -34,12 +35,14 @@ published: true
       - Meta Data 확인용 뷰 -> Static Data Rictionary View : user_***, all_***, dba_***
                           -> Dynamic Performance View    : v$***
         cf. https://docs.oracle.com/cd/E11882_01/server.112/e40540/intro.htm#CNCPT958
+```
 
 ## DBA 접속 방법
 * SQL 상태에서 conn / as sysdba
 * [orcl:~] 상태에서 sqlplus / as sysdba
 
 ## 실습
+```
     Last login: Mon Apr  8 09:20:41 2019
     [orcl:~]$ echo $ORACLE_SID
     orcl
@@ -235,10 +238,10 @@ published: true
     Session ID: 0 Serial number: 0
         
     SP2-0157: unable to CONNECT to ORACLE after 3 attempts, exiting SQL*Plus
-
-
+```
 
 ## 오라클 데이터베이스 구조 확인
+```
     [orcl:~]$ sqlplus / as sysdba
     
     SQL*Plus: Release 11.2.0.1.0 Production on Mon Apr 8 10:29:28 2019
@@ -270,10 +273,10 @@ published: true
     SQL> select paddr, name      <- paddr 컬럼이 00인 프로세스는 시작되지 않은 것임
          from v$bgprocess
          order by paddr;
-
-
+```
 
 ## 테이블 스페이스 생성
+```
     SQL> select * from v$tablespace;
     
            TS# NAME                           INC BIG FLA ENC
@@ -318,9 +321,10 @@ published: true
     6 rows selected.
     
     SQL> 
-
+```
 
 ## 사용자 관리
+```
     --생성
     SQL> create tablespace app_ts
          datafile '/u01/app/oracle/oradata/orcl/app_ts01.dbf' size 100m,
@@ -353,7 +357,9 @@ published: true
          APP_TS                         /u01/app/oracle/oradata/orcl/app_ts03.dbf
         
          9 rows selected.
-###
+```
+
+```
     --삭제
     SQL> drop tablespace app_ts
          including contents and datafiles;
@@ -372,8 +378,10 @@ published: true
          MYTS                           /u01/app/oracle/oradata/orcl/myts.dbf
     
          6 rows selected.
+```
     
 ## 사용자 관리
+```
     SQL> show parameter name
     
         NAME_COL_PLUS_SHOW_PARAM                                                         TYPE
@@ -401,7 +409,9 @@ published: true
         
         service_names                                                                    string
         orcl
-### 
+```
+
+```
     SQL> select username, account_status
       2  from dba_users
       3  order by username;
@@ -456,13 +466,17 @@ published: true
         XS$NULL                        EXPIRED & LOCKED
         
         37 rows selected.
-###
+```
+
+```
     SQL> alter user hr
       2  identified by hr
       3  account unlock;
     
         User altered.
-###
+```
+
+```
     SQL> select distinct privilege          <-관리 가능한 시스템 권한 @@@
       2  from dba_sys_privs
       3  order by 1;
@@ -727,7 +741,9 @@ published: true
         UPDATE ANY TABLE
         
         202 rows selected.
-###
+```
+
+```
     SQL> create user bts
          identified by army
          default tablespace example
@@ -774,10 +790,11 @@ published: true
         T2                             USERS
         
     SQL>
+```
     
 ## DBCA 방식이 아닌 수동으로 create database 명령으로 데이터베이스 생성
 * https://docs.oracle.com/cd/E11882_01/server.112/e25494/create.htm#ADMIN11073
-###
+```
     0.디렉토리 및 파라미터 파일 생성 
     
        [orcl:~]$ vi + $ORACLE_HOME/sqlplus/admin/glogin.sql 
@@ -840,7 +857,9 @@ published: true
         
             remote_login_passwordfile = exclusive
             vi 편집기 종료
-###            
+```
+
+```
     1.Software 시작
     
        [prod:~]$ sqlplus / as sysdba
@@ -863,7 +882,9 @@ published: true
             oracle   10484     1  0 18:17 ?        00:00:00 asm_smon_+ASM
             oracle    4556     1  0 15:53 ?        00:00:00 ora_smon_prod
             oracle    8148     1  0 14:52 ?        00:00:01 ora_smon_orcl
-### 
+```
+
+```
     2.Create database 명령 실행 
     
        SQL> create database prod        --시간 소요 됨
@@ -883,8 +904,9 @@ published: true
              INSTANCE_NAME                    STATUS
              -------------------------------- ------------------------
              prod                             OPEN
+```
 
-###
+```
     3.필수 Script 수행
     
        SQL> alter user sys identified by oracle;        -- 기본 암호 : change_on_install -> 새로운 패스워드
@@ -910,8 +932,9 @@ published: true
             DB 생성 완료!!!!! 축하합니다.
             
        SQL> exit
+```
 
-### 
+```
     Test
        [prod:~]$ ps -ef|grep smon
     
@@ -965,7 +988,9 @@ published: true
             orcl:/u01/app/oracle/product/11.2.0/dbhome_1:N  --기존에 만들어져 있음 
             prod:/u01/app/oracle/product/11.2.0/dbhome_1:N  --추가하기
             vi 편집기 종료
-###
+```
+
+```
       [prod:~]$ export ORACLE_SID=prod      --prod로 접속
       [prod:~]$ sqlplus / as sysdba         --sqlplus 접속
       
@@ -1003,16 +1028,10 @@ published: true
            Grant succeeded.
        
       SQL> exit
-      
-      
-
-
-
-
-
-
+```
 
 ## 파라미터 파일 실습
+```
     --가상머신 터미널에서 실행 
     
     [orcl:~]$ . oraenv                  <-가상환경 변경 명령문
@@ -1083,9 +1102,10 @@ published: true
         NAME                                 TYPE        VALUE
         ------------------------------------ ----------- ------------------------------
         spfile                               string
-        
+```     
 
 ## Diagnostic Tools 실습
+```
     SQL> show parameter dump_dest
     
         NAME                                 TYPE        VALUE
@@ -1174,9 +1194,10 @@ published: true
         prod_ora_10653.trc  prod_ora_10824.trm  prod_ora_8070.trc  prod_ora_8110.trm
 
     [prod:trace]$
+```
 
 ## Meta data 확인용 view
-
+```
     [prod:trace]$ cd        <-홈으로 복귀
     [prod:~]$ pwd
         /home/oracle
@@ -1191,7 +1212,9 @@ published: true
         Variable Size             100663344 bytes
         Database Buffers           67108864 bytes
         Redo Buffers                6668288 bytes
-###
+```
+
+```
     * Dynamic Performance View는 데이터의 출처가 parameter file, instance, control file임(마운트가 되어야 파일 읽을 수 있다.)
     * Static Data Dictionary View는 데이터의 출처가 datafile임(open이 되어야 파일 읽을 수 있다.)
         
@@ -1207,14 +1230,8 @@ published: true
     SQL> alter database open;    
     SQL> select * from v$instance;  --성공
     SQL> select * from v$datafile;  --에러
-    SQL> select * from dba_users;   --에러                  
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+    SQL> select * from dba_users;   --에러   
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

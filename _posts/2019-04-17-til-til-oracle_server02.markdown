@@ -34,12 +34,5 @@ published: true
 * 좌측에 새로운 가상환경 생성 완료
 <img width="1680" alt="Screen Shot 2019-04-05 at 10 04 30 AM" src="https://user-images.githubusercontent.com/46523571/55634705-fb885580-57f9-11e9-976c-482f79cb0e64.png">
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

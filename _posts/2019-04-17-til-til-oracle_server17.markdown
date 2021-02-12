@@ -28,7 +28,7 @@ published: true
 <br>
 
 ## 데이터베이스 모드 변경 : Noarchivelog -> Archivelog
-
+```
     [orcl:~]$ who am i
     oracle   pts/3        Apr 22 15:47 (:0.0)
     
@@ -132,13 +132,10 @@ published: true
     1_40_1005054039.dbf  1_41_1005054039.dbf  1_42_1005054039.dbf
     
     SQL> 
-
-<br>
-<br>
-<br> 
+```
 
 ## Whole Closed 백업
-
+```
     SQL> shutdown immediate
     Database closed.
     Database dismounted.
@@ -149,17 +146,13 @@ published: true
     SQL> ! cp /u01/app/oracle/oradata/prod/* /u01/app/oracle/oradata/prod_backup
     
     SQL> 
-
-<br>
-<br>
-<br>
+```
 
 ## 복구
 * cf. http://www.yes24.com/Product/Goods/5926350
 * cf. http://www.yes24.com/Product/Goods/5926357
-###
 * 일반 Datafile 훼손 복구 사례
-###
+```
     (1) 데이터 활동
     
     [orcl:~]$ export ORACLE_SID=prod
@@ -220,11 +213,9 @@ published: true
     SQL> /
     SQL> /
     SQL> /
-    
-    
-    
-    
-    
+```
+
+```
     (2) 에러 발생 원인
     SQL> ! rm /u01/app/oracle/oradata/prod/users01.dbf        <-파일 훼손
     
@@ -252,11 +243,9 @@ published: true
     ERROR at line 1:
     ORA-00376: file 4 cannot be read at this time
     ORA-01110: data file 4: '/u01/app/oracle/oradata/prod/users01.dbf'    
-    
-    
-    
-    
-    
+```
+
+```
     (3) 복구 = 복원 + Redo 적용
     
     SQL> ! cp /u01/app/oracle/oradata/prod_backup/users01.dbf /u01/app/oracle/oradata/prod      <-prod_backup에 있는 백업 파일을 prod에 데이터 복원
@@ -281,10 +270,10 @@ published: true
     ------ ------------------------------
       1000 Very Important!
       2000 Valuable Data
+```
 
-###
 * System 혹은 Undo Datafile 훼손 복구 사례
-###
+```
     SQL> ! rm /u01/app/oracle/oradata/prod/system01.dbf
     
     SQL> startup force
@@ -324,19 +313,19 @@ published: true
     
     SQL> alter database open;
     Database altered.
+```
 
-###
 * Temporary Datafile 훼손 복구 사례 
-###
+```
     SQL> ! rm /u01/app/oracle/oradata/prod/temp01.tmp
 
     SQL> ! vi + /u01/app/oracle/diag/rdbms/prod/prod/trace/alert_prod.log
     --중간쯤 자동으로 생성되었음을 확인할 수 있음
     Re-creating tempfile /u01/app/oracle/oradata/prod/temp01.tmp
+```
 
-###
 * Control file 훼손 복구 사례 
-###
+```
     SQL> select name from v$controlfile;
     NAME
     --------------------------------------------------------------------------------
@@ -373,10 +362,10 @@ published: true
     Database opened.
     
     SQL> 
+```
 
-###
 * Redo log file 훼손 복구 사례 
-###
+```
     SQL> col member format a50
     
     SQL> select group#, member from v$logfile;
@@ -411,14 +400,7 @@ published: true
     ORACLE instance shut down.
     
     SQL> 
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -20,8 +20,9 @@ published: true
 
 ## DBCA로 데이터베이스 생성 
 * 가상환경에서 터미널 실행
-###
+```
     [orcl:Disk1]$ dbca
+```
 <img width="100%" alt="Screen Shot 2019-04-05 at 4 22 06 PM" src="https://user-images.githubusercontent.com/46523571/55670218-bd079f00-58bc-11e9-95f9-a927ab3483ad.png">
 
 <br>
@@ -186,12 +187,13 @@ published: true
 <br>
 
 ## 맥에서 가상환경 DBA 접속 방법
-* VirtualBox Network - Port Forwarding에 아이피 등록 후 맥에서 가상환경 DBA 접속 가능 
-###
+* VirtualBox Network - Port Forwarding에 아이피 등록 후 맥에서 가상환경 DBA 접속 가능
+```
     VirtualBox - Preferences - Newtwork - Adds New NAT network 버튼 클릭
     Network Name : NatNetwork
     Network CIDR : 10.0.2.0/24
     Network Options : Supports DHCP 체크
+```
 <img width="100%" alt="55634103-b7488580-57f8-11e9-8be0-f8ee863ad38f" src="https://user-images.githubusercontent.com/46523571/55670551-ef1b0000-58c0-11e9-88dd-ff3728c41503.png">
 
 <br>
@@ -199,13 +201,14 @@ published: true
 <br>
 
 * Port Forwarding
-###
+```
     Name : OracleDB
     Protocol : TDP
     Host IP : 70.12.240.242         <-맥 IP
     Host Port : 1158
     Guest IP : 192.168.56.102       <-DBA IP
     Guest Port : 1158
+```
 
 <img width="100%" alt="Screen Shot 2019-04-05 at 7 09 42 PM" src="https://user-images.githubusercontent.com/46523571/55670601-7b2d2780-58c1-11e9-82fe-d75e1a66014c.png">
 
@@ -214,20 +217,17 @@ published: true
 <br>
 
 * 맥 터미널에서 접속 확인
-###
+```
     @KANG ~ $ssh oracle@192.168.56.102          <-DBA IP
     oracle@192.168.56.102's password: 
     Last login: Fri Apr  5 19:14:03 2019 from 192.168.56.1
     [orcl:~]$ 
+```
 
 <img width="100%" alt="Screen Shot 2019-04-05 at 6 56 16 PM" src="https://user-images.githubusercontent.com/46523571/55671018-39eb4680-58c6-11e9-8f46-acbdb176ed60.png">
 
 * 맥 크롬에서 접속이 안되는 문제 발생.... 문제 해결 중
 ![Screen Shot 2019-04-05 at 7 09 42 PM (2)](https://user-images.githubusercontent.com/46523571/55671055-bbdb6f80-58c6-11e9-9120-819c4e47a2c5.png)
-
-
-
-
 
 <br>
 <br>

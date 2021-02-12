@@ -47,12 +47,5 @@ published: true
 * 가상환경 구동 성공
 <img width="1213" alt="Screen Shot 2019-04-05 at 11 38 21 AM" src="https://user-images.githubusercontent.com/46523571/55634104-b7e11c00-57f8-11e9-84f3-db5ee6e7ec6a.png">
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

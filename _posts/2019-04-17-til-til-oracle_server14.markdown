@@ -20,7 +20,7 @@ published: true
 
 ## 
 * undo advisor를 활용해서 이 서버에 필요한 undo 크기를 파악한 뒤 적절한 크기의 undo 테이블스페이스를 사용하도록 설정하는 것
-###
+```
       SQL> create undo tablespace myundo_ts
            datafile '/u01/app/oracle/oradata/orcl/undo43.dbf' size 100m;
     
@@ -46,14 +46,8 @@ published: true
       MYTS                           PERMANENT
       UNDOTBS1                       UNDO        --> undo      : 오직 undo segment만 보관 가능   
       MYUNDO_TS                      UNDO
-      TEMP                           TEMPORARY   --> temporary : 오직 temporary segment만 보관 가능   
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+      TEMP                           TEMPORARY   --> temporary : 오직 temporary segment만 보관 가능  
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

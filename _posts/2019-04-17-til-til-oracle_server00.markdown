@@ -51,7 +51,7 @@ published: true
   - Instance = Memory(SGA) + Process(BGP)
     - SGA(System Global Area)  = Shared Pool + Databse Buffer Cache + Redo Log Buffer + 기타
     - BGP(Backaground Process) = PMON, SMON, DBWn, LGWR, CKPT, ARCn
-###
+```
         ~ 인스턴스 상태 변경 : startup -> nomount -> mount -> open
                                    |          |        |
                                parameter   control   datafile
@@ -59,6 +59,7 @@ published: true
 
         - Startup 옵션 : startup (nomount | mount | open) (restrict)
         - Shutdown 옵션 : shutdown (normal | transacitional | immediate | abort)
+```
 
 * Backup(복사), Restore(복원), Recovery(복구)
 
@@ -66,12 +67,6 @@ published: true
 ## (참고) 오라클 데이터베이스 서버 관리자 
 * Tasks of a Database Administrator
   - https://docs.oracle.com/cd/E11882_01/server.112/e25494/dba.htm#ADMIN11020
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

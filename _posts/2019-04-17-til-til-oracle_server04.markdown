@@ -76,7 +76,7 @@ published: true
 
 ## Execute Configuration scripts 관련
 * 터미널 실행
-###
+```
     [orcl:~]$ su -
     Password: 비밀번호 입력
     [root@edydrlp0 ~]#
@@ -86,6 +86,7 @@ published: true
     [root@edydrlp0 ~]# /u01/app/oracle/product/11.2.0/dbhome_1/root.sh
     
     위 2개 코드 적용 완료 후 설치화면 OK 버튼 클릭
+```
 
 <img width="720" alt="Screen Shot 2019-04-05 at 3 50 53 PM" src="https://user-images.githubusercontent.com/46523571/55633717-e6122c00-57f7-11e9-8fe0-94b9bb9ce3a7.png">
 <img width="719" alt="Screen Shot 2019-04-05 at 3 51 31 PM" src="https://user-images.githubusercontent.com/46523571/55633719-e6122c00-57f7-11e9-90e2-1e465f2e0d5b.png">
@@ -96,13 +97,6 @@ published: true
 ## Finish
 * close
 <img width="499" alt="Screen Shot 2019-04-05 at 3 53 21 PM" src="https://user-images.githubusercontent.com/46523571/55633723-e6aac280-57f7-11e9-9d4a-e7f066631405.png">
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
