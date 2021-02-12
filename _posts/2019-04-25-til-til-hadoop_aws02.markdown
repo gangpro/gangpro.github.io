@@ -19,12 +19,6 @@ AWS 탄력적 IP(고정 IP) 설정 <br />
 # AWS 탄력적 IP(고정 IP) 설정
 > Install Hadoop on AWS <br>
 
-> 개발환경<br> 
-> OS : Macbook Pro, macOS Mojave<br>
-> AWS : Amazon Web Services with EC2(Amazon Linux AMI)<br>
-> JDK : jdk-7u51-linux-x64<br>
-> Hadoop : Hadoop 1.2.1<br>
-
 ## 탄력적 IP 설정(고정 IP 설정) 및 주소 연결
 * 좌측 탭 - 네트워크 및 보안 - 탄력적 IP 선택
 * '새 주소 할당' 버튼 클릭

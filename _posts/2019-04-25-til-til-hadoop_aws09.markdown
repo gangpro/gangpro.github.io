@@ -19,13 +19,8 @@ Hadoop 설치 확인<br />
 # Hadoop 설치 확인
 > Install Hadoop on AWS <br>
 
-> 개발환경<br> 
-> OS : Macbook Pro, macOS Mojave<br>
-> AWS : Amazon Web Services with EC2(Amazon Linux AMI)<br>
-> JDK : jdk-7u51-linux-x64<br>
-> Hadoop : Hadoop 1.2.1<br>
-
 ## Hadoop 설치 확인(1)
+```
     [ec2-user@namenode conf]$ hadoop dfsadmin -report
     Safe mode is ON
     Configured Capacity: 24956350464 (23.24 GB)
@@ -74,6 +69,7 @@ Hadoop 설치 확인<br />
     
     
     [ec2-user@namenode conf]$ 
+```
 <img width="637" alt="Screen Shot 2019-04-23 at 8 02 55 PM" src="https://user-images.githubusercontent.com/46523571/56576250-d1f56980-6602-11e9-8de2-e2772b483652.png">
 
 <br>
@@ -87,10 +83,6 @@ Hadoop 설치 확인<br />
 
 * MapReduce namenode의 50030 포트에서 모니터링할 수 있다.
 ![Screen Shot 2019-04-23 at 8 07 18 PM](https://user-images.githubusercontent.com/46523571/56576464-6b248000-6603-11e9-9045-f94f70b51fd3.png)
-
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

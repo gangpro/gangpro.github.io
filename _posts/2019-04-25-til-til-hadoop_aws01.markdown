@@ -18,12 +18,6 @@ AWS EC2 인스턴스 생성<br />
 # AWS EC2 인스턴스 생성
 > Install Hadoop on AWS <br>
 
-> 개발환경<br> 
-> OS : Macbook Pro, macOS Mojave<br>
-> AWS : Amazon Web Services with EC2(Amazon Linux AMI)<br>
-> JDK : jdk-7u51-linux-x64<br>
-> Hadoop : Hadoop 1.2.1<br>
-
 ## AWS 콘솔 접속 및 AWS EC2 인스턴스 생성
 * https://aws.amazon.com/ko/
 <img width="100%" alt="Screen Shot 2019-04-23 at 9 20 09 AM" src="https://user-images.githubusercontent.com/46523571/56542547-c3c72f00-65a9-11e9-96de-151cc77c02ac.png">
@@ -114,8 +108,10 @@ AWS EC2 인스턴스 생성<br />
 <img width="702" alt="Screen Shot 2019-04-23 at 10 05 53 AM" src="https://user-images.githubusercontent.com/46523571/56544480-967d7f80-65af-11e9-8f6e-4684d1d65aa5.png">
 
 * 터미널 실행 후 다운로드한 hdcluster.pem 파일을 .ssh 폴더에 이동
-###
+```
     mv ~/Downloads/hdcluster.pem ~/.ssh/hdcluster.pem
+```
+
 * [키 페어 관련 참고 URL](https://aws.amazon.com/ko/getting-started/tutorials/launch-a-virtual-machine/)
 <img width="839" alt="Screen Shot 2019-04-23 at 10 14 28 AM" src="https://user-images.githubusercontent.com/46523571/56544841-9cc02b80-65b0-11e9-9645-c1219412a8a5.png">
 

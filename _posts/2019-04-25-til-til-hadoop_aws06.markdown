@@ -18,12 +18,6 @@ AWS EC2 인스턴스 방화벽 설정<br />
 # AWS EC2 인스턴스 방화벽 설정
 > Install Hadoop on AWS <br>
 
-> 개발환경<br> 
-> OS : Macbook Pro, macOS Mojave<br>
-> AWS : Amazon Web Services with EC2(Amazon Linux AMI)<br>
-> JDK : jdk-7u51-linux-x64<br>
-> Hadoop : Hadoop 1.2.1<br>
-
 ## EC2 인스턴스 방화벽 설정
 * EC2 인스턴스는 기본적으로 SSH 프로토콜 사용을 위한 22번 포트를 제외하고는 모든 포트들이 막혀있다. 따라서 Hadoop이 사용하는 포트의 방화벽을 풀어줘야 한다.
 * 네트워크 및 보안 - 보안 그룹 - launch-wizard-1 체크 박스 선택 - 인바운드 탭 - '편집' 버튼 클릭
@@ -44,27 +38,10 @@ AWS EC2 인스턴스 방화벽 설정<br />
   - 나의 경우 하둡관련 인스턴스가 launch-wizard-6이어서 6에 추가했다.
 <img width="1680" alt="Screen Shot 2019-04-23 at 4 37 22 PM" src="https://user-images.githubusercontent.com/46523571/56563241-1f171280-65e6-11e9-89d1-ba5dddcfeed6.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 하둡 다운로드 및 설치
 * 하둡 다운로드
 * http://mirror.apache-kr.org/hadoop/common에서 1.2.X stable 버전을 사용
-###
+```
     [ec2-user@namenode ~]$ cd
     [ec2-user@namenode ~]$ wget https://archive.apache.org/dist/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz
     --2019-04-23 07:43:01--  https://archive.apache.org/dist/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz
@@ -79,9 +56,10 @@ AWS EC2 인스턴스 방화벽 설정<br />
     2019-04-23 07:43:34 (1.95 MB/s) - 'hadoop-1.2.1.tar.gz' saved [63851630/63851630]
     
     [ec2-user@namenode ~]$ 
+```
     
 * 하둡 설치파일 압축 해제
-###
+```
     # hadoop 압축 해제
     [ec2-user@namenode ~]$ tar xvfz hadoop-1.2.1.tar.gz
     엄청 길게 실행 됨+_+
@@ -98,10 +76,11 @@ AWS EC2 인스턴스 방화벽 설정<br />
     export PATH=$HADOOP_HOME/bin:$PATH 
     export PATH=$HADOOP_HOME/sbin:$PATH
     vi 편집기 종료
+```
     
 <img width="837" alt="Screen Shot 2019-04-23 at 5 13 08 PM" src="https://user-images.githubusercontent.com/46523571/56565329-170da180-65eb-11e9-9715-1478cbcf9d76.png">
 
-    
+```
     [ec2-user@namenode ~]$ . .bash_profile
     
     [ec2-user@namenode ~]$ env|grep HOME
@@ -116,9 +95,10 @@ AWS EC2 인스턴스 방화벽 설정<br />
     
     [ec2-user@namenode ~]$ pwd
     /home/ec2-user
+```
 
 * namenode에서 다른 노드(snamenode, data01, data02, data03)들로 hadoop-1.2.1.tar.gz을 scp 명령어로 복사한다.
-###
+```
     [ec2-user@namenode ~]$ scp hadoop-1.2.1.tar.gz ec2-user@snamenode:
     hadoop-1.2.1.tar.gz                                       100%   61MB 114.7MB/s   00:00    
     [ec2-user@namenode ~]$ scp hadoop-1.2.1.tar.gz ec2-user@data01:
@@ -128,18 +108,20 @@ AWS EC2 인스턴스 방화벽 설정<br />
     [ec2-user@namenode ~]$ scp hadoop-1.2.1.tar.gz ec2-user@data03:
     hadoop-1.2.1.tar.gz                                       100%   61MB 113.4MB/s   00:00    
     [ec2-user@namenode ~]$ 
+```
 <img width="834" alt="Screen Shot 2019-04-23 at 4 51 07 PM" src="https://user-images.githubusercontent.com/46523571/56563979-07408e00-65e8-11e9-89be-e41830b1b938.png">
 
 * 각각의 snamenode, data01, data02, data03 노드에 로그인하여 아래와 같이 hadoop-1.2.1.tar.gz 파일의 압축을 풀어주고, 위 과정처럼 환경변수를 확인한다.
-###
+```
     $ cd
     $ tar xvfz hadoop-1.2.1.tar.gz 
     $ ln -s hadoop-1.2.1 hadoop 
     $ vi .bash_profile
     $ source .bash_profile
+```
 
 * Hadoop 환경 설정 파일 수정(1) - hadoop-env.sh
-###
+```
     [ec2-user@namenode ~]$ cd $HADOOP_HOME/conf
     [ec2-user@namenode conf]$ vi hadoop-env.sh
     vi 편집기 실행 
@@ -147,20 +129,22 @@ AWS EC2 인스턴스 방화벽 설정<br />
     export HADOOP_HOME=/home/ec2-user/hadoop
     export HADOOP_HOME_WARN_SUPPRESS=1
     vi 편집기 종료
+```
 <img width="837" alt="Screen Shot 2019-04-23 at 5 18 21 PM" src="https://user-images.githubusercontent.com/46523571/56565625-d06c7700-65eb-11e9-8639-f5c8da0af998.png">
 
 * Hadoop 환경 설정 파일 수정(2) - masters
-###
+```
     [ec2-user@namenode conf]$ vi masters
     [ec2-user@namenode conf]$ 
     vi 편집기 실행 
     namenode-internal
     snamenode-internal 
     vi 편집기 종료
+```
 <img width="838" alt="Screen Shot 2019-04-23 at 5 21 07 PM" src="https://user-images.githubusercontent.com/46523571/56565845-440e8400-65ec-11e9-86d5-5b5437833090.png">
 
 * Hadoop 환경 설정 파일 수정(3) - slaves
-###
+```
     [ec2-user@namenode conf]$ vi slaves
     [ec2-user@namenode conf]$ 
     vi 편집기 실행 
@@ -168,10 +152,11 @@ AWS EC2 인스턴스 방화벽 설정<br />
     data02-internal
     data03-internal
     vi 편집기 종료
+```
 <img width="836" alt="Screen Shot 2019-04-23 at 5 22 47 PM" src="https://user-images.githubusercontent.com/46523571/56565931-6f916e80-65ec-11e9-8d48-51abc6181291.png">
 
 * Hadoop 환경 설정 파일 수정(4) - core-site.xml
-###
+```
     [ec2-user@namenode conf]$ vi core-site.xml
     [ec2-user@namenode conf]$ 
     vi 편집기 실행 
@@ -189,10 +174,11 @@ AWS EC2 인스턴스 방화벽 설정<br />
     
     # 아래 디렉토리들은 하둡 실행시에 자동으로 생성된다.
     /home/ec2-user/hadoop-tmp-dir
+```
 <img width="837" alt="Screen Shot 2019-04-23 at 5 24 25 PM" src="https://user-images.githubusercontent.com/46523571/56566001-a9627500-65ec-11e9-95f6-612d68b3bc25.png">
 
 * Hadoop 환경 설정 파일 수정(5) - hdfs-site.xml
-###
+```
     [ec2-user@namenode conf]$ vi hdfs-site.xml
     [ec2-user@namenode conf]$ 
     vi 편집기 실행 
@@ -223,15 +209,18 @@ AWS EC2 인스턴스 방화벽 설정<br />
         </property>
     </configuration>
     vi 편집기 종료
+```
     
+```
     # 아래 디렉토리들은 하둡 실행시에 자동으로 생성된다.
     /home/ec2-user/hadoop-tmp-dir/dfs
     /home/ec2-user/hadoop-tmp-dir/dfs/name
     /home/ec2-user/hadoop-tmp-dir/dfs/data
+```
 <img width="837" alt="Screen Shot 2019-04-23 at 5 27 15 PM" src="https://user-images.githubusercontent.com/46523571/56566199-0eb66600-65ed-11e9-914c-0ea6b4c2ff0d.png">
 
 * Hadoop 환경 설정 파일 수정(6) - mapred-site.xml
-###
+```
     [ec2-user@namenode conf]$ vi mapred-site.xml
     [ec2-user@namenode conf]$ 
     vi 편집기 실행
@@ -242,10 +231,11 @@ AWS EC2 인스턴스 방화벽 설정<br />
         </property>
     </configuration>
     vi 편집기 종료
+```
 <img width="835" alt="Screen Shot 2019-04-23 at 5 29 11 PM" src="https://user-images.githubusercontent.com/46523571/56566327-54732e80-65ed-11e9-9967-3f967d7f6bc5.png">
 
 * 위와 같이 namenode에서 수정한 파일들을 다른 노드들에게도 scp 명령어로 복사해 준다.
-###
+```
     [ec2-user@namenode conf]$ scp hadoop-env.sh masters slaves core-site.xml hdfs-site.xml mapred-site.xml ec2-user@snamenode:/home/ec2-user/hadoop/conf
     hadoop-env.sh                                             100% 2554     3.6MB/s   00:00    
     masters                                                   100%   37    64.4KB/s   00:00    
@@ -279,14 +269,12 @@ AWS EC2 인스턴스 방화벽 설정<br />
     mapred-site.xml                                           100%  294   616.2KB/s   00:00    
     
     [ec2-user@namenode conf]$ 
-
-
-
+```
 
 # Hadoop Cluster의 HDFS 포맷
 * Hadoop을 실행하기 전에 아래와 같이 namenode에서 HDFS(Hadoop Distributed File System)을 포맷해야 한다.
 * 포맷은 Hadoop Cluster set-up 단계에서 한 번만 실행하며, 추후 필요 시 재포맷 할 수 있다.
-###
+```
     [ec2-user@namenode conf]$ hadoop namenode -format
     19/04/23 08:34:59 INFO namenode.NameNode: STARTUP_MSG: 
     /************************************************************
@@ -319,6 +307,7 @@ AWS EC2 인스턴스 방화벽 설정<br />
     ************************************************************/
     
     [ec2-user@namenode conf]$ 
+```
     
 * 추후 namenode 재포맷할 시
   - Re-format filesystem in /home/oracle/hadoop/hadoop/dfs/name ? (Y or N) <- 반드시 대문자 Y 를 사용!
@@ -354,7 +343,7 @@ AWS EC2 인스턴스 방화벽 설정<br />
 
 
 * HDFS & 맵리듀스 모두 시작
-###
+```
     # hdfs & mapred 시작
     [ec2-user@namenode conf]$ start-all.sh
     starting namenode, logging to /home/ec2-user/hadoop/logs/hadoop-ec2-user-namenode-namenode.localdomain.out
@@ -367,7 +356,9 @@ AWS EC2 인스턴스 방화벽 설정<br />
     data03-internal: tasktracker running as process 2800. Stop it first.
     data02-internal: tasktracker running as process 2826. Stop it first.
     data01-internal: tasktracker running as process 2820. Stop it first.
-###
+```
+
+```
     # namenode jps 확인
     [ec2-user@namenode conf]$ jps
     3689 NameNode
@@ -411,12 +402,10 @@ AWS EC2 인스턴스 방화벽 설정<br />
     namenode-internal: no secondarynamenode to stop
     snamenode-internal: stopping secondarynamenode
     [ec2-user@namenode conf]$ 
-
-
-
-
+```
 
 # 6. Hadoop 설치 확인
+```
     [ec2-user@namenode conf]$ hadoop dfsadmin -report
     Safe mode is ON
     Configured Capacity: 24956350464 (23.24 GB)
@@ -465,25 +454,16 @@ AWS EC2 인스턴스 방화벽 설정<br />
     
     
     [ec2-user@namenode conf]$ 
+```
 <img width="637" alt="Screen Shot 2019-04-23 at 8 02 55 PM" src="https://user-images.githubusercontent.com/46523571/56576250-d1f56980-6602-11e9-8de2-e2772b483652.png">
-
-
-
-
 
 ## 확인 2
 * 크롬 - http://namenode:50070 접속
 * HDFS 는 namenode 의 50070 포트에서 모니터링할 수 있다.
 ![Screen Shot 2019-04-23 at 8 05 45 PM](https://user-images.githubusercontent.com/46523571/56576392-331d3d00-6603-11e9-88cf-d87037bf61f8.png)
 
-
 * MapReduce namenode의 50030 포트에서 모니터링할 수 있다.
 ![Screen Shot 2019-04-23 at 8 07 18 PM](https://user-images.githubusercontent.com/46523571/56576464-6b248000-6603-11e9-9045-f94f70b51fd3.png)
-
-
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

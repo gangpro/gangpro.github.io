@@ -17,12 +17,6 @@ Hadoop Cluster 시작과 종료<br />
 # Hadoop Cluster 시작 및 종료
 > Install Hadoop on AWS <br>
 
-> 개발환경<br> 
-> OS : Macbook Pro, macOS Mojave<br>
-> AWS : Amazon Web Services with EC2(Amazon Linux AMI)<br>
-> JDK : jdk-7u51-linux-x64<br>
-> Hadoop : Hadoop 1.2.1<br>
-
 ## Hadoop Cluster의 시작과 정지
 * Hadoop Cluster 시작은 두 단계로 이루어져 있다.
 * (1) Hadoop Cluster start
@@ -51,9 +45,8 @@ Hadoop Cluster 시작과 종료<br />
   $ jps
   - 하둡 클러스터 데몬 프로세스들이 실행중이 아니면 다음 명령어로 하둡 클러스터를 start 시킨다. - HDFS 와 MapRed 를 각각 start 시키고 stop 시켜 본다.
 
-
 ## HDFS & 맵리듀스 모두 시작
-
+```
     # hdfs & mapred 시작
     [ec2-user@namenode conf]$ start-all.sh
     starting namenode, logging to /home/ec2-user/hadoop/logs/hadoop-ec2-user-namenode-namenode.localdomain.out
@@ -66,7 +59,9 @@ Hadoop Cluster 시작과 종료<br />
     data03-internal: tasktracker running as process 2800. Stop it first.
     data02-internal: tasktracker running as process 2826. Stop it first.
     data01-internal: tasktracker running as process 2820. Stop it first.
-###
+```
+
+```
     # namenode jps 확인
     [ec2-user@namenode conf]$ jps
     3689 NameNode
@@ -110,12 +105,10 @@ Hadoop Cluster 시작과 종료<br />
     namenode-internal: no secondarynamenode to stop
     snamenode-internal: stopping secondarynamenode
     [ec2-user@namenode conf]$ 
-
-
-
-
+```
 
 # 6. Hadoop 설치 확인
+```
     [ec2-user@namenode conf]$ hadoop dfsadmin -report
     Safe mode is ON
     Configured Capacity: 24956350464 (23.24 GB)
@@ -164,24 +157,16 @@ Hadoop Cluster 시작과 종료<br />
     
     
     [ec2-user@namenode conf]$ 
+```
 <img width="637" alt="Screen Shot 2019-04-23 at 8 02 55 PM" src="https://user-images.githubusercontent.com/46523571/56576250-d1f56980-6602-11e9-8de2-e2772b483652.png">
-
-
-
-
 
 ## 확인 2
 * 크롬 - http://namenode:50070 접속
 * HDFS 는 namenode 의 50070 포트에서 모니터링할 수 있다.
 ![Screen Shot 2019-04-23 at 8 05 45 PM](https://user-images.githubusercontent.com/46523571/56576392-331d3d00-6603-11e9-88cf-d87037bf61f8.png)
 
-
 * MapReduce namenode의 50030 포트에서 모니터링할 수 있다.
 ![Screen Shot 2019-04-23 at 8 07 18 PM](https://user-images.githubusercontent.com/46523571/56576464-6b248000-6603-11e9-9045-f94f70b51fd3.png)
-
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

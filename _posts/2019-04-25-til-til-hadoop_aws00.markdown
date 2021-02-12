@@ -45,7 +45,7 @@ AWS를 이용하여 하둡(hadoop) 개발환경구축<br />
   - Amazon EMR : https://docs.aws.amazon.com/ko_kr/emr/latest/ManagementGuide/emr-gs.html
 
 * Hadoop ≒ Distributed Proramming Framework 
-###
+```
     - HDFS      : 분산저장 : NameNode, DataNode       -> hdfs_comic.pdf
     - MapReduce : 분산처리 : JobTracker, TaskTracker  -> MapReduce Design Patterns.pdf
 
@@ -64,8 +64,7 @@ AWS를 이용하여 하둡(hadoop) 개발환경구축<br />
     >> 참고 교재
        -> http://www.yes24.com/Product/Goods/47699009 : 실무 프로젝트로 배우는 빅데이터 기술
        -> http://www.yes24.com/Product/Goods/44307209 : 하둡과 스파크를 활용한 실용 데이터 과학 
-
-
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
