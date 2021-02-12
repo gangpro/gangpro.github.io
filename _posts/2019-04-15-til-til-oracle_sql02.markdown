@@ -22,6 +22,7 @@ published: true
 * 후보행(candidate row)을 검증해서 True, False, Null을 리턴하는 절인데 where절이 True 리턴해야 후보행이 리턴된다.
 
 ## 기본
+```
     --기존에 있는 table 삭제(연습을 위해 기존것 삭제)
     drop table t1 purge;
 
@@ -67,21 +68,12 @@ published: true
     select empno, ename, substr(ename, 1, 1) 첫글자, substr(ename, 2) 나머지, deptno
     from emp
     where ename like 'A%';
-
-
-
-
-
-
-
-
-
-
+```
 
 ## 2-8. 비교 연산
 
 ## between A and B 연산자 사용
-###
+```
     select *
     from emp
     where empno between 7500 and 8000;
@@ -89,8 +81,10 @@ published: true
     select *
     from emp
     where empno >= 7500 and empno <= 8000;
+```
 
 ## 연산자 우선순위에 따라 (AND 수행 후 OR 수행)
+```
     --emp table에서 empno가 7500이상이고 empno가 8000이하이고 ename이 A로 시작하거나
     --ename이 B로 시작하는 모든 컬럼 리턴
     select *
@@ -106,9 +100,10 @@ published: true
     where empno between 7500 and 8000
         and (ename like 'A%' or ename like 'B%' )
         and comm is null;
+```
 
 ## in 연산자 사용    
-        
+```
     --에러남
     select *
     from emp
@@ -132,14 +127,18 @@ published: true
         and  (ename like 'A%' or ename like 'B%' )
         and   comm is null
         and   mgr in (7788, 7698) -- =이 아닌 in을 쓰면 가능함 
+```
 
 ## where 추가 기능 
+```
     --empno 컬럼에 값이 있는 행 리턴 
     select * from emp where empno = empno;
     
     --comm 컬럼에 값이 있는 행 리턴 
     select * from emp where comm = comm;
-###
+```
+
+```
     --말이 안되지만 에러 발생이 아닌
     --False인 조건이라 하나도 리턴이 되지 않는다.
     --항상 False인 조건으로 쿼리 
@@ -151,7 +150,9 @@ published: true
     create table t2
     as
     select * from emp where 1 = 2;
-###    
+```
+
+```
     --항상 True인 조건 
     --120>20 True 이니 emp table 데이터 다 나옴 
     select * from emp where 120 > 20;
@@ -159,12 +160,16 @@ published: true
     --항상 False인 조건 : 문자 데이터를 비교하는 방식 이기 때문에 
     --문자 120에서 1과 문자 20에서 2를 비교하니 false
     select * from emp where '120' > '20';
-###    
+```
+
+```
     --데이터 타입 변환 함수 to_number('문자')
     select * 
     from emp 
     where to_number('120') > to_number('15');
-###
+```
+
+```
     alter session set nls_language = 'american';
     alter session set nls_territory = 'america';
     
@@ -174,11 +179,15 @@ published: true
         and (ename like 'A%' or ename like 'B%' )
         and comm is null
         and mgr in (7788, 7698) -- =이 아닌 in을 쓰면 가능함 
-###    
+```
+
+```
     -- Month만 나오게(첫글자 대문자고 나머지는 소문자면 리턴도 똑같이
     select empno, hiredate, to_char(hiredate, 'Month')
     from emp;
-###    
+```
+
+```
     -- 12월에 입사한 사람 리턴
     -- rtrim() 오른쪽 공백 지워
     -- 값 1개 리턴 됨
@@ -196,18 +205,20 @@ published: true
         and deptno in (10, 30)
         and (job like '%C%' or job like '%K%')
         and sal > 500 and sal <= 2000);      -- between은 이상이하만 가능하므로 여기서 쓰면 안된다
-    
+```
 
 ## 2-12. LIKE 연산자를 사용하여 패턴 일치
+```
     --emp table과
     --empno 컬럼과 
     --ename이 반드시 다섯글자인 ename 컬럼 리턴 
     select empno, ename
     from emp
     where ename like '_____';
-
+```
 
 ## 2-13. Escape 옵션 예제 
+```
     --휴지통에 넣는 느낌으로 삭제 
     drop table t1;
     
@@ -235,28 +246,21 @@ published: true
     
     --escape '!'다음에 나오는 단어는 데이터야
     select * from t1 where col2 like '%A!_A%' escape '!';
-
+```
 
 ## 2-20. 우선 순위 규칙 
+```
     --상식적 수준으로 처리
     --산술(a+b) 연결(||) 비교(=) 순으로 처리 
     where a + b || c = d
     --단 and로 연결된 조건이 or로 연결된 조건에 비해 먼저 처리된다.
-
-
-
-
-
-
-
-
-
-
+```
 
 # order by절 이해
 * order by
 
 ## name으로 정렬, as로 정렬, 위치값으로 정렬.
+```
     --오름차순(ASC, Default)
     select empno, ename, sal as salary from emp order by sal;      --name
     select empno, ename, sal as salary from emp order by salary;   --as
@@ -266,8 +270,10 @@ published: true
     select empno, ename, sal as salary from emp order by sal desc;      --name
     select empno, ename, sal as salary from emp order by salary desc;   --as
     select empno, ename, sal as salary from emp order by 3 desc;        --position
+```
 
 ## 두개 이상의 조건으로 정렬
+```
     --deptno 오름차순으로 정렬 
     select deptno, empno, sal from emp order by deptno;
 
@@ -278,8 +284,10 @@ published: true
     select empno, ename, job from emp order by sal desc;
 
     --ex) 게시판에 성적순으로 이름을 나열하지만 성적자체는 노출되지 않게 할때 사용 등.
+```
 
 ## null 정렬
+```
     --null 값은 가장 큰 값으로 취급 됨(오름차순)
     select empno, comm from emp order by comm asc;
 
@@ -291,42 +299,35 @@ published: true
 
     --null 값은 가장 큰 값으로 취급 됨(내림차순) 하지만 null값을 마지막에 표시하게 끔 리턴.
     select empno, comm from emp order by comm desc nulls last;
-
-
-
+```
 
 ## 가공한 결과에 의한 order by
 * 문제. 사원이름이 짧은 사원 길이 구해서 리턴 
-###
+```
     select empno, ename, length(ename)
     from emp;
 
     select empno, ename
     from emp
     order by length(ename);
-###
+```
+
 * 문제. 사원이름이 짧은 사원부터 ABC 정렬
-###
+```
     select empno, ename
     from emp
     order by length(ename), ename;
+```
 
 * 문제. 입사일자의 월(Month)를 활용한 정렬 
-###
+```
     select empno, hiredate, to_char(hiredate, 'mm')
     from emp;
     
     select empno, hiredate
     from emp
     order by to_char(hiredate, 'mm'), hiredate;
-
-##
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

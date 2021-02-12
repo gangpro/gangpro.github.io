@@ -20,7 +20,7 @@ published: true
 
 ## 개념 정리
 * 테이블을 생성한다는 것은?
-###
+```
     - 과정 : 현실 세계 -> 데이터 모델링                -> 데이터베이스 구현 
                        - 선별, 정리                   - Create Database ~
                        - Logical    Modeling          Create User ~
@@ -39,8 +39,9 @@ published: true
       VARCHAR : 가변길이 문자
       TIME    : 시간
       DATE    : 날짜
+```
       
-###   
+```
     - Data Type
 
     - 문자 -> col1 char(10)
@@ -63,11 +64,11 @@ published: true
                  -> BFile
            -> long
            -> raw
-
+```
 
 ## 테이블 생성 및 DML
 * Table Instance Chart?
-###    
+```
       Table Instance Chart?
       
       T_EMP Table                                 T_DEPT Table
@@ -143,9 +144,10 @@ published: true
     delete from t_dept;
     
     select * from t_dept;
+```
 
 * Table Instance Chart 수정?
-###
+```
       Table Instance Chart 수정?
     
       T_EMP Table                                 T_DEPT Table
@@ -187,9 +189,10 @@ published: true
     --그래서 알기 쉽게 constraint 제약 조건명을 정하면 
     --(ACE29.T_DEPT_DEPTNO_PK) violated 이렇게 오류 메시지가 나온다.
     --그래서 오류의 의미를 바로 알 수 있어서 좋다.
-###
+```
+
 * 테이블 레벨 제약조건 설정 문법
-### 
+```
     --테이블 레벨 제약조건 설정 문법
     drop table t_emp  purge;
     drop table t_dept purge;
@@ -213,9 +216,10 @@ published: true
     constraint t_emp_hp_uk     unique(hp),
     constraint t_emp_hp_nn     check(hp is not null),
     constraint t_emp_deptno_fk foreign key(deptno) references t_dept(deptno));     --t_emp의 deptno값이 들어오면 t_dept의 deptno값
-###
+```
+
 * 반드시 테이블 레벨 문법 제약 설정을 해야하는 경우?
-###
+```
     --cf. 반드시 테이블 레벨 문법 제약 설정을 해야하는 경우?
     --    두개 이상의 컬럼으로 하나의 제약을 생성할 경우. 반드시 테이블 레벨 문법 제약조건을 설정 해야한다.
 
@@ -228,9 +232,11 @@ published: true
         no number primary key,
        ju1 varchar2(6),
        ju2 varchar2(7),
-    unique(ju1, ju2));    
+    unique(ju1, ju2)); 
+```   
 
 ## PL/SQL을 이용해서 트리거(Trigger) 생성
+```
     drop table t1 purge;
     
     create table t1 (no number, name varchar2(10));
@@ -251,10 +257,10 @@ published: true
     insert into t1 values (2000, 'alice');
     
     select * from t1;
-
-
+```
  
 ## 테이블 관련 대표적 Meta data?    
+```
     select table_name, num_rows, blocks
       from user_tables;
     
@@ -271,12 +277,7 @@ published: true
     order by table_name;
     --___PK, ___UK
     --PK와 UK는 제약조건을 만들기 위해 생성한거기 때문에 drop이 불가능하다. 
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

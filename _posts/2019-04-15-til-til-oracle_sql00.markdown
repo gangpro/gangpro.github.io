@@ -214,7 +214,6 @@ http://rtdown.molit.go.kr/# <br>
 <br>
 
 ## Data Export
-### 
 
 * ace29.sql에서 EMP 테이블 export
 
@@ -238,9 +237,8 @@ http://rtdown.molit.go.kr/# <br>
 
 * Export한 파일은 data 폴더에 있음. 
 
-
-
 ## 참고
+```
     --환경 설정 값 변경
     show all
     
@@ -258,13 +256,7 @@ http://rtdown.molit.go.kr/# <br>
     --실행
     @c.sql
     --
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

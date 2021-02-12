@@ -31,7 +31,7 @@ published: true
 
 ## 문제
 * 7782 사원보다 급여를 많이 받으면서 7902 사원과 같은 직무를 수행하는 사원?
-###
+```
     --하나 하나 찾아서 처리하는 방법
     select sal
       from emp
@@ -45,7 +45,9 @@ published: true
       from emp
      where sal > 2450
        and job = 'ANALYST';
-###    
+```
+
+```
     --조인으로 처리하는 방법
     select e.empno, e.ename, e.job, e.sal
       from emp e, emp a, emp b
@@ -53,7 +55,9 @@ published: true
        and b.empno = 7902
        and b.sal > a.sal
        and e.job = b.job;
-###    
+```
+
+```
     --서브쿼리로 처리하는 방법
     --하나하나 처리하는 것에서 
     --A
@@ -79,6 +83,7 @@ published: true
        and job = (select job
                     from emp
                    where empno = 7902);
+```
 
 ## [참고] Query Transformation 기능을 갖고 있다.
 * where ename like 'SCOTT'             --> like의 의미가 무의미하기 때문에 오라클에서는 where ename = 'SCOTT' 으로 자동 변경
@@ -86,12 +91,9 @@ published: true
 * where job in ('ANALYST', 'MANAGER')  --> where job = 'ANALYST' OR 'MANAGER'
 * 그 밖에 서브쿼리를 날리면 조인으로 자동 처리된다. 등등등~
 
-
-
-
 ## 문제
 * 회사의 평균 급여보다 많은 급여를 받으면서 7788 사원보다 빨리 입사한 사원을 쿼리하세요. 단 서브쿼리 문법을 활용하도록 하세요.
-###
+```
     --정답
     select empno, sal, hiredate
       from emp
@@ -111,37 +113,39 @@ published: true
        and hiredate < (select hiredate from emp where empno = 7788)
      group by deptno, job
      order by deptno, job;
-
+```
 
 ## 문제
 * 최저 급여자의 ename, sal을 쿼리하세요.
-###
+```
     --정답
     select empno, ename, sal
       from emp
      where sal = (select min(sal) from emp);
-    
+```
 
 ## 문제 
 * EMPNO, ENAME, SAL, "회사평균급여"를 쿼리하세요. 단, 서브쿼리 문법을 활용하도록 하세요.
 * (Scalar subquery 사용법을 눈여겨 볼 것)
-###
+```
     select empno, ename, sal, (select avg(sal) from emp) 평균급여
       from emp;
+```
 
 ## 문제
 * EMPNO, ENAME, SAL, "소속부서평균급여"를 쿼리하세요. 단, 서브쿼리 문법을 활용하도록 하세요.
 * (Scalar subquery + 상호관련 서브쿼리 사용법을 눈여겨 볼 것)
-###
+```
     select empno, ename, sal, deptno, (select avg(sal) 
                                          from emp
                                         where deptno = e1.deptno) 소속부서평균급여
       from emp e1;
+```
 
 ## 문제
 * EMPNO, ENAME, SAL, "소속부서평균급여"를 쿼리하세요. 단, 서브쿼리 문법을 활용하도록 하세요.
 * (Scalar subquery 사용법을 눈여겨 볼 것)
-###
+```
     select empno, ename, deptno
       from emp e1
      order by (select loc
@@ -154,13 +158,12 @@ published: true
       from emp e, dept d
      where e.deptno = d.deptno
      order by d.loc;
-
-
+```
 
 ## 문제
 * 근무하는 사원이 있는 부서의 deptno, dname, loc를 쿼리하세요.
 * (하나의 문제를 다양한 방법으로 해결하는 것을 전하는 예제임. 그런데 특히 상호관련 서브쿼리, Exists 연산자 사용법을 눈여겨 볼 것)
-###
+```
     --에러
     --= 왼쪽 값 1개 오른쪽 값 1개 그래서 에러
     select deptno, dname, loc
@@ -188,11 +191,12 @@ published: true
      where exists (select 'x' from emp where deptno = d.deptno);   --관습적으로 'x'   or    1을 넣는다.
     --dept scan, emp 부분 scan.
     --존재 유무를 파악할 때 exists를 사용하는게 좋다.
+```
 
 ## 문제
 * 부하직원이 있는 사원을 쿼리하세요.
 * (Exists 연산자 사용법을 눈여겨 볼 것)
-###
+```
     --내 사원번호가 MGR에 있어야 = 부하직원이 있는 
     select empno, ename, job, sal
       from emp
@@ -201,43 +205,46 @@ published: true
     select empno, ename, job, sal
       from emp e1
      where exists (select 'x' from emp where mgr = e1.empno);
+```
 
 * 5명 이상 근무하는 부서를 상호 관련 서브쿼리로 해결하세요.
 * (상호관련 서브쿼리 사용법을 눈여겨 볼 것)
-###
+```
     select deptno, dname, loc
       from dept d
      where 5 <= (select count(*) from emp where deptno = d.deptno);
+```
 
 * 부하 직원이 3명 이상인 사원을 쿼리하세요.
 * (상호관련 서브쿼리 사용법을 눈여겨 볼 것)
-###
+```
     select empno, ename, job, sal
       from emp e1
      where 3 <= (select count(*) from emp where mgr = e1.empno);
-
-
+```
 
 ## 문제
 * empno, ename, sal, 급여의 누적합을 쿼리 하세요. 단 서브 쿼리 문법을 활용하도록 하세요.
 * (상호관련 서브쿼리 사용법을 눈여겨 볼 것)
-###
+```
     --정답
     select empno, ename, sal, (select sum(sal) from emp where empno <= e1.empno) as 누적합
       from emp e1;
+```
 
 ## 문제
 * empno, ename, hiredate, "먼저입사한사원수"를 쿼리 하세요. 단 서브 쿼리 문법을 활용하도록 하세요.
 * (상호관련 서브쿼리 사용법을 눈여겨 볼 것)
-###
+```
     --정답
     select empno, ename, hiredate, (select count(hiredate) from emp where hiredate < e1.hiredate) as 먼저입사한사원수
       from emp e1
      order by hiredate
+```
 
 ## 문제
 * Single coulumn Multiple row subquery와 부등호 연산을 이해하도록 하세요.
-###
+```
     drop table t1 purge;
     drop table t2 purge;
     
@@ -286,10 +293,11 @@ published: true
     --모두보다 작다, 서브쿼리에서 값을 여러개 리턴할때 서브쿼리에 MIN으로 비교해서 리턴하면 된다.
     select * from t1
     where col1 < (select min(col1) from t2);
+```
 
 ## 문제
 * Multiple coulumn Multiple row subquery 예제를 이해하도록 하세요.
-###
+```
     drop table t1 purge;
     drop table t2 purge;
 
@@ -322,11 +330,11 @@ published: true
        select * 
          from t1
         where (col1, col2) in (select col1, col2 from t2);    /* (100, A), (200, B) */
-
+```
 
 ## 문제
 * Subquery Factoring을 이해하도록 합시다.
-###
+```
     --본문을 시작하기 전에 미리 query를 만들어서 시작.
     --문장을 단순하게 만든다.
     --서브쿼리 결과를 임시집합으로 생성해서 성능을 개선함.
@@ -337,12 +345,7 @@ published: true
       from emp e, a, b
      where e.deptno = a.deptno
        and a.dept_avgsal = (select max(dept_avgsal) from a);
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

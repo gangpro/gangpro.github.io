@@ -45,13 +45,16 @@ published: true
 
 
 ## 문자함수 - LOWER, UPPER, INITCAP 함수
+```
     select 'My name' a, 'My name' b, 'My name' c, 'My name' d
     from dual;
     
     select 'My name' a, upper('My name') b, lower('My name') c, initcap('My name') d
     from dual;
+```
 
 ## 날짜 함수
+```
     오라클은 Date를 내부적으로 7byte Nuberic으로 저장 : 20190327114325
     
     alter session set nls_date_format = 'yyyy-mm-dd hh24:mi:ss';
@@ -59,12 +62,16 @@ published: true
     
     alter session set nls_date_format = 'yyyy-mm-dd';
     select sysdate from dual;
+```
 
 ## to_char 함수 : 날짜 -> 문자
+```
     --아래와 같이 날짜 기본 세팅 후 진행하자.
     alter session set nls_language = 'american';
     alter session set nls_territory = 'america';
-### 
+```
+
+```
     --연 월 일 등   
     --format element로 format model 구성
     --1980 1980 1980
@@ -93,7 +100,9 @@ published: true
     --17 seventeen 17th seventeenth seventeenth
     select hiredate, to_char(hiredate, 'dd ddsp ddth ddspth ddthsp')
     from emp;
-###   
+```
+
+```
     --시, 분, 초
     --시스템 현재 날짜 
     --27-MAR-19 / 02 02 14 13 13
@@ -112,7 +121,9 @@ published: true
     --27-MAR-19 / 오늘은 2019년 03월 27일입니다.
     select sysdate, to_char(sysdate, '"오늘은" yyyy"년" mm"월" dd"일입니다."')
     from dual;
-###
+```
+
+```
     -- 문제. 분기별 입사자 수 구하기
     
     select hiredate, to_char(hiredate, 'q')
@@ -122,6 +133,7 @@ published: true
     from emp
     group by to_char(hiredate, 'q')
     order by 분기;
+```
 
 ## decode 함수
 * simple case expression, searched case expression
@@ -129,7 +141,7 @@ published: true
 
 ## decode 예제(1)
 * 문제1. 같은 값을 decode 함수로 다양하게 변환하기
-###
+```
     --emp table에서
     --deptno 컬럼과
     --deptno 컬럼과
@@ -174,12 +186,11 @@ published: true
             decode(deptno, 10, 'A', 20, 'B') ret2,
             decode(deptno, 10, sal*1.1, 20, sal*1.2, sal) ret3
     from emp;
-    
-    
+```
 
 ## decode 예제(2)    
 * 문제2. 부서별 직무별 급여합을 쿼리하세요.(단, 결과는 매트릭스 형태로 나타내세요.)
-###    
+```
     --emp table에서
     --deptno 컬럼과
     --sal 컬럼과
@@ -264,13 +275,12 @@ published: true
     from emp
     group by job
     order by job;
-
-
+```
 
 ## decode 예제(3)
 * 문제3. sal이 2000미만이면 low, sal이 2000이상이면 high
 * Simple case expression, searched case expression
-###
+```
     select empno, sal, sal
     from emp;
     
@@ -285,13 +295,13 @@ published: true
            sal,
            decode(trunc(sal/2000), 0, 'low', 'high') as flag
     from emp;
-
+```
 
 ## decode 함수, simple case 표현식, searched case 표현식
 * decode function
 * simple case expression
 * searched case expression
-###
+```
     --decode 함수
     select empno,
            sal,
@@ -314,9 +324,10 @@ published: true
                 when sal >=2000 then 'high'
            end flag
     from emp;
+```
 
 ## dual table
-###
+```
     desc sys.dual
     select * from dual;
     
@@ -326,15 +337,7 @@ published: true
     select 100*1.3+210 * from dual;   --1건
     
     참고 : https://docs.oracle.com/cd/E11882_01/server.112/e41084/queries009.htm#SQLRF20036
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -19,6 +19,7 @@ published: true
 > 6장 : join<br>
 
 ## 조인(Join) 용어
+```
     select *
     from emp, dept              -- 조인, Cartesian product, row 복제
     order by 1;
@@ -29,6 +30,7 @@ published: true
     and e.sal >= 1000           --Non-Join predicate
     and e.job like 'A%'         --Non-Join predicate
     and d.deptno = 20           --Non-Join predicate(Single row predicate)
+```
 
 ## 조인(Join) 분류
 * Oracle Syntax
@@ -47,13 +49,10 @@ published: true
 * SQL 표준 Syntax ⊃ Oracle Syntax
   - Join On ⊃ Equi join, Nonequi join, Self join, Outer join
 
-
-
-
 ## Join
 * Join을 잘하려면 from 처리를 잘해야한다.(정확한 값을 from에 넣어야 한다.)
 * from 절에 테이블이 두 개 이상!
-###
+```
     --emp 테이블과 dept 테이블 조인
     
     --14행 emp 테이블 리턴
@@ -74,15 +73,18 @@ published: true
     from emp, dept
     where emp.deptno = dept.deptno
     order by 1;
+```
 
 # 데이터의 상황을 확인하라 ≒ 냉장고를 살펴라
 * 참고 : https://docs.oracle.com/cd/E18283_01/server.112/e10831/diagrams.htm#CIHGFFHI
-###
+```
     -- 모든 쿼리문 찾기
     select 'select * from '||tname||';' as 질의문
     from tab;
+```
 
 ## Outer join option
+```
     Oracle Syntax   
     --Kimberely (+) 
     --직원명이 다 나오고 부서는 null
@@ -106,9 +108,9 @@ published: true
     from employees e, departments d
     where e.department_id (+) = d.department_id (+)
     order by 1;
-    
+```
 
-### 
+```
     SQL:1999 표준 Syntax    
     
     --Outer join option
@@ -133,8 +135,9 @@ published: true
     from employees e FULL OUTER JOIN departments d
                      ON (e.department_id = d.department_id)
     order by 1;
-###
- 
+```
+
+```
     Oracle Syntax Outer Join 한걸음 더 살펴보기
 
     select e.empno, e.deptno, e.sal, d.deptno, d.dname
@@ -150,8 +153,10 @@ published: true
     from emp e, dept d
     where e.deptno(+) = d.deptno
     and   e.sal(+) >= 1500;           <- 제대로
+```
     
 ## Oracle Syntax 문제. 부서와 부서에 속한 사원들의 ...를 쿼리하세요.
+```
     select * from departments;  -- 8 rows
     select * from employees;    --20 rows
     
@@ -183,8 +188,9 @@ published: true
     from employees e, departments d
     where e.DEPARTMENT_ID = d.DEPARTMENT_ID and e.SALARY >= 3000 --가능 
     order by 1;
+```
 
-###
+```
     --Outer join
     select
        e.employee_id, e.department_id, d.department_id
@@ -197,8 +203,9 @@ published: true
     from employees e, departments d 
     where e.department_id (+) = d.department_id
     order by 1;
+```
 
-###
+```
     --추가 가공
     select *
       from employees e, departments d
@@ -227,12 +234,10 @@ published: true
       and e.salary >= 3000
     group by d.department_name, e.job_id
     order by 1;
-
-
-
-
+```
 
 ## Oracle Syntax 문제. 사원과 사원들의 급여 등급을 쿼리하세요.
+```
     select * from salgrade;   --  5 rows
     select * from emp;        -- 14 rows
     
@@ -280,10 +285,10 @@ published: true
            order by s.grade) b
     where a.grade = b.grade
     order by a.grade, a.sal desc;
-
-
+```
 
 ## Oracle Syntax 문제. 7844 사원보다 많은 급여를 받는 사원?
+```
     select *
     from emp e, emp t;  --같은 이름의 테이블이 2개 나오면 Self Join
     
@@ -304,10 +309,10 @@ published: true
     --그럼 분류는 무슨 의미?가 아니라, 분류에 구애받지 않고 처리하면 된다.
     --그러면 이것저것 쓰게 된다.
     --join을 분류하는건 의미가 없다.
-
-
+```
 
 ## Oracle Syntax 문제. 누적합 구하기
+```
     ----A   ----B   ---누적합 
     7369	800      800
     7499	1600    2400
@@ -334,11 +339,11 @@ published: true
     where a.a >= b.a    --non-equi join
     group by a.a, a.b
     order by a.a        --3 rows / 정답 
-
-
+```
 
 ## SQL:1999 표준 Syntax 문제들
 ## SQL:1999 표준 Syntax 문제. Cross join 예제를 만드세요
+```
      select *
      from emp CROSS JOIN dept;
 
@@ -346,9 +351,10 @@ published: true
 
      select *
      from emp, dept;
+```
 
 ## SQL:1999 표준 Syntax 문제.Natural join 예제를 만드세요
-
+```
      desc dept
      desc emp
 
@@ -379,17 +385,19 @@ published: true
      이와같이 Natural Join은 같은 이름의 컬럼을 모두 Equi join 조건으로
      활용하므로 같은 이름의 컬럼이 많은 테이블간 연결 및 Non-equi 조인 등에는
      활용할 수 없습니다.
+```
       
 ## SQL:1999 표준 Syntax 문제.Join Using 예제를 만드세요.
-
+```
      select *
      from employees e JOIN departments d
                       USING (department_id);
 
      Join Using은 Equi join만 가능합니다.
+```
 
 ## SQL:1999 표준 Syntax 문제.부서와 부서에 속한 사원들의 ...를 쿼리하세요
-
+```
     select e.employee_id, e.department_id, d.department_id, d.department_name
     from employees e JOIN departments d
                      ON (e.department_id = d.department_id);
@@ -416,27 +424,30 @@ published: true
     select e.employee_id, e.department_id, d.department_id, d.department_name
     from employees e FULL JOIN departments d
                      ON (e.department_id = d.department_id);
+```
 
-## SQL:1999 표준 Syntax 문제.사원과 사원들의 급여 등급을 쿼리하세요
-
+## SQL:1999 표준 Syntax 문제.사원과 사원들의 급여 등급을 쿼리하세요.
+```
     select s.*, e.empno, e.sal
     from emp e JOIN salgrade s
                ON (e.sal >= s.losal and e.sal <= s.hisal);
 
     --> Natural join으로 구현 불가
     --> Join Using으로   구현 불가
+```
 
 ## SQL:1999 표준 Syntax 문제.7844 사원보다 많은 급여를 받는 사원?
-    
+```
     select e.empno, e.sal, t.empno, t.sal
     from emp e JOIN emp t
                ON (e.sal > t.sal);
 
     --> Natural join으로 구현 불가
     --> Join Using으로   구현 불가
+```
 
 ## SQL:1999 표준 Syntax 문제.누적합 구하기 
-
+```
     select a.a, a.b, sum(b.b)
     from t1 a JOIN t1 b
               ON (a.a >= b.a)
@@ -445,10 +456,10 @@ published: true
 
     --> Natural join으로 구현 불가
     --> Join Using으로   구현 불가
-
-
+```
 
 ## Cartesian product는 항상 나쁘다? 
+```
     select deptno, job, sum(sal) as sum_sal
     from emp
     group by deptno, job;
@@ -513,10 +524,10 @@ published: true
     group by decode(b.no, 1, deptno, 2, deptno), 
            decode(b.no, 1, job)
     order by 1, 2;
-
-
+```
 
 ## Join 테스트 문제
+```
        REGION_ID REGION_NAME                  사원수
       ---------- ------------------------- ---------
                1 Europe                            3
@@ -599,7 +610,7 @@ published: true
      where e.region_id(+) = r.region_id
     group by r.region_id, r.region_name
     order by r.region_id, r.region_name;
-
+```
 
 ## 데이터 연결 4가지 방법
 * 단어 의미
@@ -608,8 +619,7 @@ published: true
   - 수직 파티션
 
 * 데이터 준비 
-
-###
+```
     drop table t1 purge;
     drop table t2 purge;
     
@@ -625,9 +635,10 @@ published: true
     select empno, job
     from emp
     where empno <= 7788;
+```
 
 [1] 조인(곱셈연산)
-
+```
     select * 
     from t1, t2;
     
@@ -638,16 +649,18 @@ published: true
     select t1.empno, t1.ename, t2.job
     from t1, t2
     where t1.empno = t2.empno;
+```
 
 [2] 서브쿼리
-
+```
     --t1에 가서
     --     empno, ename,  t1.empno의 t2.job 리턴
     select empno, ename, (select job from t2 where empno = t1.empno) as job
     from t1;
+```
 
 [3] SET 연산자(덧셈연산)
-
+```
     select empno, ename, null as job
     from t1
     union all
@@ -664,9 +677,10 @@ published: true
           order by 1, 2)
     group by empno
     order by empno;
+```
 
 [4] 사용자 정의 함수(plsql을 사용하여 함수 생성)
-
+```
     --user function(uf) uf_get_t2_job 변수명( t1.empno의 타입을 a에 넣는다)
     --숫자가 들어와서 문자로 리턴
     --begin : t2에서 empno가 a인것을 job에서 찾아서 v_job에 넣고 
@@ -687,6 +701,7 @@ published: true
     
     select empno, ename, uf_get_t2_job(empno) as job
     from t1;
+```
 
 ## 읽어볼 것들 
 * [Python] Pandas를 활용한 데이터프레임 병합
@@ -694,18 +709,6 @@ published: true
 
 * [R] R 데이터 프레임 결합 : rbind(), cbind(), merge()
   - https://rfriend.tistory.com/51
-
-
- 
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -23,10 +23,6 @@ published: true
   - System privilege : DBA 관리
   - Object privilege : 객체 소유자 or DBA 관리자
 
-<br>
-<br>
-<br>
-
 ## 2. 스키마 객체 관리
 * 주요 내용
   - 테이블 수정 : 컬럼, 제약조건 등을 alter 명령으로 수정
@@ -34,7 +30,7 @@ published: true
   - 플래시백    : ..., flashback table, ...
   - 임시 테이블
   - External 테이블
-###
+```
     DELETE FROM EMP;
 
     COMMIT;
@@ -47,19 +43,12 @@ published: true
     DROP TABLE EMP;
 
     FLASHBACK TABLE EMP TO BEFORE DROP;
-
-<br>
-<br>
-<br>
+```
 
 ## 3. 데이터 딕셔너리 뷰를 사용하여 객체 관리
 * Meta Data를 쿼리로 확인하려면
   - Static Data Dictionary View
   - Dynamic Performance View
-
-<br>
-<br>
-<br>
 
 ## 4. 대형 데이터 집합 조작
 * 주요 내용
@@ -68,13 +57,9 @@ published: true
   - Merge
   - Flashback Versions Query
 
-<br>
-<br>
-<br>
-
 ## 5. 다른 시간대에서 데이터 관리
 * 주요 내용
-###
+```
       - Time Zone
       - 날짜 관련 Data type : Date -> Timestamp
                                       Timestamp with time zone
@@ -82,9 +67,10 @@ published: true
                                       Interval Year to Month
                                       Interval Day to Second
       - Timestamp 관련 단일행 함수들 : ..., current_timestamp, ...
+```
 
 * 관련 함수 예제
-###
+```
       alter session set nls_date_format = 'DD-MON-RR HH24.MI.SS';
     
       select sysdate, systimestamp
@@ -109,7 +95,9 @@ published: true
     
       select current_date, current_timestamp
       from dual;
-###
+```
+
+```
       테이블 예제
     
       drop table t1 purge;
@@ -146,7 +134,9 @@ published: true
     
       alter session set time_zone = '+09:00';
       select * from t_news;
-###
+```
+
+```
       Interval 데이터 타입
     
       ~ Date      + Number = Date
@@ -159,10 +149,7 @@ published: true
              c1 + 4 + 13/24 + 36/(24*60) + 59/(24*60*60) "4일 13시간 36분 59초 뒤",
              c1 + interval '4 13:36:59' day to second "4일 13시간 36분 59초 뒤"
       from t_news;
-
-<br>
-<br>
-<br>
+```
 
 ## 6. Subquery를 사용하여 데이터 검색
 * 주요 내용
@@ -172,14 +159,10 @@ published: true
   - Exists 연산자
   - Subquery Factoring
 
-<br>
-<br>
-<br>
-
 ## 7. 정규식 지원
 * Using Regular Expressions in Database Applications
   - https://docs.oracle.com/cd/E11882_01/appdev.112/e41502/adfns_regexp.htm#ADFNS1003
-###
+```
       [예제 1]
     
       DROP TABLE contacts;
@@ -198,7 +181,9 @@ published: true
       INSERT INTO contacts (p_number) VALUES('650-555-0100');      -- 실패
       INSERT INTO contacts (p_number) VALUES('(650)555-0100');     -- 실패
       INSERT INTO contacts (p_number) VALUES(' (650) 555-0100');   -- 실패
-###
+```
+
+```
       [예제 2]
     
       DROP TABLE famous_people;
@@ -218,14 +203,7 @@ published: true
           AS "names after regexp"
       FROM famous_people
       ORDER BY "names";
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

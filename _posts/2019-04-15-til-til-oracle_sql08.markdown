@@ -28,7 +28,7 @@ published: true
   - SELECT ...
 * INTERSECT : 교집합(중복 제거)
 * MINUS     : 차집합(중복 제거)
-###
+```
     예)
     A = {1, 1, 1, 2, 2, 3, 3, 3}
     B = {3, 3, 4, 4, 4, 5, 5}
@@ -37,9 +37,10 @@ published: true
     A union     B = {1, 2, 3, 4, 5}
     A intersect B = {3}
     A minus     B = {1, 2}
+```
     
 ## UNION ALL
-###
+```
     select deptno, job, sum(sal)
     from emp
     group by deptno, job;
@@ -64,10 +65,11 @@ published: true
     select null, null, sum(sal)
       from emp
      order by 1, 2;
+```
 
 ## 문제
-* 집계, 소계, 총계를 쿼리하세요
-###
+* 집계, 소계, 총계를 쿼리하세요.
+```
     select deptno, job, sum(sal)
     from emp
     group by deptno, job
@@ -79,10 +81,11 @@ published: true
     select null, null, sum(sal)
     from emp
     order by 1, 2;
+```
 
 ## 문제
 * 빠진 번호 찾기
-###
+```
     drop table t1 purge;
 
     create table t1
@@ -103,17 +106,7 @@ published: true
     minus
     select no               --현재 데이터가 빠진 데이터
     from t1;
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

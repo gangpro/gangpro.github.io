@@ -19,6 +19,7 @@ published: true
 > 9장 : DML, TCL<br>
 
 ## DML : INSERT, UPDATE, DELETE, MERGE
+```
     drop table t1 purge;
     
     create table t1
@@ -39,8 +40,10 @@ published: true
     insert into t1 select empno, ename, sal from emp;   --select(db내부에 있는 정보)의 결과를 insert에
     
     select * from t1;
+```
 
 ## merge
+```
     drop talbe t1 purge;
     drop table t2 purge;
     
@@ -69,18 +72,21 @@ published: true
         VALUES (t2.empno, t2.ename, t2.sal, t2.deptno) 
     
     select * from t1;
-
+```
 
 ## 9-16 Update문
 * implicit query : https://gseducation.blog.me/20125786704
 
 ## 9-25 Delete vs Truncate vs Drop
+```
                             ROLLBACK          공간 반납
     delete from t1;             O                X
     truncate table t1;          X             최초 크기만 남기고 반납(공장초기화 느낌)
     drop table t1;              X             몽땅 반납
+```
 
 ## TCL : COMMIT, ROLLBACK, SAVEPOINT
+```
     drop table t1 purge;
     
     create table t1 (no number, name varchar2(10));
@@ -105,8 +111,10 @@ published: true
     commit;
     
     select * from t1;
+```
 
 ## 9-29 읽기 일관성, Lock 그리고 Deadlock
+```
     [SESSION 1]                             [SESSION 2]
     
     -> 읽기 일관성
@@ -128,9 +136,9 @@ published: true
     
     commit;                                 
                                             select * from t_books;  --data 보임
+```
     
-    
-###
+```
     -> Lock(은행 전화걸었을 때와 같은 느낌)
     
     update t_books
@@ -146,10 +154,10 @@ published: true
                                             where no = 1000;
                                             --|끝없이 기다려야하는 상태...
     
-    rollback;                               --왼쪽에서 rollback 하는 순간 lock걸렸던 오른쪽이 풀림.           
-    
-    
-###
+    rollback;                               --왼쪽에서 rollback 하는 순간 lock걸렸던 오른쪽이 풀림.   
+```
+
+```
     -> DeadLock
     
     update t_books
@@ -180,13 +188,14 @@ published: true
     --오른쪽 lock이 풀린다.
     
     rollback;
-
+```
 
 ## 종료할 때 주의사항
 * sql에서 exit하고 끄면 처리하던 DML이 commit 처리 된 후 종료
 * sql에서 x버튼을 누르고 끄면 처리하던 DML이 rollback 처리 된 후 비정상 종료 됨.
 
 ## DDL : CREATE, ALTER, DROP, RENAME, TRUCATE, COMMENT
+```
     drop table t1 purge;
     drop table tab1 purge;
     
@@ -227,14 +236,7 @@ published: true
     
     select * from user_tab_comments;
     select * from user_col_comments;
-
-## 
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

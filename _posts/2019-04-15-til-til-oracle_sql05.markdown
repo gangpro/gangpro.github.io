@@ -19,8 +19,8 @@ published: true
 > 5장 : group by & having<br>
 > 복수행 함수 : AVG, SUM, COUNT, MAX, MIN, STDDEV, VARIANCE
 
-
 ## Group by절 이해
+```
     --emp table에서 
     --job 컬럼과 sal 컬럼 리턴
     select job, sal
@@ -39,7 +39,9 @@ published: true
     from emp
     group by deptno, job
     order by deptno, job;
-###
+```
+
+```
     --가공한 결과에 의한 Group by
     --문제 입사일자의 월(Month)를 활용한 집계
     --emp table에서
@@ -49,8 +51,10 @@ published: true
     from emp
     group by to_char(hiredate, 'mm')
     order by 월;
+```
 
 ## group by절 관련 중요 문법 
+```
     -- select 리스트에서 복수행 함수로 감싼 이외의 모든 컬럼은 반드시 group by절에 나타나야 한다. 단, literal은 예
     --* 복수행 함수를 감싼 컬럼(sum(sal)을 제외한 나머지 컬럼이 group by에 나와야한다.
     --에러  
@@ -67,15 +71,19 @@ published: true
     from emp
     group by deptno, job
     order by deptno, job;
+```
 
 ## 5-5. 그룹 함수 유형
+```
     select          sal from emp;       --결과값 : 14명
     select distinct sal from emp;       --결과값 : 12명
     
     select avg(sal)          from emp;  --결과값 : 2073...
     select avg(distinct sal) from emp;  --결과값 : 2064...
+```
     
 ## 5-6. 
+```
     --* 모든 그룹 함수는 null을 무시한다. 단 count(*) 예외 
     drop table t1 purge;
     
@@ -92,7 +100,9 @@ published: true
     
     select no, no, no
     from t1;
-###
+```
+
+```
     --count(*)           --no 컬럼에 들어간 모든 값 개수(null포함) : 6  
     --count(no)          --no 컬럼에 들어간 데이터 개수           : 4   
     --count(distinct no) --no 컬럼에 중복값을 제거한 데이터 개수    : 2  
@@ -104,8 +114,10 @@ published: true
     select count(*), count(comm)
     from emp
     where deptno = 30;
+```
 
 ## 5-11. 그룹 함수 및 null 값
+```
     select          sal from emp;       --결과값 : 14명
     select distinct sal from emp;       --결과값 : 12명
     
@@ -119,8 +131,10 @@ published: true
     select avg(comm) a,           --커미션 받는 사원들의 평균 커미션 
            avg(nvl(comm, 0)) b    --전체 사원들의 평균 커미션
     from emp;
+```
 
 ## 5-20. where절 vs having절
+```
     --여기서 where을 쓸까? having을 쓸까? 좋은 방법은 where
     --ex) where : 대통령 선거시 A시 뺄것 먼저 선택 후 시군구 집계 
     --ex) having :대통령 선거 시군구 집계를 다 한 후에 A시만 빼
@@ -155,8 +169,10 @@ published: true
 
     --where 절에는 그룹함수 사용 불가능.
     --having 절에 그룹함수 사용 가능.
+```
 
 ## 5-26 그룹함수의 중첩
+```
     --부서별 평균 급여 구하기
     select avg(sal)
     from emp
@@ -166,13 +182,7 @@ published: true
     select max(avg(sal))
     from emp
     group by deptno;
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

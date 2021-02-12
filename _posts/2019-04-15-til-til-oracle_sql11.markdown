@@ -27,6 +27,7 @@ published: true
   - Complex View : 테이블에 있는 내용 그대로 안 보여줌  (사용자가 이것저것 추가 한다는 의미)
   
 ## View - 집합의 무한 확장
+```
     --
     create or replace view vu_numbers
     as
@@ -35,8 +36,10 @@ published: true
     connect by level <= 10 ;
     
     select * from vu_numbers;  
+```
 
 ## View - Simple View 1
+```
     --create view 생성
     create or replace view v1
     as
@@ -57,8 +60,10 @@ published: true
     select empno, enamne, sal
     from v1
     where sal >= 2500;
+```
 
 ## View - Simple View 2
+```
     --일부 내용만 보이게
     create or replace view vu_emp1
     as
@@ -81,8 +86,10 @@ published: true
     --뷰는 접근 가능
     select * from ace30.vu_emp1;
     select * from ace30.vu_emp2;
+```
     
 ## View - Complex View
+```
     create or replace view v2
     as
     select d.deptno   부서번호, 
@@ -96,15 +103,13 @@ published: true
     
     
     select * from v2;
-
-
-
+```
 
 ## Sequence
 * https://orapybubu.blog.me/40020473578
 
 ## 11-30. Sequence를 사용할 경우 값의 Gap이 발생할 수 있음
-###
+```
     --발생한 번호를 포함한 DML문 ROLLBACK 
     insert into t values (seq.nextval, ...);  --1
     insert into t values (seq.nextval, ...);  --2
@@ -118,7 +123,9 @@ published: true
     rollback;
     
     insert into t values (seq.nextval, ...);  --6
-###
+```
+
+```
     --하나의 시퀀스를 여러 테이블에서 사용할 경우
     insert into t values (seq.nextval, ...); --1
     insert into t values (seq.nextval, ...); --2
@@ -126,27 +133,32 @@ published: true
     insert into t values (seq.nextval, ...); --4    
                                                         insert into t values (seq.nextval, ...); --5
                                                         insert into t values (seq.nextval, ...); --6
-###
+```
+
+```
     --Cache 설정으로 추출한 번호를 서버 종료로 잃어버리는 경우
     select * from user_sequences;
-
+```
 
 ## Index
-###
+```
       - 이익          vs          손해
         검색속도 향상               검색속도 저하
         PK, UK 제약 강화           DML 속도 저하
         FK 관련 일부 Lock 해결      스토리지 소비
+```
 
 * 데이터 저장소의 데이터가 순서없이 저장되어 있어서
 * 이를 극복하기 위해 만든 객체로서 rowid를 전문적으로 보관함.
-###
+```
     - rowid - pseudocolumn 컬럼 가운데 하나 -> https://docs.oracle.com/cd/B28359_01/server.111/b28286/pseudocolumns.htm#SQLRF0025
             - 64진법
             - 6(Object) 3(File) 6(Block) 3(Row) 구조
     
     - 오라클에서 데이터를 찾는 가장 빠른 방법은 rowid를 활용하는 것이다.
-###
+```
+
+```
     --rowid를 포함한 모든 속성의 emp 테이블 리턴
     --WARD 직원의 rowid를 살펴보자
     select rowid, e.* from emp e;
@@ -155,7 +167,9 @@ published: true
     select *
     from emp
     where rowid = 'AAAFGdAABAAAMKpAAC';
-###
+```
+
+```
     --인덱스 생성
     create index emp_job_idx
     on emp(job);
@@ -166,18 +180,20 @@ published: true
     order by 1, 2;
     
     select * from emp;
+```
 
 * 아래 쿼리를 수행할 경우 오라클의 Optimizer가 인덱스 사용 여부를 판단하며
 * 인덱스를 사용할 경우 MANAGER라는 값으로 인덱스를 이용해서 적절한 rowid를 획득함
 * 획득한 rowid로 테이블의 데이터를 찾아서 return하게 됨
-###
+```
     select *
     from emp
     where job = 'MANAGER';
+```
 
 ## Synonym
 * 하나의 객체(employees)에 여러개 synonym(es, sawon, ...) 사용 가능
-###
+```
     create synonym es for employees;
     
     select * from es;
@@ -185,14 +201,11 @@ published: true
     select * from employees;
     
     drop synonym es;
-
-<br>
-<br>
-<br>
+```
 
 ## 데이터 연결 4가지 방법
 * [0] 데이터 준비
-###
+```
     drop table t1 purge;
     drop table t2 purge;
     
@@ -207,9 +220,10 @@ published: true
     select empno, job
     from emp
     where empno <= 7788;
+```
 
 * [1] 조인
-###
+```
     select *
     from t1, t2;
     
@@ -220,14 +234,16 @@ published: true
     select t1.empno, t1.ename, t2.job
     from t1, t2
     where t1.empno = t2.empno;
+```
 
 * [2] 서브쿼리
-###
+```
     select empno, ename, (select job from t2 where empno = t1.empno) as job
     from t1;
+```
 
 * [3] SET 연산자
-###
+```
     select empno, ename, null as job
     from t1
     union all
@@ -244,9 +260,10 @@ published: true
         order by 1, 2)
     group by empno
     order by empno;
+```
 
 * [4] 사용자 정의 함수
-###
+```
     create or replace function uf_get_t2_job(a t1.empno%type) 
     return varchar2
     is
@@ -264,12 +281,7 @@ published: true
     
     select empno, ename, uf_get_t2_job(empno) as job
     from t1;
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
