@@ -19,7 +19,7 @@ published: true
 > 명시적 커서
 
 ## 7-15. 
-    
+```
       create or replace procedure p1(w number)
       is
         cursor c1
@@ -45,7 +45,9 @@ published: true
     
       exec p1(10)
       exec p1(30)
-###
+```
+
+```
       --위에 예제를 좀 줄여서
       create or replace procedure p1(w number)
       is
@@ -66,7 +68,9 @@ published: true
     
       exec p1(10)
       exec p1(30)
-###
+```
+
+```
       --위에 예제를 좀 줄여서
       create or replace procedure p1(w number)
       is
@@ -82,8 +86,10 @@ published: true
     
       exec p1(10)
       exec p1(30)
+```
 
 ## 문제. 다음과 같은 결과를 만드세요.
+```
       ------------------------
       10 ACCOUNTING NEW YORK
       ------------------------
@@ -111,7 +117,9 @@ published: true
       40 OPERATIONS BOSTON
       ------------------------
       ------------------------
-###          
+```
+
+```
       create or replace procedure p1(w number)
       is
       begin 
@@ -146,8 +154,10 @@ published: true
         end loop;
       end;
       /
+```
     
 ## 7-26. 
+```
       drop table t1 purge;
       drop table t2 purge;
     
@@ -184,9 +194,9 @@ published: true
       select * from t2;
     
       exec p1('DALLAS')
-    
-###
-    
+```
+
+```
       create or replace procedure p1(w varchar2)
       is
         cursor c1
@@ -208,9 +218,9 @@ published: true
       select * from t2;
     
       exec p1('DALLAS')
-    
-###
-    
+```
+
+```    
       create or replace procedure p1(w varchar2)
       is
         cursor c1
@@ -232,9 +242,9 @@ published: true
       select * from t2;
     
       exec p1('DALLAS')
-    
-###
-    
+```
+
+```
       create or replace procedure p1(w varchar2)
       is
         cursor c1
@@ -258,12 +268,7 @@ published: true
       exec p1('DALLAS')
     
       select * from t2;
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

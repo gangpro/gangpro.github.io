@@ -29,6 +29,7 @@ published: true
 * https://docs.oracle.com/cd/E11882_01/appdev.112/e25519/composites.htm#LNPLS00508
 
 ## %rowtype 활용 예제
+```
     create or replace procedure p1(a in jobs.job_id%type, b out jobs%rowtype)
     is
     begin
@@ -53,13 +54,7 @@ published: true
     exec dbms_output.put_line('abc')
     exec dbms_output.put_line(f1('ad_pres'))
     exec dbms_output.put_line(f1('st_man'))
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -20,7 +20,7 @@ published: true
 
 ## package
 * Package의 구조 이해
-###    
+```
       create or replace package pack1
       is
         v1 number;                                -- public variable
@@ -73,16 +73,10 @@ published: true
     
         exec p.p(pack1.v2)           -- 에러 : private 변수는 직접 이용할 수 없음
         exec p.p(pack1.v2_getter())  -- 성공
+```
 
-
-
-
-
-
-      
-
-## 예제. getter, setter 처럼 만들어봅시다.      
-    
+## 예제. getter, setter 처럼 만들어봅시다.    
+```
       drop table t1 purge;
     
       create table t1
@@ -121,9 +115,9 @@ published: true
       select * from t1;
     
       exec dbms_output.put_line(t1_get_ename(7369))
-    
-###
-    
+```
+
+```
       create or replace package t1_pack
       is
         procedure t1_set_ename
@@ -168,20 +162,18 @@ published: true
       select * from t1;
     
       exec dbms_output.put_line(t1_pack.t1_get_ename(7369))
-    
-<br>
-<br>
-<br>
+```
 
 ## Trigger
 * 트리거 유형
-###
+```
     - DML 발생시   ->   일반 DML 트리거   -> timing : before, after, instead of
                  ->   혼합 트리거
     - DDL 발생시
     - Event 발생시
 
     cf. 부록 G에 다양한 예제가 있습니다.
+```
 
 * for each row 키워드
   - 행 트리거 vs 문장 트리거
@@ -189,13 +181,6 @@ published: true
 
 * 9-12. Mutating Error
   - cf. https://orapybubu.blog.me/40025296984
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

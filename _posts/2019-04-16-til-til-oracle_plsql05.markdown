@@ -26,7 +26,7 @@ published: true
 * https://docs.oracle.com/cd/B28359_01/appdev.111/b28370/controlstructures.htm#LNPLS00401
 
 ## 5-28.
-
+```
     begin
         for i in 1..3 loop
         --i := 100;     --에러
@@ -34,9 +34,10 @@ published: true
         end loop;
     end;
     /
+```
 
 ## 문제. 구구단 만들기
-
+```
     begin
         for i in 1..9 loop
         p.p(2 * i);
@@ -52,13 +53,7 @@ published: true
         end loop;
     end;
     /   
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

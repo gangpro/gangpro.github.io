@@ -19,6 +19,7 @@ published: true
 > 예외 처리
 
 ## Error
+```
       - Syntax error
       - Logic  error
       - Runtime error -> Oracle-defined Exception -> Predefined exception      -> [1] when 이름 then
@@ -33,14 +34,12 @@ published: true
        An exception raised in an exception handler propagates immediately to the enclosing block.
 
      - https://scidb.tistory.com/entry/PLSQL-면접문제
-
+```
 
 ## Exception 처리 예제들
-
 [1] when 이름 then
-
   (0) Predefined exception의 정체를 확인해 보세요
-  
+```
       1.파일을 여세요
 
         C:\Users\student> notepad c:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\stdspec.sql
@@ -48,9 +47,10 @@ published: true
       2.다음으로 시작되는 파트를 찾으세요
 
         /********** Predefined exceptions **********/
+```
 
   (1) 발생한 Exception을 제대로 처리하지 못하는 경우
-  
+```
       drop table t1 purge;
       create table t1 (no number);
     
@@ -71,8 +71,10 @@ published: true
       exec p1(100, 0)
     
       select * from t1;    -> no rows selected
+```
   
   (2) 발생한 Exception을 제대로 처리하는 경우
+```
 
       create or replace procedure p1(a number, b number)
       is
@@ -92,8 +94,10 @@ published: true
       select * from t1;  -> exception 발생 이전의 입력 데이터가 그대로 남아있음
     
       rollback;
+```
 
 [2] 선언 -> 이름부여 -> 자동 발생 -> 처리
+```
 
       drop table t1 purge;
     
@@ -112,9 +116,9 @@ published: true
       /
     
       exec p1(null)
+```
 
-### 
-
+```
       create or replace package exception_pack
       is
         e_null exception;
@@ -133,9 +137,10 @@ published: true
       /
     
       exec p1(null)
+```
 
 [3] when others then
-
+```
       create or replace procedure p1(a number)
       is
       begin
@@ -149,9 +154,10 @@ published: true
       /
     
       exec p1(null)
+```
 
 [4] 선언 -> raise로 수동 발생 -> 처리
-
+```
       create or replace procedure p1(e number)
       is
         v_sal emp.sal%type;
@@ -176,9 +182,10 @@ published: true
     
       exec p1(7788)
       exec p1(7900)
+```
 
 [5] raise_application_error 프로시져
-    
+```
       create or replace procedure p1(a number)
       is
         v_sal emp.sal%type;
@@ -194,7 +201,9 @@ published: true
       /
     
       exec p1(7900)    --exception처리 했지만 비정상 종료 됨
-###
+```
+
+```
       create or replace procedure p1(a number)
         is
           v_sal emp.sal%type;
@@ -216,8 +225,9 @@ published: true
       /
     
       exec p1(7900)    
-      
-###      
+```
+
+```
     cf. 트리거에서 에러가 발생하는 트리거를 유발한 작업이 실패한다
 
       - 첫번째 명령 프롬프트
@@ -237,12 +247,7 @@ published: true
       - 두번째 명령 프롬프트
 
       @KANG ~ $ sqlplus ace29/me@70.12.114.184:1521/xe
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

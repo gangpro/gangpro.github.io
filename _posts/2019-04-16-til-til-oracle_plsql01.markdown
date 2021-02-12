@@ -26,18 +26,9 @@ published: true
 
 * cf. MySQL Stored Procedure : http://www.mysqltutorial.org/mysql-stored-procedure-tutorial.aspx
 
-
 ## 1-20. PL/SQL 블록 출력 활성화
 * desc dbms_output 중에 set serverout on 설정해야함
 * dbms_output.put_line으로 출력 가능
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

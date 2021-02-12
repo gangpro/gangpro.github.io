@@ -36,7 +36,7 @@ A line of PL/SQL text contains groups of characters knows as lexical units:
 ## 3-19. 
 * overloading vs overriding
 * 형제 간의 관계 vs 부모 간의 관계
-###
+```
       create or replace package p
       is
         procedure p(a number);
@@ -102,17 +102,10 @@ A line of PL/SQL text contains groups of characters knows as lexical units:
     
       END;
       /
+```
 
 ## 3-22. PL/SQL 연산자
-
-    1 + (-2)
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+...
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

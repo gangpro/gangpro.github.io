@@ -21,7 +21,7 @@ published: true
 ## Program?
 * 해야 할 일을 미리 기술해 놓은 것.
 * 인간의 언어
-###
+```
     인간의 언어
     
         ↓ translate(사람)
@@ -31,6 +31,7 @@ published: true
         ↓ translate(소프트웨어)
 
       기계어
+```
 
 ## PL/SQL
 * PLSQL = https://en.wikipedia.org/wiki/PL/SQL
@@ -42,10 +43,12 @@ published: true
 * function은 SQL에 포함시킬 수 있다는 점에서 procedure에 비해 유리한 점 있음
 
 * 구조
-###
+```
     Block Structured Language -> Anonymous block
                               -> Named block      : procedure, function, package, trigger, object, ...
-###
+```
+
+```
     --Anonymous block
     declare     --옵션
         선언부
@@ -55,8 +58,9 @@ published: true
         예외처리부
     end;        --필수 키워드
     /           --종결
+```
 
-###
+```
     --Named block
     SOMETHING   --옵션
         선언부
@@ -66,9 +70,10 @@ published: true
         예외처리부
     end;        --필수 키워드
     /           --종결
-
+```
 
 ## Anonymous Block 예제들
+```
     --plsql을 사용하여 Hello World 출력
     set serveroutput on     --화면 출력 기능 툴
     
@@ -76,7 +81,9 @@ published: true
         dbms_output.put_line('Hello World!');   --오라클 서버에 요청해서 화면에 출력
     end;
     /
-###
+```
+
+```
     --
     begin
         for i in 1..10 loop
@@ -84,7 +91,9 @@ published: true
         end loop;
     end;
     /
-###
+```
+
+```
     --begin 안에 select문, v_sal 변수를 넣기 위해 declare에 v_sal 변수 선언
     declare
         v_sal number;
@@ -96,8 +105,10 @@ published: true
         dbms_output.put_line(v_sal);
     end;
     /
+```
 
 ## Named Block 예제들
+```
     --plsql을 사용하여 Hello World 출력
     create or replace procedure p1      --dbms()....을 p1에 저장
     is
@@ -105,7 +116,9 @@ published: true
         dbms_output.put_line('Hello World!');
     end;
     /
-###
+```
+
+```
     col object_name format a30
     
     select object_name, object_type
@@ -120,7 +133,9 @@ published: true
     from user_source;
     
     execute p1
-###
+```
+
+```
     --p1
     create or replace procedure p1(a number)
     is
@@ -137,8 +152,9 @@ published: true
     desc p1
     
     exec p1(7788)   --7788사원의 월급이 리턴 = 3000
-    
-    ###
+```
+
+```
     --p2
         create  or replace procedure p2(a number)
         is
@@ -152,7 +168,9 @@ published: true
         desc p2
     
         exec p2(100)
-    ###
+```
+
+```
     --p3
     create or replace procedure p3(a number)
     is
@@ -168,9 +186,10 @@ published: true
     
     exec p3(7788)
     exec p3(7900)
-
+```
 
 ## 문제. 부서번호를 입력하면 평균급여를 리턴하는 프로시져를 생성할 것
+```
     set serveroutput on
     select * from emp;
     
@@ -190,7 +209,9 @@ published: true
     
     exec emp_avg_sal(10)
     exec emp_avg_sal(30)
-###
+```
+
+```
     --emp_avg_sal 프로시져에 out 매개변수를 사용할 경우
     --첫번째 문장
     set serveroutput on     --세션이 종료 된 후 다시 시작하면 무조건 On 해야함.
@@ -205,7 +226,7 @@ published: true
     /
     
     show errors
-    
+
     --두번째 문장
     create or replace procedure emp_sal_compare(a number)
     is
@@ -232,7 +253,9 @@ published: true
     --첫번째 문장과 두번째 문장을 활용
     exec emp_sal_compare(7788)
     exec emp_sal_compare(7900)
-###
+```
+
+```
     --emp_avg_sal 프로시져를 함수로 변경할 경우
     drop procedure emp_avg_sal;
 
@@ -248,7 +271,9 @@ published: true
       return b;
     end;
     /
-###
+```
+
+```
     - function은 SQL에 포함시킬 수 있다는 점에서 
       procedure에 비해 유리한 점 있음
  
@@ -278,9 +303,10 @@ published: true
 
     exec emp_sal_compare(7788)
     exec emp_sal_compare(7900)
-
+```
 
 ## 문제. 급여가 높은 사원의 사번을 출력하는 함수를 만드세요.
+```
     --함수
     drop procedure emp_sal_compare;
     
@@ -322,7 +348,9 @@ published: true
     select w.empno, e.empno, emp_sal_compare(w.empno, e.empno) as winner
       from emp w, emp e
      where w.empno = 7788 and e.empno != w.empno;
-###
+```
+
+```
     --cf. 함수없이 그냥 SQL로 해결하면 이렇습니다.
 
     select w.empno, e.empno, case when w.sal > e.sal then w.empno
@@ -332,13 +360,17 @@ published: true
       from emp w, emp e
      where w.empno = 7788
        and e.empno != w.empno;
+```
 
 ## 할당 연산자 vs 비교 연산자
+```
               C, Java     Basic, PowerScript      Pascal, PL/SQL
     할당 연산자  A = B             A = B                 A := B
     비교 연산자  A == B            A = B                 A = B
+```
 
 ## DML을 PL/SQL 프로그램 Unit을 이용해서 구현
+```
     drop table t1 purge;
     
     create table t1
@@ -362,13 +394,7 @@ published: true
     show errors     --오타 발생시 이유를 알 수 있음
     
     exec t1_insert_proc(1000, 'Tom', 200, 'MANAGER');
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

@@ -22,15 +22,16 @@ published: true
 * 변수(Variable) = 그릇(변경할 수 있는)
 * 상수(Constant) = 그릇(변경이 안 되는) = 특수한 변수
 * 매개변수(Parameter) = 그릇(이웃집과 나눌 수 있는)
-###
+```
     declare
         v_sal number;                    --변수 : 한줄 의미 : 메모리 할당, 그 메모리에 별명 부여(변수명), 데이터 타입 결정, 실제 데이터
         v_tax constant number := 0.013;  --상수 : 한줄 의미 : 메모리 할당, 그 메모리에 별명 부여(변수명), 데이터 타입 결정, 실제 데이터 - 상수는 반드시 초기화 해야한다.
     begin
     end;
     /
-    
-###
+```
+
+```
     create or replace function tax(a number)    --매개변수
         return number
     is
@@ -44,13 +45,14 @@ published: true
     select empno, job, sal, tax(sal)
       from emp
      where job in('MANAGER', 'SALESMAN');
+```
 
 ## SELECT문 유형에 따른 변수 선언 6가지
 * 이미지 참고<br>
 ![190402 PLSQL select_수업참고](https://user-images.githubusercontent.com/46523571/55386456-789d9b80-556a-11e9-8cec-0e65d5c6066f.png)
 
 [1] 한 개 리턴
-###
+```
     set serveroutput on
     
     create or replace procedure p1(k number)
@@ -66,9 +68,10 @@ published: true
     /
     
     exec p1(7788)
+```
 
 [2] 한 행 전부 리턴 
-###
+```
     set serveroutput on
     
     create or replace procedure p1(k number)
@@ -87,9 +90,10 @@ published: true
     /
     
     exec p1(7788)
+```
 
 [3] 하나의 행에서 중 일부 값만 리턴
-###
+```
     set serveroutput on
     
     create or replace procedure p1(k number)
@@ -112,8 +116,9 @@ published: true
     /
     
     exec p1(7788)
+```
 
-###
+```
     --조금더
     --body가 없는 package로 만들면 활용성 증가
     crete or replace package pack1
@@ -140,7 +145,9 @@ published: true
     /
 
     exec p1(7788)
-###
+```
+
+```
       cf. 뷰를 활용할 경우 이렇게 구현할 수 있음
 
       create or replace view v1
@@ -161,9 +168,10 @@ published: true
       /
 
       exec p1(7788)
+```
     
 [4] 같은 종류의 값을 여러개 리턴(배열변수 준비해야함)
-###
+```
     set serveroutput on
 
     create or replace procedure p1(k number)
@@ -188,7 +196,9 @@ published: true
     exec p1(10)
     
     select * from emp;
-###
+```
+
+```
     cf. 다른 방법으로 명시적 커서를 활용이 있음
     
     create or replace procedure p1(k number)
@@ -215,9 +225,10 @@ published: true
     
     exec p1(10)
     exec p1(30)
+```
    
 [5] 레코드 여러개 리턴
-###
+```
     create or replace procedure p1(k number)
     is 
         TYPE emp_table_type IS TABLE OF emp%rowtype
@@ -236,9 +247,10 @@ published: true
      
      exec p1(10)
      exec p1(30)
+```
     
 [6] 반복적인 일부의 값만 리턴
-###
+```
     -- 프로시져 형태로
     create or replace procedure p1(k number)
     is
@@ -264,7 +276,9 @@ published: true
     
     exec p1(10)
     exec p1(30) 
-###     
+```
+
+```
     --패키지 형태로 
 
     create or replace package pack1
@@ -295,9 +309,10 @@ published: true
     
     exec p1(10)
     exec p1(30)
-
+```
 
 ## 문제.부서와 소속 사원을 다음과 같은 형태로 나타내세요
+```
 
      DEPTNO DNAME         LOC        SAWON
   --------- ------------- ---------- --------------------------------------------
@@ -335,28 +350,19 @@ published: true
     
     select deptno, dname, loc, dept_sawon(deptno) as sawon
       from dept;
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 ## setter & getter 처럼 만들어봅시다.
+```
     --ready
     drop table t1 purge;
     
     create table t1
     as
     select * from emp;
-###
+```
+
+```
     --setter
     create or replace procedure t1_set_ename(a t1.empno%type, b t1.ename%type)
     is
@@ -370,8 +376,9 @@ published: true
     select * from t1;
     exec t1_set_ename(7369, 'QUEEN')
     select * from t1;
-    
-###
+```
+
+```
     --getter
     create or replace function t1_get_ename(a t1.empno%type)
         return t1.ename%type
@@ -389,8 +396,10 @@ published: true
     select * from t1;
     exec dbms_output.put_line(t1_get_ename(7369))
     select * from t1;
+```
 
 ## setter & getter를 package로 
+```
     --패키지 변환
     create or replace package t1_pack
     is
@@ -428,9 +437,10 @@ published: true
     exec t1_pack.t1_set_ename(7369, 'PRINCE')
     select * from t1;
     exec dbms_output.put_line(t1_pack.t1_get_ename(7369))
-
+```
 
 ## 2-11. 변수 유형
+```
     * PL/SQL 변수         - Scalar : 문자, 숫자, 날짜, Boolean
                          - Composite
                          - Ref
@@ -442,8 +452,10 @@ published: true
     
       cf. Built-in Datatypes
           http://www.mysqltutorial.org/mysql-stored-procedure-tutorial.aspx
+```
 
 ## 2-26. 
+```
     create table t9
     (a number(4),
      b varchar2(10),
@@ -453,12 +465,7 @@ published: true
     
     select dbms_metadata.get_ddl('TABLE', T9', user) as ret
     from dual;
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
