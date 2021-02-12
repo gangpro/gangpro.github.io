@@ -25,6 +25,7 @@ published: true
 > hive 1.2.1<br>
 
 ## [0] data 준비 : ml-1m 데이터 준비
+```
     [orcl:~]$ su - hadoop
     Password: 
     [hadoop@edydr1p0 ~]$ 
@@ -55,7 +56,9 @@ published: true
     2019-04-24 13:57:24 (10.3 KB/s) - `ml-1m.zip' saved [5917549/5917549]
     
     [hadoop@edydr1p0 ~]$ 
-###    
+```
+
+```
     # 데이터 파일 압축 해제
     [hadoop@edydr1p0 ~]$ unzip ml-1m.zip
     Archive:  ml-1m.zip
@@ -65,7 +68,9 @@ published: true
       inflating: ml-1m/README            
       inflating: ml-1m/users.dat         
     [hadoop@edydr1p0 ~]$ 
-###
+```
+
+```
     [hadoop@edydr1p0 ~]$ cd ml-1m
     [hadoop@edydr1p0 ml-1m]$ ls -al
     total 24372
@@ -92,6 +97,7 @@ published: true
     
     [hadoop@edydr1p0 ~]$ ls ml-1m
     movies2.dat  movies.dat  ratings2.dat  ratings.dat  README  users2.dat  users.dat
+```
 
 <br>
 <br>
@@ -105,6 +111,7 @@ published: true
 <br>
 
 ## [2] 설치 및 간단한 테스트
+```
     [hadoop@edydr1p0 ~]$ start-all.sh  
     starting namenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-namenode-edydr1p0.us.oracle.com.out
     localhost: starting datanode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-datanode-edydr1p0.us.oracle.com.out
@@ -123,7 +130,9 @@ published: true
     [hadoop@edydr1p0 ~]$ cd
     [hadoop@edydr1p0 ~]$ mkdir hive-install             <- 디렉토리 생성
     [hadoop@edydr1p0 hive-install]$ cd hive-install
-###    
+```
+
+```
     # hive 다운로드
     [hadoop@edydr1p0 hive-install]$ wget https://archive.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
     --2019-04-24 14:03:22--  https://archive.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
@@ -136,7 +145,9 @@ published: true
     100%[======================================>] 92,834,839  6.01M/s   in 23s     
     
     2019-04-24 14:03:46 (3.79 MB/s) - `apache-hive-1.2.1-bin.tar.gz' saved [92834839/92834839]
-###    
+```
+
+```
     # hive 압축 해제 
     [hadoop@edydr1p0 hive-install]$ tar xvfz apache-hive-1.2.1-bin.tar.gz
     
@@ -149,12 +160,19 @@ published: true
     /opt/hadoop/hadoop
     
     [hadoop@edydr1p0 conf]$ vi hive-env.sh
+```
     
+```
     # vi 편집기 실행        
     HADOOP_HOME=/opt/hadoop/hadoop
+```
+
+```
     # vi 편집기 종료
+```
 ![Screen Shot 2019-04-24 at 2 06 18 PM](https://user-images.githubusercontent.com/46523571/56633694-25ff5d00-669a-11e9-82cc-ffd0a8243605.png)
     
+```
     [hadoop@edydr1p0 conf]$ cd
     
     [hadoop@edydr1p0 ~]$ vi + .bash_profile
@@ -163,8 +181,11 @@ published: true
     export PATH=$HIVE_HOME/bin:$PATH
     
     [hadoop@edydr1p0 ~]$ source .bash_profile
+```
+
 ![Screen Shot 2019-04-24 at 2 08 07 PM](https://user-images.githubusercontent.com/46523571/56633756-6e1e7f80-669a-11e9-8314-88053c315b15.png)
     
+```
     [hadoop@edydr1p0 ~]$ hive           <- 에러 발생
     Caused by: java.lang.RuntimeException: The root scratch dir: 
     /tmp/hive on HDFS should be writable. Current permissions are: rwx--x--x
@@ -174,7 +195,9 @@ published: true
     [hadoop@edydr1p0 ~]$ hive
     Logging initialized using configuration in jar:file:/home/hadoop/hive-install/apache-hive-1.2.1-bin/lib/hive-common-1.2.1.jar!/hive-log4j.properties
     hive> 
-###
+```
+
+```
     hive> show tables; 
     OK
     Time taken: 1.009 seconds
@@ -394,12 +417,20 @@ published: true
 
     [hadoop@edydr1p0 ~]$ hadoop fs -cat /user/hive/warehouse/rating/ratings*
     
-    [hadoop@edydr1p0 ~]$ vi a.sql  
-    # vi 편집기 실행  
+    [hadoop@edydr1p0 ~]$ vi a.sql     
+```
+
+```
+    # vi 편집기 실행 
     select count(*) from rating r;
+```
+
+```
     # vi 편집기 종료
+```
 ![Screen Shot 2019-04-24 at 2 15 25 PM](https://user-images.githubusercontent.com/46523571/56634041-6dd2b400-669b-11e9-8a69-ccbb33492c47.png)
-###
+
+```
     [hadoop@edydr1p0 ~]$ hive -f a.sql    <- 스크립트 파일 수행 방법 1
     Logging initialized using configuration in jar:file:/home/hadoop/hive-install/apache-hive-1.2.1-bin/lib/hive-common-1.2.1.jar!/hive-log4j.properties
     Query ID = hadoop_20190424141545_2fc4be17-2b40-4839-a6a5-24c10e526431
@@ -441,7 +472,9 @@ published: true
     drwxrwxr-x 5 hadoop hadoop    4096 Apr 24 14:16 metastore_db
     drwxr-x--- 2 hadoop hadoop    4096 Apr 24 13:59 ml-1m
     -rw-rw-r-- 1 hadoop hadoop 5917549 Jan 30  2016 ml-1m.zip
-###
+```
+
+```
     hive> source a.sql;                   <- 스크립트 파일 수행 방법 2
     Query ID = hadoop_20190424141706_5a5067eb-ccfb-41b6-9114-6474090a5c80
     Total jobs = 1
@@ -470,6 +503,7 @@ published: true
     Time taken: 23.631 seconds, Fetched: 1 row(s)
 
     hive> exit;
+```
 
 <br>
 <br>
@@ -487,6 +521,4 @@ published: true
 * Hive Tutorial    : https://cwiki.apache.org/confluence/display/Hive/Tutorial
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

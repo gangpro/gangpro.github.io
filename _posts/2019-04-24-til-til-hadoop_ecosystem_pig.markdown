@@ -43,7 +43,7 @@ published: true
 ## [2] putty로 접속해서 설치 및 간단한 테스트
 * (1) 설치
   - release 0.12.0 : This release works with Hadoop 0.20.X, 1.X, 0.23.X and 2.X
-### 
+```
     [hadoop@edydr1p0 ~]$ whoami
     hadoop
     
@@ -65,7 +65,9 @@ published: true
     [hadoop@edydr1p0 ~]$ cd
     [hadoop@edydr1p0 ~]$ mkdir pig-install      <- 디렉토리 생성
     [hadoop@edydr1p0 ~]$ cd pig-install
-###
+```
+
+```
     # pig 다운로드 
     [hadoop@edydr1p0 pig-install]$ wget https://archive.apache.org/dist/pig/pig-0.12.0/pig-0.12.0.tar.gz
     --2019-04-24 14:44:26--  https://archive.apache.org/dist/pig/pig-0.12.0/pig-0.12.0.tar.gz
@@ -79,19 +81,30 @@ published: true
     
     2019-04-24 14:44:51 (2.51 MB/s) - `pig-0.12.0.tar.gz' saved [59941262/59941262] 
     [hadoop@edydr1p0 pig-install]$ 
-###
+```
+
+```
     # pig 압축 해제
     [hadoop@edydr1p0 pig-install]$ tar xvfz pig-0.12.0.tar.gz
     
     [hadoop@edydr1p0 pig-install]$ cd
     
     [hadoop@edydr1p0 ~]$ vi + .bash_profile
+```
+
+```
     # vi 편집기 실행    
     export PIG_HOME=/home/hadoop/pig-install/pig-0.12.0
     export PATH=$PIG_HOME/bin:$PATH
+```
+
+```
     # vi 편집기 종료
+```
+
 ![Screen Shot 2019-04-24 at 2 47 11 PM](https://user-images.githubusercontent.com/46523571/56635228-de7bcf80-669f-11e9-8982-e9be5623570f.png)
     
+```
     [hadoop@edydr1p0 ~]$ . .bash_profile
     
     [hadoop@edydr1p0 ~]$ pig -x local
@@ -152,13 +165,14 @@ published: true
     ... Connecting to map-reduce job tracker at: localhost:9001
     
     grunt> quit
+```
 
 * 참고하세요.
   - Pig runs locally on your machine or your gateway machine. All of the parsing, checking, and planning is done locally. Pig then executes MapReduce jobs in your cluster.
   - When I say "your gateway machine," I mean the machine from which you are launching Pig jobs. Usually this will be one or more machines that have access to your Hadoop cluster. However, depending on your configuration, it could be your local machine as well.
   -  => 피그의 conf 경로에 pig.properties 파일을 생성하고 NameNode와 JobTracker를 설정하면 됩니다.
   -  => fs.default.name=hdfs://localhost/mapred.job.tracker=localhost:8021
-###
+```
     [hadoop@edydr1p0 ~]$ pig -x local       <-리눅스 일반 경로
     
     grunt> A = LOAD '/home/hadoop/ml-1m/movies2.dat' USING PigStorage(',');        <-- 계획  
@@ -171,9 +185,10 @@ published: true
     part-m-00000  _SUCCESS
 
     [hadoop@edydr1p0 ~]$ more pig_output1/p*
+```
 
 * (3) 맵리듀스 모드
-###    
+```
     [hadoop@edydr1p0 ~]$ hadoop fs -mkdir /movie_rating_data
     [hadoop@edydr1p0 ~]$ hadoop fs -put ml-1m/*.dat /movie_rating_data
     [hadoop@edydr1p0 ~]$ hadoop fs -ls / 
@@ -248,7 +263,9 @@ published: true
     2019-04-24 14:55:43,418 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
 
     grunt> quit
-###    
+```
+
+```
     [hadoop@edydr1p0 ~]$ hadoop fs -ls / 
     Found 1 items
     drwxr-xr-x   - hadoop supergroup          0 2019-04-19 17:10 /user/hadoop/input
@@ -273,13 +290,22 @@ published: true
     cat: Unable to write to output stream.
     
     [hadoop@edydr1p0 ~]$ vi a.pig
+```
+
+```
     # vi 편집기 편집
     A = LOAD '/movie_rating_data/movies2.dat' USING PigStorage(','); 
     B = FOREACH A GENERATE $0,$1;
     STORE B INTO '/pig_output2' USING PigStorage(',');
+```
+
+```
     # vi 편집기 종료
+```
+
 ![Screen Shot 2019-04-24 at 2 58 33 PM](https://user-images.githubusercontent.com/46523571/56635699-74642a00-66a1-11e9-97fc-f7c217225548.png)
-###
+
+```
     [hadoop@edydr1p0 ~]$ pig a.pig
     2019-04-24 14:58:34,412 [main] INFO  org.apache.pig.Main - Apache Pig version 0.12.0 (r1529718) compiled Oct 07 2013, 12:20:14
     2019-04-24 14:58:34,413 [main] INFO  org.apache.pig.Main - Logging error messages to: /home/hadoop/pig_1556085514410.log
@@ -363,6 +389,7 @@ published: true
     9,Sudden Death (1995)
     10,GoldenEye (1995)
     cat: Unable to write to output stream.
+```
 
 
 <br>
@@ -374,5 +401,4 @@ published: true
 * Embedded Pig - Python and JavaScript : http://pig.apache.org/docs/r0.9.1/cont.html#Usage+Examples
 
 ## References
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

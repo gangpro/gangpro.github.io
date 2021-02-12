@@ -29,10 +29,12 @@ published: true
 
 ## [1] Homebrew 설치
 * [Homebrew URL](https://brew.sh/) 사이트 참고
-###
+```
     # 터미널에서 아래 코드 실행
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-###
+```
+
+```
     @KANG ~ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ==> This script will install:
     /usr/local/bin/brew
@@ -133,13 +135,13 @@ published: true
     - Further documentation: 
         https://docs.brew.sh
     @KANG ~ $ 
-
+```
 
 # [2] Install MySQL 5.7 on macOS
 ## [2-1] MySQL 5.7 버전 체크  
     터미널에서 아래 코드 실행
     brew info mysql@5.7
-###  
+```
     @KANG ~ $brew info mysql@5.7
     mysql@5.7: stable 5.7.25 (bottled) [keg-only]
     Open source relational database management system
@@ -173,15 +175,19 @@ published: true
     install: 21,662 (30 days), 64,880 (90 days), 214,112 (365 days)
     install_on_request: 21,614 (30 days), 64,680 (90 days), 213,591 (365 days)
     build_error: 0 (30 days)
+```
 
 <br>
 <br>
 <br>
 
 ## [2-2] MySQL 5.7 설치
+```
     # 터미널에서 아래 코드 실행
     brew install mysql@5.7
-###
+```
+
+```
     @KANG ~ $brew install mysql@5.7
     ==> Installing dependencies for mysql@5.7: openssl
     ==> Installing mysql@5.7 dependency: openssl
@@ -302,12 +308,14 @@ published: true
       brew services start mysql@5.7
     Or, if you don't want/need a background service you can just run:
       /usr/local/opt/mysql@5.7/bin/mysql.server start
+```
 
 <br>
 <br>
 <br>
 
 ## [2-3] MySQL 기타 설정
+```
     @KANG ~ $brew tap homebrew/services
     
     @KANG ~ $brew services list
@@ -322,12 +330,14 @@ published: true
     
     @KANG ~ $mysql -V
     mysql  Ver 14.14 Distrib 5.7.25, for osx10.14 (x86_64) using  EditLine wrapper
+```
 
 <br>
 <br>
 <br>
 
 ## [2-4] MySQL 서버 시작과 종료
+```
     @KANG ~ $brew services start mysql@5.7
     ==> Successfully started `mysql@5.7` (label: homebrew.mxcl.mysql@5.7)
     
@@ -346,20 +356,24 @@ published: true
     mysql  Ver 14.14 Distrib 5.7.25, for osx10.14 (x86_64) using  EditLine wrapper
 
     @KANG ~ $brew services stop mysql@5.7
+```
 <br>
 <br>
 <br>
 
 ## [2-5] MySQL root 계정 비밀번호 설정
+```
     @KANG ~ $mysqladmin -u root password '비밀번호'
     mysqladmin: [Warning] Using a password on the command line interface can be insecure.
     Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+```
 
 <br>
 <br>
 <br>
 
 ## [2-6] MySQL root 계정 접속
+```
     @KANG ~ $mysql -u root -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -375,12 +389,14 @@ published: true
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     
     mysql> 
+```
 
 <br>
 <br>
 <br>
 
 ## [2-7] MySQL 기초 사용법
+```
     mysql> show databases;
     +--------------------+
     | Database           |
@@ -391,13 +407,17 @@ published: true
     | sys                |
     +--------------------+
     4 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> use information_schema
     Reading table information for completion of table and column names
     You can turn off this feature to get a quicker startup with -A
     
     Database changed
-###
+```
+
+```
     mysql> show tables;
     +---------------------------------------+
     | Tables_in_information_schema          |
@@ -465,28 +485,42 @@ published: true
     | INNODB_SYS_TABLESTATS                 |
     +---------------------------------------+
     61 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> create database mydb;
     Query OK, 1 row affected (0.00 sec)
-###
+```
+
+```
     mysql> drop database mydb;
     Query OK, 0 rows affected (0.00 sec)
-###
+```
+
+```
     mysql> create database morcl;
     Query OK, 1 row affected (0.00 sec)
-###
+```
+
+```
     mysql> create user mscott;
     Query OK, 0 rows affected (0.00 sec)
-###
+```
+
+```
     mysql> select * from user where user = 'mscott';
     ERROR 1109 (42S02): Unknown table 'user' in information_schema
-###
+```
+
+```
     mysql> use mysql
     Reading table information for completion of table and column names
     You can turn off this feature to get a quicker startup with -A
     
     Database changed
-###
+```
+
+```
     mysql> select * from user where user = 'mscott'; 
     +------+--------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+-----------------------+-----------------------+------------------+-----------------------+-------------------+----------------+
     | Host | User   | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | Reload_priv | Shutdown_priv | Process_priv | File_priv | Grant_priv | References_priv | Index_priv | Alter_priv | Show_db_priv | Super_priv | Create_tmp_table_priv | Lock_tables_priv | Execute_priv | Repl_slave_priv | Repl_client_priv | Create_view_priv | Show_view_priv | Create_routine_priv | Alter_routine_priv | Create_user_priv | Event_priv | Trigger_priv | Create_tablespace_priv | ssl_type | ssl_cipher | x509_issuer | x509_subject | max_questions | max_updates | max_connections | max_user_connections | plugin                | authentication_string | password_expired | password_last_changed | password_lifetime | account_locked |
@@ -494,19 +528,29 @@ published: true
     | %    | mscott | N           | N           | N           | N           | N           | N         | N           | N             | N            | N         | N          | N               | N          | N          | N            | N          | N                     | N                | N            | N               | N                | N                | N              | N                   | N                  | N                | N          | N            | N                      |          |            |             |              |             0 |           0 |               0 |                    0 | mysql_native_password |                       | N                | 2019-04-24 20:47:56   |              NULL | N              |
     +------+--------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+------------------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+-----------------------+-----------------------+------------------+-----------------------+-------------------+----------------+
     1 row in set (0.00 sec)
-###
+```
+
+```
     mysql> drop user mscott;
     Query OK, 0 rows affected (0.00 sec)
-###
+```
+
+```
     mysql> create user mscott@'%';
     Query OK, 0 rows affected (0.00 sec)
-###
+```
+
+```
     mysql> GRANT ALL privileges ON morcl.* TO mscott@'%' IDENTIFIED BY 'tiger';
     Query OK, 0 rows affected, 1 warning (0.00 sec)
-###
+```
+
+```
     mysql> \q
     Bye
-###
+```
+
+```
     @KANG ~ $mysql -u mscott -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -522,12 +566,16 @@ published: true
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     
     mysql> 
-###
+```
+
+```
     mysql> create table t1 (no int);
     ERROR 1046 (3D000): No database selected
     mysql> exit
     Bye
-###
+```
+
+```
     @KANG ~ $mysql -u mscott -p morcl
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -543,7 +591,9 @@ published: true
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     
     mysql> 
-###
+```
+
+```
     mysql> select database();
     +------------+
     | database() |
@@ -551,16 +601,24 @@ published: true
     | morcl      |
     +------------+
     1 row in set (0.00 sec)
-###
+```
+
+```
     mysql> create table t1 (no int);
     Query OK, 0 rows affected (0.01 sec)
-###
+```
+
+```
     mysql> CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
     Query OK, 0 rows affected (0.02 sec)
-###
+```
+
+```
     mysql> CREATE TABLE event (name VARCHAR(20), date DATE, type VARCHAR(15), remark VARCHAR(255));
     Query OK, 0 rows affected (0.01 sec)
-###
+```
+
+```
     mysql> SHOW TABLES;
     +-----------------+
     | Tables_in_morcl |
@@ -570,7 +628,9 @@ published: true
     | t1              |
     +-----------------+
     3 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> DESCRIBE pet;
     +---------+-------------+------+-----+---------+-------+
     | Field   | Type        | Null | Key | Default | Extra |
@@ -583,7 +643,9 @@ published: true
     | death   | date        | YES  |     | NULL    |       |
     +---------+-------------+------+-----+---------+-------+
     6 rows in set (0.01 sec)
-###
+```
+
+```
     mysql> desc event;
     +--------+--------------+------+-----+---------+-------+
     | Field  | Type         | Null | Key | Default | Extra |
@@ -594,11 +656,15 @@ published: true
     | remark | varchar(255) | YES  |     | NULL    |       |
     +--------+--------------+------+-----+---------+-------+
     4 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> \q
     Bye
     @KANG ~ $
-###
+```
+
+```
     @KANG ~ $mysql -u mscott -p morcl
     Enter password: 
     Reading table information for completion of table and column names
@@ -617,15 +683,21 @@ published: true
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     
     mysql> 
-###
+```
+
+```
     mysql> LOAD DATA LOCAL INFILE '/Users/kang/Documents/PycharmProjects/TIL/HadoopEcosystem/data/pet.txt' INTO TABLE pet;
     Query OK, 8 rows affected, 9 warnings (0.00 sec)
     Records: 8  Deleted: 0  Skipped: 0  Warnings: 9
-###
+```
+
+```
     mysql> LOAD DATA LOCAL INFILE '/Users/kang/Documents/PycharmProjects/TIL/HadoopEcosystem/data/event.txt' INTO TABLE event;
     Query OK, 10 rows affected (0.00 sec)
     Records: 10  Deleted: 0  Skipped: 0  Warnings: 0
-###
+```
+
+```
     mysql> select * from pet;
     +--------+--------+---------+------+------------+-------+
     | name   | owner  | species | sex  | birth      | death |
@@ -640,7 +712,9 @@ published: true
     | Slim   | Benny  | snake   | m    | 1996-04-29 | NULL  |
     +--------+--------+---------+------+------------+-------+
     8 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> select * from event;
     +--------+------------+----------+-----------------------------+
     | name   | date       | type     | remark                      |
@@ -657,14 +731,20 @@ published: true
     | White  | 1998-12-09 | birthday | First birthday              |
     +--------+------------+----------+-----------------------------+
     10 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
     Query OK, 1 row affected (0.00 sec)
-###
+```
+
+```
     mysql> UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';
     Query OK, 1 row affected (0.00 sec)
     Rows matched: 1  Changed: 1  Warnings: 0
-###
+```
+
+```
     mysql> select * from pet;
     +----------+--------+---------+------+------------+-------+
     | name     | owner  | species | sex  | birth      | death |
@@ -680,7 +760,9 @@ published: true
     | Puffball | Diane  | hamster | f    | 1999-03-30 | NULL  |
     +----------+--------+---------+------+------------+-------+
     9 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> SELECT * FROM pet WHERE name = 'Bowser';
     +--------+-------+---------+------+------------+-------+
     | name   | owner | species | sex  | birth      | death |
@@ -688,7 +770,9 @@ published: true
     | Bowser | Diane | dog     | m    | 1989-08-31 | NULL  |
     +--------+-------+---------+------+------------+-------+
     1 row in set (0.00 sec)
-###
+```
+
+```
     mysql> SELECT * FROM pet WHERE birth >= '1998-1-1';
     +----------+-------+---------+------+------------+-------+
     | name     | owner | species | sex  | birth      | death |
@@ -697,7 +781,9 @@ published: true
     | Puffball | Diane | hamster | f    | 1999-03-30 | NULL  |
     +----------+-------+---------+------+------------+-------+
     2 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> SELECT * FROM pet WHERE species = 'dog' AND sex = 'f';
     +-------+--------+---------+------+------------+-------+
     | name  | owner  | species | sex  | birth      | death |
@@ -705,7 +791,9 @@ published: true
     | Buffy | Harold | dog     | f    | 1989-05-13 | NULL  |
     +-------+--------+---------+------+------------+-------+
     1 row in set (0.00 sec)
-###
+```
+
+```
     mysql> SELECT * FROM pet WHERE species = 'snake' OR species = 'bird';
     +--------+-------+---------+------+------------+-------+
     | name   | owner | species | sex  | birth      | death |
@@ -715,7 +803,9 @@ published: true
     | Slim   | Benny | snake   | m    | 1996-04-29 | NULL  |
     +--------+-------+---------+------+------------+-------+
     3 rows in set (0.01 sec)
-###
+```
+
+```
     mysql> SELECT * FROM pet 
         -> WHERE (species = 'cat' AND sex = 'm')
         -> OR (species = 'dog' AND sex = 'f');
@@ -726,7 +816,9 @@ published: true
     | Buffy | Harold | dog     | f    | 1989-05-13 | NULL  |
     +-------+--------+---------+------+------------+-------+
     2 rows in set (0.00 sec)
-###
+```
+
+```
     mysql> help
     
     For information about MySQL products and services, visit:
@@ -765,7 +857,9 @@ published: true
     resetconnection(\x) Clean session context.
     
     For server side help, type 'help contents'
-###
+```
+
+```
     mysql> ?
     
     For information about MySQL products and services, visit:
@@ -804,21 +898,26 @@ published: true
     resetconnection(\x) Clean session context.
     
     For server side help, type 'help contents'
+```
 
 # [3] Sqoop with MySQL
 ## [3-1] Sqoop 설치 전 상태 확인
 * 내용 확인 : http://sqoop.apache.org
 * Apache sqoop : https://www.slideshare.net/pavan5780/apache-sqoop-72298037
-###
+```
     # 실습을 위해 hadoop 유저로 로그인 뒤 reboot
     
     [hadoop@edydr1p0 ~]$ su -
     [root@edydr1p0 ~]# reboot
-###
+```
+
+```
     # 필요한 구성요소 시작 및 상태 파악
     [orcl:~]$ su - oracle
     Password: 비밀번호
-###
+```
+
+```
     [orcl:~]$ lsnrctl start   
     LSNRCTL for Linux: Version 11.2.0.1.0 - Production on 24-APR-2019 21:00:30
     
@@ -849,7 +948,9 @@ published: true
     Service "orcl" has 1 instance(s).
       Instance "orcl", status UNKNOWN, has 1 handler(s) for this service...
     The command completed successfully
-###    
+```
+
+```
     [orcl:~]$ sqlplus / as sysdba
     
     SQL*Plus: Release 11.2.0.1.0 Production on Wed Apr 24 21:00:39 2019
@@ -859,7 +960,9 @@ published: true
     Connected to an idle instance.
     
     SQL> 
-###
+```
+
+```
     SQL> startup force
     ORACLE instance started.
     
@@ -870,32 +973,46 @@ published: true
     Redo Buffers               12095488 bytes
     Database mounted.
     Database opened.
-###
+```
+
+```
     SQL> exit
     Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - Production
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
-###
+```
+
+```
     [orcl:~]$ exit
     logout
-###
+```
+
+```
     [orcl:~]$ su - hadoop
     Password: 비밀번호
-###
+```
+
+```
     [hadoop@edydr1p0 ~]$ start-all.sh
     starting namenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-namenode-edydr1p0.us.oracle.com.out
     localhost: starting datanode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-datanode-edydr1p0.us.oracle.com.out
     localhost: starting secondarynamenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-secondarynamenode-edydr1p0.us.oracle.com.out
     starting jobtracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-jobtracker-edydr1p0.us.oracle.com.out
     localhost: starting tasktracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-tasktracker-edydr1p0.us.oracle.com.out
-###
+```
+
+```
     [hadoop@edydr1p0 ~]$ ps -ef|grep lsnr
     oracle    5215     1  0 21:00 ?        00:00:00 /u01/app/oracle/product/11.2.0/dbhome_1/bin/tnslsnr LISTENER -inherit
     hadoop    6110  5360  0 21:02 pts/1    00:00:00 grep lsnr
-###    
+```
+
+```
     [hadoop@edydr1p0 ~]$ ps -ef|grep smon
     oracle    5269     1  0 21:00 ?        00:00:00 ora_smon_orcl
     hadoop    6112  5360  0 21:03 pts/1    00:00:00 grep smon
-###
+```
+
+```
     [hadoop@edydr1p0 ~]$ jps
     6113 Jps
     5798 JobTracker
@@ -903,15 +1020,19 @@ published: true
     5578 DataNode
     5709 SecondaryNameNode
     5934 TaskTracker
+```
 
 ## [3-2] Sqoop 설치
+```
     [hadoop@edydr1p0 ~]$ cd
     [hadoop@edydr1p0 ~]$ whoami
     hadoop
     [hadoop@edydr1p0 ~]$ mkdir sqoop-install
     [hadoop@edydr1p0 ~]$ cd sqoop-install
     [hadoop@edydr1p0 sqoop-install]$ 
-###
+```
+
+```
     # sqoop 1.4.4 다운로드 
     [hadoop@edydr1p0 sqoop-install]$ wget https://archive.apache.org/dist/sqoop/1.4.4/sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
     --2019-04-25 01:04:14--  https://archive.apache.org/dist/sqoop/1.4.4/sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
@@ -924,34 +1045,52 @@ published: true
     100%[======================================>] 5,266,542    106K/s   in 42s     
     
     2019-04-25 01:04:58 (121 KB/s) - `sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz' saved [5266542/5266542]
+```
     
-###
+```
     # sqoop 압축 해제 
     [hadoop@edydr1p0 sqoop-install]$ tar zxvf sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
-###
+```
+
+```
     [hadoop@edydr1p0 sqoop-install]$ vi + ../.bash_profile
     # vi 편집기 실행
     export SQOOP_HOME=/home/hadoop/sqoop-install/sqoop-1.4.4.bin__hadoop-1.0.0
     export SQOOP_CONF_DIR=/home/hadoop/sqoop-install/sqoop-1.4.4.bin__hadoop-1.0.0/conf
     export PATH=$PATH:$SQOOP_HOME/bin
+```
+
+```
     # vi 편집기 종료
+``` 
+
 <img width="1083" alt="Screen Shot 2019-04-24 at 9 05 48 PM" src="https://user-images.githubusercontent.com/46523571/56671308-5e7d5600-66ef-11e9-92ab-3de16309bc6c.png">
 
-###
+```
     [hadoop@edydr1p0 sqoop-install]$ source ../.bash_profile
-###
+```
+
+```
     [hadoop@edydr1p0 sqoop-install]$ cd $SQOOP_HOME/conf
-###
+```
+
+```
     [hadoop@edydr1p0 conf]$ pwd
     /home/hadoop/sqoop-install/sqoop-1.4.4.bin__hadoop-1.0.0/conf
-###
+```
+
+```
     [hadoop@edydr1p0 conf]$ ls $HADOOP_HOME/*core*
     /opt/hadoop/hadoop/hadoop-core-1.2.1.jar
-###
+```
+
+```
     [hadoop@edydr1p0 conf]$ ls $HADOOP_HOME/bin/h*
     /opt/hadoop/hadoop/bin/hadoop            /opt/hadoop/hadoop/bin/hadoop-daemon.sh
     /opt/hadoop/hadoop/bin/hadoop-config.sh  /opt/hadoop/hadoop/bin/hadoop-daemons.sh
-###
+```
+
+```
     [hadoop@edydr1p0 conf]$ cp sqoop-env-template.sh sqoop-env.sh
     [hadoop@edydr1p0 conf]$ vi + sqoop-env.sh
     # vi 편집기 실행해서 아래 내용 아래 코드 추가
@@ -959,9 +1098,13 @@ published: true
     export HADOOP_COMMON_HOME=$HADOOP_HOME
     #Set path to where hadoop-*-core.jar is available
     export HADOOP_MAPRED_HOME=$HADOOP_HOME
-    # vi 편집기 종료
+```
 
+```
+    # vi 편집기 종료
     [hadoop@edydr1p0 conf]$ cd
+```
+
 <img width="1081" alt="Screen Shot 2019-04-24 at 9 08 51 PM" src="https://user-images.githubusercontent.com/46523571/56675295-b8cde500-66f6-11e9-8ce0-5301e4fd6923.png">
 
 <br>
@@ -969,6 +1112,7 @@ published: true
 <br>
 
 ## [3-3] Sqoop import 테스트 : from MySQL
+```
     [hadoop@edydr1p0 ~]$ sqoop import --connect jdbc:mysql://70.12.114.169/morcl --table pet --username mscott -m 1
     Warning: /usr/lib/hbase does not exist! HBase imports will fail.
     Please set $HBASE_HOME to the root of your HBase installation.
@@ -997,27 +1141,31 @@ published: true
             at org.apache.sqoop.Sqoop.runTool(Sqoop.java:229)
             at org.apache.sqoop.Sqoop.main(Sqoop.java:238)
     --> 에러 발생 Could not load db driver class : JDBC 드라이버 설정 필요.
-###
+```
+
+```
     [hadoop@edydr1p0 ~]$ cd $SQOOP_HOME
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ pwd
     /home/hadoop/sqoop-install/sqoop-1.4.4.bin__hadoop-1.0.0
-###
+```
+
+```
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ ls
     bin            COMPILING.txt  ivy      LICENSE.txt  README.txt            src
     build.xml      conf           ivy.xml  NOTICE.txt   sqoop-1.4.4.jar       testdata
     CHANGELOG.txt  docs           lib      pom-old.xml  sqoop-test-1.4.4.jar
-###
+```
+
+```
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ wget http://70.12.114.169/Share/mysql-connector-java-5.1.28.tar.gz
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ tar zxvf mysql-connector-java-5.1.28.tar.gz
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ cp mysql-connector-java-5.1.28/mysql-connector-java-5.1.28-bin.jar $SQOOP_HOME/lib
     [hadoop@edydr1p0 sqoop-1.4.4.bin__hadoop-1.0.0]$ cd
     
     [hadoop@edydr1p0 ~]$ sqoop help import
+```
 
-
-
-
-
+```
   [hadoop@edydr1p0 ~]$ sqoop import --connect jdbc:mysql://70.12.114.169/morcl --table pet --username mscott -P -m 1
 
   [hadoop@edydr1p0 ~]$ hadoop fs -lsr
@@ -1025,11 +1173,7 @@ published: true
   [hadoop@edydr1p0 ~]$ hadoop fs -cat /user/hadoop/pet/part-m-00000
 
   [hadoop@edydr1p0 ~]$ hive
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
