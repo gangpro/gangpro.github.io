@@ -46,7 +46,7 @@ published: true
   - 5.Validate  : 관련자들 앞에서 큰소리로 떠들기
 
 * Relationship Syntax
-###
+```
     Each entity1   must be     relationship name    one or more        entity2s.
     Each entity1   may be      relationship name    one or more        entity2s.
     Each entity1   must be     relationship name    one and only one   entity2.
@@ -55,8 +55,10 @@ published: true
                 [optionality]        [name]           [Degree]
 
     cf.A degree of 0 is addressed by may be.
+```
 
 ## 연습문제
+```
     -- 1-45. Practice : Read and Comment
     Each PERSON must be born in one or more TOWN(s)
     Each TOWN may be birthplace of one and only one PERSON
@@ -69,6 +71,7 @@ published: true
     
     Each PERSON may be mayor of one and only one TOWN
     Each TOWN may be with mayor one and only one PERSON
+```
 
 * Relationship Types : 1:1 or 1:M or M:M
 
@@ -82,12 +85,6 @@ published: true
   - 4.Derived Attribute는 아니겠지요?
   - 5.정말 Attribute인가요? 혹시 Entity가 아닌가요?  -> If an attribute has their own attributes, then it is an entity!!!
   - 6.필수 속성인가 판단하기. 
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

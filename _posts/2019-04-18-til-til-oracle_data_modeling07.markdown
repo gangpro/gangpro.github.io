@@ -21,7 +21,7 @@ published: true
 
 ## Database Design : Relational Design
 * Eyes Are Usually Red After Swimming(Studying)
-###
+```
     Initial database design
 
     1.Simple Entity     -> Table
@@ -40,9 +40,10 @@ published: true
     6.Subtype           -> Single Table Design     -> View로 단점 극복 가능
                         -> Separate Tables Design  -> View로 단점 극복 가능
                         -> Arc Implementation 
+```
 
 * Table Normalization
-### 
+```
     Complete database design
 
     1.Referential integrity : on delete cacade, on delete set null
@@ -54,13 +55,7 @@ published: true
     4.Denormalization
 
     5.Physical storage usage
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

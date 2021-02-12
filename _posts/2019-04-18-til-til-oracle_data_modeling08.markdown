@@ -19,7 +19,7 @@ published: true
 > Denormalized Data
 
 ## Denormalization
-    
+```
       Storing Derivable Values : 토탈 
     
       Pre-Joining Tables : 저기 있는거 여기 추가 
@@ -39,14 +39,7 @@ published: true
       Hierarchy Level Indicator : 
     
       ...
- 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

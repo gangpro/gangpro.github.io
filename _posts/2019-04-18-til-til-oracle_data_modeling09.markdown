@@ -36,6 +36,7 @@ published: true
 
 
 ## Table과 Segment의 관계
+```
                           table   segment
     
       - Heap-organized      1       1  
@@ -44,7 +45,9 @@ published: true
       - Index-organized     1       2  -> http://me2.do/5ROboyz1, http://me2.do/xlJAs890(실습)
      
       - MView -> http://me2.do/GkFy9CQD
-###
+```
+
+```
      -- CLUSTER 예제
 
      set autot off
@@ -96,7 +99,9 @@ published: true
      |   2 |   TABLE ACCESS FULL   | BANK    |
      |   3 |   TABLE ACCESS CLUSTER| ACCOUNT |
      -----------------------------------------
-###
+```
+
+```
      -- IOT 예제
 
      create table iot
@@ -121,12 +126,13 @@ published: true
      where c3 > 0;
 
      --> http://www.orafaq.com/wiki/Index-organized_table
+```
 
 ## With Check Option
 * View?
   - Named Select!
   - View에 대한 질의는 Base Table에 대한 질의로 transformation 됩니다. (예외 많음)
-###    
+```
       drop table t1 purge;
       
       create table t1 
@@ -182,16 +188,18 @@ published: true
       where table_name like 'SAWON%'
       or    table_name like 'TV%'   
       or    table_name like 'EMPL%'   ;
+```
 
 
 ## 참고 자료
 * Partitioned Outer Join : http://me2.do/5Fc6guTF 
-###
+```
       select ...
       from days d LEFT OUTER JOIN sales s PARTITION BY (prod_id) ON (조인조건)
+```
   
 * Between 이해
-###    
+```
       drop table t1 purge;
     
       create table t1 
@@ -210,11 +218,12 @@ published: true
     
       select * from t1
       where '20120630' between start_date and nvl(end_date, '99991231');
+```
 
 * Flashback Data Archive + Flashback Query
 
 * 객체이름 정하기
-###    
+```
       http://orapybubu.blog.me/40045704831
       http://me2.do/xV90URJ3 : Oracle SQL Reserved Words
     
@@ -230,20 +239,13 @@ published: true
       create table substr (substr varchar2(30));
       select substr, substr(substr, 1, 2)
       from substr;
+```
 
 * MView 
-
   http://docs.oracle.com/cd/E11882_01/server.112/e25554/toc.htm
 
-* 물리모델링시 Width가 없는 Number형을 쓰지 말아야 할 이유 
-  
+* 물리모델링시 Width가 없는 Number형을 쓰지 말아야 할 이유   
   http://gseducation.blog.me/20095938837
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

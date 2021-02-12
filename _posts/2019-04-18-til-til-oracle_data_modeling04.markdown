@@ -27,7 +27,7 @@ published: true
   - cf.1:M 관계에서 1쪽의 UID가 복잡할 경우 Database Design시에 M쪽에 컬럼이 많이 생긴다.
   - [식별자 관계(UID의 일부가 되는 Relationship)]와 [비식별자 관계(UID의 일부가 되지 않는 Relationship)]를 결정
 
-###
+```
     ~ 식별자 관계   -> PK 구조가 복잡해진다. 중복이 많아진다. 
 
 	A : REGIONS 
@@ -55,7 +55,9 @@ published: true
 	c1 (pk), (fk)
 	b1 (pk), (fk)
 	a1 (pk), (fk)
-###
+```
+
+```
     ~ 비식별자 관계 -> 정보가 단절되어 과다한 조인이 필요해진다.
 
 	A : REGIONS 
@@ -80,8 +82,9 @@ published: true
 	d1 (pk)
 	d2
 	c1 (fk)
+```
 
-###
+```
     [1] 식별자 관계 : C, D 조인
   
     select e.*
@@ -90,21 +93,27 @@ published: true
     and d.country_id = e.country_id
     and d.region_id = e.region_id
     and d.name = 'SALES';
-###
+```
+
+```
     [2] 식별자 관계 : A, D 조인
 
     select e.*
     from region r, emp e
     where r.region_id = e.region_id
     and r.name = 'ASIA';
-###
+```
+
+```
     [3] 비식별자 관계 : C, D 조인
  
     select e.*
     from dept d, emp e
     where and d.deptid = e.deptno
     and d.name = 'SALES';
-###
+```
+
+```
     [4] 비식별자 관계 : A, D 조인
 
     select e.*
@@ -113,9 +122,10 @@ published: true
     and c.country_id = d.country_id
     and d.deptid = e.deptno
     and r.name = 'ASIA';
+```
 
 ## 4-7
-
+```
     drop table orders purge;
     drop table customers purge;
 
@@ -167,9 +177,10 @@ published: true
             where c =
 
             도출된 인덱스 : c + a + b
+```
 
 ## 4-8
-
+```
     drop table rooms purge;
     drop table floors purge;
     drop table hotels purge;
@@ -190,12 +201,9 @@ published: true
      hotel_name varchar2(10),
        primary key(no, floor_no, hotel_name),
        foreign key(floor_no, hotel_name) references floors(no, hotel_name));
+```
 
- 
-
-
-
-###
+```
     --문제1
     DROP TABLE t_customers PURGE;
     DROP TABLE t_orders    PURGE;
@@ -216,12 +224,12 @@ published: true
         PRIMARY KEY(order_date),
         FOREIGN KEY(family_name, address) REFERENCES t_customers(family_name, address)
     );
+```
 
 <img width="623" alt="Screen Shot 2019-04-17 at 3 07 47 PM" src="https://user-images.githubusercontent.com/46523571/56264798-93534100-6122-11e9-99a2-dd8e8d806742.png">
 [사진출처 : 오라클(RDM_vol.1_English)] 
 
-
-###
+```
     --문제2
     CREATE TABLE a
     (	a1	VARCHAR2(10),
@@ -253,12 +261,11 @@ published: true
         PRIMARY KEY(d1),
         FOREIGN KEY(c1) REFERENCES c(c1)
     );
+```
 
 <img width="1255" alt="Screen Shot 2019-04-17 at 3 05 37 PM" src="https://user-images.githubusercontent.com/46523571/56264709-4a02f180-6122-11e9-88b5-a69d8a167f29.png">
 
-
-
-###
+```
     --문제3
     CREATE TABLE aa
     (	a1	VARCHAR2(10),
@@ -294,6 +301,8 @@ published: true
         PRIMARY KEY(d1, c1, b1, b2, a1),
         FOREIGN KEY(c1, b1, b2, a1) REFERENCES cc(c1, b1,b2, a1)
     );
+```
+
 <img width="1193" alt="Screen Shot 2019-04-17 at 3 06 53 PM" src="https://user-images.githubusercontent.com/46523571/56264759-728aeb80-6122-11e9-812f-7a1bd06dec97.png">
 
 <br>
@@ -312,18 +321,6 @@ published: true
 
 ## Boundaries
 * 각각의 entity가 관련성이 하나도 없으며 그냥 참고용으로 만든다.
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

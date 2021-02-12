@@ -38,11 +38,5 @@ published: true
 ![Screen Shot 2019-04-16 at 1 26 17 PM](https://user-images.githubusercontent.com/46523571/56182061-42244e00-604b-11e9-82d2-c98cd70d78ec.png)
 ![Screen Shot 2019-04-16 at 1 26 09 PM](https://user-images.githubusercontent.com/46523571/56182062-42244e00-604b-11e9-941c-c3954e90cc96.png)
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

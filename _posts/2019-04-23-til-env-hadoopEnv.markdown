@@ -30,7 +30,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
 ## 참고
 * Hadoop ≒ Distributed Proramming Framework 
-###
+```
     - HDFS      : 분산저장 : NameNode, DataNode       -> hdfs_comic.pdf
     - MapReduce : 분산처리 : JobTracker, TaskTracker  -> MapReduce Design Patterns.pdf
 
@@ -49,6 +49,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
     >> 참고 교재
        -> http://www.yes24.com/Product/Goods/47699009 : 실무 프로젝트로 배우는 빅데이터 기술
        -> http://www.yes24.com/Product/Goods/44307209 : 하둡과 스파크를 활용한 실용 데이터 과학 
+```
 
 <br>
 <br>
@@ -57,7 +58,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 ## 참고.
 * 하둡 에코시스템(Hadoop Ecosystem)
 * 하둡은 분산 프로그래밍 프레임워크, 하둡 에코시스템은 하둡을 이루고 있는 다양한 서브 프로젝트들의 모임.
-###
+```
     하둡 코어 프로젝트
       - 분산 데이터 저장 HDFS
       - 분산 데이터 처리 MapReduce
@@ -73,6 +74,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       - 정형 데이터 수집 Sqoop, hiho
       - 분산 코디네이터 Zookeeper
       - 분산 데이터베이스 Hbase, Cassandra
+```
 
 <br>
 <br>
@@ -174,6 +176,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 <img width="719" alt="Screen Shot 2019-04-05 at 3 07 55 PM" src="https://user-images.githubusercontent.com/46523571/55633699-e3173b80-57f7-11e9-9953-7491430888cf.png">
 
 ## [4-2] jdk 확인
+```
       1. 32bit/64bit 확인
       [orcl:~]$ getconf LONG_BIT
       32
@@ -192,10 +195,12 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       4. 설치된 자바 위치 확인
       [orcl:~]$ which java
       /usr/java/jdk1.6.0_18/bin/java
+```
 
 <img width="573" alt="Screen Shot 2019-04-21 at 10 08 50 PM" src="https://user-images.githubusercontent.com/46523571/56470536-173e5d80-6482-11e9-81b2-54550ce554aa.png">
 
 ## [4-3] 최신버전 JDK 다운로드 및 설치
+```
       http://www.oracle.com/technetwork/java/javase/downloads/index.html 에서 최신 jdk를 다운로드하세요.
       >> jdk1.8.0_211 다운로드하는게 실습에 에러가 적다!
          jdk-*-linux-i586.tar.gz
@@ -218,8 +223,10 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       [root@edydr1p0 java]# tar xvfz jdk-*-linux-i586.tar.gz
     
       [root@edydr1p0 java]# exit
+```
 
-## [4-4] 자바 환경 변수 설정      
+## [4-4] 자바 환경 변수 설정  
+```    
       [orcl:~]$ cd
       [orcl:~]$ whoami
       oracle
@@ -236,11 +243,13 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       java version "1.8.0_211"
       Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
       Java HotSpot(TM) Server VM (build 25.121-b13, mixed mode)
+```
 
 <img width="574" alt="Screen Shot 2019-04-21 at 10 06 45 PM" src="https://user-images.githubusercontent.com/46523571/56470495-c890c380-6481-11e9-81db-2a0d10d03050.png">
 <img width="574" alt="Screen Shot 2019-04-21 at 10 09 00 PM" src="https://user-images.githubusercontent.com/46523571/56470535-173e5d80-6482-11e9-8e08-d552f4c4792f.png">
 
 ## [4-5] 자바 연습
+```
       [orcl:~]$ vi HelloWorldApp.java
     
         class HelloWorldApp {
@@ -255,16 +264,17 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       Hello World!
      
       [orcl:~]$ v
+```
+
 <img width="304" alt="Screen Shot 2019-04-19 at 3 21 55 PM" src="https://user-images.githubusercontent.com/46523571/56410155-13aaab00-62b7-11e9-9c30-b94c60f12e2c.png">
 
 <br>
 <br>
 <br>
 
-
 ## [5-1] 하둡 관리 및 하둡 프로그래밍용 리눅스 유저 생성
 * 가상환경 리눅스에서 oracle 유저로 로그인후 root 유저로 전환
-###    
+```
       [orcl:~]$ su -
       Password: oracle    <- 보이지 않습니다.
 
@@ -287,9 +297,10 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
       --디렉토리 소유자 및 그룹 설정
       [root@edydr1p0 ~]# chown hadoop:hadoop /opt/hadoop
+```
 
 * hadoop 유저로 로그인
-###
+```
       [root@edydr1p0 ~]# su - hadoop    <- root 유저에서 su를 실행하면 암호를 물어보지 않습니다.
     
       [hadoop@edydr1p0 ~]$ pwd
@@ -298,9 +309,11 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       [hadoop@edydr1p0 ~]$ vi .bash_profile
       export JAVA_HOME=/usr/java/jdk1.8.0_211
       export PATH=$JAVA_HOME/bin:$PATH
+```
       
 <img width="826" alt="Screen Shot 2019-04-19 at 3 29 04 PM" src="https://user-images.githubusercontent.com/46523571/56411895-49529280-62bd-11e9-9445-8dd8d87fc0a9.png">
 
+```
       [hadoop@edydr1p0 ~]$ . .bash_profile
       
       [hadoop@edydr1p0 ~]$ echo $JAVA_HOME
@@ -308,6 +321,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
       --하둡 (수업) 관련 파일을 저장할 디렉토리 생성
       [hadoop@edydr1p0 ~]$ mkdir download
+```
 
 <br>
 <br>
@@ -316,7 +330,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 ## [5-2] Hadoop Setup : Single Node Setup 
 * SSH 설정
   - 하둡은 SSH 프로토콜을 이용해 하둡 클러스터 간의 내부 통신을 수행합니다. 네임노드에서 SSH 공개키를 설정하고, 이 공개키를 전체 서버에 복사해야 합니다.
-###    
+```
       [hadoop@edydr1p0 ~]$ whoami
       hadoop
     
@@ -348,6 +362,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       Warning: Permanently added 'localhost' (RSA) to the list of known hosts.
     
       [hadoop@edydr1p0 ~]$ 
+```
 
 <br>
 <br>
@@ -355,7 +370,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
 ## [5-2-1] Hadoop 다운로드 및 설치 
 * http://mirror.apache-kr.org/hadoop/common에서 1.2.X stable 버전을 사용합니다.
-###
+```
       --설치할 경로로 이동
       [hadoop@edydr1p0 ~]$ cd /opt/hadoop
       
@@ -385,8 +400,11 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       가장 아래쪽에 추가하세요.
       export HADOOP_HOME=/opt/hadoop/hadoop
       export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+```
+
 <img width="827" alt="Screen Shot 2019-04-19 at 3 35 32 PM" src="https://user-images.githubusercontent.com/46523571/56411960-8c146a80-62bd-11e9-942e-22d45121a480.png">
     
+```
       [hadoop@edydr1p0 ~]$ . .bash_profile
     
       [hadoop@edydr1p0 ~]$ env|grep HOME
@@ -396,12 +414,14 @@ macOS에 하둡(hadoop) 개발환경구축<br />
     
       [hadoop@edydr1p0 ~]$ pwd
       /home/hadoop
+```
 
 <br>
 <br>
 <br>
 
 ## [5-2-2] Hadoop 환경설정 파일 수정 : 6개
+```
       [hadoop@edydr1p0 ~]$ cd $HADOOP_HOME/conf
       
       [hadoop@edydr1p0 conf]$ pwd
@@ -422,22 +442,28 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       capacity-scheduler.xml  hadoop-policy.xml      mapred-site.xml
       core-site.xml           hdfs-site.xml
       fair-scheduler.xml      mapred-queue-acls.xml
-###
+```
+
+```
       [hadoop@edydr1p0 conf]$ vi hadoop-env.sh    -- 위에서 여덟번째 줄 부근에 적절하게 입력하세요. 
       export JAVA_HOME=/usr/java/jdk1.8.0_211
       export HADOOP_HOME=/opt/hadoop/hadoop
       export HADOOP_HOME_WARN_SUPPRESS=1 
+```
+
 <img width="825" alt="Screen Shot 2019-04-19 at 3 39 32 PM" src="https://user-images.githubusercontent.com/46523571/56411990-abab9300-62bd-11e9-86df-2144fbe99ab9.png">
 
-###
+```
       [hadoop@edydr1p0 conf]$ more masters        -- SecondaryNameNode 설정
       localhost
+```
 
-###    
+```
       [hadoop@edydr1p0 conf]$ more slaves         -- DataNode, Task Tracker 설정
       localhost
+```
 
-###    
+```
       [hadoop@edydr1p0 conf]$ vi core-site.xml    -- NameNode의 호스트명과 포트 설정
       -- STS 플러그인으로 접속하려면 localhost 대신 ip address 사용할 것
 
@@ -451,9 +477,11 @@ macOS에 하둡(hadoop) 개발환경구축<br />
               <value>/opt/hadoop/hadoop-tmp-dir/</value>
           </property>
       </configuration>
+```
+
 <img width="825" alt="Screen Shot 2019-04-19 at 3 41 57 PM" src="https://user-images.githubusercontent.com/46523571/56412051-ea414d80-62bd-11e9-9246-54389036b4c0.png">
     
-###
+```
       [hadoop@edydr1p0 conf]$ vi hdfs-site.xml         -- HDFS에서 사용할 환경정보 설정
     
       <configuration>
@@ -486,9 +514,11 @@ macOS에 하둡(hadoop) 개발환경구축<br />
               <value>false</value>
           </property>
       </configuration>
+```
+
 <img width="826" alt="Screen Shot 2019-04-19 at 3 42 46 PM" src="https://user-images.githubusercontent.com/46523571/56412084-0349fe80-62be-11e9-9932-30d54e6c8fd8.png">
 
-###
+```
       --위에서 dfs.permissions를 false로 해서 STS 플러그인에서 파일 업로드를 할 수 있게 한다.
      [hadoop@edydr1p0 conf]$ vi mapred-site.xml       -- JobTracker의 호스트명과 포트 설정
     
@@ -498,12 +528,14 @@ macOS에 하둡(hadoop) 개발환경구축<br />
                <value>192.168.56.102:9001</value>
            </property>
       </configuration>
+```
 
 <br>
 <br>
 <br>
 
 ## [5-2-3] Hadoop 실행
+```
       [hadoop@edydr1p0 conf]$ cd
     
       [hadoop@edydr1p0 ~]$ which hadoop
@@ -566,6 +598,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
     16574 DataNode
 
       [hadoop@edydr1p0 ~]$ 
+```
 
 <br>
 <br>
@@ -573,7 +606,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
 ## [5-2-4] jps는 Java Virtual Machine Process Status Tool의 약자이며,
 * 시스템에서 실행 중인 자바 프로세스를 출력합니다. 
-###    
+```
       [hadoop@edydr1p0 ~]$ jps            
     
       8981 NameNode
@@ -603,7 +636,9 @@ macOS에 하둡(hadoop) 개발환경구축<br />
     stopping namenode
     localhost: stopping datanode
     localhost: stopping secondarynamenode
-###    
+```
+
+```
       [hadoop@edydr1p0 ~]$ start-dfs.sh       // HDFS만 실행
     starting namenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-namenode-edydr1p0.us.oracle.com.out
     localhost: starting datanode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-datanode-edydr1p0.us.oracle.com.out
@@ -619,7 +654,9 @@ macOS에 하둡(hadoop) 개발환경구축<br />
     stopping namenode
     localhost: stopping datanode
     localhost: stopping secondarynamenode
-###    
+```
+
+```
       [hadoop@edydr1p0 ~]$ start-mapred.sh    // Map Reduce만 실행
     starting jobtracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-jobtracker-edydr1p0.us.oracle.com.out
     localhost: starting tasktracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-tasktracker-edydr1p0.us.oracle.com.out
@@ -632,13 +669,16 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       [hadoop@edydr1p0 ~]$ stop-mapred.sh     // Map Reduce만 종료
     stopping jobtracker
     localhost: stopping tasktracker
-###    
+```
+
+```
       [hadoop@edydr1p0 ~]$ start-all.sh 
     starting namenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-namenode-edydr1p0.us.oracle.com.out
     localhost: starting datanode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-datanode-edydr1p0.us.oracle.com.out
     localhost: starting secondarynamenode, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-secondarynamenode-edydr1p0.us.oracle.com.out
     starting jobtracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-jobtracker-edydr1p0.us.oracle.com.out
     localhost: starting tasktracker, logging to /opt/hadoop/hadoop/logs/hadoop-hadoop-tasktracker-edydr1p0.us.oracle.com.out
+```
 
 <br>
 <br>
@@ -646,7 +686,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
 ## [5-3] Hadoop programming 예제
 * WordCount 소스 분석 : http://me2.do/5Z4aYa6k
-###
+```
       [hadoop@edydr1p0 ~]$ cd
     
       [hadoop@edydr1p0 ~]$ hadoop fs -mkdir input
@@ -1014,6 +1054,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       [hadoop@edydr1p0 ~]$ hadoop fs -cat output2/part-r-00000
     
       [hadoop@edydr1p0 ~]$ hadoop fs -get output2/part-r-00000 .
+```
 
 <br>
 <br>
@@ -1023,7 +1064,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 > MapReduce
 
 ## [6-1] 맵리듀스(MapReduce) 이해하기
-###
+```
                 Input   	Output
       Map   	<k1, v1>	list (<k2, v2>)             # k1(문장), v1(한줄)           -> Map    함수 ->  list{k2(단어), v2(개수)}  -> 셔플
       Reduce	<k2, list(v2)>	list (<k3, v3>)         # k2(단어), list(v2(개수))     -> Reduce 함수 ->  list{k3(), v3()}
@@ -1031,9 +1072,12 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       https://www.slideshare.net/gruter/mapreduce-tuning에서 4번 슬라이드
       https://www.tutorialspoint.com/hadoop/hadoop_mapreduce.htm
       http://www.yes24.com/24/Goods/9146116
+```
 
 ## [6-2] WordCount 소스 분석 : http://me2.do/5Z4aYa6k
+```
 
+```
 <br>
 <br>
 <br>
@@ -1043,7 +1087,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
 
 ## [7-1] 하둡 스트리밍
 * 참고 http://blog.acronym.co.kr/606
-###
+```
       [orcl:~]$ su - hadoop
       Password: 
     
@@ -1053,33 +1097,7 @@ macOS에 하둡(hadoop) 개발환경구축<br />
       hadoop-streaming-1.2.1.jar
     
       [hadoop@edydr1p0 streaming]$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 ## References
-
-<br/>
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>

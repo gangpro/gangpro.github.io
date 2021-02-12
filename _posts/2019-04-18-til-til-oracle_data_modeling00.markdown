@@ -39,7 +39,8 @@ published: true
   - [URL](http://me2.do/FWF1jH60) : 오라클 실습
   - [URL](http://me2.do/GkFy9CQD) : DW 매뉴얼 21장 이후 
 
-## System Development Cycle           
+## System Development Cycle  
+```         
       Business Information Requirements     
          ↓       
       Data Modeling (Conceptual) : Basic, Advanced 
@@ -51,14 +52,7 @@ published: true
      (Performance를 고려한 Database Design 수정 : PK 컬럼 조정, Denomalization 등)
          ↓      
       Database Build : DB 설치 등
-
-
-
-
-
-
-
-
+```
 
 ## SQL Developer 접속
 <img width="100%" alt="Screen Shot 2019-04-15 at 10 24 21 AM" src="https://user-images.githubusercontent.com/46523571/56102595-f4cfb000-5f68-11e9-82f2-cada40af46e7.png">
@@ -100,7 +94,7 @@ published: true
 * Logical Models 오른쪽 마우스 클릭 - 새 엔티티
 <img width="100%" alt="Screen Shot 2019-04-15 at 11 10 47 AM" src="https://user-images.githubusercontent.com/46523571/56104622-775d6d00-5f73-11e9-8832-2ecd67dda25d.png">
 
-###
+```
       일반 - 이름: DEPT
       
       속성 - 아래 3개 추가
@@ -116,11 +110,12 @@ published: true
       이름 : loc
       데이터 타입 : Logical
       소스 타입 : CHAR
+```
 
 <img width="100%" alt="Screen Shot 2019-04-15 at 11 10 57 AM" src="https://user-images.githubusercontent.com/46523571/56104647-8e9c5a80-5f73-11e9-8d3c-3ee01d3904f4.png">
 <img width="100%" alt="Screen Shot 2019-04-15 at 11 20 27 AM" src="https://user-images.githubusercontent.com/46523571/56104649-8fcd8780-5f73-11e9-8173-e65c288667cd.png">
 
-###
+```
       일반 - 이름: EMP
       
       속성 - 아래 3개 추가
@@ -132,6 +127,7 @@ published: true
     
       이름 : sal
       소스 타입 : CHAR 
+```
 
 <img width="100%" alt="Screen Shot 2019-04-15 at 11 20 50 AM" src="https://user-images.githubusercontent.com/46523571/56107096-5ac73200-5f7f-11e9-8c77-7d3aaa4ba893.png">
 <img width="100%" alt="Screen Shot 2019-04-15 at 1 06 46 PM" src="https://user-images.githubusercontent.com/46523571/56107155-a548ae80-5f7f-11e9-9822-8504c0a3691e.png">
@@ -153,13 +149,9 @@ published: true
 <br>
 
 ## 표기법(Notation)
+```
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
+```
 
 ## References
 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀 드립니다.<br/>
