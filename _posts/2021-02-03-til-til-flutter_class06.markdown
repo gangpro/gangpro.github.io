@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 플로터(flutter) - 프로젝트 폴더와 기본 코드 이해하기'
+title: '[TIL] 플러터(flutter) - 프로젝트 폴더와 기본 코드 이해하기'
 subtitle: 
 categories: til
 tags: til flutter
@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플로터(flutter) 프로젝트 폴더와 기본 코드 이해하기<br />
+플러터(flutter) 프로젝트 폴더와 기본 코드 이해하기<br />
 
 
 # Flutter 프로젝트 폴더와 기본 코드 이해하기
@@ -29,7 +29,7 @@ published: true
 
 ### main.dart
 
-- 플로터 앱을 만들기 위해서는 material 라이브러리 import 필수!
+- 플러터 앱을 만들기 위해서는 material 라이브러리 import 필수!
 
 ```dart
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ import 'package:flutter/material.dart';
 // 아무것도 반환하지 않음 void
 // 앱의 시작점
             // => : main 함수가 다른 함수를 호출한다는 의미 
-void main() => runApp(MyApp()); // runApp(app) : 플로터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
+void main() => runApp(MyApp()); // runApp(app) : 플러터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
 
 -------------------------------------------------------------------------------------
 // 함수 : 소문자로 시작
@@ -58,14 +58,14 @@ import 'package:flutter/material.dart';
 // 앱의 시작점
 // => : main 함수가 다른 함수를 호출한다는 의미
 void main() => runApp(
-    MyApp()); // runApp(app) : 플로터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
+    MyApp()); // runApp(app) : 플러터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
 
 // stl 자동완성
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // MaterialApp : 플로터에서 제공하고 있는 모든 위젯과 디자인 테마 사용 할 수 있다.
+      // MaterialApp : 플러터에서 제공하고 있는 모든 위젯과 디자인 테마 사용 할 수 있다.
       title: 'First app',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(), // 앱이 정상적으로 실행되었을 때 가장 먼저 보여주는 화면 경로
@@ -105,14 +105,14 @@ import 'package:flutter/material.dart';
 // 앱의 시작점
 // => : main 함수가 다른 함수를 호출한다는 의미
 void main() => runApp(
-    MyApp()); // runApp(app) : 플로터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
+    MyApp()); // runApp(app) : 플러터에서 최상위 함수. runApp 함수 안에는 app, 즉 위젯이 들어온다 생각하면 됨.
 
 // stl 자동완성
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // MaterialApp : 플로터에서 제공하고 있는 모든 위젯과 디자인 테마 사용 할 수 있다.
+      // MaterialApp : 플러터에서 제공하고 있는 모든 위젯과 디자인 테마 사용 할 수 있다.
       title: 'First app',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(

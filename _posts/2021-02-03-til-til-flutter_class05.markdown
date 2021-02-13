@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] 플로터(flutter) - 위젯이란?'
+title: '[TIL] 플러터(flutter) - 위젯이란?'
 subtitle: 
 categories: til
 tags: til flutter
@@ -13,9 +13,9 @@ sitemap:
 published: true
 ---
 
-플로터(flutter) - 위젯이란?<br />
+플러터(flutter) - 위젯이란?<br />
 
-# 플로터에서 제일 중요하다는 위젯이란 무엇일까요?
+# 플러터에서 제일 중요하다는 위젯이란 무엇일까요?
 
 ## 1. Flutter 상에서의 위젯이란?
 
