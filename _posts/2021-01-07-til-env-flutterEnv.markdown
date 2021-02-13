@@ -693,6 +693,18 @@ Doctor summary (to see all details, run flutter doctor -v):
 ➜  ~
 ```
 
+## Visual Studio Code에 Flutter 설치
+
+- View > Extensions 누르면 비쥬얼 스튜디오 마켓 플레이스가 나온다.
+- 검색창에 Flutter 설치 하기(+@ Dart 언어도 자동으로 함께 설치된다.)
+
+## Visual Studio Code에서 Flutter 시작하기
+
+- View > Command Palette > 검색창 > Flutter: New Application Project 
+- 플러터 앱 프로젝트를 생성할 폴더 지정 > 프로젝트 명 지정(시작은 알파벳 소문자로 시작해야함)
+- 기본 환경 구성이 세팅된다. 개발시작!
+
+
 ## 개발환경 구축 완료 :)
 <img width="1680" alt="Screen Shot 2021-01-11 at 0 13 33" src="https://user-images.githubusercontent.com/59175609/106360765-c13c6080-635d-11eb-9a2e-da950bb09ac6.png">
 <img width="1680" alt="Screen Shot 2021-01-11 at 0 32 50" src="https://user-images.githubusercontent.com/59175609/106360769-c7cad800-635d-11eb-9421-2bc07f378cb1.png">
