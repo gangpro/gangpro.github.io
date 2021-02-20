@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] Dart 언어 기초'
+title: '[TIL] 다트(Dart) 언어 기초'
 subtitle: 
 categories: til
 tags: til dart
@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-Dart 언어 기초<br />
+다트(Dart) 언어 기초<br />
 
 
 ## Dart 언어 기초 자료
