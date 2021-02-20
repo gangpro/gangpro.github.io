@@ -121,7 +121,7 @@ class Grade extends StatelessWidget {
 }
 ```
 
-## 강좌 12 : 캐릭터 페이지 디자인 3
+## 강좌 11 : 캐릭터 페이지 디자인 3
 
 ```dart
 import 'package:flutter/material.dart';
