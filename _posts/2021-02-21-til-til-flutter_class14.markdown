@@ -23,6 +23,61 @@ published: true
 - actions: 복수의 앙이콘 버튼 등을 오른쪽에 배치할 때
 - onPressed: 함수의 형태로 일반 버튼이나 아이콘 버튼을 터치했을 때 일어나는 이벤트를 정의하는 곳
 
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+// 단축어 stl
+// MyApp
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Appbar',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: MyPage(),
+    );
+  }
+}
+
+// MyPage
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Appbar icon menu'),
+        centerTitle: true, // 중앙 정렬
+        elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.menu), // 햄버거버튼 생성
+          onPressed: () {
+            // 아이콘 버튼 실행
+            print('menu button is clicked');
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.shopping_cart), // 햄버거버튼 생성
+            onPressed: () {
+              // 아이콘 버튼 실행
+              print('Shopping cart button is clicked');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search), // 햄버거버튼 생성
+            onPressed: () {
+              // 아이콘 버튼 실행
+              print('Search button is clicked');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
 
 ### 구현 화면
 <img width="348" alt="Screen Shot 2021-02-21 at 1 18 22" src="https://user-images.githubusercontent.com/59175609/108602038-3b06bd80-73e3-11eb-9943-986be51cbec7.png">
