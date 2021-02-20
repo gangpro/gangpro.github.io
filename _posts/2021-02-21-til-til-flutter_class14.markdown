@@ -51,7 +51,7 @@ class MyPage extends StatelessWidget {
         centerTitle: true, // 중앙 정렬
         elevation: 0.0,
         leading: IconButton(
-          icon: Icon(Icons.menu), // 햄버거버튼 생성
+          icon: Icon(Icons.menu), // 햄버거버튼 아이콘 생성
           onPressed: () {
             // 아이콘 버튼 실행
             print('menu button is clicked');
@@ -59,14 +59,14 @@ class MyPage extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.shopping_cart), // 햄버거버튼 생성
+            icon: Icon(Icons.shopping_cart), // 장바구니 아이콘 생성
             onPressed: () {
               // 아이콘 버튼 실행
               print('Shopping cart button is clicked');
             },
           ),
           IconButton(
-            icon: Icon(Icons.search), // 햄버거버튼 생성
+            icon: Icon(Icons.search), // 검색 아이콘 생성
             onPressed: () {
               // 아이콘 버튼 실행
               print('Search button is clicked');
