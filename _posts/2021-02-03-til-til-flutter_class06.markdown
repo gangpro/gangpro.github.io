@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(flutter) 프로젝트 폴더와 기본 코드 이해하기<br />
+플러터(flutter) 프로젝트 폴더와 기본 코드 이해하기 강좌 6~8<br />
 
 
 # Flutter 프로젝트 폴더와 기본 코드 이해하기
@@ -139,5 +139,5 @@ class MyApp extends StatelessWidget {
 
 
 ## 참고
-- 유튜브 강의 : [https://youtu.be/b5wbsJFXVTM](https://youtu.be/b5wbsJFXVTM)
+- 유튜브 강의 : [코딩셰프](https://www.youtube.com/channel/UC_2ge45JCuJH1z6VYt4iCgQ)
 - 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>

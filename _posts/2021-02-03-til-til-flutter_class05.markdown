@@ -73,5 +73,5 @@ MyApp
 ```
 
 ## 참고
-- 유튜브 강의 : [https://youtu.be/jI4kqLdqXic](https://youtu.be/jI4kqLdqXic)
+- 유튜브 강의 : [코딩셰프](https://www.youtube.com/channel/UC_2ge45JCuJH1z6VYt4iCgQ)
 - 개발자님들 덕분에 많이 배울 수 있었습니다. 감사의 말씀드립니다.<br/>
