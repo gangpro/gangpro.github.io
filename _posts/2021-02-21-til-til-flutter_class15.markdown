@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(Flutter) Drawer 메뉴 만들기 15<br />
+플러터(Flutter) Drawer 메뉴 만들기 강좌 15~16<br />
 
 # 플러터(Flutter) Drawer 메뉴 만들기
 

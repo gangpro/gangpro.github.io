@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-다트(Dart) 클래스와 위젯의 정체<br />
+다트(Dart) 클래스와 위젯의 정체 강좌 12~13<br />
 
 
 # 다트(Dart) 클래스와 위젯의 정체
