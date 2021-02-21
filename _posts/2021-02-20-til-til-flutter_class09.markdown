@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(flutter) 캐릭터 페이지 디자인 강좌 9~11<br />
+플러터(flutter) 캐릭터 페이지 디자인 (강좌 9~11)<br />
 
 # Flutter 캐릭터 카드 페이지 만들기
 

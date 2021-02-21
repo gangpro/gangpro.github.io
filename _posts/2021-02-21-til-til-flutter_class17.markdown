@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(Flutter) BuildContext 이해하기 강좌 17<br />
+플러터(Flutter) BuildContext 이해하기 (강좌 17)<br />
 
 # 플러터(Flutter) BuildContext 이해하기
 

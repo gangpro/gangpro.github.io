@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(Flutter) 앱바 메뉴 아이콘 추가하기 강좌 14<br />
+플러터(Flutter) 앱바 메뉴 아이콘 추가하기 (강좌 14)<br />
 
 # 플러터(Flutter) 앱바 메뉴 아이콘 추가하기
 

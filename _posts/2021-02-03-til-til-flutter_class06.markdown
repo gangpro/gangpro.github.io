@@ -13,7 +13,7 @@ sitemap:
 published: true
 ---
 
-플러터(flutter) 프로젝트 폴더와 기본 코드 이해하기 강좌 6~8<br />
+플러터(flutter) 프로젝트 폴더와 기본 코드 이해하기 (강좌 6~8)<br />
 
 
 # Flutter 프로젝트 폴더와 기본 코드 이해하기
