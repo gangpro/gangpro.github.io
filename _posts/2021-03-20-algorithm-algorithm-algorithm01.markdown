@@ -35,7 +35,7 @@ return 하는 solution 함수를 완성해 주세요.
 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 ```
 
-*문제 출처 : https://programmers.co.kr/learn/courses/30/lessons/12906
+* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12906](https://programmers.co.kr/learn/courses/30/lessons/12906)
 
 
 ## 나의 풀이
@@ -58,9 +58,9 @@ return 하는 solution 함수를 완성해 주세요.
 
 ## 공부하기
 - [push 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 
-: push 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환 
+push() 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환 
 - [filter 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-: filter 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환
+filter() 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환
 
 
 
