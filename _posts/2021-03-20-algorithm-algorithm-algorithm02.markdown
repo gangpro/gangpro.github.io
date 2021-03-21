@@ -37,7 +37,7 @@ answer에 n의 길이에 따라 짝수면 수, 홀수면 박을 더한 후 retur
 
 ```javascript
   function solution(n) {
-      var answer = '';
+      let answer = '';
       
       for(let i = 0; i < n; i++) {
           answer += i % 2 === 0 ? '수' : '박';

@@ -31,10 +31,11 @@ a와 b는 -10,000,000 이상 10,000,000 이하인 정수입니다.
 a와 b의 대소관계는 정해져있지 않습니다.
 
 <입출력 예>
-a	b	return
-3	5	12
-3	3	3
-5	3	12
+| a | b | return |
+| --- | --- | --- |
+| 3 | 5 | 12 |
+| 3 | 3 | 3 |
+| 5 | 3 | 12 |
 ```
 
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12912](https://programmers.co.kr/learn/courses/30/lessons/12912)
@@ -45,7 +46,7 @@ a와 b의 크기에 따라 분기 후 해당 길이만큼 더함
 
 ```javascript
   function solution(a, b) {
-      var answer = 0;
+      let answer = 0;
       
       if(a <= b) {
           for(let i = a; i <= b; i++) {

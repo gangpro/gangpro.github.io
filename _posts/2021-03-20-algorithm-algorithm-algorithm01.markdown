@@ -43,7 +43,7 @@ return 하는 solution 함수를 완성해 주세요.
 
 ```javascript
   function solution(arr) {
-      var answer = [];
+      let answer = [];
       
       for(let i = 0; i < arr.length; i++) {
           if(arr[i] !== arr[i+1]) {
