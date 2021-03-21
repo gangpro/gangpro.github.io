@@ -36,15 +36,15 @@ n은 길이 10,000이하인 자연수입니다.
 answer에 n의 길이에 따라 짝수면 수, 홀수면 박을 더한 후 return
 
 ```javascript
-  function solution(n) {
-      let answer = '';
-      
-      for(let i = 0; i < n; i++) {
-          answer += i % 2 === 0 ? '수' : '박';
-      }
-      
-      return answer;
-  }
+function solution(n) {
+    let answer = '';
+    
+    for(let i = 0; i < n; i++) {
+        answer += i % 2 === 0 ? '수' : '박';
+    }
+    
+    return answer;
+}
 ```
 
 

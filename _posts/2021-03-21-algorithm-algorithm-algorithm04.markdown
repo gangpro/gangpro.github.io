@@ -27,8 +27,8 @@ published: true
 s는 길이가 1 이상, 100이하인 스트링입니다.
 
 <입출력 예>
-s	        return
-"abcde"	  "c"
+s         return
+"abcde"   "c"
 "qwer"    "we"
 
 
@@ -41,15 +41,15 @@ s	        return
 문자열 길이를 체크하여 짝수와 홀수에 맞게 글자열 추출
 
 ```javascript
-  function solution(s) {
-      let answer = '';
-      let len = s.length;
-      
-      //answer = len % 2 === 0 ? console.log("짝수") : console.log("홀수");
-      answer = len % 2 === 0 ? s.substr(len/2-1, 2) : s.substr(len/2, 1);
-      
-      return answer;
-  }
+function solution(s) {
+    let answer = '';
+    let len = s.length;
+    
+    //answer = len % 2 === 0 ? console.log("짝수") : console.log("홀수");
+    answer = len % 2 === 0 ? s.substr(len/2-1, 2) : s.substr(len/2, 1);
+    
+    return answer;
+}
 ```
 
 

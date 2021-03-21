@@ -42,16 +42,16 @@ return 하는 solution 함수를 완성해 주세요.
 들어오는 배열 n 번째와 n+1 번째를 비교하여 다르면 answer 배열에 넣어 출력
 
 ```javascript
-  function solution(arr) {
-      let answer = [];
-      
-      for(let i = 0; i < arr.length; i++) {
-          if(arr[i] !== arr[i+1]) {
-            answer.push(arr[i]);
-          }
-      }
-      return answer;
-  }
+function solution(arr) {
+    let answer = [];
+    
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] !== arr[i+1]) {
+          answer.push(arr[i]);
+        }
+    }
+    return answer;
+}
 ```
 
 

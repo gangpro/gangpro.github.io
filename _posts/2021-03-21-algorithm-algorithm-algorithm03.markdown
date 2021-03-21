@@ -40,9 +40,9 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
 문자열 s를 숫자 타입으로 변환하여 출력
 
 ```javascript
-  function solution(s) {
-      return Number(s);
-  }
+function solution(s) {
+    return Number(s);
+}
 ```
 
 

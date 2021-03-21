@@ -32,9 +32,9 @@ s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True,
 문자열 s는 알파벳으로만 이루어져 있습니다.
 
 <입출력 예>
-s	        answer
-"pPoooyY"	true
-"Pyy"	    false
+s           answer
+"pPoooyY"   true
+"Pyy"       false
 
 <입출력 예 설명>
 입출력 예 #1
@@ -51,33 +51,33 @@ s	        answer
 같으면 true 리턴, 다르면 false 리턴
 
 ```javascript
-  function solution(s){
-      let answer = true;
-      let input = s.toUpperCase();
-      let findP = input.indexOf("P");
-      let findY = input.indexOf("Y");
-      
-      // 문자열 P 개수
-      let countP = 0;
-      while (findP !== -1) {
-          countP++;
-          findP = input.indexOf("P", findP + 1);
-      }
-      console.log(countP);
-      
-      // 문자열 Y 개수
-      let countY = 0;
-      while (findY !== -1) {
-          countY++;
-          findY = input.indexOf("Y", findY + 1);
-      }
-      console.log(countY);
-      
-      // if문
-      answer = countP === countY ? true : false;
+function solution(s){
+    let answer = true;
+    let input = s.toUpperCase();
+    let findP = input.indexOf("P");
+    let findY = input.indexOf("Y");
+    
+    // 문자열 P 개수
+    let countP = 0;
+    while (findP !== -1) {
+        countP++;
+        findP = input.indexOf("P", findP + 1);
+    }
+    console.log(countP);
+    
+    // 문자열 Y 개수
+    let countY = 0;
+    while (findY !== -1) {
+        countY++;
+        findY = input.indexOf("Y", findY + 1);
+    }
+    console.log(countY);
+    
+    // if문
+    answer = countP === countY ? true : false;
 
-      return answer;
-  }
+    return answer;
+}
 ```
 
 
