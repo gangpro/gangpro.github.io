@@ -36,6 +36,7 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12925](https://programmers.co.kr/learn/courses/30/lessons/12925)
 
 
+
 ## 나의 풀이
 문자열 s를 숫자 타입으로 변환하여 출력
 
@@ -52,6 +53,7 @@ function solution(s) {
 Number 객체는 숫자 값으로 작업할 수 있게 해주는 래퍼wrapper 객체입니다. 
 Number 객체는 Number() 생성자를 사용하여 만듭니다. 
 원시 숫자 자료형은 Number() 함수를 사용해 생성합니다.
+
 
 
 ## 참고

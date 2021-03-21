@@ -30,11 +30,10 @@ s는 길이가 1 이상, 100이하인 스트링입니다.
 s         return
 "abcde"   "c"
 "qwer"    "we"
-
-
 ```
 
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12903](https://programmers.co.kr/learn/courses/30/lessons/12903)
+
 
 
 ## 나의 풀이
@@ -57,7 +56,6 @@ function solution(s) {
 ## 공부하기
 - [substr() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
 substr() 메서드는 문자열에서 특정 위치에서 시작하여 특정 문자 수 만큼의 문자들을 반환합니다.
-
 
 
 

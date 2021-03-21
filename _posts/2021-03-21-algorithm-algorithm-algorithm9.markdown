@@ -38,6 +38,7 @@ phone_number    return
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12948](https://programmers.co.kr/learn/courses/30/lessons/12948)
 
 
+
 ## 나의 풀이
 핸드폰 번호 길이에서 마지막 4자리를 제외한 숫자에 "*" 표시를 한 후에
 핸드폰 번호 마지막 4자리 자른 후 붙여서 리턴
@@ -61,6 +62,7 @@ function solution(phone_number) {
 repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
 - [slice() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 splice() 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
+
 
 
 ## 참고

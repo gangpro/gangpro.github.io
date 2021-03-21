@@ -37,6 +37,7 @@ seoul             return
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12919](https://programmers.co.kr/learn/courses/30/lessons/12919)
 
 
+
 ## 나의 풀이
 Kim의 위치를 찾아 answer에 대입 후 출력
 

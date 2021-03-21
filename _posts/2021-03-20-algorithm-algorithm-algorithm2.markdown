@@ -32,6 +32,7 @@ n은 길이 10,000이하인 자연수입니다.
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12922#](https://programmers.co.kr/learn/courses/30/lessons/12922#)
 
 
+
 ## 나의 풀이
 answer에 n의 길이에 따라 짝수면 수, 홀수면 박을 더한 후 return
 
@@ -53,6 +54,7 @@ function solution(n) {
 - 문자열 메소드 다루는 법
 - [repeat() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
 repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
+
 
 
 ## 참고
