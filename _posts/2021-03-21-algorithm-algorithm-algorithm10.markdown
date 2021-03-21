@@ -39,6 +39,7 @@ arr         return
 * 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12935#](https://programmers.co.kr/learn/courses/30/lessons/12935#)
 
 
+
 ## 나의 풀이
 arr 배열에서 최소값을 구해 위치를 찾고
 그 위치를 제거한 arr을 리턴
