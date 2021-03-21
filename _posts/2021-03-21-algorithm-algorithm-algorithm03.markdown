@@ -48,7 +48,7 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
 
 
 ## 공부하기
-- [Number 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- [Number() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number)
 Number 객체는 숫자 값으로 작업할 수 있게 해주는 래퍼wrapper 객체입니다. 
 Number 객체는 Number() 생성자를 사용하여 만듭니다. 
 원시 숫자 자료형은 Number() 함수를 사용해 생성합니다.

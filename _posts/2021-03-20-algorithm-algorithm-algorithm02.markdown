@@ -51,7 +51,7 @@ answer에 n의 길이에 따라 짝수면 수, 홀수면 박을 더한 후 retur
 
 ## 공부하기
 - 문자열 메소드 다루는 법
-- [repeat 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+- [repeat() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
 repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
 
 

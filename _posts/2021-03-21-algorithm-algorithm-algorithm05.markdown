@@ -83,13 +83,13 @@ s	        answer
 
 
 ## 공부하기
-- [toUpperCase 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [toUpperCase() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
 toUpperCase() 메서드는 문자열을 대문자로 변환해 반환합니다.
-- [toLowerCase 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [toLowerCase() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 toLowerCase() 메서드는 문자열을 소문자로 변환해 반환합니다.
-- [split 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [split() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 split() 메서드는 String 객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눕니다.
-- [match 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [match() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/match)
 match() 메서드는 문자열이 정규식과 매치되는 부분을 검색합니다.
 
 
