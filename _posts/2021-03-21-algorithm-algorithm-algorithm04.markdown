@@ -20,7 +20,8 @@ published: true
 ## 문제 
 ```text
 <문제 설명>
-단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 
+단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
 
 <제한사항>
 s는 길이가 1 이상, 100이하인 스트링입니다.
@@ -55,7 +56,7 @@ s	        return
 
 ## 공부하기
 - [substr 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-substr() 메서드는 문자열에서 특정 위치에서 시작하여 특정 문자 수 만큼의 문자들을 반
+substr() 메서드는 문자열에서 특정 위치에서 시작하여 특정 문자 수 만큼의 문자들을 반환합니다.
 
 
 
