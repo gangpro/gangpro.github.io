@@ -33,7 +33,7 @@ s는 "0"으로 시작하지 않습니다.
 str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12925](https://programmers.co.kr/learn/courses/30/lessons/12925)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12925)
 
 
 

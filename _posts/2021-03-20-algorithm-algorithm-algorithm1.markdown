@@ -35,7 +35,7 @@ return 하는 solution 함수를 완성해 주세요.
 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12906](https://programmers.co.kr/learn/courses/30/lessons/12906)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12906)
 
 
 

@@ -32,7 +32,7 @@ n       return
 118372  873211
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12933#](https://programmers.co.kr/learn/courses/30/lessons/12933#)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12933#)
 
 
 

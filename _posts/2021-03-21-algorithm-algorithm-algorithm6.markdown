@@ -37,7 +37,7 @@ a	b	return
 5	3	12
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12912](https://programmers.co.kr/learn/courses/30/lessons/12912)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12912)
 
 
 

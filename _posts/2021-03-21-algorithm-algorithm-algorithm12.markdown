@@ -35,7 +35,7 @@ s        return
 "1234"   true
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12918](https://programmers.co.kr/learn/courses/30/lessons/12918)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12918)
 
 
 

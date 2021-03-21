@@ -43,7 +43,7 @@ s           answer
 'p'의 개수 1개, 'y'의 개수 2개로 다르므로 false를 return 합니다.
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12916#](https://programmers.co.kr/learn/courses/30/lessons/12916#)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12916#)
 
 
 

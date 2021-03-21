@@ -32,7 +32,7 @@ s         return
 "qwer"    "we"
 ```
 
-* 문제 출처 : [https://programmers.co.kr/learn/courses/30/lessons/12903](https://programmers.co.kr/learn/courses/30/lessons/12903)
+* [문제 출처](https://programmers.co.kr/learn/courses/30/lessons/12903)
 
 
 
