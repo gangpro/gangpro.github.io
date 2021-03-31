@@ -28,7 +28,7 @@ num은 int 범위의 정수입니다.
 0은 짝수입니다.
 
 <입출력 예>
-num	  return
+num   return
 3     "Odd"
 4     "Even
 ```

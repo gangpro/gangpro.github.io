@@ -61,19 +61,6 @@ for...in  문은 객체의 열거 속성을 통해 지정된 변수를 반복합
 
 - [reduce() 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 reduce() 메서드는 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환합니다.
-```javascript
-const array1 = [1, 2, 3, 4];
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-// 1 + 2 + 3 + 4
-console.log(array1.reduce(reducer));
-// expected output: 10
-
-// 5 + 1 + 2 + 3 + 4
-console.log(array1.reduce(reducer, 5));
-// expected output: 15
-
-```
 
 
 ## 참고
