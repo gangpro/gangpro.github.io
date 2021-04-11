@@ -47,8 +47,8 @@ function solution(x, n) {
     for(let i = 1; i <= n; i++) {
         answer.push(x * i);
     }
+
     return answer;
-    
 }
 ```
 
