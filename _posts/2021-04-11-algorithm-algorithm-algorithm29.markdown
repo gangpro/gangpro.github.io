@@ -73,7 +73,7 @@ function lcm(min, max) {
 - [Math.min() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
 Math.min() 함수는 주어진 숫자들 중 가장 작은 값을 반환합니다.
 - [Math.max() 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
-Math.max()함수는 입력값으로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환합니다.
+Math.max() 함수는 입력값으로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환합니다.
 
 
 
